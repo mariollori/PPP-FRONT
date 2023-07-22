@@ -2,7 +2,12 @@
 module.exports = {
   content: ["./src/**/*.{html,ts}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        bluePrimary: '#003965',
+        hellowoPrimary: '#F8B91E',
+      }
+    },
   },
   plugins: [
     require("@tailwindcss/typography"),
