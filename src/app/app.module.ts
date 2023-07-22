@@ -9,14 +9,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomePageComponent } from './modules/home/presentation/pages/home-page.component';
-import { LogInComponent } from './modules/log-in/presentation/pages/log-in.component';
+import { LogInComponent } from './modules/auth/log-in/presentation/pages/log-in.component';
+import { RegisterStudentsComponent } from './modules/auth/register-students/presentation/pages/register-students.component';
 
 // PROVIDERS
 
 // BOOTSTRAP
 
 @NgModule({
-  declarations: [AppComponent, HomePageComponent, LogInComponent],
+  declarations: [
+    AppComponent,
+    HomePageComponent,
+    LogInComponent,
+    RegisterStudentsComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
