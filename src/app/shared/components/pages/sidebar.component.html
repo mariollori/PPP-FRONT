@@ -1,0 +1,19 @@
+<aside
+    class="flex flex-col items-center justify-center h-screen w-24  bg-white border-r-2 p-4">
+    <div class="  flex justify-center items-center">
+        <img src="../../../../assets/png/LOGO_UPEU.png"
+            class="max-w-[100%] max-h-[100%]">
+    </div>
+
+    <ul class=" mt-6 flex flex-1 flex-col items-center justify-center w-full list-none gap-6">
+        <li  *ngFor="let opt of list" [attr.data-title]="opt.title"
+        class="bg-hellowoPrimary w-12 h-12 rounded-lg shadow-lg flex justify-center items-center cursor-pointer toolpit">
+            {{opt.icon}}
+        </li>
+
+    </ul>
+    <div  class="mt-6 w-full h-max flex justify-center" >
+        <button class="text-red-500">⏼</button>
+    </div>
+
+</aside>
