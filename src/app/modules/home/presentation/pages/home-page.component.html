@@ -1,23 +1,52 @@
-<div class="flex flex-col items-center justify-center h-screen">
+<div>
   <div class="p-4 w-full h-full">
-    <div class="flex justify-between items-center">
-      <img src="../../../../../assets/png/LOGO_UPEU.png" class="h-[70px]">
+    <div class="flex justify-between items-center ml-7 mr-7">
+      <img src="../../../../../assets/png/LOGO_UPEU.png" class="h-[60px]">
       <span class="cursor-pointer" [routerLink]="['/sign-in']">Iniciar Sesión</span>
     </div>
-    <span class="font-montserrat font-black">Simplifica y optimiza tu proceso de précticas pre profesionales</span>
-    <br><br>
-    <span class="font-montserrat font-bold">Te ayudamos a que el control de tu proceso de practica pre profesionales sea mas sencillas, para poder alcanzar tu meta de graduación.</span>
-    <br><br>
-    <span class="font-montserrat font-extrabold">Sigue los siguientes pasos para tus practicas</span>
-    <br><br>
-    <span class="font-montserrat font-semibold">Prueba color azul global en el Tailwind</span>
-    <br><br>
-    <button class="bg-bluePrimary p-5 text-white font-montserrat font-medium">Empezar</button>
-    <br>
-    <br>
-    <span class="text-bluePrimary font-bold">Azul color Primario</span> <br>
-    <span class="font-montserrat font-black">Prueba color amarillo global en el Tailwind</span>
-    <br>
-    <span class="text-hellowoPrimary font-normal">Amarrillo color Primario</span>
+    <div class="grid grid-cols-10 gap-9 items-center mb-12">
+      <div class="col-span-4">
+        <div class="mb-6">
+          <span class="font-montserrat font-semibold text-[30px] lg:text-[40px] xl:text-[45px]">Simplifica y optimiza tu
+            proceso de
+            précticas pre profesionales</span>
+        </div>
+        <div class="mt-6 mb-6">
+          <span class="font-montserrat font-normal text-[15px] lg:text-[16px] xl:text-[18px]">Te ayudamos a que el
+            control
+            de tu proceso de practica
+            pre profesionales sea
+            mas sencillas, para poder alcanzar tu meta de graduación.</span>
+        </div>
+        <div class="mt-6">
+            <button-standalone width="w-[150px]" height="h-[50px]" colorFondo="bg-blackPrimary" radius="rounded-[7px]"
+              hover="hover:bg-blackSecondary" transition="transition-all" duration="duration-300" text="Empezar"
+              colorText="text-white" fontFamily="font-montserrat" fontSize="text-[17px]"
+              fontWeight="font-semibold" (click)="scrollToElement()"></button-standalone>
+        </div>
+      </div>
+      <div class="col-span-6 justify-self-end w-full">
+        <img src="../../../../../assets/svg/principal-home-2.svg" class="w-full">
+      </div>
+    </div>
+    <div id="step-counts" class="mb-10">
+      <span class="font-montserrat font-bold text-[25px]">Sigue los siguientes pasos para tus practicas</span>
+    </div>
+    <div class="justify-center flex h-[850px]">
+      <img
+        src="https://venngage-wordpress-es.s3.amazonaws.com/uploads/2022/05/Como-hacer-una-infografia-en-5-pasos-Guia-Infografia.png">
+    </div>
+  </div>
+  <div
+    class="w-full h-[80px] bg-bluePrimary flex justify-between items-center pr-10 pl-10 font-montserrat font-semibold text-hellowPrimary">
+    <div>
+      <span>Sé Integro</span>
+    </div>
+    <div>
+      <span>Sé Misonero</span>
+    </div>
+    <div>
+      <span>Sé Innovador</span>
+    </div>
   </div>
 </div>

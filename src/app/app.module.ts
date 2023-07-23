@@ -12,6 +12,7 @@ import { HomePageComponent } from './modules/home/presentation/pages/home-page.c
 import { LogInComponent } from './modules/auth/log-in/presentation/pages/log-in.component';
 import { RegisterStudentsComponent } from './modules/auth/register-students/presentation/pages/register-students.component';
 import { Sidebar } from './shared/components/sidebar/sidebar.component';
+import { ButtonStandAlone } from './shared/components/button/button-shared.standalone';
 
 // PROVIDERS
 
@@ -23,7 +24,7 @@ import { Sidebar } from './shared/components/sidebar/sidebar.component';
     HomePageComponent,
     LogInComponent,
     RegisterStudentsComponent,
-    Sidebar
+    Sidebar,
   ],
   imports: [
     BrowserModule,
@@ -32,6 +33,7 @@ import { Sidebar } from './shared/components/sidebar/sidebar.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ButtonStandAlone,
   ],
   providers: [],
   bootstrap: [AppComponent],
