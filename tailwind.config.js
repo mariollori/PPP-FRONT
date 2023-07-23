@@ -4,9 +4,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        bluePrimary: '#003965',
-        hellowoPrimary: '#F8B91E',
-      }
+        bluePrimary: "#003965",
+        hellowoPrimary: "#F8B91E",
+      },
+      fontFamily: {
+        montserrat: ["Montserrat", "sans-serif"],
+      },
     },
   },
   plugins: [
