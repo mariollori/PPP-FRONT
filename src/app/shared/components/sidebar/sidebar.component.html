@@ -11,7 +11,7 @@
     
         <ul class="mt-6 flex  flex-1 flex-col items-center justify-center w-full list-none gap-6 ">
             <li *ngFor="let opt of list" [attr.data-title]="opt.title"
-                class="bg-hellowPrimary w-12 h-12   rounded-lg shadow-lg flex flex-row justify-center items-center cursor-pointer toolpit max-md:w-full">
+                class="bg-hellowPrimary w-16 h-16   rounded-3xl shadow-lg flex flex-row justify-center items-center cursor-pointer toolpit max-md:w-full">
                {{opt.icon}} <label class="max-md:block hidden ml-5">{{opt.title}}</label>
             </li>
         </ul>
@@ -29,22 +29,26 @@
 
 </main>
 
-<aside class="h-screen w-[30%]   border-l-2  max-xl:fixed max-xl:right-0 max-xl:bg-white ">
-    <button></button>
-    <div>
-        <img src="" alt="">
-        <div>
-            <span></span>
-            <label for=""></label>            
+<aside class="h-screen w-[30%]  flex flex-col items-end p-5 border-l-2 gap-4 max-lg:w-[50%] max-xl:w-[50%]  max-md:w-[80%] max-xl:fixed max-xl:right-0 max-xl:bg-white ">
+    <button>DDD</button>
+    <div class="flex w-full justify-end mr-6">
+        <app-circle-avatar 
+        imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0pwDRKDJJeZoRRS04lgxVABACNycQ-C_WKOMTDIOT00JMfmX7aqFc5YpgQe-8GUIMkXQ&usqp=CAU" 
+        size="avatar-md"></app-circle-avatar>
+       <div class="flex flex-col justify-center ml-4 ">
+            <span>Practicante</span>
+            <label class="font-bold text-2xl">Kevin P.</label>            
         </div>
     </div>
-    <div>
-        <label for="">Supervisor de practicas</label>
-        <div>
-            <app-circle-avatar imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0pwDRKDJJeZoRRS04lgxVABACNycQ-C_WKOMTDIOT00JMfmX7aqFc5YpgQe-8GUIMkXQ&usqp=CAU" [size]="avatar"></app-circle-avatar>
-            <div>
-                <span>Mg benjamin David Reyna</span>
-                <div>
+    <div class="flex w-full flex-col items-start gap-3">
+        <label class="">Supervisor de practicas</label>
+        <div class="flex flex-row w-full">
+            <app-circle-avatar 
+            imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0pwDRKDJJeZoRRS04lgxVABACNycQ-C_WKOMTDIOT00JMfmX7aqFc5YpgQe-8GUIMkXQ&usqp=CAU" 
+            size="avatar-md"></app-circle-avatar>
+            <div class="flex flex-col ml-4 w-full gap-2">
+                <span class="font-bold text-bluePrimary">Mg. Benjamin David Reyna Barreto</span>
+                <div class="flex flex-row justify-between text-[#D9D9D9]">
                     <span>123 calificados</span>
                     <span>Ingenieria de Software</span>
                 </div>
@@ -52,33 +56,42 @@
             </div>
          
         </div>
-        <div>
-            <div>
-                <label ></label>
-                <span></span>
+        <div class="flex flex-row  justify-evenly w-full">
+            <div class="flex flex-col items-center text-bluePrimary">
+                <label >Horas completadas</label>
+                <span class="font-[400] text-6xl">700 H</span>
             </div>
-            <div>
-                <label ></label>
-                <span></span>
+            <div class="flex flex-col items-center text-hellowPrimary">
+                <label >Horas Restantes</label>
+                <span class="font-[400] text-6xl">100 H</span>
             </div>
         </div>
     </div>
-    <div>
+    <div class="flex flex-col items-start w-full gap-4">
         <label >Buzon de notificaciones</label>
-        <div>
-            <input type="text">
-            icon
+        
+        
+        
+        <div class="w-full rounded-xl overflow-hidden border-bluePrimary  border-[1px]">
+            <input type="text " class="w-full outline-none rounded-sm p-2 pr-[30px]">
+            
         </div>
-        <ul>
-            <li>
-                <img src="" alt="">
-                <div>
-                    <label for=""></label>
-                    <span></span>
+        
+        
+        
+        
+        <ul class="w-full list-none overflow-y-auto h-3/4 flex flex-col gap-5 p-6">
+            <li class="flex flex-row border-b-[1px]  border-[#C0C0C0] p-2 gap-6" *ngFor="let notifications of list">
+                <app-circle-avatar 
+                 imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0pwDRKDJJeZoRRS04lgxVABACNycQ-C_WKOMTDIOT00JMfmX7aqFc5YpgQe-8GUIMkXQ&usqp=CAU" 
+                 size="avatar-md"></app-circle-avatar>
+                <div class="flex flex-col justify-around">
+                    <label class="font-[500]">Benjamin David Reyna Barreto</label>
+                    <span class="text-[#676767]">Ha calificado un documento enviado</span>
                 </div>
-                <div>
-                    <label for=""></label>
-                    <span></span>
+                <div  class="flex flex-col justify-around items-center">
+                    <label class="font-bold text-sm ">Oct. 06</label>
+                    <span class="w-4 h-4 bg-hellowPrimary rounded-[50%]"></span>
                 </div>
             </li>
         </ul>
