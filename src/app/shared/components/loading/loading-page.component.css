@@ -1,0 +1,55 @@
+.loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.loading-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: bounceUpDown 1.5s infinite; /* Aumentamos la duración a 1.5s */
+}
+
+.loading-letter {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 36px;
+  animation: bounceUpDownLetter 1.5s infinite; /* Aumentamos la duración a 1.5s */
+}
+
+.loading-points {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 25px;
+  /* opacity: 0.6; */
+  animation: bounceUpDownPoints 1.5s infinite; /* Aumentamos la duración a 1.5s */
+}
+
+@keyframes bounceUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes bounceUpDownLetter {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  20%, 70% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes bounceUpDownPoints {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  40%, 90% {
+    transform: translateY(-12px);
+  }
+}
