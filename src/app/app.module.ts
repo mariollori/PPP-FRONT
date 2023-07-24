@@ -16,6 +16,7 @@ import { ButtonStandAlone } from './shared/components/button/button-shared.stand
 import { LoadingPageComponent } from './shared/components/loading/loading-page.component';
 import { CircleAvatarComponent } from './shared/components/circle-avatar/circle-avatar.component';
 import { InputTextMedium } from './shared/components/input-text-medium/input-text-medium';
+import { Providers } from './shared/utils/providers.utils';
 
 // PROVIDERS
 
@@ -29,7 +30,7 @@ import { InputTextMedium } from './shared/components/input-text-medium/input-tex
     RegisterStudentsComponent,
     Sidebar,
     LoadingPageComponent,
-    CircleAvatarComponent
+    CircleAvatarComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,9 +40,9 @@ import { InputTextMedium } from './shared/components/input-text-medium/input-tex
     HttpClientModule,
     FormsModule,
     ButtonStandAlone,
-    InputTextMedium
+    InputTextMedium,
   ],
-  providers: [],
+  providers: Providers,
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HomeService } from '../../domain/services/home.service';
+// import { getImgHomeUseCase } from '../../domain/usecase/getImgHomeUseCase';
 
 @Component({
   selector: 'home-page',
@@ -6,14 +8,22 @@ import { Component, OnInit } from '@angular/core';
   // styleUrls: './home-page.component.css',
 })
 export class HomePageComponent implements OnInit {
-  constructor() {}
+  constructor(private homeServide: HomeService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getImgHome()
+  }
 
   scrollToElement() {
     const element = document.getElementById('step-counts');
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth'});
+      element.scrollIntoView({ behavior: 'smooth' });
     }
+  }
+
+  getImgHome() {
+    this.homeServide.getAllImagesHomeRepository().subscribe((data) => {
+      console.log(data);
+    });
   }
 }
