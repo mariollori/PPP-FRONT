@@ -1,4 +1,5 @@
-<aside
+<div class="flex">
+    <aside
     class="flex flex-col items-center justify-center h-screen w-24  bg-white border-r-2 p-4">
     <div class="  flex justify-center items-center">
         <img src="../../../../assets/png/LOGO_UPEU.png"
@@ -7,7 +8,7 @@
 
     <ul class=" mt-6 flex flex-1 flex-col items-center justify-center w-full list-none gap-6">
         <li  *ngFor="let opt of list" [attr.data-title]="opt.title"
-        class="bg-hellowoPrimary w-12 h-12 rounded-lg shadow-lg flex justify-center items-center cursor-pointer toolpit">
+            class="bg-hellowoPrimary w-12 h-12 rounded-lg shadow-lg flex justify-center items-center cursor-pointer toolpit">
             {{opt.icon}}
         </li>
 
@@ -17,3 +18,13 @@
     </div>
 
 </aside>
+
+<main class="h-screen w-[70%]  bg-gray-100 overflow-y-hidden max-xl::w-[100%]">
+
+</main>
+
+<aside class="h-screen w-[30%]   border-l-2  max-xl:fixed max-xl:right-0 max-xl:bg-white ">
+
+</aside>
+</div>
+
