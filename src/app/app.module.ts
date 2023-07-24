@@ -15,6 +15,7 @@ import { Sidebar } from './shared/components/sidebar/sidebar.component';
 import { ButtonStandAlone } from './shared/components/button/button-shared.standalone';
 import { LoadingPageComponent } from './shared/components/loading/loading-page.component';
 import { CircleAvatarComponent } from './shared/components/circle-avatar/circle-avatar.component';
+import { InputTextMedium } from './shared/components/input-text-medium/input-text-medium';
 
 // PROVIDERS
 
@@ -38,6 +39,7 @@ import { CircleAvatarComponent } from './shared/components/circle-avatar/circle-
     HttpClientModule,
     FormsModule,
     ButtonStandAlone,
+    InputTextMedium
   ],
   providers: [],
   bootstrap: [AppComponent],

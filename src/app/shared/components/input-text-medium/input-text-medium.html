@@ -1,1 +1,43 @@
-<span>Input text medium</span>
+<div class="h-[6px] w-full"></div>
+<div class="container relative">
+  <input type="text" class="pl-12 pr-2 py-2 placeholder-transparent items-center" [placeholder]="placeholder"
+    (focus)="movePlaceholder()" (blur)="checkInput()" [id]="inputId" [ngClass]="[
+    widht,
+    height,
+    borderColor,
+    borderInput,
+    fondoColor,
+    placeholder,
+    radius,
+    fontSize,
+    fontFamily,
+    fontWeigth,
+    shadow
+    ]">
+  <div class="absolute inset-y-0 left-2 flex items-center pl-2">
+    <i class="fas" [ngClass]="[
+    icon,
+    iconColor,
+    iconSize
+    ]"></i>
+  </div>
+  <label class="absolute top-[0.85rem] left-12 cursor-text" [class.active]="isPlaceholderActive" [for]="inputId"
+    (click)="activateInput()" [ngClass]="[
+    transition,
+    duration,
+    colorPlaceholder,
+    colorPlaceholderDiv,
+    fontSizePlaceholder,
+    fontFamilyPlaceholder,
+    fontWeigthPlaceholder
+    ]">
+    {{ placeholder }}
+  </label>
+</div>
+
+
+<!-- <input-text-medium-standalone widht="w-full" height="h-[55px]" borderInput="border-none" fondoColor="bg-greyPrimary"
+  radius="rounded-[11px]" fontSize="text-[17px]" fontFamily="font-montserrat" fontWeigth="font-normal"
+  transition="transition-all" duration="duration-300" shadow="shadow-md" placeholder="**************"
+  colorPlaceholder="text-greySecondary" fontSizePlaceholder="text-[15px]" fontFamilyPlaceholder="font-montserrat"
+  fontWeigthPlaceholder="font-normal" icon="" iconColor="" iconSize=""></input-text-medium-standalone> -->
