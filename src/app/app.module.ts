@@ -13,6 +13,7 @@ import { LogInComponent } from './modules/auth/log-in/presentation/pages/log-in.
 import { RegisterStudentsComponent } from './modules/auth/register-students/presentation/pages/register-students.component';
 import { Sidebar } from './shared/components/sidebar/sidebar.component';
 import { ButtonStandAlone } from './shared/components/button/button-shared.standalone';
+import { LoadingPageComponent } from './shared/components/loading/loading-page.component';
 
 // PROVIDERS
 
@@ -25,6 +26,7 @@ import { ButtonStandAlone } from './shared/components/button/button-shared.stand
     LogInComponent,
     RegisterStudentsComponent,
     Sidebar,
+    LoadingPageComponent
   ],
   imports: [
     BrowserModule,

@@ -6,8 +6,8 @@
 
 body {
   padding: 0;
-  height: 100vh;
-  overflow: auto;
+  /* height: 100vh; */
+  margin: 0;
 }
 
 :root {
