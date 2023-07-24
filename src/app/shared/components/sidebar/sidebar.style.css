@@ -30,3 +30,12 @@
     align-items: center;
     z-index: 99;
 }
+
+@media (max-width: 768px) {
+   .toolpit::after{
+    transition: none;
+    }
+    .toolpit:hover::after{
+    transform: scale(0);
+    }
+}

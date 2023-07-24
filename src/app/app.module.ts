@@ -14,6 +14,7 @@ import { RegisterStudentsComponent } from './modules/auth/register-students/pres
 import { Sidebar } from './shared/components/sidebar/sidebar.component';
 import { ButtonStandAlone } from './shared/components/button/button-shared.standalone';
 import { LoadingPageComponent } from './shared/components/loading/loading-page.component';
+import { CircleAvatarComponent } from './shared/components/circle-avatar/circle-avatar/circle-avatar.component';
 
 // PROVIDERS
 
@@ -26,7 +27,8 @@ import { LoadingPageComponent } from './shared/components/loading/loading-page.c
     LogInComponent,
     RegisterStudentsComponent,
     Sidebar,
-    LoadingPageComponent
+    LoadingPageComponent,
+    CircleAvatarComponent
   ],
   imports: [
     BrowserModule,
