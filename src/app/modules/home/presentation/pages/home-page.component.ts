@@ -1,15 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { HomeService } from '../../domain/services/home.service';
-import { getImgHomeUseCase } from '../../domain/usecase/getImgHomeUseCase';
+
+import { GetImgHomeUseCase } from '../../domain/usecase/getImgHomeUseCase';
 // import { getImgHomeUseCase } from '../../domain/usecase/getImgHomeUseCase';
 
 @Component({
   selector: 'home-page',
   templateUrl: './home-page.component.html',
-  // styleUrls: './home-page.component.css',
 })
 export class HomePageComponent implements OnInit {
-  constructor(private homeServide: getImgHomeUseCase) {}
+
+  constructor(
+    private getImgHomeUsecase: GetImgHomeUseCase
+  ) {}
 
   ngOnInit(): void {
     this.getImgHome()
@@ -22,9 +24,12 @@ export class HomePageComponent implements OnInit {
     }
   }
 
-  getImgHome() {
-    this.homeServide.execute().subscribe((data) => {
-      console.log(data);
-    });
+  async getImgHome() {
+
+    const data = await this.getImgHomeUsecase.execute()
+
+    console.log('aqui entró pe')
+    console.log(data)
+
   }
 }

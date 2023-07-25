@@ -9,6 +9,7 @@ import { routesAccess } from '../../../../config/api/network_api';
   providedIn: 'root',
 })
 export class HomeService extends HomeRepository {
+
   private routes = routesAccess;
 
   constructor(private http: HttpClient) {

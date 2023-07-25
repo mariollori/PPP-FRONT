@@ -3,7 +3,7 @@ import { LoaderInterceptor } from '../Functions/loading.interceptor';
 import { LoadingService } from '../components/loading/services/loading.service';
 import { HomeRepository } from 'src/app/modules/home/data/repositories/home-repository';
 import { HomeService } from 'src/app/modules/home/domain/services/home.service';
-import { getImgHomeUseCase } from 'src/app/modules/home/domain/usecase/getImgHomeUseCase';
+import { GetImgHomeUseCase } from 'src/app/modules/home/domain/usecase/getImgHomeUseCase';
 // import { MessageService } from 'primeng/api';
 
 export const Providers = [
@@ -17,8 +17,9 @@ export const Providers = [
     provide: HomeRepository,
     useClass: HomeService,
   },
-  {
-    provide: getImgHomeUseCase
+  /* {
+    provide: GetImgHomeUseCase
     // useClass: getImgHomeUseCase
-  }
+  }, */
+  GetImgHomeUseCase
 ];

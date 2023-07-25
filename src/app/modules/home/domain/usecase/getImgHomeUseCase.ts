@@ -1,16 +1,19 @@
-import { Observable } from 'rxjs';
+import { Observable, lastValueFrom } from 'rxjs';
 import { HomeService } from '../services/home.service';
 import { HomeModel } from '../models/home-models';
+import { Injectable } from '@angular/core';
 
-export class getImgHomeUseCase {
+@Injectable({ providedIn: 'root' })
+export class GetImgHomeUseCase {
+
   constructor(private homeService: HomeService) {}
 
-  execute(): Observable<HomeModel | undefined> {
-    try {
-      return this.homeService.getAllImagesHomeRepository();
-    } catch (error) {
-      console.log(error);
-      return new Observable<HomeModel | undefined>();
-    }
+  execute(): Promise< HomeModel | undefined > {
+
+      const response = lastValueFrom(this.homeService.getAllImagesHomeRepository())
+      
+      return response
+  
   }
+
 }
