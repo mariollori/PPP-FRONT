@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeService } from '../../domain/services/home.service';
+import { getImgHomeUseCase } from '../../domain/usecase/getImgHomeUseCase';
 // import { getImgHomeUseCase } from '../../domain/usecase/getImgHomeUseCase';
 
 @Component({
@@ -8,7 +9,7 @@ import { HomeService } from '../../domain/services/home.service';
   // styleUrls: './home-page.component.css',
 })
 export class HomePageComponent implements OnInit {
-  constructor(private homeServide: HomeService) {}
+  constructor(private homeServide: getImgHomeUseCase) {}
 
   ngOnInit(): void {
     this.getImgHome()
@@ -22,7 +23,7 @@ export class HomePageComponent implements OnInit {
   }
 
   getImgHome() {
-    this.homeServide.getAllImagesHomeRepository().subscribe((data) => {
+    this.homeServide.execute().subscribe((data) => {
       console.log(data);
     });
   }
