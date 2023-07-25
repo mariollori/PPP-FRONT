@@ -13,6 +13,7 @@ export const routesAccess = {
   registerUser: `${env}${client.userApi}/register`,
 
   // PLAN
+  basesPPPGet: `${env}${client.planApi}/get-bases-ppp`,
   plantGetAll: `${env}${client.planApi}/get-all`,
   typeDocumentGetAll: `${env}${client.planApi}/get-all-types-documents`,
   createPlan: `${env}${client.planApi}/create-plan-ppp`,
