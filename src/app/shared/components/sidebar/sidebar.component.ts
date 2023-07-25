@@ -13,9 +13,9 @@ import {Component} from '@angular/core';
 export class Sidebar{
    
        list = [
-        {icon:'H',title:'Home'},
-        {icon:'A',title:'Admin'},
-        {icon:'O',title:'Options'},
+        {icon:'home-2',title:'Home'},
+        {icon:'setting-1',title:'Admin'},
+        {icon:'clock',title:'Options'},
         
       
        ]

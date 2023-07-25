@@ -13,6 +13,9 @@ body {
 :root {
   --azulPrimary: #003965;
   --hellowPrimary: #F8B91E;
+
+  --Iconsax-Size:25px;
+  --Iconsax-Color:black;
 }
 
 @font-face {

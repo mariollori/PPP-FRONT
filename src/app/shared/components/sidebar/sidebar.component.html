@@ -1,6 +1,6 @@
 <div class="flex">
 
-    <aside class="flex flex-col items-center justify-center h-screen w-24 bg-white border-r-2 p-4 
+    <aside class="flex flex-col items-center justify-center h-screen min-h-full w-24 bg-white border-r-2 p-4 
                   max-md:w-96 max-md:fixed max-md:overflow-y-scroll  
                   max-sm:w-screen  max-sm:z-10
                   ">
@@ -12,12 +12,13 @@
         <ul class="mt-6 flex  flex-1 flex-col items-center justify-center w-full list-none gap-6 ">
             <li *ngFor="let opt of list" [attr.data-title]="opt.title"
                 class="bg-hellowPrimary w-16 h-16   rounded-3xl shadow-lg flex flex-row justify-center items-center cursor-pointer toolpit max-md:w-full">
-               {{opt.icon}} <label class="max-md:block hidden ml-5">{{opt.title}}</label>
+                <i class="iconsax" [attr.icon-name]="opt.icon"></i>
+              <label class="max-md:block hidden ml-5">{{opt.title}}</label>
             </li>
         </ul>
     
         <div class="mt-6 w-full  flex justify-center">
-            <button class="text-red-500">⏼</button>
+            <button class="text-red-500" style="--Iconsax-Color:#696969"><i class="iconsax" icon-name="logout-2" ></i></button>
         </div>
     </aside>
     
@@ -29,7 +30,7 @@
 
 </main>
 
-<aside class="h-screen w-[30%]  flex flex-col items-end p-5 border-l-2 gap-4 max-lg:w-[50%] max-xl:w-[50%]  max-md:w-[80%] max-xl:fixed max-xl:right-0 max-xl:bg-white ">
+<aside class="h-screen w-[30%] overflow-y-auto flex flex-col items-end p-5 border-l-2 gap-4 max-lg:w-[50%] max-xl:w-[50%]  max-md:w-[80%] max-xl:fixed max-xl:right-0 max-xl:bg-white ">
     <button>DDD</button>
     <div class="flex w-full justify-end mr-6">
         <app-circle-avatar 
