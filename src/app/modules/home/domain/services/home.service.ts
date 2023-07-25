@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HomeRepository } from '../../data/repositories/home-repository';
-import { HomeModel } from '../models/home-models';
+import { HomeModel } from '../../data/models/home-models';
 import { routesAccess } from '../../../../config/api/network_api';
 
 @Injectable({

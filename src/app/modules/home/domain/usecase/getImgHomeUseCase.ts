@@ -1,19 +1,19 @@
-import { Observable, lastValueFrom } from 'rxjs';
+import { lastValueFrom } from 'rxjs';
 import { HomeService } from '../services/home.service';
-import { HomeModel } from '../models/home-models';
+import { HomeModel } from '../../data/models/home-models';
 import { Injectable } from '@angular/core';
 
-@Injectable({ providedIn: 'root' })
+@Injectable({
+  providedIn: 'root',
+})
 export class GetImgHomeUseCase {
-
   constructor(private homeService: HomeService) {}
 
-  execute(): Promise< HomeModel | undefined > {
+  execute(): Promise<HomeModel | undefined> {
+    const response = lastValueFrom(
+      this.homeService.getAllImagesHomeRepository()
+    );
 
-      const response = lastValueFrom(this.homeService.getAllImagesHomeRepository())
-      
-      return response
-  
+    return response;
   }
-
 }

@@ -17,9 +17,5 @@ export const Providers = [
     provide: HomeRepository,
     useClass: HomeService,
   },
-  /* {
-    provide: GetImgHomeUseCase
-    // useClass: getImgHomeUseCase
-  }, */
   GetImgHomeUseCase
 ];

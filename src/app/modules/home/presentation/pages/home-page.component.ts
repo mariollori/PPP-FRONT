@@ -8,13 +8,10 @@ import { GetImgHomeUseCase } from '../../domain/usecase/getImgHomeUseCase';
   templateUrl: './home-page.component.html',
 })
 export class HomePageComponent implements OnInit {
-
-  constructor(
-    private getImgHomeUsecase: GetImgHomeUseCase
-  ) {}
+  constructor(private getImgHomeUsecase: GetImgHomeUseCase) {}
 
   ngOnInit(): void {
-    this.getImgHome()
+    this.getImgHome();
   }
 
   scrollToElement() {
@@ -25,11 +22,9 @@ export class HomePageComponent implements OnInit {
   }
 
   async getImgHome() {
+    const response = await this.getImgHomeUsecase.execute();
+    const { data } = response!;
 
-    const data = await this.getImgHomeUsecase.execute()
-
-    console.log('aqui entró pe')
-    console.log(data)
-
+    console.log(data);
   }
 }

@@ -30,7 +30,6 @@ import { Providers } from './shared/utils/providers.utils';
     RegisterStudentsComponent,
     Sidebar,
     LoadingPageComponent,
-    CircleAvatarComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +40,7 @@ import { Providers } from './shared/utils/providers.utils';
     FormsModule,
     ButtonStandAlone,
     InputTextMedium,
+    CircleAvatarComponent,
   ],
   providers: Providers,
   bootstrap: [AppComponent],
