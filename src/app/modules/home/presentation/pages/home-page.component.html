@@ -32,7 +32,7 @@
     </div>
 
   </div>
-  <div id="step-counts" class="mb-10">
+  <div id="step-counts" class="mb-10 pl-4">
     <span class="font-montserrat font-bold text-[25px]">Sigue los siguientes pasos para tus practicas</span>
   </div>
   <!-- <div class="justify-center flex h-[850px] bg-blackPrimary pt-8 pb-8">
@@ -43,11 +43,11 @@
       </ng-container>
     </div>
   </div> -->
-  <div class="w-full p-12 h-700px bg-blackPrimary pt-60px pb-60px flex overflow-x-auto items-center" (mousedown)="onMouseDown($event)" (mouseup)="onMouseUp()"
+  <div class="w-full p-12 h-[400px] lg:h-[400px] xl:h-[500px] 2xl:h-[600px] bg-blackPrimary pt-60px pb-60px flex overflow-x-auto items-center" (mousedown)="onMouseDown($event)" (mouseup)="onMouseUp()"
   (mousemove)="onMouseMove($event)" (mouseleave)="onMouseUp()">
-    <div class="flex-shrink-0 flex ml-4 mr-4 overflow-hidden rounded-xl"
+    <div class="h-full flex-shrink-0 flex ml-4 mr-4 overflow-hidden rounded-xl"
       *ngFor="let item of imgCarousel; let i = index" #scrollContainer>
-      <img [src]="item" class="min-h-full min-w-full">
+      <img [src]="item">
     </div>
   </div>
 
