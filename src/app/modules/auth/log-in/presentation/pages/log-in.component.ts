@@ -36,7 +36,7 @@ export class LogInComponent implements OnInit {
 
       console.log(sessionStorage);
 
-      this.router.navigate(['/sidebar']);
+      this.router.navigate(['/dashboard']);
     } catch (err) {
       console.log(err);
     }

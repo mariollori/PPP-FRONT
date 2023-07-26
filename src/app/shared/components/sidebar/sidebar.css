@@ -13,6 +13,7 @@
     
 }
 
+
 .toolpit::after{
     
     left: calc(100% + 15px);
@@ -28,10 +29,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 99;
+    
 }
 
-@media (max-width: 768px) {
+.show-side{
+    left: -100%;
+}
+
+@media (max-width: 1280px) {
    .toolpit::after{
     transition: none;
     }
@@ -39,3 +44,4 @@
     transform: scale(0);
     }
 }
+

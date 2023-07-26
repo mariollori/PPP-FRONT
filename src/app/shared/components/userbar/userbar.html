@@ -1,37 +1,12 @@
-<div class="flex">
+<button id="userbar" (click)="toogleSidebar()" class="absolute z-30 hidden right-4 top-2
+                                                      max-xl:block">DDD</button>
 
-    <aside class="flex flex-col items-center justify-center h-screen min-h-full w-24 bg-white border-r-2 p-4 
-                  max-md:w-96 max-md:fixed max-md:overflow-y-scroll  
-                  max-sm:w-screen  max-sm:z-10
-                  ">
-        
-        <div class="flex justify-center items-center max-h-24 ">
-            <img src="../../../../assets/png/LOGO_UPEU.png" class="max-w-[100%] max-h-[100%]">
-        </div>
-    
-        <ul class="mt-6 flex  flex-1 flex-col items-center justify-center w-full list-none gap-6 ">
-            <li *ngFor="let opt of list" [attr.data-title]="opt.title"
-                class="bg-hellowPrimary w-16 h-16   rounded-3xl shadow-lg flex flex-row justify-center items-center cursor-pointer toolpit max-md:w-full">
-                <i class="iconsax" [attr.icon-name]="opt.icon"></i>
-              <label class="max-md:block hidden ml-5">{{opt.title}}</label>
-            </li>
-        </ul>
-    
-        <div class="mt-6 w-full  flex justify-center">
-            <button class="text-red-500" style="--Iconsax-Color:#696969"><i class="iconsax" icon-name="logout-2" ></i></button>
-        </div>
-    </aside>
-    
- 
+<aside
 
-  
-
-<main class="h-screen w-[70%]  bg-gray-100 overflow-y-hidden max-xl::w-[100%]">
-
-</main>
-
-<aside class="h-screen w-[30%] overflow-y-auto flex flex-col items-end p-5 border-l-2 gap-4 max-lg:w-[50%] max-xl:w-[50%]  max-md:w-[80%] max-xl:fixed max-xl:right-0 max-xl:bg-white ">
-    <button>DDD</button>
+ class="h-screen overflow-y-auto  flex flex-col items-end p-5 pt-12 border-l-2 gap-4  transition-all
+              max-xl:fixed max-xl:z-20 max-xl:right-0 max-xl:bg-white
+               max-sm:w-full "
+              [ngClass]="{'show-side': userbarVisible}">
     <div class="flex w-full justify-end mr-6">
         <app-circle-avatar 
         imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0pwDRKDJJeZoRRS04lgxVABACNycQ-C_WKOMTDIOT00JMfmX7aqFc5YpgQe-8GUIMkXQ&usqp=CAU" 
@@ -57,7 +32,7 @@
             </div>
          
         </div>
-        <div class="flex flex-row  justify-evenly w-full">
+        <div class="flex /flex-row  justify-evenly w-full">
             <div class="flex flex-col items-center text-bluePrimary">
                 <label >Horas completadas</label>
                 <span class="font-[400] text-6xl">700 H</span>
@@ -82,7 +57,7 @@
         
         
         <ul class="w-full list-none overflow-y-auto h-3/4 flex flex-col gap-5 p-6">
-            <li class="flex flex-row border-b-[1px]  border-[#C0C0C0] p-2 gap-6" *ngFor="let notifications of list">
+            <!-- <li class="flex flex-row border-b-[1px]  border-[#C0C0C0] p-2 gap-6" *ngFor="let notifications of list">
                 <app-circle-avatar 
                  imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0pwDRKDJJeZoRRS04lgxVABACNycQ-C_WKOMTDIOT00JMfmX7aqFc5YpgQe-8GUIMkXQ&usqp=CAU" 
                  size="avatar-md"></app-circle-avatar>
@@ -94,11 +69,8 @@
                     <label class="font-bold text-sm ">Oct. 06</label>
                     <span class="w-4 h-4 bg-hellowPrimary rounded-[50%]"></span>
                 </div>
-            </li>
+            </li> -->
         </ul>
     </div>
 
-
 </aside>
-</div>
-

@@ -11,12 +11,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomePageComponent } from './modules/home/presentation/pages/home-page.component';
 import { LogInComponent } from './modules/auth/log-in/presentation/pages/log-in.component';
 import { RegisterStudentsComponent } from './modules/auth/register-students/presentation/pages/register-students.component';
-import { Sidebar } from './shared/components/sidebar/sidebar.component';
+import { Sidebar } from './shared/components/sidebar/sidebar';
 import { ButtonStandAlone } from './shared/components/button/button-shared.standalone';
 import { LoadingPageComponent } from './shared/components/loading/loading-page.component';
 import { CircleAvatarComponent } from './shared/components/circle-avatar/circle-avatar.component';
 import { InputTextMedium } from './shared/components/input-text-medium/input-text-medium';
 import { Providers } from './shared/utils/providers.utils';
+import { DashboardComponent } from './modules/dashboard/presentation/pages/dashboard/dashboard.component';
+import { UserBar } from './shared/components/userbar/userbar';
+
+
 
 // PROVIDERS
 
@@ -28,8 +32,9 @@ import { Providers } from './shared/utils/providers.utils';
     HomePageComponent,
     LogInComponent,
     RegisterStudentsComponent,
-    Sidebar,
     LoadingPageComponent,
+    DashboardComponent,
+   
   ],
   imports: [
     BrowserModule,
@@ -41,6 +46,8 @@ import { Providers } from './shared/utils/providers.utils';
     ButtonStandAlone,
     InputTextMedium,
     CircleAvatarComponent,
+    Sidebar,
+    UserBar
   ],
   providers: Providers,
   bootstrap: [AppComponent],
