@@ -19,8 +19,7 @@ import { InputTextMedium } from './shared/components/input-text-medium/input-tex
 import { Providers } from './shared/utils/providers.utils';
 import { DashboardComponent } from './modules/dashboard/presentation/pages/dashboard/dashboard.component';
 import { UserBar } from './shared/components/userbar/userbar';
-
-
+import { ScreenPageComponent } from './shared/components/screen/screen-page';
 
 // PROVIDERS
 
@@ -34,7 +33,6 @@ import { UserBar } from './shared/components/userbar/userbar';
     RegisterStudentsComponent,
     LoadingPageComponent,
     DashboardComponent,
-   
   ],
   imports: [
     BrowserModule,
@@ -47,7 +45,8 @@ import { UserBar } from './shared/components/userbar/userbar';
     InputTextMedium,
     CircleAvatarComponent,
     Sidebar,
-    UserBar
+    UserBar,
+    ScreenPageComponent,
   ],
   providers: Providers,
   bootstrap: [AppComponent],

@@ -53,6 +53,7 @@ body {
 
 
 ::-webkit-scrollbar {
+  height: 6px;
   width: 6px; /* Ancho de la barra de desplazamiento */
   transition: all 6.0s;
 }

@@ -13,7 +13,7 @@ export class TokenInterceptorService {
         'x-token': `${this.logInService.getToken()}`,
       },
     });
-    console.log("Aqui toy pe mano "+this.logInService.getToken());
+
     return next.handle(tokeninzeReq);
   }
 }

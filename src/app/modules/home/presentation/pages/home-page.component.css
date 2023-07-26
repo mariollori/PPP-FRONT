@@ -1,0 +1,23 @@
+/* .animate-slide {
+  animation: slideToLeft 1s ease, fadeOut 1s ease;
+}
+
+@keyframes slideToLeft {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+} */
