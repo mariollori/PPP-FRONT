@@ -1,0 +1,40 @@
+<div class="w-full min-h-screen">
+    <div class="w-full pt-6">
+      <img class="h-14 ml-6 mb-6" src="../../../../../../assets/png/LOGO_UPEU.png">
+    </div>
+    <div class="grid grid-cols-10 gap-4 items-center">
+      <div class="col-span-4">
+        <div class="w-full items-center justify-center flex font-montserrat font-bold text-[35px] mb-6">
+          <span>Crea tu Cuenta</span>
+        </div>
+        <div class="pl-[100px] mb-3 pr-[100px] w-full font-montserrat font-normal">
+            <span>Debemos asegurarnos que seas estudiante de la Universidad Peruana Unión.</span>
+          </div>
+        <div class="pl-[100px] mb-3 pr-[100px] w-full font-montserrat font-normal">
+          <span>Código universitario</span>
+        </div>
+       
+       
+        <div class="pl-[100px] mb-3 pr-[100px] w-full font-montserrat font-normal">
+          <input class="w-full font-montserrat font-normal" type="password">
+        </div>
+        <div class="pl-[100px] mt-8 pr-[100px] flex justify-between items-center">
+
+          <div class="font-montserrat">
+            <span>Ya tienes cuenta?,</span>
+            <span [routerLink]="['/sign-in']"
+              class="text-hellowPrimary font-semibold ml-2 transition-all duration-300 hover:text-hellowSecondary cursor-pointer">Logueate</span>
+          </div>
+          <div>
+            <button-standalone width="w-[100px]" height="h-[45px]" colorFondo="bg-hellowPrimary" radius="rounded-[7px]"
+              hover="hover:bg-hellowSecondary" transition="transition-all" duration="duration-300" text="Registrarse"
+              colorText="text-white" fontFamily="font-montserrat" fontSize="text-[15px]"></button-standalone>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-span-6 w-full pr-[100px] pt-[100px] pb-[100px]">
+        <img class="w-full" src="../../../../../../assets/svg/sign-in-1.svg">
+      </div>
+    </div>
+  </div>
