@@ -20,6 +20,7 @@ import { Providers } from './shared/utils/providers.utils';
 import { DashboardComponent } from './modules/dashboard/presentation/pages/dashboard/dashboard.component';
 import { UserBar } from './shared/components/userbar/userbar';
 import { ScreenPageComponent } from './shared/components/screen/screen-page';
+import { WelcomeComponent } from './modules/dashboard/presentation/pages/welcome/welcome.component';
 
 // PROVIDERS
 
@@ -33,6 +34,7 @@ import { ScreenPageComponent } from './shared/components/screen/screen-page';
     RegisterStudentsComponent,
     LoadingPageComponent,
     DashboardComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
@@ -47,6 +49,7 @@ import { ScreenPageComponent } from './shared/components/screen/screen-page';
     Sidebar,
     UserBar,
     ScreenPageComponent,
+    
   ],
   providers: Providers,
   bootstrap: [AppComponent],

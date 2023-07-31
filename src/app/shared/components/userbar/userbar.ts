@@ -20,6 +20,15 @@ export class UserBar{
         {icon:'home-2',title:'Home'},
         {icon:'setting-1',title:'Admin'},
         {icon:'clock',title:'Options'},
+        {icon:'home-2',title:'Home'},
+        {icon:'setting-1',title:'Admin'},
+        {icon:'clock',title:'Options'},
+        {icon:'home-2',title:'Home'},
+        {icon:'setting-1',title:'Admin'},
+        {icon:'clock',title:'Options'},
+        {icon:'home-2',title:'Home'},
+        {icon:'setting-1',title:'Admin'},
+        {icon:'clock',title:'Options'},
         
       
        ]

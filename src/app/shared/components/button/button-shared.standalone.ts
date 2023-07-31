@@ -21,6 +21,8 @@ export class ButtonStandAlone {
   @Input() text: string = '';
   @Input() colorText: string = '';
   @Input() fontFamily: string = '';
+  @Input() shadow: string = '';
   @Input() fontWeight: string = '';
+  @Input() padding:string = '';
   @Input() fontSize: string = '';
 }

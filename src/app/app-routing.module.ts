@@ -12,7 +12,9 @@ const routes: Routes = [
   { path: '', component: HomePageComponent },
   { path: 'sign-in', component: LogInComponent },
   { path: 'register-students', component: RegisterStudentsComponent },
-  { path: 'dashboard', component: DashboardComponent, canActivate: [authenticationGuard] },
+  { path: 'dashboard', component: DashboardComponent, 
+  // canActivate: [authenticationGuard] 
+},
   { path: 'loading', component: LoadingPageComponent },
   { path: '**', redirectTo: '/' },
 ];

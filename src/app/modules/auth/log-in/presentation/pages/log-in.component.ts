@@ -23,22 +23,22 @@ export class LogInComponent implements OnInit {
       password: '123456',
     };
 
-    try {
-      const response = await this.authenticationLoginUseCase.execute(data);
+    // try {
+    //   const response = await this.authenticationLoginUseCase.execute(data);
 
-      sessionStorage.setItem('token', response!.data.token);
+    //   sessionStorage.setItem('token', response!.data.token);
 
-      let json = JSON.parse(window.atob(response!.data.token.split('.')[1]));
+    //   let json = JSON.parse(window.atob(response!.data.token.split('.')[1]));
 
-      this.loginData = response!.data;
+    //   this.loginData = response!.data;
 
-      sessionStorage.setItem('user', JSON.stringify(this.loginData));
+    //   sessionStorage.setItem('user', JSON.stringify(this.loginData));
 
-      console.log(sessionStorage);
+    //   console.log(sessionStorage);
 
       this.router.navigate(['/dashboard']);
-    } catch (err) {
-      console.log(err);
-    }
+    // } catch (err) {
+    //   console.log(err);
+    // }
   }
 }
