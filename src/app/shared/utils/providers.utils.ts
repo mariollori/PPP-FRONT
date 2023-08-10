@@ -7,7 +7,7 @@ import { GetImgHomeUseCase } from 'src/app/modules/home/domain/usecase/getImgHom
 import { AuthenticationLoginUseCase } from 'src/app/modules/auth/log-in/domain/usecase/authenticationLoginUseCase';
 import { authenticationGuard } from 'src/app/config/guard/authentication.guard';
 import { TokenInterceptorService } from '../Functions/token-interceptor.service';
-// import { MessageService } from 'primeng/api';
+import { StudentServiceApi } from 'src/app/modules/list-student/domain/services/student.services';
 
 export const Providers = [
   LoadingService,
@@ -27,5 +27,6 @@ export const Providers = [
   },
   GetImgHomeUseCase,
   AuthenticationLoginUseCase,
-  authenticationGuard
+  authenticationGuard,
+  StudentServiceApi
 ];

@@ -13,14 +13,33 @@
               <i class="fa-sharp fa-solid fa-magnifying-glass" placeholder="Buscar"></i>
               <input class="buscar"  type="text" placeholder="Filtros" required>    
           </label>
+
       </div>
 
         <div class="flex gap-6 py-4 w-full flex-wrap h-auto max-md:justify-center">
-            <div *ngFor="let step of steps" 
-                class="w-48 h-48 rounded-md shadow-lg cursor-pointer bg-white">
-                <!-- <img [src]="listStudent.foto" alt="">
-                <h1>{{listStudent.name}}</h1>
-                <p>{{listStudent.code}}.</p>  -->
+          
+          <div 
+            *ngFor="let student of students" 
+            class="rounded-xl w-48 h-55 rounded-md shadow-lg cursor-pointer bg-white text-center">
+
+                <img 
+                  class="w-15 h-15 md:w-20 mt-4 md:h-auto rounded-full mx-auto" 
+                  src="{{ student.user.urlProfile }}"
+                  alt="{{ student.code }}" 
+                  width="384" 
+                  height="512">
+
+                  <div class="text-dark-500 dark:text-stale-400 mt-2">
+                    {{ student.user.firstName }}
+                  </div>
+
+                  <span class="text-dark-200 dark:text-stale-200">
+                    {{ student.code }}
+                  </span>
+
+                  <button class="h-10 px-6 font-normal rounded-md bg-black text-white mb-4 mt-2" type="submit">
+                    ver perfil
+                  </button>
     
           </div> 
     

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { ListStudent } from './list-student.class';
+import { Component, OnInit } from '@angular/core'
+import { StudentServiceApi } from '../../domain/services/student.services'
+import { StudentEntity } from '../../data/entities/student.entity'
 interface Steps {
   title: string;
   description: string;
@@ -11,29 +12,19 @@ interface Steps {
 })
 export class ListStudentComponent implements OnInit {
 
-  steps: Steps[] = [
-    { title: 'Registra tus datos', description: 'All recipes are written using certain conventions, which define the characteristics of common ingredients. The rules vary from place to place. All recipes are written using certain conventions, which define the characteristics of common ingredients. The rules vary from place to place.' },
-    { title: 'Registra tu empresa', description: 'All recipes are written using certain conventions, which define the characteristics of common ingredients. The rules vary from place to place. All recipes are written using certain conventions, which define the characteristics of common ingredients. The rules vary from place to place.' },
-    { title: 'Sube los documentos que se te soliciten', description: 'All recipes are written using certain conventions, which define the characteristics of common ingredients. The rules vary from place to place. All recipes are written using certain conventions, which define the characteristics of common ingredients. The rules vary from place to place.' },
-    { title: 'Realizar las evaluaciones', description: 'All recipes are written using certain conventions, which define the characteristics of common ingredients. The rules vary from place to place. All recipes are written using certain conventions, which define the characteristics of common ingredients. The rules vary from place to place.' },
-    { title: 'Sube los documentos que se te soliciten', description: 'All recipes are written using certain conventions, which define the characteristics of common ingredients. The rules vary from place to place. All recipes are written using certain conventions, which define the characteristics of common ingredients. The rules vary from place to place.' },
-    { title: 'Sube los documentos que se te soliciten', description: 'All recipes are written using certain conventions, which define the characteristics of common ingredients. The rules vary from place to place. All recipes are written using certain conventions, which define the characteristics of common ingredients. The rules vary from place to place.' },
-    { title: 'Sube los documentos que se te soliciten', description: 'All recipes are written using certain conventions, which define the characteristics of common ingredients. The rules vary from place to place. All recipes are written using certain conventions, which define the characteristics of common ingredients. The rules vary from place to place.' },
-    { title: 'Sube los documentos que se te soliciten', description: 'All recipes are written using certain conventions, which define the characteristics of common ingredients. The rules vary from place to place. All recipes are written using certain conventions, which define the characteristics of common ingredients. The rules vary from place to place.' },
-    
-  ]
- 
-  listStudents    : ListStudent[] = [];
-  listStudent     : ListStudent = {
-    foto: '',
-    name: '',
-    code: ''
+  students: StudentEntity[] = []
+
+  constructor(
+    private studentServiceApi: StudentServiceApi
+  ) { }
+
+  ngOnInit(): void {
+
+    this.studentServiceApi
+          .getStudents('452e3d45-9e93-4f72-ace5-c188f6912f8b')
+          .subscribe( x => { console.log({ x }); this.students = x })
+
   }
- 
 
-    ngOnInit(): void {
-        throw new Error('Method not implemented.');
-    }
 
-   
 }
