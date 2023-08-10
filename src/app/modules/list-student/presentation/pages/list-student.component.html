@@ -1,0 +1,36 @@
+<div>
+    <div class="flex flex-col gap-6">
+      <h1 class="text-3xl">Bienvenido, <span class="font-bold">David Reyna </span>
+      </h1>
+      <h3 class="text-xl">Practicantes en lista de espera</h3>
+      <div>
+        <p class=" text-[#676767]">
+          Los siguientes estudiantes no tienen asignado un supervisor. Antes de asignar un supervisor, asegúrate de revisar detenidamente sus documentos.
+        </p>
+        <div class="open">
+         
+          <label class="search">
+              <i class="fa-sharp fa-solid fa-magnifying-glass" placeholder="Buscar"></i>
+              <input class="buscar"  type="text" placeholder="Filtros" required>    
+          </label>
+      </div>
+
+        <div class="flex gap-6 py-4 w-full flex-wrap h-auto max-md:justify-center">
+            <div *ngFor="let step of steps" 
+                class="w-48 h-48 rounded-md shadow-lg cursor-pointer bg-white">
+                <!-- <img [src]="listStudent.foto" alt="">
+                <h1>{{listStudent.name}}</h1>
+                <p>{{listStudent.code}}.</p>  -->
+    
+          </div> 
+    
+        </div>
+      </div>
+     
+    
+    </div>
+  
+   
+  
+    
+ 

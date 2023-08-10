@@ -21,6 +21,7 @@ import { DashboardComponent } from './modules/dashboard/presentation/pages/dashb
 import { UserBar } from './shared/components/userbar/userbar';
 import { ScreenPageComponent } from './shared/components/screen/screen-page';
 import { WelcomeComponent } from './modules/dashboard/presentation/pages/welcome/welcome.component';
+import { ListStudentComponent } from './modules/list-student/presentation/pages/list-student.component';
 
 // PROVIDERS
 
@@ -34,7 +35,9 @@ import { WelcomeComponent } from './modules/dashboard/presentation/pages/welcome
     RegisterStudentsComponent,
     LoadingPageComponent,
     DashboardComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    ListStudentComponent
+    
   ],
   imports: [
     BrowserModule,

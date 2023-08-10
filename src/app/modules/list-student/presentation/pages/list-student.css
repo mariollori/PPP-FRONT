@@ -1,0 +1,35 @@
+.open {
+    height: 50px;
+    width: 100%;
+    background: linear-gradient(90deg, hsl(0, 62%, 75%) 0%, hsla(314, 88%, 20%, 0.856) 100%);
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search {
+    width: 50%;
+    height: 45px;
+    background: #becedbbf;
+    border-radius: 30px;
+    color: aliceblue;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    width: 20%;
+    height: 45px;
+    background: #162938bf;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: aliceblue;
+    font-weight: 500;
+    font-style: normal;
+}
