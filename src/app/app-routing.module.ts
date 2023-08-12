@@ -6,6 +6,7 @@ import { RegisterStudentsComponent } from './modules/auth/register-students/pres
 import { LoadingPageComponent } from './shared/components/loading/loading-page.component';
 import { authenticationGuard } from './config/guard/authentication.guard';
 import { DashboardComponent } from './modules/dashboard/presentation/pages/dashboard/dashboard.component';
+import { ListStudentComponent } from './modules/list-student/presentation/pages/list-student.component';
 
 const routesHome: Routes = [
   // { path: '', redirectTo: 'aea', pathMatch: 'full' }, no borrar
@@ -24,7 +25,9 @@ const routes: Routes = [
     children: routesHome
   },
   { path: 'loading', component: LoadingPageComponent },
+  { path: 'list-student', component: ListStudentComponent },
   { path: '**', redirectTo: '/' },
+
 ];
 
 @NgModule({

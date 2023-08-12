@@ -21,9 +21,10 @@ import { DashboardComponent } from './modules/dashboard/presentation/pages/dashb
 import { UserBar } from './shared/components/userbar/userbar';
 import { ScreenPageComponent } from './shared/components/screen/screen-page';
 import { WelcomeComponent } from './modules/dashboard/presentation/pages/welcome/welcome.component';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
-import { provideStorage,getStorage } from '@angular/fire/storage';
+import { provideStorage, getStorage } from '@angular/fire/storage';
+import { ListStudentComponent } from './modules/list-student/presentation/pages/list-student.component';
 
 // PROVIDERS
 
@@ -37,7 +38,8 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     RegisterStudentsComponent,
     LoadingPageComponent,
     DashboardComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    ListStudentComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,7 +56,6 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     ScreenPageComponent,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideStorage(() => getStorage()),
-    
   ],
   providers: Providers,
   bootstrap: [AppComponent],
