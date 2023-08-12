@@ -8,6 +8,9 @@ import { LoginModelData } from '../../data/models/log-in-model';
   templateUrl: './log-in.component.html',
 })
 export class LogInComponent implements OnInit {
+  username: string = '';
+  password: string = '';
+
   loginData = new LoginModelData();
 
   constructor(
@@ -17,28 +20,38 @@ export class LogInComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  obtenerInputValue(value: string, typeText: string) {
+    if (typeText == 'username') {
+      this.username = value;
+      console.log("Esto es user: " + this.username);
+    } else if (typeText == 'password') {
+      this.password = value;
+      console.log("Esto es password: " + this.password);
+    }
+  }
+
   async login() {
     const data = {
-      userName: 'dreyna',
-      password: '123456',
+      userName: this.username,
+      password: this.password,
     };
 
-    // try {
-    //   const response = await this.authenticationLoginUseCase.execute(data);
+    try {
+      const response = await this.authenticationLoginUseCase.execute(data);
 
-    //   sessionStorage.setItem('token', response!.data.token);
+      sessionStorage.setItem('token', response!.data.token);
 
-    //   let json = JSON.parse(window.atob(response!.data.token.split('.')[1]));
+      let json = JSON.parse(window.atob(response!.data.token.split('.')[1]));
 
-    //   this.loginData = response!.data;
+      this.loginData = response!.data;
 
-    //   sessionStorage.setItem('user', JSON.stringify(this.loginData));
+      sessionStorage.setItem('user', JSON.stringify(this.loginData));
 
-    //   console.log(sessionStorage);
+      console.log(sessionStorage);
 
-      this.router.navigate(['/dashboard']);
-    // } catch (err) {
-    //   console.log(err);
-    // }
+      this.router.navigate(['/menu-items']);
+    } catch (err) {
+      console.log(err);
+    }
   }
 }

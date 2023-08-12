@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -9,6 +9,8 @@ import { Component, Input } from '@angular/core';
   imports: [NgClass],
 })
 export class InputTextMedium {
+  @Output() inputValueChange: EventEmitter<string> = new EventEmitter<string>();
+
   @Input() widht: string = ''; //'w-full';
   @Input() height: string = ''; //'h-[55px]';
   @Input() borderColor: string = ''; //'border-red-500';
@@ -48,8 +50,11 @@ export class InputTextMedium {
     const inputElement = document.getElementById(
       this.inputId
     ) as HTMLInputElement;
-    if (inputElement && !inputElement.value) {
-      this.isPlaceholderActive = false;
+    if (inputElement) {
+      // this.isPlaceholderActive = false;
+      const inputValue = inputElement.value;
+      this.isPlaceholderActive = inputValue !== '';
+      this.inputValueChange.emit(inputValue);
     }
   }
 

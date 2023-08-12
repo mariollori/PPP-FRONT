@@ -7,20 +7,28 @@ import { LoadingPageComponent } from './shared/components/loading/loading-page.c
 import { authenticationGuard } from './config/guard/authentication.guard';
 import { DashboardComponent } from './modules/dashboard/presentation/pages/dashboard/dashboard.component';
 
+const routesHome: Routes = [
+  // { path: '', redirectTo: 'aea', pathMatch: 'full' }, no borrar
+  // { path: 'aea', component: HomePageComponent }, no borrar
+  { path: 'menu-items', component: DashboardComponent, canActivate: [authenticationGuard] }
+];
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
   { path: 'sign-in', component: LogInComponent },
   { path: 'register-students', component: RegisterStudentsComponent },
-  { path: 'dashboard', component: DashboardComponent, 
-  // canActivate: [authenticationGuard] 
-},
+  {
+    path: 'menu-items',
+    component: DashboardComponent,
+    canActivate: [authenticationGuard],
+    children: routesHome
+  },
   { path: 'loading', component: LoadingPageComponent },
   { path: '**', redirectTo: '/' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}

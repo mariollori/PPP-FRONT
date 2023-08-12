@@ -31,18 +31,7 @@ export class HomePageComponent implements OnInit {
 
     const { banner_url } = data[0];
 
-    this.imgCarousel = [
-      'https://safetyculture.com/wp-content/media/2022/09/Tipos-de-procedimientos-de-auditoria.png',
-      'https://www.bureauveritascertification.com/co/wp-content/uploads/sites/4/2020/04/auditorias-remotas-certificacion-bureau-veritas-iso-9001-45001-infografia-2.jpg',
-      'https://safetyculture.com/wp-content/media/2022/09/Tipos-de-procedimientos-de-auditoria.png',
-      'https://www.bureauveritascertification.com/co/wp-content/uploads/sites/4/2020/04/auditorias-remotas-certificacion-bureau-veritas-iso-9001-45001-infografia-2.jpg',
-      'https://safetyculture.com/wp-content/media/2022/09/Tipos-de-procedimientos-de-auditoria.png',
-      'https://www.bureauveritascertification.com/co/wp-content/uploads/sites/4/2020/04/auditorias-remotas-certificacion-bureau-veritas-iso-9001-45001-infografia-2.jpg',
-      'https://safetyculture.com/wp-content/media/2022/09/Tipos-de-procedimientos-de-auditoria.png',
-      'https://www.bureauveritascertification.com/co/wp-content/uploads/sites/4/2020/04/auditorias-remotas-certificacion-bureau-veritas-iso-9001-45001-infografia-2.jpg',
-    ];
-
-    console.log(banner_url);
+    this.imgCarousel = banner_url;
   }
 
   isDragging: boolean = false;

@@ -11,13 +11,23 @@
         <span>Usuario</span>
       </div>
       <div class="pl-[100px] mb-6 pr-[100px] w-full font-montserrat font-normal">
-        <input class="w-full font-montserrat font-normal" type="text">
+        <input-text-medium-standalone (inputValueChange)="obtenerInputValue($event, 'username')" widht="w-full" height="h-[55px]"
+          borderInput="border-none" fondoColor="bg-greyPrimary" radius="rounded-[11px]" fontSize="text-[17px]"
+          fontFamily="font-montserrat" fontWeigth="font-normal" transition="transition-all" duration="duration-300"
+          shadow="shadow-md" placeholder="**************" colorPlaceholder="text-greySecondary"
+          fontSizePlaceholder="text-[15px]" fontFamilyPlaceholder="font-montserrat" fontWeigthPlaceholder="font-normal"
+          icon="" iconColor="" iconSize=""></input-text-medium-standalone>
       </div>
       <div class="pl-[100px] mb-3 pr-[100px] w-full font-montserrat font-normal">
         <span>Contraseña</span>
       </div>
       <div class="pl-[100px] mb-3 pr-[100px] w-full font-montserrat font-normal">
-        <input class="w-full font-montserrat font-normal" type="password">
+        <input-text-medium-standalone (inputValueChange)="obtenerInputValue($event, 'password')" widht="w-full" height="h-[55px]"
+          borderInput="border-none" fondoColor="bg-greyPrimary" radius="rounded-[11px]" fontSize="text-[17px]"
+          fontFamily="font-montserrat" fontWeigth="font-normal" transition="transition-all" duration="duration-300"
+          shadow="shadow-md" placeholder="**************" colorPlaceholder="text-greySecondary"
+          fontSizePlaceholder="text-[15px]" fontFamilyPlaceholder="font-montserrat" fontWeigthPlaceholder="font-normal"
+          icon="" iconColor="" iconSize=""></input-text-medium-standalone>
       </div>
       <div class="pl-[100px] mt-8 pr-[100px] flex justify-between items-center">
         <div class="font-montserrat">
@@ -28,8 +38,8 @@
         <div>
           <button-standalone width="w-[100px]" height="h-[45px]" colorFondo="bg-hellowPrimary" radius="rounded-[7px]"
             hover="hover:bg-hellowSecondary" transition="transition-all" duration="duration-300" text="Ingresar"
-            colorText="text-white" fontFamily="font-montserrat" fontSize="text-[15px]"
-            fontWeight="font-normal" (click)="login()"></button-standalone>
+            colorText="text-white" fontFamily="font-montserrat" fontSize="text-[15px]" fontWeight="font-normal"
+            (click)="login()"></button-standalone>
         </div>
       </div>
     </div>

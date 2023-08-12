@@ -35,14 +35,6 @@
   <div id="step-counts" class="mb-10 pl-4">
     <span class="font-montserrat font-bold text-[25px]">Sigue los siguientes pasos para tus practicas</span>
   </div>
-  <!-- <div class="justify-center flex h-[850px] bg-blackPrimary pt-8 pb-8">
-    <div class="transition-transform flex">
-      <ng-container *ngFor="let image of imgCarousel; let i = index">
-        <img *ngIf="currentIndex === i" [src]="image" class="w-full flex-shrink-0 opacity-100 transition-opacity"
-          [class.animate-slide]="isChangingImage && currentIndex === i" alt="Slide">
-      </ng-container>
-    </div>
-  </div> -->
   <div class="w-full p-12 h-[400px] lg:h-[400px] xl:h-[500px] 2xl:h-[600px] bg-blackPrimary pt-60px pb-60px flex overflow-x-auto items-center" (mousedown)="onMouseDown($event)" (mouseup)="onMouseUp()"
   (mousemove)="onMouseMove($event)" (mouseleave)="onMouseUp()">
     <div class="h-full flex-shrink-0 flex ml-4 mr-4 overflow-hidden rounded-xl"

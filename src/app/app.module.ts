@@ -21,6 +21,9 @@ import { DashboardComponent } from './modules/dashboard/presentation/pages/dashb
 import { UserBar } from './shared/components/userbar/userbar';
 import { ScreenPageComponent } from './shared/components/screen/screen-page';
 import { WelcomeComponent } from './modules/dashboard/presentation/pages/welcome/welcome.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 // PROVIDERS
 
@@ -49,6 +52,8 @@ import { WelcomeComponent } from './modules/dashboard/presentation/pages/welcome
     Sidebar,
     UserBar,
     ScreenPageComponent,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideStorage(() => getStorage()),
     
   ],
   providers: Providers,
