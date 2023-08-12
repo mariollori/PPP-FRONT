@@ -11,7 +11,6 @@ import { ListStudentComponent } from './modules/list-student/presentation/pages/
 const routesHome: Routes = [
   // { path: '', redirectTo: 'aea', pathMatch: 'full' }, no borrar
   // { path: 'aea', component: HomePageComponent }, no borrar
-  { path: 'menu-items', component: DashboardComponent, canActivate: [authenticationGuard] }
 ];
 
 const routes: Routes = [
