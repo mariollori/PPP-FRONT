@@ -7,7 +7,7 @@ import { LoadingPageComponent } from './shared/components/loading/loading-page.c
 import { authenticationGuard } from './config/guard/authentication.guard';
 
 import { ListStudentComponent } from './modules/list-student/presentation/pages/list-student.component';
-import { MenuItems } from './modules/menu-items/presentation/pages/menu-items/menu-items.component';
+import { MenuItems } from './modules/menu-items/presentation/pages/menu-items.component';
 import { Settings } from './modules/settings/presentation/pages/settings.component';
 
 const routesHome: Routes = [
@@ -30,7 +30,7 @@ const routes: Routes = [
   // { path: 'list-student', component: ListStudentComponent },
   { path: 'loading', component: LoadingPageComponent },
   { path: '**', redirectTo: '/' },
-  
+
 ];
 
 @NgModule({
