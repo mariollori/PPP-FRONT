@@ -23,7 +23,7 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideStorage, getStorage } from '@angular/fire/storage';
 import { ListStudentComponent } from './modules/list-student/presentation/pages/list-student.component';
-import { MenuItems } from './modules/menu-items/presentation/pages/menu-items/menu-items.component';
+import { MenuItems } from './modules/menu-items/presentation/pages/menu-items.component';
 import { Settings } from './modules/settings/presentation/pages/settings.component';
 
 // PROVIDERS
