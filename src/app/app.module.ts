@@ -17,14 +17,14 @@ import { LoadingPageComponent } from './shared/components/loading/loading-page.c
 import { CircleAvatarComponent } from './shared/components/circle-avatar/circle-avatar.component';
 import { InputTextMedium } from './shared/components/input-text-medium/input-text-medium';
 import { Providers } from './shared/utils/providers.utils';
-import { DashboardComponent } from './modules/dashboard/presentation/pages/dashboard/dashboard.component';
 import { UserBar } from './shared/components/userbar/userbar';
 import { ScreenPageComponent } from './shared/components/screen/screen-page';
-import { WelcomeComponent } from './modules/dashboard/presentation/pages/welcome/welcome.component';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideStorage, getStorage } from '@angular/fire/storage';
 import { ListStudentComponent } from './modules/list-student/presentation/pages/list-student.component';
+import { MenuItems } from './modules/menu-items/presentation/pages/menu-items/menu-items.component';
+import { Settings } from './modules/settings/presentation/pages/settings.component';
 
 // PROVIDERS
 
@@ -37,8 +37,8 @@ import { ListStudentComponent } from './modules/list-student/presentation/pages/
     LogInComponent,
     RegisterStudentsComponent,
     LoadingPageComponent,
-    DashboardComponent,
-    WelcomeComponent,
+    Settings,
+    MenuItems,
     ListStudentComponent,
   ],
   imports: [

@@ -1,3 +1,5 @@
+import { AccessModel } from "./access-model";
+
 export class LoginModel {
   info!: string;
   data!: LoginModelData;
@@ -16,6 +18,7 @@ export class LoginModelData {
   urlProfile!: string;
   status!: string;
   token!: string;
+  accesses!:AccessModel[];
 }
 
 export class LoginModelSend {

@@ -5,12 +5,16 @@ import { LogInComponent } from './modules/auth/log-in/presentation/pages/log-in.
 import { RegisterStudentsComponent } from './modules/auth/register-students/presentation/pages/register-students.component';
 import { LoadingPageComponent } from './shared/components/loading/loading-page.component';
 import { authenticationGuard } from './config/guard/authentication.guard';
-import { DashboardComponent } from './modules/dashboard/presentation/pages/dashboard/dashboard.component';
+
 import { ListStudentComponent } from './modules/list-student/presentation/pages/list-student.component';
+import { MenuItems } from './modules/menu-items/presentation/pages/menu-items/menu-items.component';
+import { Settings } from './modules/settings/presentation/pages/settings.component';
 
 const routesHome: Routes = [
   // { path: '', redirectTo: 'aea', pathMatch: 'full' }, no borrar
   // { path: 'aea', component: HomePageComponent }, no borrar
+  // { path: '', component: ListStudentComponent },
+  { path: 'settings', component: Settings },
 ];
 
 const routes: Routes = [
@@ -19,14 +23,14 @@ const routes: Routes = [
   { path: 'register-students', component: RegisterStudentsComponent },
   {
     path: 'menu-items',
-    component: DashboardComponent,
+    component: MenuItems,
     canActivate: [authenticationGuard],
     children: routesHome
   },
+  // { path: 'list-student', component: ListStudentComponent },
   { path: 'loading', component: LoadingPageComponent },
-  { path: 'list-student', component: ListStudentComponent },
   { path: '**', redirectTo: '/' },
-
+  
 ];
 
 @NgModule({
