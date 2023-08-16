@@ -25,6 +25,7 @@ import { provideStorage, getStorage } from '@angular/fire/storage';
 import { ListStudentComponent } from './modules/list-student/presentation/pages/list-student.component';
 import { MenuItems } from './modules/menu-items/presentation/pages/menu-items.component';
 import { Settings } from './modules/settings/presentation/pages/settings.component';
+import { InputTextBasic } from './shared/components/input-text-basic/input-text-basic';
 
 // PROVIDERS
 
@@ -50,6 +51,7 @@ import { Settings } from './modules/settings/presentation/pages/settings.compone
     FormsModule,
     ButtonStandAlone,
     InputTextMedium,
+    InputTextBasic,
     CircleAvatarComponent,
     Sidebar,
     UserBar,

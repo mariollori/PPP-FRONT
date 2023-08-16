@@ -1,7 +1,17 @@
-import { Component } from '@angular/core';
+import { NgClass } from '@angular/common';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
+  standalone: true,
   selector: 'input-text-basic',
   templateUrl: './input-text-basic.html',
+  imports: [NgClass],
 })
-export class InputTextBasic {}
+export class InputTextBasic {
+  @Output() inputValueChange: EventEmitter<string> = new EventEmitter<string>();
+
+  onInputChange(value: any) {
+    // print(value);
+    this.inputValueChange.emit(value);
+  }
+}

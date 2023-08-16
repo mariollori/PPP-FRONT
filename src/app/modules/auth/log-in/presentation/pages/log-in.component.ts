@@ -41,7 +41,7 @@ export class LogInComponent implements OnInit {
 
       sessionStorage.setItem('token', response!.data.token);
 
-   
+
       sessionStorage.setItem('access',JSON.stringify(response!.data.accesses));
 
       let json = JSON.parse(window.atob(response!.data.token.split('.')[1]));
