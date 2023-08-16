@@ -25,6 +25,7 @@ export class Sidebar implements OnInit{
   constructor(private router: Router){}
 
   ngOnInit(): void {
+    console.log(this.accesses)
     this.accesses = JSON.parse(sessionStorage.getItem('access')!) as AccessModel[] || [];  
     console.log(this.accesses[0])
     if(this.accesses.length != 0) this.router.navigate([`${this.accesses[0].path}`]);  
