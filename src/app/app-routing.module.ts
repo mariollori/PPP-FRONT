@@ -14,7 +14,21 @@ const routesHome: Routes = [
   // { path: '', redirectTo: 'aea', pathMatch: 'full' }, no borrar
   // { path: 'aea', component: HomePageComponent }, no borrar
   // { path: '', component: ListStudentComponent },
-  { path: 'settings', component: Settings },
+
+  // Practicante
+  { path: 'configuracion-de-cuenta', component: Settings },
+  { path: 'home', component: Settings },
+  { path: 'control-de-practicas-pre-profesionales', component: Settings },
+
+   //Supervisor
+  // { path: 'home', component: Settings },
+  { path: 'lista-estudiantes', component: Settings },
+ 
+   //Comite
+  { path: 'lista-de-estudiantes-en-espera', component: Settings },
+  { path: 'listas-de-estudiantes', component: Settings },
+
+
 ];
 
 const routes: Routes = [
