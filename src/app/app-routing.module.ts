@@ -11,9 +11,9 @@ import { MenuItems } from './modules/menu-items/presentation/pages/menu-items.co
 import { Settings } from './modules/settings/presentation/pages/settings.component';
 
 const routesHome: Routes = [
-  // { path: '', redirectTo: 'aea', pathMatch: 'full' }, no borrar
-  // { path: 'aea', component: HomePageComponent }, no borrar
-  // { path: '', component: ListStudentComponent },
+  { path: '', redirectTo: 'configuracion-de-cuenta', pathMatch: 'full' },
+
+  // PARA TODOS LOS ROLES
   { path: 'configuracion-de-cuenta', component: Settings },
 
   // Practicante
@@ -21,7 +21,6 @@ const routesHome: Routes = [
   { path: 'control-de-practicas-pre-profesionales', component: Settings },
 
    //Supervisor
-  // { path: 'home', component: Settings },
   { path: 'lista-estudiantes', component: Settings },
 
    //Comite
