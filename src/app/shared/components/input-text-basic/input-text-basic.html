@@ -1,5 +1,9 @@
 <div class="relative">
   <input type="text"
-    class="p-4 w-full rounded-[10px] border-none bg-greyPrimary focus:bg-white placeholder-greySecondary shadow-md text-[17px]"
-    placeholder="kevinpeinado..." (input)="onInputChange($event)">
+    class="p-4 w-full rounded-[10px] border-none bg-greyPrimary  placeholder-greySecondary shadow-md text-[17px]"
+    [placeholder]="placeholderText" (input)="onInputChange($event)" [ngClass]="[
+    backgroundInput,
+    colorPlaceholeder,
+    activeBackgroundInput,
+    ]">
 </div>

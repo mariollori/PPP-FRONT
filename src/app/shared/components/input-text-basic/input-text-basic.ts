@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, Input } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -9,6 +9,11 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class InputTextBasic {
   @Output() inputValueChange: EventEmitter<string> = new EventEmitter<string>();
+
+  @Input() backgroundInput = '';
+  @Input() activeBackgroundInput = '';
+  @Input() colorPlaceholeder = '';
+  @Input() placeholderText = '';
 
   onInputChange(value: any) {
     this.inputValueChange.emit(value.target.value);

@@ -11,13 +11,18 @@
         <span>Usuario</span>
       </div>
       <div class="pl-[100px] mb-6 pr-[100px] w-full font-montserrat font-normal">
-        <input-text-basic (inputValueChange)="obtenerInputValue($event, 'username')"></input-text-basic>
+        <input-text-basic (inputValueChange)="obtenerInputValue($event, 'username')" backgroundInput="bg-greyPrimary"
+        activeBackgroundInput="focus:bg-white" colorPlaceholeder="placeholder-greySecondary"
+        placeholderText="kevinpeinado..."></input-text-basic>
       </div>
       <div class="pl-[100px] mb-3 pr-[100px] w-full font-montserrat font-normal">
         <span>Contraseña</span>
       </div>
       <div class="pl-[100px] mb-3 pr-[100px] w-full font-montserrat font-normal">
-        <input-text-basic (inputValueChange)="obtenerInputValue($event, 'password')"></input-text-basic>
+
+        <input-text-basic (inputValueChange)="obtenerInputValue($event, 'password')" backgroundInput="bg-greyPrimary"
+        activeBackgroundInput="focus:bg-white" colorPlaceholeder="placeholder-greySecondary"
+        placeholderText="*******************"></input-text-basic>
         <!-- <input-text-medium-standalone (inputValueChange)="obtenerInputValue($event, 'password')" widht="w-full" height="h-[55px]"
           borderInput="border-none" fondoColor="bg-greyPrimary" radius="rounded-[11px]" fontSize="text-[17px]"
           fontFamily="font-montserrat" fontWeigth="font-normal" transition="transition-all" duration="duration-300"
