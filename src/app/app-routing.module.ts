@@ -24,6 +24,7 @@ const routesHome: Routes = [
   { path: 'lista-estudiantes', component: Settings },
 
    //Comite
+  { path: 'gestion-de-practicantes', component: Settings },
   { path: 'lista-de-estudiantes-en-espera', component: Settings },
   { path: 'listas-de-estudiantes', component: Settings },
 

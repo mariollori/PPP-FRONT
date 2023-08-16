@@ -9,5 +9,5 @@ export const environment = {
     messagingSenderId: '271875484225',
   },
   production: true,
-  apiUrl: 'https://upeu-ppp-services.onrender.com',
+  apiUrl: 'https://ppp-services-wu3h-dev.fl0.io',
 };

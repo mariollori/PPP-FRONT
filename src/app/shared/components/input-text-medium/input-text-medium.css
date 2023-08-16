@@ -14,7 +14,7 @@ div > label.active {
   top: -8px;
   left: 30px;
   font-size: 12px;
-  /* background-color: white; */
+  background-color: white;
   padding: 0 5px;
 }
 

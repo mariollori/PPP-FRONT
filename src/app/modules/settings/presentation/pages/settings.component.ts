@@ -18,8 +18,8 @@ export class Settings  {
         { title: 'Sube los documentos que se te soliciten', description: 'All recipes are written using certain conventions, which define the characteristics of common ingredients. The rules vary from place to place. All recipes are written using certain conventions, which define the characteristics of common ingredients. The rules vary from place to place.' },
         { title: 'Realizar las evaluaciones', description: 'All recipes are written using certain conventions, which define the characteristics of common ingredients. The rules vary from place to place. All recipes are written using certain conventions, which define the characteristics of common ingredients. The rules vary from place to place.' }
       ]
-    
-   
-  
+
+
+
 
 }
