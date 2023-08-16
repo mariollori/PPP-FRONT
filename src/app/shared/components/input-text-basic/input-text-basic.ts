@@ -11,7 +11,6 @@ export class InputTextBasic {
   @Output() inputValueChange: EventEmitter<string> = new EventEmitter<string>();
 
   onInputChange(value: any) {
-    // print(value);
-    this.inputValueChange.emit(value);
+    this.inputValueChange.emit(value.target.value);
   }
 }
