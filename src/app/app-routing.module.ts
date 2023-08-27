@@ -9,26 +9,25 @@ import { authenticationGuard } from './config/guard/authentication.guard';
 import { ListStudentComponent } from './modules/list-student/presentation/pages/list-student.component';
 import { MenuItems } from './modules/menu-items/presentation/pages/menu-items.component';
 import { Settings } from './modules/settings/presentation/pages/settings.component';
+import { GestionDePracticas } from './modules/coordinador/gestion-de-practicas/presentation/pages/gestion-de-practicas.component';
 
 const routesHome: Routes = [
   { path: '', redirectTo: 'configuracion-de-cuenta', pathMatch: 'full' },
-
-  // PARA TODOS LOS ROLES
-  { path: 'configuracion-de-cuenta', component: Settings },
 
   // Practicante
   { path: 'home', component: Settings },
   { path: 'control-de-practicas-pre-profesionales', component: Settings },
 
-   //Supervisor
+  //Supervisor
   { path: 'lista-estudiantes', component: Settings },
 
-   //Comite
-  { path: 'gestion-de-practicantes', component: Settings },
+  //Comite
+  { path: 'gestion-de-practicantes', component: GestionDePracticas },
   { path: 'lista-de-estudiantes-en-espera', component: Settings },
   { path: 'listas-de-estudiantes', component: Settings },
 
-
+  // PARA TODOS LOS ROLES
+  { path: 'configuracion-de-cuenta', component: Settings },
 ];
 
 const routes: Routes = [
@@ -39,12 +38,11 @@ const routes: Routes = [
     path: 'menu-items',
     component: MenuItems,
     canActivate: [authenticationGuard],
-    children: routesHome
+    children: routesHome,
   },
   // { path: 'list-student', component: ListStudentComponent },
   { path: 'loading', component: LoadingPageComponent },
   { path: '**', redirectTo: '/' },
-
 ];
 
 @NgModule({

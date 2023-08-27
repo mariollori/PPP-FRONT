@@ -23,10 +23,8 @@ export class LogInComponent implements OnInit {
   obtenerInputValue(value: string, typeText: string) {
     if (typeText == 'username') {
       this.username = value;
-      console.log("Esto es user: " + this.username);
     } else if (typeText == 'password') {
       this.password = value;
-      console.log("Esto es password: " + this.password);
     }
   }
 
@@ -41,8 +39,7 @@ export class LogInComponent implements OnInit {
 
       sessionStorage.setItem('token', response!.data.token);
 
-
-      sessionStorage.setItem('access',JSON.stringify(response!.data.accesses));
+      sessionStorage.setItem('access', JSON.stringify(response!.data.accesses));
 
       let json = JSON.parse(window.atob(response!.data.token.split('.')[1]));
 
@@ -50,9 +47,6 @@ export class LogInComponent implements OnInit {
 
       sessionStorage.setItem('user', JSON.stringify(this.loginData));
 
-      console.log(sessionStorage);
-
-      // this.router.navigate(['/menu-items']);
       this.router.navigate(['/menu-items']);
     } catch (err) {
       console.log(err);

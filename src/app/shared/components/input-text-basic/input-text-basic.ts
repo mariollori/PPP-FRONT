@@ -10,6 +10,7 @@ import { Component, EventEmitter, Output, Input } from '@angular/core';
 export class InputTextBasic {
   @Output() inputValueChange: EventEmitter<string> = new EventEmitter<string>();
 
+  @Input() typeInput = 'text';
   @Input() backgroundInput = '';
   @Input() activeBackgroundInput = '';
   @Input() colorPlaceholeder = '';

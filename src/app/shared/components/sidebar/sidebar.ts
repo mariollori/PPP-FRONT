@@ -11,7 +11,7 @@ import { AccessModel } from 'src/app/modules/auth/log-in/data/models/access-mode
   selector: 'sidebar-ppp',
   templateUrl: './sidebar.html',
   styleUrls: ['./sidebar.css'],
-  imports: [NgClass, CommonModule,RouterModule]
+  imports: [NgClass, CommonModule, RouterModule]
 
 
 })
@@ -25,13 +25,11 @@ export class Sidebar implements OnInit{
   constructor(private router: Router){}
 
   ngOnInit(): void {
-    console.log(this.accesses)
-    this.accesses = JSON.parse(sessionStorage.getItem('access')!) as AccessModel[] || [];  
-    console.log(this.accesses[0])
-    if(this.accesses.length != 0) this.router.navigate([`${this.accesses[0].path}`]);  
+    this.accesses = JSON.parse(sessionStorage.getItem('access')!) as AccessModel[] || [];
+    if(this.accesses.length != 0) this.router.navigate([`${this.accesses[0].path}`]);
   }
-  
-  
+
+
   toogleSidebar() {
     this.sidebarVisible = !this.sidebarVisible;
   }

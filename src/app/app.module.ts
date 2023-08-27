@@ -26,6 +26,12 @@ import { ListStudentComponent } from './modules/list-student/presentation/pages/
 import { MenuItems } from './modules/menu-items/presentation/pages/menu-items.component';
 import { Settings } from './modules/settings/presentation/pages/settings.component';
 import { InputTextBasic } from './shared/components/input-text-basic/input-text-basic';
+import { GestionDePracticas } from './modules/coordinador/gestion-de-practicas/presentation/pages/gestion-de-practicas.component';
+import { BodyGestionDePracticas } from './modules/coordinador/gestion-de-practicas/presentation/components/body/body-gestion-de-practicas.component';
+import { GlobalModel } from './shared/components/modal/global-modal';
+import { ConfigPracticanteModal } from './modules/coordinador/gestion-de-practicas/presentation/components/content-modal/config-practicante/config-practicante';
+import { ConfigSupervisorMoldal } from './modules/coordinador/gestion-de-practicas/presentation/components/content-modal/config-supervisor/config-supervisor';
+import { CreateNewPlanModal } from './modules/coordinador/gestion-de-practicas/presentation/components/content-modal/create-new-plan/create-new-plan';
 
 // PROVIDERS
 
@@ -39,6 +45,7 @@ import { InputTextBasic } from './shared/components/input-text-basic/input-text-
     RegisterStudentsComponent,
     LoadingPageComponent,
     Settings,
+    GestionDePracticas,
     MenuItems,
     ListStudentComponent,
   ],
@@ -56,6 +63,11 @@ import { InputTextBasic } from './shared/components/input-text-basic/input-text-
     Sidebar,
     UserBar,
     ScreenPageComponent,
+    BodyGestionDePracticas,
+    GlobalModel,
+    ConfigPracticanteModal,
+    ConfigSupervisorMoldal,
+    CreateNewPlanModal,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideStorage(() => getStorage()),
   ],

@@ -1,24 +1,29 @@
+.router-active{
+  background-color: var(--hellowTertiary);
+  /* opacity: 1; */
+}
+
 .toolpit{
     position: relative;
-    opacity: 0.8;
+    /* opacity: 0.8; */
 }
 
 .toolpit:hover{
-    background-color: var(--hellowPrimary);
-    opacity: 1;
+    background-color: var(--hellowSecondary);
+    /* opacity: 1; */
 }
 .toolpit:hover::after{
-    
+
     transform:scale(1);
-    
+
 }
 
 
 .toolpit::after{
-    
+    width: max-content;
     left: calc(100% + 15px);
     content: attr(data-title);
-    padding:10px 15px;  
+    padding:10px 15px;
     transition:transform .5s cubic-bezier(0.68, -0.55, 0.27, 1.55) ;
     transform-origin: 0  50%;
     transform:scale(0);
@@ -29,7 +34,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
 
 .show-side{

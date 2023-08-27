@@ -1,0 +1,113 @@
+<div class="overflow-y-auto overflow-scroll">
+  <div class="flex flex-col gap-6">
+    <h1 class="text-3xl font-montserrat">Bienvenido, <span class="font-bold font-montserrat">David Reyna </span>
+    </h1>
+    <h3 class="font-bold text-xl font-montserrat">Configuracion general</h3>
+    <div>
+      <label class="mb-2 text-lg font-[500] font-montserrat">
+        Gestion de usuarios
+      </label>
+      <p class=" text-[#9C9C9C] font-montserrat text-[13.5px]">
+        Cada cartilla está representando a un rol de usuario específico en el sistema web.
+      </p>
+      <div class="flex gap-6 py-4 w-full flex-wrap h-auto
+                    max-md:justify-center">
+        <div *ngFor="let items of gestion_users" (click)="toggleModal(items.position)"
+          class="w-60 h-60 rounded-xl shadow-lg cursor-pointer bg-white px-5 py-4 flex flex-col hover:bg-neutral-200">
+          <div class="h-[65%] flex items-center justify-center">
+            <img class="h-full" [src]="items.image">
+          </div>
+          <div class="h-10"></div>
+          <div class="h-[40%] text-center flex items-center justify-center font-montserrat px-5">
+            <span>{{items.title}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <label class="mb-2 text-lg font-[500] font-montserrat">
+        Gestión de plan de practicas pre profesionales
+      </label>
+      <p class=" text-[#9C9C9C] font-montserrat text-[13.5px]">
+        Recuerda que cada plan de practicas va de la mano con los planes academicos (intervalo de 4 años).</p>
+      <div class="flex gap-6 py-4 flex-wrap h-auto
+          max-md:justify-center">
+        <div *ngFor="let items of gestion_plan" (click)="toggleModal(items.position)"
+          class="w-60 h-60 rounded-xl shadow-lg cursor-pointer bg-white px-5 py-4 flex flex-col hover:bg-neutral-200">
+          <div class="h-[65%] flex items-center justify-center text-center">
+            <img class="h-full" [src]="items.image">
+          </div>
+          <div class="h-10"></div>
+          <div class="h-[40%] text-center flex items-center justify-center font-montserrat px-5">
+            <span>{{items.title}}</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<global-modal [isOpen]="modalOpen" (close)="modalOpen = false" *ngIf="modalOpen">
+  <ng-container [ngSwitch]="position">
+    <modal-config-practicante *ngSwitchCase="'1'"></modal-config-practicante>
+    <modal-config-supervisor *ngSwitchCase="'2'"></modal-config-supervisor>
+    <create-new-plan *ngSwitchCase="'4'"></create-new-plan>
+  </ng-container>
+</global-modal>
+
+
+<!-- <div *ngIf="showModal"
+  class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex">
+  <div class="relative w-auto my-6 mx-auto max-w-6xl">
+
+    <div class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+
+      <div class="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
+        <h3 class="text-2xl font-semibold text-bluePrimary">
+          Agregar item de evaluacion
+        </h3>
+        <button
+          class="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+          (click)="toggleModal()">
+          <span class="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
+            ×
+          </span>
+        </button>
+      </div>
+
+      <div class="relative p-6 flex-auto flex gap-3 flex-col">
+
+        <div class="w-132 grid grid-cols-2 gap-2 ">
+          <input-text-medium-standalone widht="w-full" borderColor="border-[#D2D2D2]" placeholder="Seleccione  la area"
+            fontSize="text-[16px]" height="h-[55px]" radius="rounded-[16px]"
+            transition="transition-all"></input-text-medium-standalone>
+          <input-text-medium-standalone widht="w-full" borderColor="border-[#D2D2D2]" placeholder="Seleccione el plan"
+            fontSize="text-[16px]" height="h-[55px]" radius="rounded-[16px]"
+            transition="transition-all"></input-text-medium-standalone>
+        </div>
+        <input-text-medium-standalone widht="w-full" borderColor="border-[#D2D2D2]" placeholder="Agregue una pregunta"
+          fontSize="text-[16px]" height="h-[55px]" radius="rounded-[16px]"
+          transition="transition-all"></input-text-medium-standalone>
+        <input-text-medium-standalone widht="w-full" borderColor="border-[#D2D2D2]"
+          placeholder="Agregue el tipo de pregunta" fontSize="text-[16px]" height="h-[55px]" radius="rounded-[16px]"
+          transition="transition-all"></input-text-medium-standalone>
+
+      </div>
+
+      <div class="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
+        <button
+          class="text-hellowPrimary background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+          type="button" (click)="toggleModal()">
+          Close
+        </button>
+        <button
+          class="bg-bluePrimary text-white active:bg-blue-950 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+          type="button" (click)="toggleModal()">
+          Save Changes
+        </button>
+      </div>
+    </div>
+  </div>
+</div> -->

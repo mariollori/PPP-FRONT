@@ -2,12 +2,12 @@
 <button id="sidebar" (click)="toogleSidebar()" class="absolute z-50 left-4 top-2 hidden
                                                       max-md:block">OP</button>
 <aside
-    class="h-screen w-24 flex flex-col items-center   bg-white border-r-2  
+    class="h-screen w-24 flex flex-col items-center   bg-white border-r-2
            transition-all
             max-xl:overflow-y-auto   max-xl:left-0
             max-md:w-96 max-md:fixed max-md:z-40
-            max-sm:w-screen  
-            " 
+            max-sm:w-screen
+            "
     [ngClass]="{'show-side': sidebarVisible}">
 
     <div class="flex justify-center items-center max-h-24 p-4 ">
@@ -19,11 +19,12 @@
         class="mt-6 flex p-4 flex-1 flex-col items-center  justify-center w-full list-none gap-6 min-h-[60%]
                max-xl:overflow-y-auto max-xl:overflow-x-hidden max-xl:justify-normal max-xl:min-h-[12rem]" >
 
-        <li *ngFor="let access of accesses"  [routerLink]="[access.path]" [attr.data-title]="access.name"
-            class="bg-hellowPrimary w-16 h-16 min-h-[4rem] rounded-3xl shadow-lg flex flex-row justify-center items-center cursor-pointer toolpit 
+        <li *ngFor="let access of accesses"  [routerLink]="[access.path]" [routerLinkActive]="'router-active'" [attr.data-title]="access.name"
+            class="bg-hellowPrimary transition-all duration-300 w-16 h-16 min-h-[4rem] rounded-3xl shadow-lg flex flex-row justify-center items-center cursor-pointer toolpit
                      max-md:w-full">
-           
-            <label class="hidden ml-5 
+            <img class="h-8" [src]="access.icon">
+
+            <label class="hidden ml-5
                           max-md:flex  ">{{access.name}}</label>
         </li>
     </ul>
