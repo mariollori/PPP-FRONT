@@ -14,17 +14,17 @@ import { GestionDePracticas } from './modules/coordinador/gestion-de-practicas/p
 const routesHome: Routes = [
   { path: '', redirectTo: 'configuracion-de-cuenta', pathMatch: 'full' },
 
-  // Practicante
-  { path: 'home', component: Settings },
-  { path: 'control-de-practicas-pre-profesionales', component: Settings },
-
-  //Supervisor
-  { path: 'lista-estudiantes', component: Settings },
-
   //Comite
   { path: 'gestion-de-practicantes', component: GestionDePracticas },
   { path: 'lista-de-estudiantes-en-espera', component: Settings },
   { path: 'listas-de-estudiantes', component: Settings },
+
+  //Supervisor
+  { path: 'lista-estudiantes', component: Settings },
+
+  // Practicante
+  { path: 'home', component: Settings },
+  { path: 'control-de-practicas-pre-profesionales', component: Settings },
 
   // PARA TODOS LOS ROLES
   { path: 'configuracion-de-cuenta', component: Settings },
