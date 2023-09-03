@@ -34,3 +34,17 @@ export class ItemsOfSettingGeneralComite {
     },
   ];
 }
+
+export class BannersFirebase {
+  name!: string;
+  url!: string;
+  peso!: string;
+}
+
+export class DocumementsFirebase {
+  name!: string;
+  urlDocument!: string;
+  description!: string;
+  status!: boolean;
+  type!: string;
+}

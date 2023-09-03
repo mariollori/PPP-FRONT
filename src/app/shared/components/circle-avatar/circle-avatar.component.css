@@ -1,26 +1,26 @@
 .avatar-xs {
-  width: 32px;
-  height: 32px;
+  width: 24;
+  height: 24px;
 }
 
 .avatar-sm {
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
 }
 
 .avatar-md {
-  width: 64px;
-  height: 64px;
+  width: 56px;
+  height: 56px;
 }
 
 .avatar-mdd {
-  width: 78px;
-  height: 78px;
+  width: 70px;
+  height: 70px;
 }
 
 .avatar-lg {
-  width: 96px;
-  height: 96px;
+  width: 88px;
+  height: 88px;
 }
 
 .circle-avatar {

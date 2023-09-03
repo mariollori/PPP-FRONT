@@ -2,10 +2,10 @@
     class="absolute z-30 hidden right-4 top-2 max-xl:block">DDD</button>
 
 <aside
-    class="w-130 h-screen overflow-y-auto bg-white  flex flex-col items-end p-5 pt-12 border-l-2 gap-4  transition-all
+    class="w-[490px] h-screen overflow-y-auto bg-white  flex flex-col items-end p-5 pt-12 border-l-2 gap-4  transition-all font-montserrat text-[15px]
         max-2xl:w-104
         max-xl:fixed max-xl:right-0 max-xl:w-128
-        max-md:w-full " 
+        max-md:w-full "
     [ngClass]="{'show-side': userbarVisible}">
     <div class="flex w-full justify-end mr-6">
         <app-circle-avatar
@@ -25,7 +25,7 @@
             <div class="flex flex-col ml-4 w-full gap-2">
                 <span class="font-bold text-bluePrimary">Mg. Benjamin David
                     Reyna Barreto</span>
-                <div class="flex flex-row justify-between text-[#D9D9D9]">
+                <div class="flex flex-row justify-between text-center text-greySecondary">
                     <span>123 calificados</span>
                     <span>Ingenieria de Software</span>
                 </div>
@@ -33,23 +33,23 @@
             </div>
 
         </div>
-        <div class="flex /flex-row  justify-evenly w-full">
+        <div class="flex /flex-row mt-2 justify-evenly w-full">
             <div class="flex flex-col items-center text-bluePrimary">
                 <label>Horas completadas</label>
-                <span class="font-[400] text-6xl">700 H</span>
+                <span class="font-[400] text-[50px]">700 H</span>
             </div>
             <div class="flex flex-col items-center text-hellowPrimary">
                 <label>Horas Restantes</label>
-                <span class="font-[400] text-6xl">100 H</span>
+                <span class="font-[400] text-[50px]">100 H</span>
             </div>
         </div>
     </div>
 
-    <div class="w-full flex flex-col gap-2 mt-2">
+    <div class="w-full flex flex-col gap-2">
         <label>Buzon de notificaciones</label>
         <div
-            class="w-full rounded-xl overflow-hidden border-gray-300  border-[1px]">
-            <input type="text " placeholder="Search...."
+            class="w-full py-1 px-2 rounded-xl overflow-hidden border-gray-300 border active:border-bluePrimary">
+            <input type="text " placeholder="Buscar una notificación...."
                 class="w-full outline-none rounded-sm p-2 pr-[30px]">
         </div>
     </div>
@@ -57,19 +57,19 @@
     <div class="flex flex-1 w-full  overflow-hidden  min-h-[250px]">
         <ul
             class="w-full h-full list-none overflow-y-auto  flex  flex-col gap-5 px-4 py-4">
-            <li class="flex flex-row justify-between border-b-[1px] border-[#C0C0C0]  pb-2" *ngFor="let notifications of list">
+            <li class="flex flex-row justify-between border-b-[2px] border-greyPrimary  pb-2" *ngFor="let notifications of list">
 
                 <div class="flex flex-row gap-3 overflow-hidden">
-                    <app-circle-avatar 
-                     imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0pwDRKDJJeZoRRS04lgxVABACNycQ-C_WKOMTDIOT00JMfmX7aqFc5YpgQe-8GUIMkXQ&usqp=CAU" 
+                    <app-circle-avatar
+                     imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0pwDRKDJJeZoRRS04lgxVABACNycQ-C_WKOMTDIOT00JMfmX7aqFc5YpgQe-8GUIMkXQ&usqp=CAU"
                      size="avatar-md"></app-circle-avatar>
-                    <div class="flex flex-col justify-around">
-                        <label class="font-[500] truncate h-6  ">Benjamin David Reyna Barreto</label>
-                        <span class="text-[#676767] truncate  w-max ">Ha calificado un documento enviado aksjdlkasjlkdjalksj askjdlasj lkajs dlkjasldj alsj dakjsd aklsjd laksd lkaj</span>
+                    <div class="flex flex-col justify-around font-[14px] ">
+                        <label class=" truncate h-6 font-medium">Benjamin David Reyna Barreto</label>
+                        <span class="text-greySecondary truncate w-max text-[13.5px]">Ha calificado un documento enviado aksjdlkasjlkdjalksj askjdlasj lkajs dlkjasldj alsj dakjsd aklsjd laksd lkaj</span>
                     </div>
                 </div>
-                <div  class="flex flex-col justify-around items-center">
-                    <label class="font-bold text-sm ">Oct. 06</label>
+                <div  class="w-56 flex flex-col justify-around items-end">
+                    <label class="font-bold text-[12.5px]">Oct. 06</label>
                     <span class="w-4 h-4 bg-hellowPrimary rounded-[50%]"></span>
                 </div>
             </li>

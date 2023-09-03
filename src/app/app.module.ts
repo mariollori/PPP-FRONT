@@ -32,6 +32,8 @@ import { GlobalModel } from './shared/components/modal/global-modal';
 import { ConfigPracticanteModal } from './modules/coordinador/gestion-de-practicas/presentation/components/content-modal/config-practicante/config-practicante';
 import { ConfigSupervisorMoldal } from './modules/coordinador/gestion-de-practicas/presentation/components/content-modal/config-supervisor/config-supervisor';
 import { CreateNewPlanModal } from './modules/coordinador/gestion-de-practicas/presentation/components/content-modal/create-new-plan/create-new-plan';
+import { GlobasToast } from './shared/components/toast/globas-toast';
+import { GlobalBgAlerts } from './shared/components/bg-alerts/global-bg-alerts';
 
 // PROVIDERS
 
@@ -68,6 +70,8 @@ import { CreateNewPlanModal } from './modules/coordinador/gestion-de-practicas/p
     ConfigPracticanteModal,
     ConfigSupervisorMoldal,
     CreateNewPlanModal,
+    GlobasToast,
+    GlobalBgAlerts,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideStorage(() => getStorage()),
   ],

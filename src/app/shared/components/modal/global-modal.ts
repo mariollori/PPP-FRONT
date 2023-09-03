@@ -19,6 +19,7 @@ export class GlobalModel {
 
   @Input() closeText: string = 'Cerrar';
   @Input() buttonAccion: boolean = true;
+  @Input() textButtonAccion: string = 'Guardar';
 
   @HostListener('document:keydown.escape', ['$event'])
   handleEscapeKey() {

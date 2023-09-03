@@ -1,37 +1,93 @@
-<div class="font-montserrat w-full">
-  <div class="w-full flex">
+<div class="font-montserrat w-full relative max-h-[100%]">
+  <div class="w-full mb-5">
     <span class="font-[600]">Crear un nuevo plan de Prácticas Pre Profesionales</span>
   </div>
-  <div class="grid grid-cols-1 gap-4 my-5 w-full sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 lg:w-[620px] xl:grid-cols-2 xl:w-[620px] 2xl:grid-cols-2 2xl:w-[620px]">
-    <input-text-medium-standalone widht="w-full" borderColor="border-[#D2D2D2]" placeholder="Nombre del plan"
-      fontSize="text-[16px]" height="h-[55px]" radius="rounded-[16px]"
-      transition="transition-all"></input-text-medium-standalone>
-    <input-text-medium-standalone widht="w-full" borderColor="border-[#D2D2D2]" placeholder="Horas del plan académico"
-      fontSize="text-[16px]" height="h-[55px]" radius="rounded-[16px]"
-      transition="transition-all"></input-text-medium-standalone>
-  </div>
-  <div class="w-full">
-    <span class="font-[450] text-[14px]">Subir la imagen del banner publicitario de las Prácticas Pre
-      Profesionales</span>
-    <!-- <div
-      class="mt-1 mb-5 w-full h-40 shadow-lg bg-greyPrimary rounded-2xl flex text-center justify-center items-center flex-col">
-        <img class="h-16 mb-2" src="assets/svg/uploads/upload.svg">
-        <span class="text-bluePrimary font-[580] text-[13px]">Seleccionar imagen</span>
-    </div> -->
-    <label for="fileInput"
-      class="mt-1 mb-5 w-full h-40 shadow-lg bg-greyPrimary rounded-2xl flex text-center justify-center items-center flex-col cursor-pointer hover:bg-neutral-200 transition-all duration-300">
-      <img class="h-16 mb-2" src="assets/svg/uploads/upload.svg">
-      <span class="text-bluePrimary font-[580] text-[13px]">Seleccionar imagen</span>
-      <input type="file" id="fileInput" class="hidden"> <!-- (change)="handleFileInput($event)" -->
-    </label>
-  </div>
-  <div class="w-full">
-    <span class="font-[450] text-[14px]">Subir los documentos de las Prácticas Pre
-      Profesionales</span>
+  <div class="overflow-y-scroll overscroll-none max-h-[73vh] pr-2">
     <div
-      class="mt-1 mb-5 w-full h-40 shadow-lg bg-greyPrimary rounded-2xl flex text-center justify-center items-center">
+      class="grid grid-cols-1 gap-4 mb-5 w-full sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 lg:w-[620px] xl:grid-cols-2 xl:w-[620px] 2xl:grid-cols-2 2xl:w-[620px]">
+      <input-text-medium-standalone widht="w-full" borderColor="border-[#D2D2D2]" placeholder="Nombre del plan"
+        fontSize="text-[16px]" height="h-[55px]" radius="rounded-[16px]"
+        transition="transition-all"></input-text-medium-standalone>
+      <input-text-medium-standalone widht="w-full" borderColor="border-[#D2D2D2]" placeholder="Horas del plan académico"
+        fontSize="text-[16px]" height="h-[55px]" radius="rounded-[16px]"
+        transition="transition-all"></input-text-medium-standalone>
+    </div>
+    <div class="w-full h-auto">
+      <span class="font-[450] text-[14px]">Subir la imagen del banner publicitario de las Prácticas Pre
+        Profesionales</span>
+      <div class="mt-1 mb-2 w-full max-h-60 overflow-auto pr-[6px]" *ngIf="bannerList.length > 0">
+        <div class="w-full h-28 mb-3 p-3 bg-bluePastelPrimary rounded-xl border-dashed border-2 border-bluePrimary flex"
+          *ngFor="let banner of bannerList">
+          <div class="h-full p-2">
+            <img class="h-full" src="assets/png/folder-image.png">
+          </div>
+          <div class="grid grid-cols-1 gap-0 flex-1 h-full font-montserrat relative">
+            <div class="w-full text-center text-[14px] font-medium text-hellowSecondary truncate">
+              <span>Se ha subido la imagen correctamente...!!!</span>
+            </div>
+            <div class="w-full text-[13px] flex items-center text-greySecondary font-normal truncate">
+              <span class="ml-5">{{banner.name}}</span>
+            </div>
+            <div class="w-full relative text-[13px] items-end flex justify-between text-greySecondary font-normal">
+              <span class="ml-5">1 archivo</span>
+              <span class="mr-5 font-medium">{{banner.peso}}</span>
+            </div>
+          </div>
+          <div class="h-full grid grid-cols-1 gap-0">
+            <div class="h-full w-[41px] text-center items-center p-[3px] flex justify-center cursor-pointer"
+              (click)="actionAlert()">
+              <!-- <img class="h-full cursor-pointer" src="assets/svg/modal/close-square.svg"> -->
+              <svg class="fill-redPrimary hover:fill-redSecondary transition-all duration-300 cursor-pointer"
+                viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M9.16937 15.5801C8.97937 15.5801 8.78938 15.5101 8.63938 15.3601C8.34938 15.0701 8.34938 14.5901 8.63938 14.3001L14.2994 8.64011C14.5894 8.35011 15.0694 8.35011 15.3594 8.64011C15.6494 8.93011 15.6494 9.41011 15.3594 9.70011L9.69937 15.3601C9.55937 15.5101 9.35937 15.5801 9.16937 15.5801Z" />
+                <path
+                  d="M14.8294 15.5801C14.6394 15.5801 14.4494 15.5101 14.2994 15.3601L8.63938 9.70011C8.34938 9.41011 8.34938 8.93011 8.63938 8.64011C8.92937 8.35011 9.40937 8.35011 9.69937 8.64011L15.3594 14.3001C15.6494 14.5901 15.6494 15.0701 15.3594 15.3601C15.2094 15.5101 15.0194 15.5801 14.8294 15.5801Z" />
+                <path
+                  d="M15 22.75H9C3.57 22.75 1.25 20.43 1.25 15V9C1.25 3.57 3.57 1.25 9 1.25H15C20.43 1.25 22.75 3.57 22.75 9V15C22.75 20.43 20.43 22.75 15 22.75ZM9 2.75C4.39 2.75 2.75 4.39 2.75 9V15C2.75 19.61 4.39 21.25 9 21.25H15C19.61 21.25 21.25 19.61 21.25 15V9C21.25 4.39 19.61 2.75 15 2.75H9Z" />
+              </svg>
 
-      <span class="text-bluePrimary font-[580] text-[13px]">Añadir un documento</span>
+            </div>
+            <div class="w-[41px] h-full text-center items-center p-[3px] flex justify-center">
+              <!-- <img class="h-full cursor-pointer" src="assets/svg/modal/eye.svg" alt=""> -->
+              <svg class="fill-bluePrimary hover:fill-blueSecondary transition-all duration-300 cursor-pointer"
+                viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M11.9999 16.3299C9.60992 16.3299 7.66992 14.3899 7.66992 11.9999C7.66992 9.60992 9.60992 7.66992 11.9999 7.66992C14.3899 7.66992 16.3299 9.60992 16.3299 11.9999C16.3299 14.3899 14.3899 16.3299 11.9999 16.3299ZM11.9999 9.16992C10.4399 9.16992 9.16992 10.4399 9.16992 11.9999C9.16992 13.5599 10.4399 14.8299 11.9999 14.8299C13.5599 14.8299 14.8299 13.5599 14.8299 11.9999C14.8299 10.4399 13.5599 9.16992 11.9999 9.16992Z" />
+                <path
+                  d="M12.0001 21.02C8.24008 21.02 4.69008 18.82 2.25008 15C1.19008 13.35 1.19008 10.66 2.25008 8.99998C4.70008 5.17998 8.25008 2.97998 12.0001 2.97998C15.7501 2.97998 19.3001 5.17998 21.7401 8.99998C22.8001 10.65 22.8001 13.34 21.7401 15C19.3001 18.82 15.7501 21.02 12.0001 21.02ZM12.0001 4.47998C8.77008 4.47998 5.68008 6.41998 3.52008 9.80998C2.77008 10.98 2.77008 13.02 3.52008 14.19C5.68008 17.58 8.77008 19.52 12.0001 19.52C15.2301 19.52 18.3201 17.58 20.4801 14.19C21.2301 13.02 21.2301 10.98 20.4801 9.80998C18.3201 6.41998 15.2301 4.47998 12.0001 4.47998Z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <label for="bannerInput" (change)="uploadArchive($event, 'banners')" *ngIf="uploadProgressBanner == null"
+        class="mt-1 mb-5 w-full h-32 shadow-lg bg-greyPrimary rounded-2xl flex text-center justify-center items-center flex-col cursor-pointer hover:bg-neutral-200 transition-all duration-300">
+        <img class="h-16 mb-2" src="assets/png/imagen.png">
+        <span class="text-bluePrimary font-[580] text-[13px]">Seleccionar una imagen</span>
+        <input type="file" id="bannerInput" class="hidden" accept=".jpg, .jpeg, .png">
+      </label>
+    </div>
+    <div class="w-full">
+      <span class="font-[450] text-[14px]">Subir los documentos de las Prácticas Pre
+        Profesionales</span>
+      <div class="mt-1 mb-2 w-full h-auto">
+        <div class="w-full h-32 mb-3 bg-bluePrimary" *ngFor="let document of documents">
+          Progreso de subida: {{ uploadProgressDocs }}%
+        </div>
+      </div>
+      <label for="fileInput" (change)="uploadArchive($event, 'docs')" *ngIf="uploadProgressDocs == null"
+        class="mt-1 mb-5 w-full h-32 shadow-lg bg-greyPrimary rounded-2xl flex text-center justify-center items-center flex-col cursor-pointer hover:bg-neutral-200 transition-all duration-300">
+        <img class="h-16 mb-2" src="assets/svg/uploads/upload.svg">
+        <span class="text-bluePrimary font-[580] text-[13px]">Subir un documento</span>
+        <input type="file" id="fileInput" class="hidden" accept=".doc, .docx, .pdf, .ppt, .pptx, .xls, .xlsx">
+      </label>
     </div>
   </div>
 </div>
+
+<global-bg-alerts *ngIf="validated" (actionAlert)="actionAlert()" (actionAccept)="prueba()" alert="view-image">
+</global-bg-alerts>
+
+<global-toast *ngIf="toast" [message]="message" (closed)="toast=false"></global-toast>

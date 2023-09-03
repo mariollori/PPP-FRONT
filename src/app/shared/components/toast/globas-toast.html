@@ -1,0 +1,17 @@
+<div class="fixed bottom-10 inset-x-0 mx-5 flex justify-center font-montserrat">
+  <div class="bg-white p-[3px] rounded-[22px]">
+    <div class="bg-errorbg border-2 border-errorbd text-black text-center font-montserrat p-[8px] rounded-[22px] flex items-center">
+      <div class="h-14 w-14 bg-error border-2 border-errorbdicon rounded-[20px] p-[6px]">
+        <div class="w-full h-full flex justify-center items-center bg-white rounded-full">
+
+        </div>
+      </div>
+      <div class="ml-5">
+        {{ message }}
+      </div>
+      <div class="ml-10 w-10 h-10 flex justify-center items-center cursor-pointer rounded-xl text-[#69717d] hover:bg-white hover:text-black"  (click)="close()">
+        <button class="cursor-pointer text-[25px] font-normal">x</button>
+      </div>
+    </div>
+  </div>
+</div>
