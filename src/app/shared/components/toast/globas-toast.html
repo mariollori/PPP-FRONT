@@ -1,15 +1,97 @@
-<div class="fixed bottom-10 inset-x-0 mx-5 flex justify-center font-montserrat">
-  <div class="bg-white p-[3px] rounded-[22px]">
-    <div class="bg-errorbg border-2 border-errorbd text-black text-center font-montserrat p-[8px] rounded-[22px] flex items-center">
-      <div class="h-14 w-14 bg-error border-2 border-errorbdicon rounded-[20px] p-[6px]">
-        <div class="w-full h-full flex justify-center items-center bg-white rounded-full">
+<div class="fixed bottom-10 inset-x-0 mx-5 flex justify-center font-montserrat" *ngIf="type != ''">
+
+  <!-- SUCCESS  -->
+  <div class="bg-white p-[3px] rounded-[22px]" *ngIf="type == 'success'">
+    <div
+      class="bg-successbg border-2 border-successbd text-black text-center font-montserrat p-[8px] rounded-[22px] flex items-center">
+      <div class="h-14 w-14 bg-success border-2 border-successbdicon rounded-[20px] p-1">
+        <div class="w-full h-full flex justify-center items-center rounded-full">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M12 2C6.49 2 2 6.49 2 12C2 17.51 6.49 22 12 22C17.51 22 22 17.51 22 12C22 6.49 17.51 2 12 2ZM16.78 9.7L11.11 15.37C10.97 15.51 10.78 15.59 10.58 15.59C10.38 15.59 10.19 15.51 10.05 15.37L7.22 12.54C6.93 12.25 6.93 11.77 7.22 11.48C7.51 11.19 7.99 11.19 8.28 11.48L10.58 13.78L15.72 8.64C16.01 8.35 16.49 8.35 16.78 8.64C17.07 8.93 17.07 9.4 16.78 9.7Z"
+              fill="#ffffff" />
+          </svg>
+        </div>
+      </div>
+      <div class="ml-5">
+        {{ message }}
+      </div>
+      <div
+        class="ml-10 w-10 h-10 flex justify-center items-center cursor-pointer rounded-xl text-[#69717d] hover:bg-white hover:text-black"
+        (click)="close()">
+        <button class="cursor-pointer text-[25px] font-normal">x</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ERROR  -->
+  <div class="bg-white p-[3px] rounded-[22px]" *ngIf="type == 'error'">
+    <div
+      class="bg-errorbg border-2 border-errorbd text-black text-center font-montserrat p-[8px] rounded-[22px] flex items-center">
+      <div class="h-14 w-14 bg-error border-2 border-errorbdicon rounded-[20px] p-1">
+        <div class="w-full h-full flex justify-center items-center rounded-full">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M21.12 6.98L17.02 2.88C16.54 2.4 15.58 2 14.9 2H9.1C8.42 2 7.46 2.4 6.98 2.88L2.88 6.98C2.4 7.46 2 8.42 2 9.1V14.9C2 15.58 2.4 16.54 2.88 17.02L6.98 21.12C7.46 21.6 8.42 22 9.1 22H14.9C15.58 22 16.54 21.6 17.02 21.12L21.12 17.02C21.6 16.54 22 15.58 22 14.9V9.1C22 8.42 21.6 7.46 21.12 6.98ZM16.03 14.97C16.32 15.26 16.32 15.74 16.03 16.03C15.88 16.18 15.69 16.25 15.5 16.25C15.31 16.25 15.12 16.18 14.97 16.03L12 13.06L9.03 16.03C8.88 16.18 8.69 16.25 8.5 16.25C8.31 16.25 8.12 16.18 7.97 16.03C7.68 15.74 7.68 15.26 7.97 14.97L10.94 12L7.97 9.03C7.68 8.74 7.68 8.26 7.97 7.97C8.26 7.68 8.74 7.68 9.03 7.97L12 10.94L14.97 7.97C15.26 7.68 15.74 7.68 16.03 7.97C16.32 8.26 16.32 8.74 16.03 9.03L13.06 12L16.03 14.97Z"
+              fill="#ffffff" />
+          </svg>
 
         </div>
       </div>
       <div class="ml-5">
         {{ message }}
       </div>
-      <div class="ml-10 w-10 h-10 flex justify-center items-center cursor-pointer rounded-xl text-[#69717d] hover:bg-white hover:text-black"  (click)="close()">
+      <div
+        class="ml-10 w-10 h-10 flex justify-center items-center cursor-pointer rounded-xl text-[#69717d] hover:bg-white hover:text-black"
+        (click)="close()">
+        <button class="cursor-pointer text-[25px] font-normal">x</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- WARNING -->
+  <div class="bg-white p-[3px] rounded-[22px]" *ngIf="type == 'warning'">
+    <div
+      class="bg-warningbg border-2 border-warningbd text-black text-center font-montserrat p-[8px] rounded-[22px] flex items-center">
+      <div class="h-14 w-14 bg-warning border-2 border-warningbdicon rounded-[20px] p-1">
+        <div class="w-full h-full flex justify-center items-center rounded-full">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M21.7605 15.92L15.3605 4.4C14.5005 2.85 13.3105 2 12.0005 2C10.6905 2 9.50047 2.85 8.64047 4.4L2.24047 15.92C1.43047 17.39 1.34047 18.8 1.99047 19.91C2.64047 21.02 3.92047 21.63 5.60047 21.63H18.4005C20.0805 21.63 21.3605 21.02 22.0105 19.91C22.6605 18.8 22.5705 17.38 21.7605 15.92ZM11.2505 9C11.2505 8.59 11.5905 8.25 12.0005 8.25C12.4105 8.25 12.7505 8.59 12.7505 9V14C12.7505 14.41 12.4105 14.75 12.0005 14.75C11.5905 14.75 11.2505 14.41 11.2505 14V9ZM12.7105 17.71C12.6605 17.75 12.6105 17.79 12.5605 17.83C12.5005 17.87 12.4405 17.9 12.3805 17.92C12.3205 17.95 12.2605 17.97 12.1905 17.98C12.1305 17.99 12.0605 18 12.0005 18C11.9405 18 11.8705 17.99 11.8005 17.98C11.7405 17.97 11.6805 17.95 11.6205 17.92C11.5605 17.9 11.5005 17.87 11.4405 17.83C11.3905 17.79 11.3405 17.75 11.2905 17.71C11.1105 17.52 11.0005 17.26 11.0005 17C11.0005 16.74 11.1105 16.48 11.2905 16.29C11.3405 16.25 11.3905 16.21 11.4405 16.17C11.5005 16.13 11.5605 16.1 11.6205 16.08C11.6805 16.05 11.7405 16.03 11.8005 16.02C11.9305 15.99 12.0705 15.99 12.1905 16.02C12.2605 16.03 12.3205 16.05 12.3805 16.08C12.4405 16.1 12.5005 16.13 12.5605 16.17C12.6105 16.21 12.6605 16.25 12.7105 16.29C12.8905 16.48 13.0005 16.74 13.0005 17C13.0005 17.26 12.8905 17.52 12.7105 17.71Z"
+              fill="#ffffff" />
+          </svg>
+        </div>
+      </div>
+      <div class="ml-5">
+        {{ message }}
+      </div>
+      <div
+        class="ml-10 w-10 h-10 flex justify-center items-center cursor-pointer rounded-xl text-[#69717d] hover:bg-white hover:text-black"
+        (click)="close()">
+        <button class="cursor-pointer text-[25px] font-normal">x</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- INFORMATION -->
+  <div class="bg-white p-[3px] rounded-[22px]" *ngIf="type == 'information'">
+    <div
+      class="bg-informationbg border-2 border-informationbd text-black text-center font-montserrat p-[8px] rounded-[22px] flex items-center">
+      <div class="h-14 w-14 bg-information border-2 border-informationbdicon rounded-[20px] p-1">
+        <div class="w-full h-full flex justify-center items-center rounded-full">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M12 2C6.49 2 2 6.49 2 12C2 17.51 6.49 22 12 22C17.51 22 22 17.51 22 12C22 6.49 17.51 2 12 2ZM11.25 8C11.25 7.59 11.59 7.25 12 7.25C12.41 7.25 12.75 7.59 12.75 8V13C12.75 13.41 12.41 13.75 12 13.75C11.59 13.75 11.25 13.41 11.25 13V8ZM12.92 16.38C12.87 16.51 12.8 16.61 12.71 16.71C12.61 16.8 12.5 16.87 12.38 16.92C12.26 16.97 12.13 17 12 17C11.87 17 11.74 16.97 11.62 16.92C11.5 16.87 11.39 16.8 11.29 16.71C11.2 16.61 11.13 16.51 11.08 16.38C11.03 16.26 11 16.13 11 16C11 15.87 11.03 15.74 11.08 15.62C11.13 15.5 11.2 15.39 11.29 15.29C11.39 15.2 11.5 15.13 11.62 15.08C11.86 14.98 12.14 14.98 12.38 15.08C12.5 15.13 12.61 15.2 12.71 15.29C12.8 15.39 12.87 15.5 12.92 15.62C12.97 15.74 13 15.87 13 16C13 16.13 12.97 16.26 12.92 16.38Z"
+              fill="#ffffff" />
+          </svg>
+        </div>
+      </div>
+      <div class="ml-5">
+        {{ message }}
+      </div>
+      <div
+        class="ml-10 w-10 h-10 flex justify-center items-center cursor-pointer rounded-xl text-[#69717d] hover:bg-white hover:text-black"
+        (click)="close()">
         <button class="cursor-pointer text-[25px] font-normal">x</button>
       </div>
     </div>

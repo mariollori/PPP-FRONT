@@ -30,14 +30,17 @@ import { GlobalBgAlerts } from 'src/app/shared/components/bg-alerts/global-bg-al
   standalone: true,
   selector: 'create-new-plan',
   templateUrl: './create-new-plan.html',
+  styleUrls: ['create-new-plan.css'],
   imports: [InputTextMedium, CommonModule, GlobasToast, GlobalBgAlerts],
 })
 export class CreateNewPlanModal implements OnInit {
   toast: boolean = false;
   message: string = '';
+  typeToast: string = '';
 
   validated: boolean = true;
-  alertPosition!: number;
+  alert: string = '';
+  actionAlrt!: void;
 
   bannerList: BannersFirebase[] = [];
 
@@ -67,6 +70,8 @@ export class CreateNewPlanModal implements OnInit {
   }
 
   uploadArchive($event: any, folder: string) {
+    this.uploadProgressBanner = 0;
+
     const pathFirebase = `documents/comite/${folder}/`;
     const file = $event.target.files[0];
     const imgRef = ref(this.storage, `${pathFirebase}/${file.name}`);
@@ -75,7 +80,9 @@ export class CreateNewPlanModal implements OnInit {
       .then(async (metadata) => {
         // Aquí puedes mostrar una advertencia al usuario de que el archivo ya existe.
         this.message = `El archivo "${metadata.name}" ya existe. Intente subir el archivo con otro nombre.`;
+        this.typeToast = 'warning';
         this.toast = true;
+
         if (folder == 'banners') {
           this.uploadProgressBanner = null;
           this.cdr.detectChanges();
@@ -86,6 +93,8 @@ export class CreateNewPlanModal implements OnInit {
         setTimeout(() => ((this.toast = false), (this.message = '')), 5000);
       })
       .catch((error) => {
+        console.log(error);
+
         // Si el archivo no existe, puedes proceder a subirlo.
         if (error.code === 'storage/object-not-found') {
           const uploadTask = uploadBytesResumable(imgRef, file);
@@ -122,6 +131,7 @@ export class CreateNewPlanModal implements OnInit {
                 for (let items of result.items) {
                   if (file.name == items.name) {
                     this.message = `Se ha subido un archivo correctamente...!!!`;
+                    this.typeToast = 'success';
                     this.toast = true;
                     const [metadata, url] = await Promise.all([
                       getMetadata(items),
@@ -184,7 +194,7 @@ export class CreateNewPlanModal implements OnInit {
 
           uploadTask.resume(); // Iniciar la subida.
         } else {
-          console.log('Quefue no se' + error);
+          console.log('Quefue no se ' + error);
         }
       });
   }
@@ -210,7 +220,6 @@ export class CreateNewPlanModal implements OnInit {
   }
 
   prueba() {
-    console.log("devuelve?");
-
+    console.log('devuelve?');
   }
 }
