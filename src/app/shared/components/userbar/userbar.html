@@ -16,7 +16,10 @@
             <label class="font-bold text-2xl">Kevin P.</label>
         </div>
     </div>
-    <div class="flex w-full flex-col items-start gap-3">
+
+    <!-- Practicante -->
+    <div class="flex w-full flex-col items-start gap-3"
+        *ngIf="validateRol.includes('practicante')">
         <label class>Supervisor de practicas</label>
         <div class="flex flex-row w-full">
             <app-circle-avatar
@@ -25,7 +28,8 @@
             <div class="flex flex-col ml-4 w-full gap-2">
                 <span class="font-bold text-bluePrimary">Mg. Benjamin David
                     Reyna Barreto</span>
-                <div class="flex flex-row justify-between text-center text-greySecondary">
+                <div
+                    class="flex flex-row justify-between text-center text-greySecondary">
                     <span>123 calificados</span>
                     <span>Ingenieria de Software</span>
                 </div>
@@ -44,6 +48,71 @@
             </div>
         </div>
     </div>
+    <!-- Supervisor -->
+    <!-- No tinene nada xd -->
+
+    <!-- Coordinador -->
+    <div class="flex flex-col items-start w-full gap-3"
+        *ngIf="validateRol.includes('coordinador')">
+        <label class>Supervisor de Practicas</label>
+        <div class="flex flex-row space-x-3 w-full items-center">
+            <button
+                class="rounded-full h-12 w-12 bg-white border-dashed border-2  border-hellowPrimary hover:bg-slate-50   items-center justify-center text-3xl">+</button>
+            <div
+                class="flex flex-1 space-x-3 overflow-x-auto max-w-full p-3 rounded-full">
+                <img class="rounded-full w-16 h-16 object-cover "
+                    src="https://s1.eestatic.com/2023/06/08/vivir/salud-mental/769933690_233804290_1706x960.jpg"
+                    alt>
+                <img class="rounded-full w-16 h-16 object-cover "
+                    src="https://s1.eestatic.com/2023/06/08/vivir/salud-mental/769933690_233804290_1706x960.jpg"
+                    alt>
+                <img class="rounded-full w-16 h-16 object-cover "
+                    src="https://s1.eestatic.com/2023/06/08/vivir/salud-mental/769933690_233804290_1706x960.jpg"
+                    alt>
+                <img class="rounded-full w-16 h-16 object-cover "
+                    src="https://s1.eestatic.com/2023/06/08/vivir/salud-mental/769933690_233804290_1706x960.jpg"
+                    alt>
+                <img class="rounded-full w-16 h-16 object-cover "
+                    src="https://s1.eestatic.com/2023/06/08/vivir/salud-mental/769933690_233804290_1706x960.jpg"
+                    alt>
+                <img class="rounded-full w-16 h-16 object-cover "
+                    src="https://s1.eestatic.com/2023/06/08/vivir/salud-mental/769933690_233804290_1706x960.jpg"
+                    alt>
+                <img class="rounded-full w-16 h-16 object-cover "
+                    src="https://s1.eestatic.com/2023/06/08/vivir/salud-mental/769933690_233804290_1706x960.jpg"
+                    alt>
+                <img class="rounded-full w-16 h-16 object-cover "
+                    src="https://s1.eestatic.com/2023/06/08/vivir/salud-mental/769933690_233804290_1706x960.jpg"
+                    alt>
+                <img class="rounded-full w-16 h-16 object-cover "
+                    src="https://s1.eestatic.com/2023/06/08/vivir/salud-mental/769933690_233804290_1706x960.jpg"
+                    alt>
+                <img class="rounded-full w-16 h-16 object-cover "
+                    src="https://s1.eestatic.com/2023/06/08/vivir/salud-mental/769933690_233804290_1706x960.jpg"
+                    alt>
+                <img class="rounded-full w-16 h-16 object-cover "
+                    src="https://s1.eestatic.com/2023/06/08/vivir/salud-mental/769933690_233804290_1706x960.jpg"
+                    alt>
+                <img class="rounded-full w-16 h-16 object-cover "
+                    src="https://s1.eestatic.com/2023/06/08/vivir/salud-mental/769933690_233804290_1706x960.jpg"
+                    alt>
+                <img class="rounded-full w-16 h-16 object-cover "
+                    src="https://s1.eestatic.com/2023/06/08/vivir/salud-mental/769933690_233804290_1706x960.jpg"
+                    alt>
+                <img class="rounded-full w-16 h-16 object-cover "
+                    src="https://s1.eestatic.com/2023/06/08/vivir/salud-mental/769933690_233804290_1706x960.jpg"
+                    alt>
+                <img class="rounded-full w-16 h-16 object-cover "
+                    src="https://s1.eestatic.com/2023/06/08/vivir/salud-mental/769933690_233804290_1706x960.jpg"
+                    alt>
+                <img class="rounded-full w-16 h-16 object-cover "
+                    src="https://s1.eestatic.com/2023/06/08/vivir/salud-mental/769933690_233804290_1706x960.jpg"
+                    alt>
+
+            </div>
+        </div>
+
+    </div>
 
     <div class="w-full flex flex-col gap-2">
         <label>Buzon de notificaciones</label>
@@ -57,18 +126,25 @@
     <div class="flex flex-1 w-full  overflow-hidden  min-h-[250px]">
         <ul
             class="w-full h-full list-none overflow-y-auto  flex  flex-col gap-5 px-4 py-4">
-            <li class="flex flex-row justify-between border-b-[2px] border-greyPrimary  pb-2" *ngFor="let notifications of list">
+            <li
+                class="flex flex-row justify-between border-b-[2px] border-greyPrimary  pb-2"
+                *ngFor="let notifications of list">
 
                 <div class="flex flex-row gap-3 overflow-hidden">
                     <app-circle-avatar
-                     imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0pwDRKDJJeZoRRS04lgxVABACNycQ-C_WKOMTDIOT00JMfmX7aqFc5YpgQe-8GUIMkXQ&usqp=CAU"
-                     size="avatar-md"></app-circle-avatar>
+                        imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0pwDRKDJJeZoRRS04lgxVABACNycQ-C_WKOMTDIOT00JMfmX7aqFc5YpgQe-8GUIMkXQ&usqp=CAU"
+                        size="avatar-md"></app-circle-avatar>
                     <div class="flex flex-col justify-around font-[14px] ">
-                        <label class=" truncate h-6 font-medium">Benjamin David Reyna Barreto</label>
-                        <span class="text-greySecondary truncate w-max text-[13.5px]">Ha calificado un documento enviado aksjdlkasjlkdjalksj askjdlasj lkajs dlkjasldj alsj dakjsd aklsjd laksd lkaj</span>
+                        <label class=" truncate h-6 font-medium">Benjamin David
+                            Reyna Barreto</label>
+                        <span
+                            class="text-greySecondary truncate w-max text-[13.5px]">Ha
+                            calificado un documento enviado aksjdlkasjlkdjalksj
+                            askjdlasj lkajs dlkjasldj alsj dakjsd aklsjd laksd
+                            lkaj</span>
                     </div>
                 </div>
-                <div  class="w-56 flex flex-col justify-around items-end">
+                <div class="w-56 flex flex-col justify-around items-end">
                     <label class="font-bold text-[12.5px]">Oct. 06</label>
                     <span class="w-4 h-4 bg-hellowPrimary rounded-[50%]"></span>
                 </div>
