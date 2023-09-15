@@ -1,0 +1,174 @@
+<div class="h-screen bg-gray-50">
+    <div class="px-7 py-6">
+        <img 
+            class="h-14 w-auto" 
+            src="../../../../../../assets/png/LOGO_UPEU.png">
+
+    </div>
+    
+    <div class="text-center">
+        <h1 class="text-4xl font-bold mb-4">Completa tus datos</h1>
+        <p>Asegúrate de proporcionar información precisa y verídica, ya que estos datos serán fundamentales para tu proceso de prácticas y posteriormente alcanzar tu graduación.</p>
+    </div>
+
+    <div class="bg-white py-5 px-7 rounded-2xl drop-shadow-lg grid md:grid-cols-3 sm:grid-cols-1 gap-4 md:w-[70%] sm:w-[90%] mt-8 ml-auto mr-auto">
+        
+        <div>
+            <label 
+                class="text-gray-600"
+                for="codeStudent">
+                Codigo estudiante
+            </label>
+            <input-text-basic 
+                id="codeStudent"
+                backgroundInput="bg-greyPrimary"
+                [(ngModel)]="practicante.code"
+                activeBackgroundInput="focus:bg-white" 
+                colorPlaceholeder="placeholder-greySecondary"
+                placeholderText="2020 *****"/>
+        </div>
+
+        <div>
+            <label 
+                class="text-gray-600"
+                for="firstName">
+                Nombres
+            </label>
+            <input-text-basic 
+                id="firstName"
+                [(ngModel)]="practicante.firstName"
+                backgroundInput="bg-greyPrimary"
+                activeBackgroundInput="focus:bg-white" 
+                colorPlaceholeder="placeholder-greySecondary"
+                placeholderText="2020 *****"/>
+        </div>
+
+        <div>
+            <label 
+                class="text-gray-600"
+                for="lastName">
+                Apellidos
+            </label>
+            <input-text-basic 
+                id="lastName"
+                (inputValueChange)="onChangeValue($event, 'codeStudent')"
+                backgroundInput="bg-greyPrimary"
+                activeBackgroundInput="focus:bg-white" 
+                colorPlaceholeder="placeholder-greySecondary"
+                placeholderText="2020 *****"/>
+        </div>
+
+        <div>
+            <label 
+                class="text-gray-600"
+                for="dni">
+                Dni
+            </label>
+            <input-text-basic 
+                id="dni"
+                (inputValueChange)="onChangeValue($event, 'codeStudent')"
+                backgroundInput="bg-greyPrimary"
+                activeBackgroundInput="focus:bg-white" 
+                colorPlaceholeder="placeholder-greySecondary"
+                placeholderText="2020 *****"/>
+        </div>
+
+        <div>
+            <label 
+                class="text-gray-600"
+                for="yearAcademic">
+                Año academico
+            </label>
+            <input-text-basic 
+                id="yearAcademic"
+                (inputValueChange)="onChangeValue($event, 'codeStudent')"
+                backgroundInput="bg-greyPrimary"
+                activeBackgroundInput="focus:bg-white" 
+                colorPlaceholeder="placeholder-greySecondary"
+                placeholderText="2020 *****"/>
+        </div>
+
+        <div>
+            <label 
+                class="text-gray-600"
+                for="cycleAcedemic">
+                Ciclo academico
+            </label>
+            <input-text-basic 
+                id="cycleAcedemic"
+                (inputValueChange)="onChangeValue($event, 'codeStudent')"
+                backgroundInput="bg-greyPrimary"
+                activeBackgroundInput="focus:bg-white" 
+                colorPlaceholeder="placeholder-greySecondary"
+                placeholderText="2020 *****"/>
+        </div>
+
+        <div>
+            <label 
+                class="text-gray-600"
+                for="email">
+                Correo electronico
+            </label>
+            <input-text-basic 
+                id="email"
+                (inputValueChange)="onChangeValue($event, 'codeStudent')"
+                backgroundInput="bg-greyPrimary"
+                activeBackgroundInput="focus:bg-white" 
+                colorPlaceholeder="placeholder-greySecondary"
+                placeholderText="2020 *****"/>
+        </div>
+
+        <div>
+            <label 
+                class="text-gray-600"
+                for="phoneNumber">
+                Celular
+            </label>
+            <input-text-basic 
+                id="phoneNumber"
+                (inputValueChange)="onChangeValue($event, 'codeStudent')"
+                backgroundInput="bg-greyPrimary"
+                activeBackgroundInput="focus:bg-white" 
+                colorPlaceholeder="placeholder-greySecondary"
+                placeholderText="2020 *****"/>
+        </div>
+
+        <div>
+            <label 
+                class="text-gray-600"
+                for="area">
+                Area de practicas
+            </label>
+            <input-text-basic 
+                id="area"
+                (inputValueChange)="onChangeValue($event, 'codeStudent')"
+                backgroundInput="bg-greyPrimary"
+                activeBackgroundInput="focus:bg-white" 
+                colorPlaceholeder="placeholder-greySecondary"
+                placeholderText="2020 *****"/>
+        </div>
+        
+        <div class="md:col-span-3 bg-blue-200 py-10 px-7 text-center rounded-3xl">
+            <p>Subir algo aqui pe mascota gaa</p>
+        </div>
+
+    </div>
+
+    <div class="flex flex-row justify-between mt-5 ml-auto mr-auto md:w-[70%] px-3">
+        <p class="text-lg font-bold cursor-pointer">Volver</p>
+        <button-standalone 
+            width="w-[100px]" 
+            height="h-[45px]" 
+            colorFondo="bg-hellowPrimary"
+            radius="rounded-[7px]" 
+            hover="hover:bg-hellowSecondary" 
+            transition="transition-all"
+            duration="duration-300" 
+            text="Continuar" 
+            colorText="text-white" 
+            fontFamily="font-montserrat"
+            fontSize="text-[15px]">
+        </button-standalone>
+    </div>
+
+</div>

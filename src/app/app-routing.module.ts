@@ -10,6 +10,7 @@ import { authenticationGuard } from './config/guard/authentication.guard';
 import { MenuItems } from './modules/menu-items/presentation/pages/menu-items.component';
 import { Settings } from './modules/settings/presentation/pages/settings.component';
 import { GestionDePracticas } from './modules/coordinador/gestion-de-practicas/presentation/pages/gestion-de-practicas.component';
+import { FirstStepRegister, SecondStepRegister } from './modules/registrar-practicante/presentation/pages';
 
 const routesHome: Routes = [
   { path: '', redirectTo: 'configuracion-de-cuenta', pathMatch: 'full' },
@@ -40,6 +41,10 @@ const routes: Routes = [
     canActivate: [authenticationGuard],
     children: routesHome,
   },
+
+  { path: 'crear-cuenta', component: FirstStepRegister }, 
+  { path: 'crear-cuenta-info', component: SecondStepRegister }, 
+
   // { path: 'list-student', component: ListStudentComponent },
   { path: 'loading', component: LoadingPageComponent },
   { path: '**', redirectTo: '/' },

@@ -34,6 +34,7 @@ import { CreateNewPlanModal } from './modules/coordinador/gestion-de-practicas/p
 import { GlobasToast } from './shared/components/toast/globas-toast';
 import { GlobalBgAlerts } from './shared/components/bg-alerts/global-bg-alerts';
 import { ListStudentComponent } from './modules/coordinador/lista-de-estudiantes/list-student/presentation/pages/list-student.component';
+import { FirstStepRegister, SecondStepRegister } from './modules/registrar-practicante/presentation/pages';
 
 // PROVIDERS
 
@@ -49,6 +50,9 @@ import { ListStudentComponent } from './modules/coordinador/lista-de-estudiantes
     Settings,
     GestionDePracticas,
     MenuItems,
+
+    FirstStepRegister,
+    SecondStepRegister
   ],
   imports: [
     ListStudentComponent,
