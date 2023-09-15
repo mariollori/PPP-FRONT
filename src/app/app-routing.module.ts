@@ -6,7 +6,7 @@ import { RegisterStudentsComponent } from './modules/auth/register-students/pres
 import { LoadingPageComponent } from './shared/components/loading/loading-page.component';
 import { authenticationGuard } from './config/guard/authentication.guard';
 
-import { ListStudentComponent } from './modules/list-student/presentation/pages/list-student.component';
+
 import { MenuItems } from './modules/menu-items/presentation/pages/menu-items.component';
 import { Settings } from './modules/settings/presentation/pages/settings.component';
 import { GestionDePracticas } from './modules/coordinador/gestion-de-practicas/presentation/pages/gestion-de-practicas.component';

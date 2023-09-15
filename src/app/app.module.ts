@@ -22,7 +22,6 @@ import { ScreenPageComponent } from './shared/components/screen/screen-page';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideStorage, getStorage } from '@angular/fire/storage';
-import { ListStudentComponent } from './modules/list-student/presentation/pages/list-student.component';
 import { MenuItems } from './modules/menu-items/presentation/pages/menu-items.component';
 import { Settings } from './modules/settings/presentation/pages/settings.component';
 import { InputTextBasic } from './shared/components/input-text-basic/input-text-basic';
@@ -34,6 +33,7 @@ import { ConfigSupervisorMoldal } from './modules/coordinador/gestion-de-practic
 import { CreateNewPlanModal } from './modules/coordinador/gestion-de-practicas/presentation/components/content-modal/create-new-plan/create-new-plan';
 import { GlobasToast } from './shared/components/toast/globas-toast';
 import { GlobalBgAlerts } from './shared/components/bg-alerts/global-bg-alerts';
+import { ListStudentComponent } from './modules/coordinador/lista-de-estudiantes/list-student/presentation/pages/list-student.component';
 
 // PROVIDERS
 
@@ -49,9 +49,9 @@ import { GlobalBgAlerts } from './shared/components/bg-alerts/global-bg-alerts';
     Settings,
     GestionDePracticas,
     MenuItems,
-    ListStudentComponent,
   ],
   imports: [
+    ListStudentComponent,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

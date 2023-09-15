@@ -7,7 +7,8 @@ import { GetImgHomeUseCase } from 'src/app/modules/home/domain/usecase/getImgHom
 import { AuthenticationLoginUseCase } from 'src/app/modules/auth/log-in/domain/usecase/authenticationLoginUseCase';
 import { authenticationGuard } from 'src/app/config/guard/authentication.guard';
 import { TokenInterceptorService } from '../Functions/token-interceptor.service';
-import { StudentServiceApi } from 'src/app/modules/list-student/domain/services/student.services';
+import { StudentServiceApi } from '../../modules/coordinador/lista-de-estudiantes/list-student/domain/services/student.services';
+
 
 export const Providers = [
   LoadingService,

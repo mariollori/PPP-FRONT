@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { StudentServiceApi } from '../../domain/services/student.services'
 import { StudentEntity } from '../../data/entities/student.entity'
+import { CommonModule } from '@angular/common';
 interface Steps {
   title: string;
   description: string;
@@ -9,6 +10,8 @@ interface Steps {
 @Component({
   selector: 'list-student',
   templateUrl: './list-student.component.html',
+  standalone:true,
+  imports:[CommonModule]
 })
 export class ListStudentComponent implements OnInit {
 
@@ -18,7 +21,7 @@ export class ListStudentComponent implements OnInit {
     private studentServiceApi: StudentServiceApi
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
 
     this.studentServiceApi
           .getStudents('452e3d45-9e93-4f72-ace5-c188f6912f8b')
