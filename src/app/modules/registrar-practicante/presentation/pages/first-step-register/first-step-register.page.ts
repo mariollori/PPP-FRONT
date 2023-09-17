@@ -61,12 +61,11 @@ export class FirstStepRegister {
     private onShowMessageError(msg: string) {
         
         this.isShowError = true;
-        
-        this.msgError = msg;
+        this.msgError    = msg;
 
         setTimeout(() => {
             this.isShowError = false;
-        }, 5000 )
+        }, 8000 )
 
     }
 

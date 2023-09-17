@@ -27,15 +27,14 @@ export class SecondStepRegister implements OnInit {
         this.practicante = { ...this.practicante, ...this.router.getCurrentNavigation()?.extras.state as PracticanteEntity };
     }
 
-    ngOnInit(): void {
-     }
+    ngOnInit(): void { }
 
     onChangeValue(value: string, typeText: string) {
-        this.practicante = { ...this.practicante, [ typeText ]: value }
+        this.practicante = { ...this.practicante, [ typeText ]: value };
     }
 
     onRegisterPracticante() {
-        console.log('registrar', { practicante: this.practicante })
+        console.log('registrar', { practicante: this.practicante });
     }
 
 }

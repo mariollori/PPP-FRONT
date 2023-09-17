@@ -8,10 +8,10 @@
 
     <div class="text-center">
         <h1 class="text-4xl font-bold mb-4">Completa tus datos</h1>
-        <p>Asegúrate de proporcionar información precisa y verídica, ya que estos datos serán fundamentales para tu proceso de prácticas y posteriormente alcanzar tu graduación.</p>
+        <p>Hola <strong>{{ practicante.firstName }}</strong>, asegúrate de proporcionar información precisa y verídica, ya que estos datos serán fundamentales para tu proceso de prácticas y posteriormente alcanzar tu graduación.</p>
     </div>
 
-    <div class="bg-white py-5 px-7 rounded-2xl drop-shadow-lg grid md:grid-cols-3 sm:grid-cols-1 gap-4 md:w-[70%] sm:w-[90%] mt-8 ml-auto mr-auto">
+    <div class="bg-white py-5 px-7 rounded-2xl drop-shadow-lg grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 md:w-[70%] sm:w-[90%] mt-8 ml-auto mr-auto">
 
         <div>
             <label
@@ -33,7 +33,7 @@
             <label
                 class="text-gray-600"
                 for="firstName">
-                Nombres {{practicante.firstName}}
+                Nombres
             </label>
             <input-text-basic
                 id="firstName"
@@ -53,7 +53,6 @@
             </label>
             <input-text-basic
                 id="lastName"
-                (inputValueChange)="onChangeValue($event, 'codeStudent')"
                 ngModel="{{practicante.lastName}}"
                 backgroundInput="bg-greyPrimary"
                 activeBackgroundInput="focus:bg-white"
@@ -70,7 +69,6 @@
             </label>
             <input-text-basic
                 id="dni"
-                (inputValueChange)="onChangeValue($event, 'codeStudent')"
                 ngModel="{{practicante.dni}}"
                 backgroundInput="bg-greyPrimary"
                 activeBackgroundInput="focus:bg-white"
@@ -87,7 +85,6 @@
             </label>
             <input-text-basic
                 id="yearAcademic"
-                (inputValueChange)="onChangeValue($event, 'codeStudent')"
                 ngModel="{{practicante.yearAcademic}}"
                 backgroundInput="bg-greyPrimary"
                 activeBackgroundInput="focus:bg-white"
@@ -104,7 +101,6 @@
             </label>
             <input-text-basic
                 id="cycleAcademic"
-                (inputValueChange)="onChangeValue($event, 'codeStudent')"
                 ngModel="{{practicante.cycleAcademic}}"
                 backgroundInput="bg-greyPrimary"
                 activeBackgroundInput="focus:bg-white"
@@ -121,7 +117,7 @@
             </label>
             <input-text-basic
                 id="email"
-                (inputValueChange)="onChangeValue($event, 'codeStudent')"
+                (inputValueChange)="onChangeValue($event, 'email')"
                 backgroundInput="bg-greyPrimary"
                 activeBackgroundInput="focus:bg-white"
                 colorPlaceholeder="placeholder-greySecondary"
@@ -136,7 +132,7 @@
             </label>
             <input-text-basic
                 id="phoneNumber"
-                (inputValueChange)="onChangeValue($event, 'codeStudent')"
+                (inputValueChange)="onChangeValue($event, 'numberPhone')"
                 backgroundInput="bg-greyPrimary"
                 activeBackgroundInput="focus:bg-white"
                 colorPlaceholeder="placeholder-greySecondary"
@@ -151,14 +147,14 @@
             </label>
             <input-text-basic
                 id="area"
-                (inputValueChange)="onChangeValue($event, 'codeStudent')"
+                (inputValueChange)="onChangeValue($event, 'area')"
                 backgroundInput="bg-greyPrimary"
                 activeBackgroundInput="focus:bg-white"
                 colorPlaceholeder="placeholder-greySecondary"
                 placeholderText="2020 *****"/>
         </div>
 
-        <div class="md:col-span-3 bg-blue-200 py-10 px-7 text-center rounded-3xl">
+        <div class="lg:col-span-3 md:col-span-2 bg-blue-200 py-10 px-7 text-center rounded-3xl">
             <p>Subir algo aqui pe mascota gaa</p>
         </div>
 
@@ -177,7 +173,8 @@
             text="Continuar"
             colorText="text-white"
             fontFamily="font-montserrat"
-            fontSize="text-[15px]">
+            fontSize="text-[15px]"
+            (click)="onRegisterPracticante()">
         </button-standalone>
     </div>
 
