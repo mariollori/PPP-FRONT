@@ -7,7 +7,7 @@ import { PracticanteEntity } from "../../../domain/entity";
     templateUrl: "./second-step-register.page.html"
 })
 export class SecondStepRegister implements OnInit {
-    
+
     practicante: PracticanteEntity = {
         code: "",
         firstName: "",
@@ -23,11 +23,12 @@ export class SecondStepRegister implements OnInit {
 
     constructor(
         private router: Router
-    ) { 
+    ) {
         this.practicante = { ...this.practicante, ...this.router.getCurrentNavigation()?.extras.state as PracticanteEntity };
     }
 
-    ngOnInit(): void { }
+    ngOnInit(): void {
+     }
 
     onChangeValue(value: string, typeText: string) {
         this.practicante = { ...this.practicante, [ typeText ]: value }

@@ -1,9 +1,9 @@
 <div class="relative">
-  <input [type]="typeInput"
+  <input [type]="typeInput" [(ngModel)]="ngModel"
     class="p-4 w-full rounded-[10px] border-none bg-greyPrimary  placeholder-greySecondary shadow-md text-[17px]"
     [placeholder]="placeholderText" (input)="onInputChange($event)" [ngClass]="[
     backgroundInput,
     colorPlaceholeder,
     activeBackgroundInput,
-    ]">
+    ]" [disabled]="disabled">
 </div>

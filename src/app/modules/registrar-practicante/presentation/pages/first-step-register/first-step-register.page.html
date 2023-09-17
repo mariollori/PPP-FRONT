@@ -1,16 +1,16 @@
-<div class="sm:grid sm:grid-cols-1 md:grid-cols-3 h-screen">
+<div class="sm:grid sm:grid-cols-1 md:grid-cols-3 h-screen font-montserrat">
 
     <!-- lado derecho de la ventana -->
     <div class="px-7 py-6">
-        <img 
-            class="h-14 w-auto" 
+        <img
+            class="h-14 w-auto"
             src="../../../../../../assets/png/LOGO_UPEU.png">
-        
+
         <h1 class="font-bold text-4xl text-center mt-14">Crea tu cuenta</h1>
-        
+
         <p class="my-4 md:mx-10 text-justify text-gray-400">Debemos asegurarnos que seas estudiante de la Universidad Peruana Unión.</p>
-        
-        <div 
+
+        <div
             *ngIf="isShowError"
             class="bg-error md:mx-10 py-2 px-4 rounded-xl">
             <p class="text-white font-semibold">
@@ -19,46 +19,46 @@
         </div>
 
         <div class="grid mt-8 md:mx-10">
-            <label 
-                for="codeStudent" 
+            <label
+                for="codeStudent"
                 class="my-2 text-sm">
                 Codigo universitario
             </label>
-            <input-text-basic 
+            <input-text-basic
                 (inputValueChange)="onChangeValue($event, 'codeStudent')"
                 backgroundInput="bg-greyPrimary"
-                activeBackgroundInput="focus:bg-white" 
+                activeBackgroundInput="focus:bg-white"
                 colorPlaceholeder="placeholder-greySecondary"
                 placeholderText="2020 *****">
             </input-text-basic>
         </div>
-        
+
         <div class="flex mt-8 flex-row justify-between md:mx-10">
             <p class="self-center">
-                Ya tienes cuenta?, 
-                <span 
+                Ya tienes cuenta?,
+                <span
                     [routerLink]="['/sign-in']"
                     class="text-hellowPrimary font-extrabold cursor-pointer">
                     logeate
                 </span>
             </p>
 
-            <button-standalone 
-                width="w-[100px]" 
-                height="h-[45px]" 
+            <button-standalone
+                width="w-[100px]"
+                height="h-[45px]"
                 colorFondo="bg-hellowPrimary"
-                radius="rounded-[7px]" 
-                hover="hover:bg-hellowSecondary" 
+                radius="rounded-[7px]"
+                hover="hover:bg-hellowSecondary"
                 transition="transition-all"
-                duration="duration-300" 
-                text="Registrarse" 
-                colorText="text-white" 
+                duration="duration-300"
+                text="Registrarse"
+                colorText="text-white"
                 fontFamily="font-montserrat"
                 fontSize="text-[15px]"
                 (click)="onValidate()">
             </button-standalone>
         </div>
-    
+
     </div>
 
     <!-- parte informativa -->
@@ -67,3 +67,4 @@
     </div>
 
 </div>
+<loading-page></loading-page>
