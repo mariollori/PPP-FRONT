@@ -34,9 +34,9 @@ export class SecondStepRegister {
     ) {
 
         const responseFound = this.router.getCurrentNavigation()?.extras.state as PracticanteEntity;
-        
+
         if ( !responseFound ) {
-            this.router.navigate(['/crear-cuenta']); 
+            this.router.navigate(['/crear-cuenta']);
             return;
         }
 
@@ -44,7 +44,7 @@ export class SecondStepRegister {
     }
 
     onUploadDocument(event: Event) {
-        
+
         const elementFile = event.target as HTMLInputElement;
 
         if ( elementFile.files?.length === this.ARRAY_EMPTY ) {
@@ -68,22 +68,23 @@ export class SecondStepRegister {
 
             // TODO: subida del pdf al firebase
             const urlProfile = await this.uploadDocumentInFirebase();
-            
+            console.log(urlProfile);
+
             // TODO: mandar a registrar al practicante
             this.practicante = { ...this.practicante, urlProfile };
-            
+
             // TODO: llamado a la api para mandarlo a registrar
             const practicanteCreated = await this.practicanteRepository.postRegisterPracticante( this.practicante )
-            
+
             // TODO: limpiar formulario
-            
+
             // TODO: guardar el token en el localstorage
             localStorage.setItem('x-token', JSON.stringify( practicanteCreated.token ))
-            
+
             // TODO: mandar al dashboard principal
             console.log("Bienvenido usuario!")
             this.router.navigate(['www.pornhub.com'])
-        
+
         } catch( error ) {
             alert("Oops, error al registrarte.")
             console.log(error)
@@ -93,11 +94,11 @@ export class SecondStepRegister {
 
     private async uploadDocumentInFirebase() {
 
-        const pathFirebase = `documents/students/${ this.practicante.code }/cv/`;
+        const pathFirebase = `documents/students/${ this.practicante.code }/cv`;
         const documentRef  = ref(this.storage, `${ pathFirebase }/${ this.documentCvCharged?.name }`);
 
         const uploadTask = uploadBytesResumable(documentRef, this.documentCvCharged!);
-        
+
         const snapshot = await uploadTask
 
         const downloadUrl = await getDownloadURL( snapshot.ref )
