@@ -31,5 +31,13 @@ export class PracticanteRepository implements IPracticanteRepository {
 
     }
 
+    postRegisterPracticante(payload: PracticanteEntity): Promise< PracticanteEntity > {
+        
+        
+
+        throw new Error('sexo');
+
+    }
+
 
 }

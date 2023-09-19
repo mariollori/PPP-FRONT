@@ -10,7 +10,8 @@ export class PracticanteEntity {
     numberPhone?: string;
     area?: string;
     escuela?: string;
-    urlProfile?: string
+    urlProfile?: string;
+    token?: string;
 
     constructor({ ...props }: PracticanteEntity) {
         this.code = props.code;
@@ -24,6 +25,7 @@ export class PracticanteEntity {
         this.area = props.area;
         this.escuela = props.escuela;
         this.urlProfile = props.urlProfile;
+        this.token = props.token;
     }
 
 }

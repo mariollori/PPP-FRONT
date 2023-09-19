@@ -121,7 +121,7 @@
                 backgroundInput="bg-greyPrimary"
                 activeBackgroundInput="focus:bg-white"
                 colorPlaceholeder="placeholder-greySecondary"
-                placeholderText="2020 *****"/>
+                placeholderText="jhondoe@server.x"/>
         </div>
 
         <div>
@@ -136,7 +136,7 @@
                 backgroundInput="bg-greyPrimary"
                 activeBackgroundInput="focus:bg-white"
                 colorPlaceholeder="placeholder-greySecondary"
-                placeholderText="2020 *****"/>
+                placeholderText="923966203"/>
         </div>
 
         <div>
@@ -151,11 +151,30 @@
                 backgroundInput="bg-greyPrimary"
                 activeBackgroundInput="focus:bg-white"
                 colorPlaceholeder="placeholder-greySecondary"
-                placeholderText="2020 *****"/>
+                placeholderText="Desarrollo"/>
         </div>
 
-        <div class="lg:col-span-3 md:col-span-2 bg-blue-200 py-10 px-7 text-center rounded-3xl">
-            <p>Subir algo aqui pe mascota gaa</p>
+        <div class="lg:col-span-3 md:col-span-2 text-center rounded-3xl border-dashed border-2 border-sky-700">
+            <label 
+                for="bannerInput"
+                (change) = "onUploadDocument($event)"
+                class="w-full h-32 shadow-lg py-20 bg-sky-100 rounded-3xl flex text-center justify-center items-center flex-col cursor-pointer hover:bg-sky-50 transition-all duration-300">
+                
+                <img class="h-16 mb-2" src="assets/png/imagen.png">
+            
+                <span class="text-bluePrimary font-[580]">Suba su CV aquí.</span>
+                <span class="font-light" *ngIf="!documentCvCharged">Solo pude subir archivos PDF</span>
+                
+                <span class="font-light" *ngIf="documentCvCharged">Documento cargado:</span>
+                <span class="text-base font-semibold" *ngIf="documentCvCharged">{{ documentCvCharged.name }}</span>
+            
+                <input 
+                    id="bannerInput"
+                    type="file"
+                    class="hidden"
+                    accept=".pdf">
+            
+            </label>
         </div>
 
     </div>
