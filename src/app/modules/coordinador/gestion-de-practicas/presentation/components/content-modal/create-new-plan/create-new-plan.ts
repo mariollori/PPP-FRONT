@@ -38,11 +38,12 @@ export class CreateNewPlanModal implements OnInit {
   message: string = '';
   typeToast: string = '';
 
-  validated: boolean = true;
+  validated: boolean = false;
   alert: string = '';
   actionAlrt!: void;
 
   bannerList: BannersFirebase[] = [];
+  bannerListString: string[] = [''];
 
   documents: DocumementsFirebase[] = [];
 
