@@ -103,7 +103,7 @@ export class SecondStepRegister implements OnInit {
 
             const token = await lastValueFrom( this.practicanteRepository.postRegisterPracticante( data ) );
 
-            this.router.navigate(['login']);
+            this.router.navigate(['sign-in']);
 
         } catch( error ) {
             alert("Oops, error al registrarte.");
