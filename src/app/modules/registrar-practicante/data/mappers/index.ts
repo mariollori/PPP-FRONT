@@ -1,1 +1,2 @@
-export * from './pracitcante.mapper'
+export * from './pracitcante.mapper';
+export * from './area.mapper'
