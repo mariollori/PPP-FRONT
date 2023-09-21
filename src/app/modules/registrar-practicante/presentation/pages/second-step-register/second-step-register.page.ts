@@ -127,24 +127,3 @@ export class SecondStepRegister implements OnInit {
     }
 
 }
-
-interface DataRequest {
-    code: string
-    cycle: number
-    intershipHours?: number
-    nameCv: string
-    urlCv: string
-    finalRate?: string
-    planPPP: string
-    user: {
-        userName: string
-        password: string
-        firstName: string
-        lastName: string
-        email: string
-        cellphone: string
-        area: string
-        urlProfile?: string
-        status?: boolean
-    }
-}
