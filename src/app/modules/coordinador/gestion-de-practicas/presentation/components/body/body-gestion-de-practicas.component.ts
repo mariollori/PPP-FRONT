@@ -7,6 +7,9 @@ import { ItemsOfSettingGeneralComite } from '../../../data/models/array_modules'
 import { ConfigPracticanteModal } from '../content-modal/config-practicante/config-practicante';
 import { ConfigSupervisorMoldal } from '../content-modal/config-supervisor/config-supervisor';
 import { CreateNewPlanModal } from '../content-modal/create-new-plan/create-new-plan';
+import { TypeDocumentsUseCase } from '../../../domain/usecase/type_documents_usecase';
+import { TypeDocumentData } from '../../../data/models/type_documents';
+import { LoadingPageComponent } from 'src/app/shared/components/loading/loading-page.component';
 
 @Component({
   standalone: true,
@@ -21,9 +24,13 @@ import { CreateNewPlanModal } from '../content-modal/create-new-plan/create-new-
     ConfigPracticanteModal,
     ConfigSupervisorMoldal,
     CreateNewPlanModal,
+    LoadingPageComponent,
   ],
+
 })
 export class BodyGestionDePracticas implements OnInit {
+  typeDocumentsListAll: TypeDocumentData[] = [];
+
   itemsComite = new ItemsOfSettingGeneralComite();
 
   position!: number;
@@ -33,7 +40,17 @@ export class BodyGestionDePracticas implements OnInit {
 
   modalOpen: boolean = false;
 
-  ngOnInit(): void {}
+  constructor(private typeDocumentsGetAll: TypeDocumentsUseCase) {}
+
+  ngOnInit(): void {
+    this.getAllTypeDocuments();
+  }
+
+  async getAllTypeDocuments() {
+    const response = await this.typeDocumentsGetAll.execute();
+    const { data } = response!;
+    this.typeDocumentsListAll = data;
+  }
 
   toggleModal(position: number) {
     this.position = position;

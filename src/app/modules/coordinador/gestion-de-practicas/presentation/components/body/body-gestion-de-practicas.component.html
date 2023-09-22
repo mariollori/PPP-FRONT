@@ -53,10 +53,11 @@
   <ng-container [ngSwitch]="position">
     <modal-config-practicante *ngSwitchCase="'1'"></modal-config-practicante>
     <modal-config-supervisor *ngSwitchCase="'2'"></modal-config-supervisor>
-    <create-new-plan *ngSwitchCase="'4'"></create-new-plan>
+    <create-new-plan [typeDocumentList]="typeDocumentsListAll" *ngSwitchCase="'4'"></create-new-plan>
   </ng-container>
 </global-modal>
 
+<loading-page></loading-page>
 
 <!-- <div *ngIf="showModal"
   class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex">

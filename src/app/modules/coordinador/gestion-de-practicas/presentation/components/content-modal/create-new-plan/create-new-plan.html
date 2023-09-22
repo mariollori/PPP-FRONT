@@ -88,18 +88,50 @@
       </div>
       <div class="mt-1 mb-2 w-full h-auto px-2 py-2">
         <div class="w-full h-60 rounded-xl bg-white shadow-[0_0px_15px_4px_rgba(0,0,0,0.05)] p-3"
-          *ngFor="let document of bannerListString">
+          *ngFor="let document of documents">
           <div class="flex h-full">
             <div>
-              <label for="fileInput" (change)="uploadArchive($event, 'docs')" *ngIf="uploadProgressDocs == null"
+              <label for="fileInput" (change)="uploadArchive($event, 'docs')"
+                *ngIf="uploadProgressDocs == null && view_docs == ''"
                 class="w-48 h-full bg-greyPrimary rounded-xl flex text-center justify-center items-center flex-col cursor-pointer hover:bg-neutral-200 transition-all duration-300">
                 <img class="h-16 mb-2" src="assets/svg/uploads/upload.svg">
                 <span class="text-bluePrimary font-[580] text-[13px]">Subir un documento</span>
                 <input type="file" id="fileInput" class="hidden" accept=".doc, .docx, .pdf, .ppt, .pptx, .xls, .xlsx">
               </label>
+
+              <div *ngIf="uploadProgressDocs != null"
+                class="w-48 h-full bg-greyPrimary rounded-xl flex text-center justify-center items-center flex-col cursor-pointer hover:bg-neutral-200 transition-all duration-300">
+                <span class="text-[11px] font-semibold text-bluePrimary">Subiendo</span>
+                <div class="text-[14px] font-bold text-hellowPrimary p-2 text-center items-center justify-center flex">
+                  <span class="loader"></span>
+                  <span class="absolute">{{uploadProgressDocs}}%</span>
+                </div>
+                <span class="text-[11px] font-semibold text-bluePrimary">1 documento</span>
+              </div>
+
+              <div *ngIf="view_docs != ''"
+                class="w-48 h-full bg-gray-300 rounded-xl flex flex-col items-center justify-center hover:bg-gray-400 transition-all duration-300">
+                <div class="w-full h-full flex relative justify-end">
+                  <img *ngIf="view_docs == 'wor'" class="h-full" src="assets/docs/logos/word1.png">
+                  <img *ngIf="view_docs == 'pow'" class="h-full" src="assets/docs/logos/powerpoint1.png">
+                  <img *ngIf="view_docs == 'exc'" class="h-full" src="assets/docs/logos/excel1.png">
+                  <img *ngIf="view_docs == 'pdf'" class="h-full" src="assets/docs/logos/pdf1.png">
+                  <div class="absolute cursor-pointer">
+                    <div class="w-8 h-8 rounded-lg m-2 hover:bg-white">
+                      <svg class="fill-red-600" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M9.16937 15.5801C8.97937 15.5801 8.78938 15.5101 8.63938 15.3601C8.34938 15.0701 8.34938 14.5901 8.63938 14.3001L14.2994 8.64011C14.5894 8.35011 15.0694 8.35011 15.3594 8.64011C15.6494 8.93011 15.6494 9.41011 15.3594 9.70011L9.69937 15.3601C9.55937 15.5101 9.35937 15.5801 9.16937 15.5801Z" />
+                        <path
+                          d="M14.8294 15.5801C14.6394 15.5801 14.4494 15.5101 14.2994 15.3601L8.63938 9.70011C8.34938 9.41011 8.34938 8.93011 8.63938 8.64011C8.92937 8.35011 9.40937 8.35011 9.69937 8.64011L15.3594 14.3001C15.6494 14.5901 15.6494 15.0701 15.3594 15.3601C15.2094 15.5101 15.0194 15.5801 14.8294 15.5801Z" />
+                        <path
+                          d="M15 22.75H9C3.57 22.75 1.25 20.43 1.25 15V9C1.25 3.57 3.57 1.25 9 1.25H15C20.43 1.25 22.75 3.57 22.75 9V15C22.75 20.43 20.43 22.75 15 22.75ZM9 2.75C4.39 2.75 2.75 4.39 2.75 9V15C2.75 19.61 4.39 21.25 9 21.25H15C19.61 21.25 21.25 19.61 21.25 15V9C21.25 4.39 19.61 2.75 15 2.75H9Z" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="flex-1 pl-4">
-              <!-- Progreso de subida: {{ uploadProgressDocs }}% -->
               <div class="relative w-full">
                 <div class="relative w-full pt-2">
                   <label class="absolute left-7 -top-[1px] text-bluePrimary text-[11px] bg-white px-2"
@@ -110,33 +142,59 @@
                         d="M6.293 6.707a1 1 0 1 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414l-3 3a1 1 0 1 1-1.414-1.414L8.586 9 6.293 6.707z" />
                     </svg> -->
                     <svg class="fill-current h-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M16 3.75H8C7.59 3.75 7.25 3.41 7.25 3C7.25 2.59 7.59 2.25 8 2.25H16C16.41 2.25 16.75 2.59 16.75 3C16.75 3.41 16.41 3.75 16 3.75Z" fill="#003965"/>
-                      <path d="M16 21.75H8C7.59 21.75 7.25 21.41 7.25 21C7.25 20.59 7.59 20.25 8 20.25H16C16.41 20.25 16.75 20.59 16.75 21C16.75 21.41 16.41 21.75 16 21.75Z" fill="#003965"/>
-                      <path d="M15.5 5H8.5C6.17 5 5 6.17 5 8.5V15.5C5 17.83 6.17 19 8.5 19H15.5C17.83 19 19 17.83 19 15.5V8.5C19 6.17 17.83 5 15.5 5ZM14.5 13.25H11.5C11.09 13.25 10.75 12.91 10.75 12.5V9.5C10.75 9.09 11.09 8.75 11.5 8.75C11.91 8.75 12.25 9.09 12.25 9.5V11.75H14.5C14.91 11.75 15.25 12.09 15.25 12.5C15.25 12.91 14.91 13.25 14.5 13.25Z" fill="#003965"/>
-                      </svg>
+                      <path
+                        d="M16 3.75H8C7.59 3.75 7.25 3.41 7.25 3C7.25 2.59 7.59 2.25 8 2.25H16C16.41 2.25 16.75 2.59 16.75 3C16.75 3.41 16.41 3.75 16 3.75Z"
+                        fill="#003965" />
+                      <path
+                        d="M16 21.75H8C7.59 21.75 7.25 21.41 7.25 21C7.25 20.59 7.59 20.25 8 20.25H16C16.41 20.25 16.75 20.59 16.75 21C16.75 21.41 16.41 21.75 16 21.75Z"
+                        fill="#003965" />
+                      <path
+                        d="M15.5 5H8.5C6.17 5 5 6.17 5 8.5V15.5C5 17.83 6.17 19 8.5 19H15.5C17.83 19 19 17.83 19 15.5V8.5C19 6.17 17.83 5 15.5 5ZM14.5 13.25H11.5C11.09 13.25 10.75 12.91 10.75 12.5V9.5C10.75 9.09 11.09 8.75 11.5 8.75C11.91 8.75 12.25 9.09 12.25 9.5V11.75H14.5C14.91 11.75 15.25 12.09 15.25 12.5C15.25 12.91 14.91 13.25 14.5 13.25Z"
+                        fill="#003965" />
+                    </svg>
 
                   </div>
                   <select id="planHours"
-                    class="appearance-none border border-bluePrimary bg-white text-gray-700 py-3 px-8 pl-10 rounded-xl leading-tight focus:border-bluePrimary focus:ring-transparent w-full">
-                    <option>Option 1</option>
-                    <option>Option 2</option>
-                    <option>Option 3</option>
+                    class="truncate appearance-none border border-bluePrimary bg-white text-gray-700 py-3 px-8 pl-10 rounded-xl leading-tight focus:border-bluePrimary focus:ring-transparent w-full">
+                    <option class="truncate" *ngFor="let docs of typeDocumentList">{{docs.name}}</option>
                   </select>
                 </div>
               </div>
               <div class="w-full h-max pt-3 px-0">
-                <textarea class="w-full rounded-lg border-bluePrimary p-2 h-max focus:border-none" name="" id="" cols="auto" rows="5"></textarea>
+                <textarea class="w-full rounded-lg border-bluePrimary p-2 h-max focus:border-none" name="" id=""
+                  cols="auto" rows="5"></textarea>
               </div>
             </div>
           </div>
         </div>
-        <label for="fileInput" (change)="uploadArchive($event, 'docs')" *ngIf="uploadProgressDocs == null"
-          class="mt-1 mb-5 w-full h-32 shadow-lg bg-greyPrimary rounded-2xl flex text-center justify-center items-center flex-col cursor-pointer hover:bg-neutral-200 transition-all duration-300">
-          <img class="h-16 mb-2" src="assets/svg/uploads/upload.svg">
-          <span class="text-bluePrimary font-[580] text-[13px]">Subir un documento</span>
-          <input type="file" id="fileInput" class="hidden" accept=".doc, .docx, .pdf, .ppt, .pptx, .xls, .xlsx">
-        </label>
+
       </div>
+      <div (click)="addDocumentPlan()"
+        class="w-full h-20 shadow-lg bg-greyPrimary rounded-2xl flex text-center justify-center items-center cursor-pointer hover:bg-neutral-200 transition-all duration-300">
+        <div class="justify-end flex pr-2">
+          <svg *ngIf="documents.length == 0" class="w-10 fill-greySecondary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M20.5 10.19H17.61C15.24 10.19 13.31 8.26 13.31 5.89V3C13.31 2.45 12.86 2 12.31 2H8.07C4.99 2 2.5 4 2.5 7.57V16.43C2.5 20 4.99 22 8.07 22H15.93C19.01 22 21.5 20 21.5 16.43V11.19C21.5 10.64 21.05 10.19 20.5 10.19ZM11.53 13.53C11.38 13.68 11.19 13.75 11 13.75C10.81 13.75 10.62 13.68 10.47 13.53L9.75 12.81V17C9.75 17.41 9.41 17.75 9 17.75C8.59 17.75 8.25 17.41 8.25 17V12.81L7.53 13.53C7.24 13.82 6.76 13.82 6.47 13.53C6.18 13.24 6.18 12.76 6.47 12.47L8.47 10.47C8.54 10.41 8.61 10.36 8.69 10.32C8.71 10.31 8.74 10.3 8.76 10.29C8.82 10.27 8.88 10.26 8.95 10.25C8.98 10.25 9 10.25 9.03 10.25C9.11 10.25 9.19 10.27 9.27 10.3C9.28 10.3 9.28 10.3 9.29 10.3C9.37 10.33 9.45 10.39 9.51 10.45C9.52 10.46 9.53 10.46 9.53 10.47L11.53 12.47C11.82 12.76 11.82 13.24 11.53 13.53Z" />
+            <path
+              d="M17.4297 8.81048C18.3797 8.82048 19.6997 8.82048 20.8297 8.82048C21.3997 8.82048 21.6997 8.15048 21.2997 7.75048C19.8597 6.30048 17.2797 3.69048 15.7997 2.21048C15.3897 1.80048 14.6797 2.08048 14.6797 2.65048V6.14048C14.6797 7.60048 15.9197 8.81048 17.4297 8.81048Z" />
+          </svg>
+
+          <svg *ngIf="documents.length != 0" class="w-10 fill-greySecondary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M15.7997 2.21048C15.3897 1.80048 14.6797 2.08048 14.6797 2.65048V6.14048C14.6797 7.60048 15.9197 8.81048 17.4297 8.81048C18.3797 8.82048 19.6997 8.82048 20.8297 8.82048C21.3997 8.82048 21.6997 8.15048 21.2997 7.75048C19.8597 6.30048 17.2797 3.69048 15.7997 2.21048Z" />
+            <path
+              d="M14.7605 19.2618C12.4105 19.4318 12.4105 22.8318 14.7605 23.0018H20.3205C20.9905 23.0018 21.6505 22.7518 22.1405 22.3018C23.7905 20.8618 22.9105 17.9818 20.7405 17.7118C19.9605 13.0218 13.1805 14.8018 14.7805 19.2718" />
+            <path
+              d="M21.5 11.19V14.44C21.5 14.74 21.06 14.88 20.84 14.67C20.36 14.2 19.77 13.84 19.09 13.63C17.41 13.11 15.46 13.62 14.25 14.9C13.44 15.74 13.03 16.81 13.04 17.97C13.04 18.16 12.95 18.33 12.8 18.44C12 19.05 11.5 20.01 11.5 21.12C11.5 21.2 11.5 21.28 11.51 21.36C11.53 21.68 11.3 21.99 10.97 21.99H8.07C4.99 21.99 2.5 19.99 2.5 16.42V7.57C2.5 4 4.99 2 8.07 2H12.31C12.86 2 13.31 2.45 13.31 3V5.89C13.31 8.27 15.23 10.19 17.61 10.19H20.5C21.05 10.19 21.5 10.64 21.5 11.19Z" />
+          </svg>
+        </div>
+        <div class="flex justify-start pl-2">
+          <span *ngIf="documents.length == 0" class="text-greySecondary font-[580] text-[13px]">Subir un documento</span>
+
+          <span *ngIf="documents.length != 0" class="text-greySecondary font-[580] text-[13px]">Subir un nuevo documento</span>
+        </div>
+      </div>
+      <div class="pt-5"></div>
     </div>
   </div>
 
