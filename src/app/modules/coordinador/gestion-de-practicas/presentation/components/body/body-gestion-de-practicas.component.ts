@@ -7,21 +7,28 @@ import { ItemsOfSettingGeneralComite } from '../../../data/models/array_modules'
 import { ConfigPracticanteModal } from '../content-modal/config-practicante/config-practicante';
 import { ConfigSupervisorMoldal } from '../content-modal/config-supervisor/config-supervisor';
 import { CreateNewPlanModal } from '../content-modal/create-new-plan/create-new-plan';
+import { CreateNewItemModal } from '../content-modal/create-item/create-new-item';
+
+
+
 
 @Component({
-  standalone: true,
-  selector: 'body-gestion-practicas',
-  templateUrl: './body-gestion-de-practicas.component.html',
-  imports: [
-    NgClass,
-    RouterModule,
-    CommonModule,
-    InputTextMedium,
-    GlobalModel,
-    ConfigPracticanteModal,
-    ConfigSupervisorMoldal,
-    CreateNewPlanModal,
-  ],
+    standalone: true,
+    selector: 'body-gestion-practicas',
+    templateUrl: './body-gestion-de-practicas.component.html',
+    imports: [
+        NgClass,
+        RouterModule,
+        CommonModule,
+        InputTextMedium,
+        GlobalModel,
+        ConfigPracticanteModal,
+        ConfigSupervisorMoldal,
+        CreateNewPlanModal,
+        CreateNewItemModal
+
+        
+    ]
 })
 export class BodyGestionDePracticas implements OnInit {
   itemsComite = new ItemsOfSettingGeneralComite();
