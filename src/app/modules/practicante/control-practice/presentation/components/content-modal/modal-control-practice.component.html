@@ -1,0 +1,25 @@
+<div class="container mx-auto overflow-y-auto overflow-scroll">
+  <div class="flex flex-col gap-6">
+    <span class="text-xl font-montserrat">Constancia de Trabajo </span>
+    <span>Adjunta tu constancia de trabajo,  entregada por la empresa.</span>
+     <div class="lg:col-span-3 md:col-span-2 text-center rounded-3xl border-dashed border-2 border-sky-700">
+            <label 
+                for="bannerInput"
+                
+                class="w-full h-32 shadow-lg py-20 bg-sky-100 rounded-3xl flex text-center justify-center items-center flex-col cursor-pointer hover:bg-sky-50 transition-all duration-300">
+                
+                <img class="h-16 mb-2" src="assets/png/imagen.png">
+            
+                <span class="text-bluePrimary font-[580]">Suba su CV aquí.</span>
+                <span class="font-light" *ngIf="!documentCvCharged">Solo pude subir archivos PDF</span>
+                
+                <input 
+                    id="bannerInput"
+                    type="file"
+                    class="hidden"
+                    accept=".pdf">
+            
+            </label>
+        </div>
+  </div> 
+</div>
