@@ -46,7 +46,6 @@ import { FirstStepRegister, SecondStepRegister } from './modules/registrar-pract
     HomePageComponent,
     LogInComponent,
     RegisterStudentsComponent,
-    LoadingPageComponent,
     Settings,
     GestionDePracticas,
     MenuItems,
@@ -55,6 +54,8 @@ import { FirstStepRegister, SecondStepRegister } from './modules/registrar-pract
     SecondStepRegister
   ],
   imports: [
+    LoadingPageComponent,
+
     ListStudentComponent,
     BrowserModule,
     AppRoutingModule,
