@@ -35,52 +35,59 @@ import { GlobasToast } from './shared/components/toast/globas-toast';
 import { GlobalBgAlerts } from './shared/components/bg-alerts/global-bg-alerts';
 import { ListStudentComponent } from './modules/coordinador/lista-de-estudiantes/list-student/presentation/pages/list-student.component';
 import { FirstStepRegister, SecondStepRegister } from './modules/registrar-practicante/presentation/pages';
+import { PrincipalHomeComponent } from './modules/practicante/principal-home/presentation/pages/principal-home';
+import { GentionInfoEmpresaModule } from "./modules/practicante/principal-home/presentation/components/content-body/gestion-informacion-empresa/gestion-informacion-empresa";
+import { PrincipalHomeBody } from "./modules/practicante/principal-home/presentation/components/body/body-principal-home";
+import { RegistrarEmpresaComponent } from "./modules/practicante/principal-home/presentation/components/content-body/registrar-empresa/registrar-empresa";
 
 // PROVIDERS
 
 // BOOTSTRAP
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomePageComponent,
-    LogInComponent,
-    RegisterStudentsComponent,
-    Settings,
-    GestionDePracticas,
-    MenuItems,
-
-    FirstStepRegister,
-    SecondStepRegister
-  ],
-  imports: [
-    LoadingPageComponent,
-
-    ListStudentComponent,
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    ButtonStandAlone,
-    InputTextMedium,
-    InputTextBasic,
-    CircleAvatarComponent,
-    Sidebar,
-    UserBar,
-    ScreenPageComponent,
-    BodyGestionDePracticas,
-    GlobalModel,
-    ConfigPracticanteModal,
-    ConfigSupervisorMoldal,
-    CreateNewPlanModal,
-    GlobasToast,
-    GlobalBgAlerts,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideStorage(() => getStorage()),
-  ],
-  providers: Providers,
-  bootstrap: [AppComponent],
+    declarations: [
+        AppComponent,
+        HomePageComponent,
+        LogInComponent,
+        RegisterStudentsComponent,
+        Settings,
+        GestionDePracticas,
+        MenuItems,
+        PrincipalHomeComponent,
+        FirstStepRegister,
+        SecondStepRegister
+    ],
+    providers: Providers,
+    bootstrap: [AppComponent],
+    imports: [
+        LoadingPageComponent,
+        ListStudentComponent,
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule,
+        ButtonStandAlone,
+        InputTextMedium,
+        InputTextBasic,
+        CircleAvatarComponent,
+        Sidebar,
+        UserBar,
+        ScreenPageComponent,
+        BodyGestionDePracticas,
+        GlobalModel,
+        ConfigPracticanteModal,
+        ConfigSupervisorMoldal,
+        CreateNewPlanModal,
+        GlobasToast,
+        GlobalBgAlerts,
+        GentionInfoEmpresaModule,
+        provideFirebaseApp(() => initializeApp(environment.firebase)),
+        provideStorage(() => getStorage()),
+        GentionInfoEmpresaModule,
+        PrincipalHomeBody,
+        RegistrarEmpresaComponent
+    ]
 })
 export class AppModule {}

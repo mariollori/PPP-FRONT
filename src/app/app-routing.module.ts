@@ -12,6 +12,8 @@ import { Settings } from './modules/settings/presentation/pages/settings.compone
 import { GestionDePracticas } from './modules/coordinador/gestion-de-practicas/presentation/pages/gestion-de-practicas.component';
 import { FirstStepRegister, SecondStepRegister } from './modules/registrar-practicante/presentation/pages';
 import { ListStudentComponent } from './modules/coordinador/lista-de-estudiantes/list-student/presentation/pages/list-student.component';
+import { PrincipalHomeComponent } from './modules/practicante/principal-home/presentation/pages/principal-home';
+import { GentionInfoEmpresaModule } from './modules/practicante/principal-home/presentation/components/content-body/gestion-informacion-empresa/gestion-informacion-empresa';
 
 const routesHome: Routes = [
   { path: '', redirectTo: 'configuracion-de-cuenta', pathMatch: 'full' },
@@ -25,7 +27,7 @@ const routesHome: Routes = [
   { path: 'lista-estudiantes', component: ListStudentComponent },
 
   // Practicante
-  { path: 'home', component: Settings },
+  { path: 'home', component: PrincipalHomeComponent },
   { path: 'control-de-practicas-pre-profesionales', component: Settings },
 
   // PARA TODOS LOS ROLES
