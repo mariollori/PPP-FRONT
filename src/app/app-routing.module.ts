@@ -12,7 +12,12 @@ import { Settings } from './modules/settings/presentation/pages/settings.compone
 import { GestionDePracticas } from './modules/coordinador/gestion-de-practicas/presentation/pages/gestion-de-practicas.component';
 import { FirstStepRegister, SecondStepRegister } from './modules/registrar-practicante/presentation/pages';
 import { ListStudentComponent } from './modules/coordinador/lista-de-estudiantes/list-student/presentation/pages/list-student.component';
+<<<<<<< HEAD
 import { ControlPractice } from './modules/practicante/control-practice/presentation/pages/control-practice.component';
+=======
+import { PrincipalHomeComponent } from './modules/practicante/principal-home/presentation/pages/principal-home';
+import { GentionInfoEmpresaModule } from './modules/practicante/principal-home/presentation/components/content-body/gestion-informacion-empresa/gestion-informacion-empresa';
+>>>>>>> f922dba29854ff325ec11c8b312d65f84d19bf1a
 
 const routesHome: Routes = [
   { path: '', redirectTo: 'configuracion-de-cuenta', pathMatch: 'full' },
@@ -26,9 +31,14 @@ const routesHome: Routes = [
   { path: 'lista-estudiantes', component: ListStudentComponent },
 
   // Practicante
+<<<<<<< HEAD
   { path: 'home', component: Settings },
   { path: 'control-de-practicas-pre-profesionales', component: ControlPractice },
   // { path: 'control-practice', component: Settings},
+=======
+  { path: 'home', component: PrincipalHomeComponent },
+  { path: 'control-de-practicas-pre-profesionales', component: Settings },
+>>>>>>> f922dba29854ff325ec11c8b312d65f84d19bf1a
 
   // PARA TODOS LOS ROLES
   { path: 'configuracion-de-cuenta', component: Settings },

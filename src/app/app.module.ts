@@ -35,9 +35,7 @@ import { GlobasToast } from './shared/components/toast/globas-toast';
 import { GlobalBgAlerts } from './shared/components/bg-alerts/global-bg-alerts';
 import { ListStudentComponent } from './modules/coordinador/lista-de-estudiantes/list-student/presentation/pages/list-student.component';
 import { FirstStepRegister, SecondStepRegister } from './modules/registrar-practicante/presentation/pages';
-import { BodyControlPractice } from './modules/practicante/control-practice/presentation/components/body/body-control-practice.component';
-import { ControlPractice } from './modules/practicante/control-practice/presentation/pages/control-practice.component';
-import { ModalControlPractice } from './modules/practicante/control-practice/presentation/components/content-modal/modal-control-practice.component';
+
 // PROVIDERS
 
 // BOOTSTRAP
@@ -51,9 +49,9 @@ import { ModalControlPractice } from './modules/practicante/control-practice/pre
     Settings,
     GestionDePracticas,
     MenuItems,
-    ControlPractice,
+
     FirstStepRegister,
-    SecondStepRegister,
+    SecondStepRegister
   ],
   imports: [
     LoadingPageComponent,
@@ -79,8 +77,6 @@ import { ModalControlPractice } from './modules/practicante/control-practice/pre
     CreateNewPlanModal,
     GlobasToast,
     GlobalBgAlerts,
-    BodyControlPractice,
-    ModalControlPractice,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideStorage(() => getStorage()),
   ],

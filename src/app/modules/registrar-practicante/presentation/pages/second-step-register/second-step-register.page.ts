@@ -33,6 +33,11 @@ export class SecondStepRegister implements OnInit {
 
     areaPlans: AreaPlanEntity[] = [];
 
+    /**
+     * Modals
+     */
+    isShowModal = false;
+
     constructor(
         private router: Router,
         private storage: Storage,
@@ -110,6 +115,10 @@ export class SecondStepRegister implements OnInit {
             console.log(error);
         }
 
+    }
+
+    onToggleModal() {
+        this.isShowModal = true;
     }
 
     private async uploadDocumentInFirebase() {
