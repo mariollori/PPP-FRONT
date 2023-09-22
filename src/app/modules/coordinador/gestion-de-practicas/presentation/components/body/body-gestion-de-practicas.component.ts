@@ -31,6 +31,8 @@ import { CreateNewItemModal } from '../content-modal/create-item/create-new-item
     ]
 })
 export class BodyGestionDePracticas implements OnInit {
+  typeDocumentsListAll: TypeDocumentData[] = [];
+
   itemsComite = new ItemsOfSettingGeneralComite();
 
   position!: number;
@@ -40,11 +42,25 @@ export class BodyGestionDePracticas implements OnInit {
 
   modalOpen: boolean = false;
 
-  ngOnInit(): void {}
+  constructor(private typeDocumentsGetAll: TypeDocumentsUseCase) {}
+
+  ngOnInit(): void {
+    this.getAllTypeDocuments();
+  }
+
+  async getAllTypeDocuments() {
+    const response = await this.typeDocumentsGetAll.execute();
+    const { data } = response!;
+    this.typeDocumentsListAll = data;
+  }
 
   toggleModal(position: number) {
-    this.position = position;
-    this.modalOpen = true;
+    if (position == 1) {
+      this.position = position;
+    } else {
+      this.position = position;
+      this.modalOpen = true;
+    }
   }
 
   closeModal() {

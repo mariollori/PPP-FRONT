@@ -11,6 +11,7 @@ import { MenuItems } from './modules/menu-items/presentation/pages/menu-items.co
 import { Settings } from './modules/settings/presentation/pages/settings.component';
 import { GestionDePracticas } from './modules/coordinador/gestion-de-practicas/presentation/pages/gestion-de-practicas.component';
 import { FirstStepRegister, SecondStepRegister } from './modules/registrar-practicante/presentation/pages';
+import { ListStudentComponent } from './modules/coordinador/lista-de-estudiantes/list-student/presentation/pages/list-student.component';
 
 const routesHome: Routes = [
   { path: '', redirectTo: 'configuracion-de-cuenta', pathMatch: 'full' },
@@ -18,10 +19,10 @@ const routesHome: Routes = [
   //Comite
   { path: 'gestion-de-practicantes', component: GestionDePracticas },
   { path: 'lista-de-estudiantes-en-espera', component: Settings },
-  { path: 'listas-de-estudiantes', component: Settings },
+  { path: 'listas-de-estudiantes', component: ListStudentComponent },
 
   //Supervisor
-  { path: 'lista-estudiantes', component: Settings },
+  { path: 'lista-estudiantes', component: ListStudentComponent },
 
   // Practicante
   { path: 'home', component: Settings },

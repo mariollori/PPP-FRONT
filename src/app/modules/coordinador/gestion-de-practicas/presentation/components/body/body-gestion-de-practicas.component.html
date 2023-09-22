@@ -1,5 +1,5 @@
 <div class="overflow-y-auto overflow-scroll">
-  <div class="flex flex-col gap-6">
+  <div class="flex flex-col gap-6" *ngIf="position == null || position == 2 || position == 3 || position == 4 || position == 5 || position == 6">
     <h1 class="text-3xl font-montserrat">Bienvenido, <span class="font-bold font-montserrat">David Reyna </span>
     </h1>
     <h3 class="font-bold text-xl font-montserrat">Configuracion general</h3>
@@ -47,17 +47,20 @@
     </div>
 
   </div>
+
+  <modal-config-practicante *ngIf="position == 1"></modal-config-practicante>
 </div>
 
 <global-modal [isOpen]="modalOpen" (close)="modalOpen = false" *ngIf="modalOpen">
   <ng-container [ngSwitch]="position">
-    <modal-config-practicante *ngSwitchCase="'1'"></modal-config-practicante>
+    <!-- <modal-config-practicante *ngSwitchCase="'1'"></modal-config-practicante> -->
     <modal-config-supervisor *ngSwitchCase="'2'"></modal-config-supervisor>
-    <create-new-plan *ngSwitchCase="'4'"></create-new-plan>
+    <create-new-plan [typeDocumentList]="typeDocumentsListAll" *ngSwitchCase="'4'"></create-new-plan>
     <create-new-item *ngSwitchCase="'6'"></create-new-item>
   </ng-container>
 </global-modal>
 
+<loading-page></loading-page>
 
 
 <!-- <div *ngIf="showModal"
