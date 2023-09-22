@@ -12,6 +12,7 @@ export class PracticanteEntity {
     escuela?: string;
     urlProfile?: string;
     token?: string;
+    password?: string;
 
     constructor({ ...props }: PracticanteEntity) {
         this.code = props.code;
@@ -26,6 +27,7 @@ export class PracticanteEntity {
         this.escuela = props.escuela;
         this.urlProfile = props.urlProfile;
         this.token = props.token;
+        this.password = props.password;
     }
 
 }
