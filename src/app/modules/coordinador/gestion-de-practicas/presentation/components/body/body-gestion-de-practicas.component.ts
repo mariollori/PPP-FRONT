@@ -8,27 +8,26 @@ import { ConfigPracticanteModal } from '../content-modal/config-practicante/conf
 import { ConfigSupervisorMoldal } from '../content-modal/config-supervisor/config-supervisor';
 import { CreateNewPlanModal } from '../content-modal/create-new-plan/create-new-plan';
 import { CreateNewItemModal } from '../content-modal/create-item/create-new-item';
-
-
-
+import { TypeDocumentData } from '../../../data/models/type_documents';
+import { TypeDocumentsUseCase } from '../../../domain/usecase/type_documents_usecase';
+import { LoadingPageComponent } from 'src/app/shared/components/loading/loading-page.component';
 
 @Component({
-    standalone: true,
-    selector: 'body-gestion-practicas',
-    templateUrl: './body-gestion-de-practicas.component.html',
-    imports: [
-        NgClass,
-        RouterModule,
-        CommonModule,
-        InputTextMedium,
-        GlobalModel,
-        ConfigPracticanteModal,
-        ConfigSupervisorMoldal,
-        CreateNewPlanModal,
-        CreateNewItemModal
-
-        
-    ]
+  standalone: true,
+  selector: 'body-gestion-practicas',
+  templateUrl: './body-gestion-de-practicas.component.html',
+  imports: [
+    NgClass,
+    RouterModule,
+    CommonModule,
+    InputTextMedium,
+    GlobalModel,
+    ConfigPracticanteModal,
+    ConfigSupervisorMoldal,
+    CreateNewPlanModal,
+    CreateNewItemModal,
+    LoadingPageComponent,
+  ],
 })
 export class BodyGestionDePracticas implements OnInit {
   typeDocumentsListAll: TypeDocumentData[] = [];
