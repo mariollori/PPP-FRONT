@@ -16,7 +16,7 @@ import { LoadingPageComponent } from 'src/app/shared/components/loading/loading-
   selector: 'body-gestion-practicas',
   templateUrl: './body-gestion-de-practicas.component.html',
   imports: [
-    NgClass,
+    // NgClass,
     RouterModule,
     CommonModule,
     InputTextMedium,
@@ -26,7 +26,6 @@ import { LoadingPageComponent } from 'src/app/shared/components/loading/loading-
     CreateNewPlanModal,
     LoadingPageComponent,
   ],
-
 })
 export class BodyGestionDePracticas implements OnInit {
   typeDocumentsListAll: TypeDocumentData[] = [];
@@ -53,8 +52,12 @@ export class BodyGestionDePracticas implements OnInit {
   }
 
   toggleModal(position: number) {
-    this.position = position;
-    this.modalOpen = true;
+    if (position == 1) {
+      this.position = position;
+    } else {
+      this.position = position;
+      this.modalOpen = true;
+    }
   }
 
   closeModal() {
