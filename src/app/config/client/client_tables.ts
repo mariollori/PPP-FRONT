@@ -6,5 +6,8 @@ export const routesBackendTables = {
   userApi: '/api/user',
 
   // PLAN
-  planApi: '/api/plan'
+  planApi: '/api/plan',
+
+  // STUDENT
+  planStudent:'/api/student'
 };

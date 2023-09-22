@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import { StudentServiceApi } from '../../domain/services/student.services'
 import { StudentEntity } from '../../data/entities/student.entity'
 import { CommonModule } from '@angular/common';
+import { GetStudentsUseCase } from '../../domain/usecase/getStudentsUseCase';
 interface Steps {
   title: string;
   description: string;
@@ -18,16 +19,23 @@ export class ListStudentComponent implements OnInit {
   students: StudentEntity[] = []
 
   constructor(
-    private studentServiceApi: StudentServiceApi
+    private  getStudentUseCase: GetStudentsUseCase
   ) { }
 
   ngOnInit(): void { 
-
-    this.studentServiceApi
-          .getStudents('452e3d45-9e93-4f72-ace5-c188f6912f8b')
-          .subscribe( x => { console.log({ x }); this.students = x })
-
+    this.getStudents(); 
   }
+  
+  
+  async getStudents(){
+    try {
+      this.students = await this.getStudentUseCase.execute('452e3d45-9e93-4f72-ace5-c188f6912f8b')
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  
 
 
 }

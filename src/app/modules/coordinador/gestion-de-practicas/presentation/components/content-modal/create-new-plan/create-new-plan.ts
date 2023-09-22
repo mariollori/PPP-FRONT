@@ -26,6 +26,7 @@ import {
 import { CommonModule } from '@angular/common';
 import { GlobasToast } from 'src/app/shared/components/toast/globas-toast';
 import { GlobalBgAlerts } from 'src/app/shared/components/bg-alerts/global-bg-alerts';
+import { TypeDocumentData } from '../../../../data/models/type_documents';
 @Component({
   standalone: true,
   selector: 'create-new-plan',
@@ -34,6 +35,8 @@ import { GlobalBgAlerts } from 'src/app/shared/components/bg-alerts/global-bg-al
   imports: [InputTextMedium, CommonModule, GlobasToast, GlobalBgAlerts],
 })
 export class CreateNewPlanModal implements OnInit {
+  @Input() typeDocumentList: TypeDocumentData[] = [];
+
   toast: boolean = false;
   message: string = '';
   typeToast: string = '';
@@ -50,6 +53,8 @@ export class CreateNewPlanModal implements OnInit {
   uploadProgressBanner: number | null = null;
   uploadProgressDocs: number | null = null;
 
+  view_docs: string = '';
+
   constructor(
     private storage: Storage,
     private router: Router,
@@ -57,7 +62,7 @@ export class CreateNewPlanModal implements OnInit {
     private cdr: ChangeDetectorRef
   ) {}
 
-  ngOnInit() {}
+  ngOnInit(): void {}
 
   actionAlert() {
     if (!this.validated) this.validated = true;
@@ -71,7 +76,8 @@ export class CreateNewPlanModal implements OnInit {
   }
 
   uploadArchive($event: any, folder: string) {
-    this.uploadProgressBanner = 0;
+    if (folder == 'banners') this.uploadProgressBanner = 0;
+    else if (folder == 'docs') this.uploadProgressDocs = 0;
 
     const pathFirebase = `documents/comite/${folder}/`;
     const file = $event.target.files[0];
@@ -222,5 +228,25 @@ export class CreateNewPlanModal implements OnInit {
 
   prueba() {
     console.log('devuelve?');
+  }
+
+  addDocumentPlan() {
+    if (this.documents.length == 0) {
+      this.documents.push({
+        name: '',
+        description: '',
+        urlDocument: '',
+        status: true,
+        type: '',
+      });
+    } else if (this.documents.length > 0) {
+      this.documents.push({
+        name: '',
+        description: '',
+        urlDocument: '',
+        status: true,
+        type: '',
+      });
+    }
   }
 }

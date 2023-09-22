@@ -20,4 +20,5 @@ export const routesAccess = {
   createAreaPlan: `${env}${client.planApi}/create-area-plan`,
   createQuestion: `${env}${client.planApi}/create-question-evaluation`,
   createDocumentPPP: `${env}${client.planApi}/create-document-plan`,
+  getStudents: `${env}${client.planStudent}/get-students-by-plan-ppp`,
 };
