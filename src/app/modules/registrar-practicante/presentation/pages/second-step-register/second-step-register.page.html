@@ -196,8 +196,25 @@
 
     </div>
 
-    <div class="flex flex-row justify-between mt-5 ml-auto mr-auto md:w-[70%] px-3">
+    <div class="flex flex-row justify-between ml-auto mr-auto md:w-[70%] px-3 py-5">
+        
         <p class="text-lg font-bold cursor-pointer" [routerLink]="'/crear-cuenta'">Volver</p>
+
+        <button-standalone
+            width="w-[100px]"
+            height="h-[45px]"
+            colorFondo="bg-hellowPrimary"
+            radius="rounded-[7px]"
+            hover="hover:bg-hellowSecondary"
+            transition="transition-all"
+            duration="duration-300"
+            text="Quitar esto"
+            colorText="text-white"
+            fontFamily="font-montserrat"
+            fontSize="text-[15px]"
+            (click)="onToggleModal()">
+        </button-standalone>
+
         <button-standalone
             width="w-[100px]"
             height="h-[45px]"
@@ -212,6 +229,13 @@
             fontSize="text-[15px]"
             (click)="onRegisterPracticante()">
         </button-standalone>
+    
     </div>
+
+    <global-modal [isOpen]="isShowModal" (close)="isShowModal = false" *ngIf="isShowModal">
+        
+        <modal-viewer-doc-component></modal-viewer-doc-component>
+
+    </global-modal>
 
 </div>
