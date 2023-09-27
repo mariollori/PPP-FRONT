@@ -43,6 +43,8 @@ import { BodyControlPractice } from './modules/practicante/control-practice/pres
 import { PrincipalHomeComponent } from './modules/practicante/principal-home/presentation/pages/principal-home';
 import { PrincipalHomeBody } from './modules/practicante/principal-home/presentation/components/body/body-principal-home';
 import { GentionInfoEmpresaModule } from './modules/practicante/principal-home/presentation/components/content-body/gestion-informacion-empresa/gestion-informacion-empresa';
+import { RegistrarEmpresaComponent } from './modules/practicante/principal-home/presentation/components/content-body/registrar-empresa/registrar-empresa';
+// import { IonicModule } from '@ionic/angular';
 
 // PROVIDERS
 
@@ -88,8 +90,10 @@ import { GentionInfoEmpresaModule } from './modules/practicante/principal-home/p
     BodyControlPractice,
     PrincipalHomeBody,
     GentionInfoEmpresaModule,
+    RegistrarEmpresaComponent,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideStorage(() => getStorage()),
+    // IonicModule.forRoot(),
   ],
   providers: Providers,
   bootstrap: [AppComponent],

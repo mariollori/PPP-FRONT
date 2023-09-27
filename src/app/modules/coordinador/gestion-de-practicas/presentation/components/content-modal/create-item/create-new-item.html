@@ -1,21 +1,14 @@
- <div class="font-montserrat w-full relative h-full">
+<div class="font-montserrat w-full relative h-full">
   <div class="w-full mb-5 text-bluePrimary">
-    <span class="font-[600]"
-      >Crear un nuevo plan de Prácticas Pre Profesionales</span
-    >
+    <span class="font-[600]">Crear un nuevo plan de Prácticas Pre Profesionales</span>
   </div>
   <div class="relative w-full grid grid-cols-3 gap-3">
     <div class="relative w-full pt-2">
-      <label
-        class="absolute left-7 -top-[1px] text-bluePrimary text-[11px] bg-white px-2"
-        for="planHours"
-        >Selecione Plan</label
-      >
+      <label class="absolute left-7 -top-[1px] text-bluePrimary text-[11px] bg-white px-2" for="planHours">Selecione
+        Plan</label>
 
-      <select
-        id="planHours"
-        class="appearance-none border border-bluePrimary bg-white text-bluePrimary py-3 px-8 pl-10 rounded-xl leading-tight focus:border-bluePrimary focus:ring-transparent w-full"
-      >
+      <select id="planHours"
+        class="appearance-none border border-bluePrimary bg-white text-bluePrimary py-3 px-8 pl-10 rounded-xl leading-tight focus:border-bluePrimary focus:ring-transparent w-full">
         <option>Plan 2016</option>
         <option>Plan 2017</option>
         <option>Plan 2018</option>
@@ -23,16 +16,11 @@
     </div>
 
     <div class="relative w-full pt-2">
-      <label
-        class="absolute left-7 -top-[1px] text-bluePrimary text-[11px] bg-white px-2"
-        for="planHours"
-        >Selecione Área</label
-      >
+      <label class="absolute left-7 -top-[1px] text-bluePrimary text-[11px] bg-white px-2" for="planHours">Selecione
+        Área</label>
 
-      <select
-        id="planHours"
-        class="appearance-none border border-bluePrimary bg-white text-bluePrimary py-3 px-8 pl-10 rounded-xl leading-tight focus:border-bluePrimary focus:ring-transparent w-full"
-      >
+      <select id="planHours"
+        class="appearance-none border border-bluePrimary bg-white text-bluePrimary py-3 px-8 pl-10 rounded-xl leading-tight focus:border-bluePrimary focus:ring-transparent w-full">
         <option>Ingeniería de software</option>
         <option>Ingeniería Infraestructura</option>
         <option>Ingeniería Gestión</option>
@@ -40,16 +28,11 @@
     </div>
 
     <div class="relative w-full pt-2">
-      <label
-        class="absolute left-7 -top-[1px] text-bluePrimary text-[11px] bg-white px-2"
-        for="planHours"
-        >Etapa Evaluación</label
-      >
+      <label class="absolute left-7 -top-[1px] text-bluePrimary text-[11px] bg-white px-2" for="planHours">Etapa
+        Evaluación</label>
 
-      <select
-        id="planHours"
-        class="appearance-none border border-bluePrimary bg-white text-bluePrimary py-3 px-8 pl-10 rounded-xl leading-tight focus:border-bluePrimary focus:ring-transparent w-full"
-      >
+      <select id="planHours"
+        class="appearance-none border border-bluePrimary bg-white text-bluePrimary py-3 px-8 pl-10 rounded-xl leading-tight focus:border-bluePrimary focus:ring-transparent w-full">
         <option>Inicio</option>
         <option>Intermedio</option>
         <option>Final</option>
@@ -58,50 +41,21 @@
   </div>
 
   <div class="grid gap-3 my-3 text-bluePrimary">
-    <div
-        
-    >
-      <input-text-medium-standalone
-        widht="w-[100%]"
-        borderColor="border-[#D2D2D2]"
-        placeholder="Agregar una pregunta"
-        fontSize="text-[16px]"
-        height="h-[55px]"
-        radius="rounded-[16px]"
-        transition="transition-all"
-      ></input-text-medium-standalone>
+    <div>
+      <input-text-medium-standalone widht="w-[100%]" borderColor="border-[#D2D2D2]" placeholder="Agregar una pregunta"
+        fontSize="text-[16px]" height="h-[55px]" radius="rounded-[16px]" transition="transition-all"
+        icon="fa-solid fa-circle-question"></input-text-medium-standalone>
     </div>
 
-    <div
-    >
-      <input-text-medium-standalone
-        widht="w-full"
-        borderColor="border-[#D2D2D2]"
-        placeholder="Agregar el tipo de pregunta"
-        fontSize="text-[16px]"
-        height="h-[55px]"
-        radius="rounded-[16px]"
-        transition="transition-all"
-      ></input-text-medium-standalone>
+    <div>
+      <input-text-medium-standalone widht="w-full" borderColor="border-[#D2D2D2]"
+        placeholder="Agregar el tipo de pregunta" fontSize="text-[16px]" height="h-[55px]" radius="rounded-[16px]"
+        transition="transition-all" icon="fa-solid fa-file-circle-question"></input-text-medium-standalone>
     </div>
   </div>
 
-  <global-bg-alerts
-    *ngIf="validated"
-    (actionAlert)="actionAlert()"
-    (actionAccept)="actionAlrt"
-    [alert]="alert"
-  >
+  <global-bg-alerts *ngIf="validated" (actionAlert)="actionAlert()" (actionAccept)="actionAlrt" [alert]="alert">
   </global-bg-alerts>
 
-  <global-toast
-    *ngIf="toast"
-    [message]="message"
-    [type]="typeToast"
-    (closed)="toast=false"
-  ></global-toast>
-</div> 
-
-
-
-
+  <global-toast *ngIf="toast" [message]="message" [type]="typeToast" (closed)="toast=false"></global-toast>
+</div>

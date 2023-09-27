@@ -1,5 +1,6 @@
 import { NgClass } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   standalone: true,
@@ -31,12 +32,14 @@ export class InputTextMedium {
   @Input() fontFamilyPlaceholder: string = ''; // 'font-montserrat';
   @Input() fontWeigthPlaceholder: string = ''; // 'font-normal';
 
-  @Input() icon: string = '';
+  @Input() icon: string = 'fa-solid fa-magnifying-glass';
   @Input() iconColor: string = '';
   @Input() iconSize: string = '';
 
   isPlaceholderActive: boolean = false;
   inputId!: string;
+
+  constructor(private sanitizer: DomSanitizer) {}
 
   ngOnInit() {
     this.inputId = `input-${Math.random().toString(36).substr(2, 9)}`;
@@ -63,5 +66,9 @@ export class InputTextMedium {
     if (inputElement) {
       inputElement.focus();
     }
+  }
+
+  sanitizeHtml(html: string): SafeHtml {
+    return this.sanitizer.bypassSecurityTrustHtml(html);
   }
 }

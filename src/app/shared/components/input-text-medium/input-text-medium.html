@@ -1,7 +1,8 @@
 <div class="h-[6px] w-full"></div>
 <div class="container relative">
-  <input type="text" class="pl-12 pr-2 py-2 border placeholder-transparent items-center focus:border-bluePrimary focus:ring-transparent" [placeholder]="placeholder"
-    (focus)="movePlaceholder()" (blur)="checkInput()" [id]="inputId" [ngClass]="[
+  <input type="text"
+    class="pl-12 pr-2 py-2 border placeholder-transparent items-center focus:border-bluePrimary focus:ring-transparent"
+    [placeholder]="placeholder" (focus)="movePlaceholder()" (blur)="checkInput()" [id]="inputId" [ngClass]="[
     widht,
     height,
     borderColor,
@@ -15,11 +16,7 @@
     shadow
     ]">
   <div class="absolute inset-y-0 left-2 flex items-center pl-2 ">
-    <i class="fas" [ngClass]="[
-    icon,
-    iconColor,
-    iconSize
-    ]"></i>
+    <i [ngClass]="[icon, iconColor, iconSize]"></i>
   </div>
   <label class="absolute top-[0.85rem] left-12 cursor-text" [class.active]="isPlaceholderActive" [for]="inputId"
     (click)="activateInput()" [ngClass]="[
