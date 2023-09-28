@@ -7,8 +7,9 @@ import { ItemsOfSettingGeneralComite } from '../../../data/models/array_modules'
 import { ConfigPracticanteModal } from '../content-modal/config-practicante/config-practicante';
 import { ConfigSupervisorMoldal } from '../content-modal/config-supervisor/config-supervisor';
 import { CreateNewPlanModal } from '../content-modal/create-new-plan/create-new-plan';
-import { TypeDocumentsUseCase } from '../../../domain/usecase/type_documents_usecase';
+import { CreateNewItemModal } from '../content-modal/create-item/create-new-item';
 import { TypeDocumentData } from '../../../data/models/type_documents';
+import { TypeDocumentsUseCase } from '../../../domain/usecase/type_documents_usecase';
 import { LoadingPageComponent } from 'src/app/shared/components/loading/loading-page.component';
 
 @Component({
@@ -16,7 +17,7 @@ import { LoadingPageComponent } from 'src/app/shared/components/loading/loading-
   selector: 'body-gestion-practicas',
   templateUrl: './body-gestion-de-practicas.component.html',
   imports: [
-    // NgClass,
+    NgClass,
     RouterModule,
     CommonModule,
     InputTextMedium,
@@ -24,6 +25,7 @@ import { LoadingPageComponent } from 'src/app/shared/components/loading/loading-
     ConfigPracticanteModal,
     ConfigSupervisorMoldal,
     CreateNewPlanModal,
+    CreateNewItemModal,
     LoadingPageComponent,
   ],
 })

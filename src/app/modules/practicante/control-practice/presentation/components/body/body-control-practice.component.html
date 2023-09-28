@@ -1,0 +1,119 @@
+<div class="overflow-y-auto overflow-scroll">
+  <div class="flex flex-col gap-6">
+    <h1 class="text-3xl font-montserrat">
+      Bienvenido, <span class="font-bold font-montserrat">David Reyna </span>
+    </h1>
+    <h3 class="text-lg font-montserrat">
+      Control de Prácticas /
+      <span class="font-bold text-lg font-montserrat"
+        >Union Peruana del Norte</span
+      >
+    </h3>
+    <div class="container mx-auto grid grid-cols-3 gap-4">
+      <div class="text-center flex items-center justify-center font-montserrat px-5">
+      <img class="h-12" src="assets/svg/uno.svg"/>
+      <span class="text-sm font-montserrat ml-3">Informacion Basica</span>
+      </div>
+      <div class="text-center flex items-center justify-center font-montserrat px-5">
+        <img class="h-12" src="assets/svg/dos.svg" />
+        <span class="text-sm font-montserrat ml-3">Documentos</span>
+      </div>
+      <div class="text-center flex items-center justify-center font-montserrat px-5">
+        <img class="h-12" src="assets/svg/tres.svg"/>
+        <span class="text-sm font-montserrat ml-3">Items Evaluación</span>
+      </div>
+      
+      
+    </div>
+    <div class="container mx-auto bg-white grid grid-cols-4 gap-4 p-6 rounded-xl">
+      <div
+        class="w-45 h-60 rounded-xl shadow-lg cursor-pointer bg-white px-5 py-4 flex flex-col hover:bg-neutral-200"
+      ><div class="h-[65%] flex items-center justify-center text-center">
+            <img class="h-full" src="assets/svg/np.svg">
+          </div>
+          <div class="h-[40%] text-center flex items-center justify-center font-montserrat px-5">
+            <span>holaaa</span>
+          </div>
+    </div>
+      <div
+        class="w-45 h-60 rounded-xl shadow-lg cursor-pointer bg-white px-5 py-4 flex flex-col hover:bg-neutral-200"
+      >
+        <div class="h-[65%] flex items-center justify-center text-center">
+            <img class="h-full" src="assets/svg/np.svg">
+          </div>
+          <div class="h-[40%] text-center flex items-center justify-center font-montserrat px-5">
+            <span>holaaa</span>
+          </div>
+      </div>
+      <div
+        class="w-45 h-60 rounded-xl shadow-lg cursor-pointer bg-white px-5 py-4 flex flex-col hover:bg-neutral-200"
+      >
+      <div class="h-[65%] flex items-center justify-center text-center">
+            <img class="h-full" src="assets/svg/np.svg">
+          </div>
+          <div class="h-[40%] text-center flex items-center justify-center font-montserrat px-5">
+            <span>holaaa</span>
+          </div>
+    </div>
+      <div
+        class="w-45 h-60 rounded-xl shadow-lg cursor-pointer bg-white px-5 py-4 flex flex-col hover:bg-neutral-200"
+      >
+      <div class="h-[65%] flex items-center justify-center text-center">
+            <img class="h-full" src="assets/svg/np.svg">
+          </div>
+          <div class="h-[40%] text-center flex items-center justify-center font-montserrat px-5">
+            <span>holaaa</span>
+          </div>
+    </div>
+      <div
+        class="w-45 h-60 rounded-xl shadow-lg cursor-pointer bg-white px-5 py-4 flex flex-col hover:bg-neutral-200"
+      >
+    <div class="h-[65%] flex items-center justify-center text-center">
+            <img class="h-full" src="assets/svg/np.svg">
+          </div>
+          <div class="h-[40%] text-center flex items-center justify-center font-montserrat px-5">
+            <span>holaaa</span>
+          </div>
+    </div>
+      <div
+        class="w-45 h-60 rounded-xl shadow-lg cursor-pointer bg-white px-5 py-4 flex flex-col hover:bg-neutral-200"
+      >  
+      <div 
+      (click)="sexo()"
+      class="h-[65%] flex items-center bg-bluePrimary justify-center text-center">
+            <img class="h-full" src="assets/svg/np.svg">
+          </div>
+          <div class="h-[40%] text-center flex items-center justify-center font-montserrat px-5">
+            <span>puta</span>
+          </div>
+    </div>
+      <div
+        class="w-45 h-60 rounded-xl shadow-lg cursor-pointer bg-white px-5 py-4 flex flex-col hover:bg-neutral-200"
+      >
+      <div class="h-[65%] flex items-center justify-center text-center">
+            <img class="h-full" src="assets/svg/np.svg">
+          </div>
+          <div class="h-[40%] text-center flex items-center justify-center font-montserrat px-5">
+            <span>holaaa</span>
+          </div>
+    </div>
+      <div
+        class="w-45 h-60 rounded-xl shadow-lg cursor-pointer bg-white px-5 py-4 flex flex-col hover:bg-neutral-200"
+      >
+      <div class="h-[65%] flex items-center justify-center text-center">
+            <img class="h-full" src="assets/svg/np.svg">
+          </div>
+          <div class="h-[40%] text-center flex items-center justify-center font-montserrat px-5">
+            <span>holaaa</span>
+          </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<global-modal [isOpen]="modalOpen" (close)="modalOpen = false" *ngIf="modalOpen">
+<ng-container>
+  <modal-control-practice></modal-control-practice>
+
+</ng-container>
+</global-modal>

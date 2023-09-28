@@ -34,7 +34,17 @@ import { CreateNewPlanModal } from './modules/coordinador/gestion-de-practicas/p
 import { GlobasToast } from './shared/components/toast/globas-toast';
 import { GlobalBgAlerts } from './shared/components/bg-alerts/global-bg-alerts';
 import { ListStudentComponent } from './modules/coordinador/lista-de-estudiantes/list-student/presentation/pages/list-student.component';
-import { FirstStepRegister, SecondStepRegister } from './modules/registrar-practicante/presentation/pages';
+import {
+  FirstStepRegister,
+  SecondStepRegister,
+} from './modules/registrar-practicante/presentation/pages';
+import { ControlPractice } from './modules/practicante/control-practice/presentation/pages/control-practice.component';
+import { BodyControlPractice } from './modules/practicante/control-practice/presentation/components/body/body-control-practice.component';
+import { PrincipalHomeComponent } from './modules/practicante/principal-home/presentation/pages/principal-home';
+import { PrincipalHomeBody } from './modules/practicante/principal-home/presentation/components/body/body-principal-home';
+import { GentionInfoEmpresaModule } from './modules/practicante/principal-home/presentation/components/content-body/gestion-informacion-empresa/gestion-informacion-empresa';
+import { RegistrarEmpresaComponent } from './modules/practicante/principal-home/presentation/components/content-body/registrar-empresa/registrar-empresa';
+// import { IonicModule } from '@ionic/angular';
 
 // PROVIDERS
 
@@ -49,13 +59,13 @@ import { FirstStepRegister, SecondStepRegister } from './modules/registrar-pract
     Settings,
     GestionDePracticas,
     MenuItems,
-
     FirstStepRegister,
-    SecondStepRegister
+    SecondStepRegister,
+    ControlPractice,
+    PrincipalHomeComponent,
   ],
   imports: [
     LoadingPageComponent,
-
     ListStudentComponent,
     BrowserModule,
     AppRoutingModule,
@@ -77,8 +87,13 @@ import { FirstStepRegister, SecondStepRegister } from './modules/registrar-pract
     CreateNewPlanModal,
     GlobasToast,
     GlobalBgAlerts,
+    BodyControlPractice,
+    PrincipalHomeBody,
+    GentionInfoEmpresaModule,
+    RegistrarEmpresaComponent,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideStorage(() => getStorage()),
+    // IonicModule.forRoot(),
   ],
   providers: Providers,
   bootstrap: [AppComponent],
