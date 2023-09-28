@@ -1,3 +1,80 @@
-<div>
-  Hola soy el practicante
+<div class="overflow-y-auto overflow-scroll">
+  <div class="flex flex-col gap-6">
+    <h1 class="text-3xl font-montserrat">Bienvenido, <span class="font-bold font-montserrat">David Reyna</span> </h1>
+    <div class="flex justify-start space-x-2">
+      <img class="h-6 mb-2" src="assets/svg/arrow-left.svg">
+      <h3 class="text-xl font-montserrat">Configuración general / 
+        <span class="font-semibold font-montserrat">Gestión Practicantes</span>
+      </h3>
+    </div>
+
+    <div class="w-auto h-[300px] grid grid-cols-4 shadow-lg bg-white justify-center space-x-2">
+      <!-- tabla -->
+      <div class="col-span-3">
+        <table class="table-fixed w-full">
+          <thead class="bg-gray-200">
+            <tr>
+              <th class="p-1 rounded-l-lg font-montserrat">Código Universitario</th>
+              <th class="p-1 font-montserrat">Nombres Completos</th>
+              <th class="p-1 font-montserrat">Fecha Subida</th>
+              <th class="p-1 rounded-r-lg font-montserrat">Estado</th>
+            </tr>
+          </thead>
+          <tbody class="text-center">
+            <tr class="w-full">
+              <td class="p-1 font-montserrat">201727893 </td>
+              <td class="p-1 font-montserrat">Malcolm Lockyer sdfnkjdsbgjhds</td>
+              <td class="p-1 font-montserrat">12/05/2018</td>
+              <td class="py-1 px-3 font-montserrat">
+                <div class="bg-red-500 rounded-xl">
+                  Pendiente
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- filtro -->
+      <div class="col-span-1 mt-2 text-center">
+        <h3 class="font-bold">Filtros</h3>
+        <h4 class="">Plan acádemico</h4>
+          <br>
+          <select id="planAcademico" class="truncate appearance-none border border-bluePrimary bg-white text-gray-700 py-3 px-8 pl-10 rounded-xl leading-tight focus:border-bluePrimary focus:ring-transparent">
+            <option class="truncate">2022</option>
+            <option class="">2021</option>
+            <option class="">2020</option>
+            <option class="">2019</option>
+          </select>
+
+          <br>
+      </div>
+    </div>
+    
+    <!-- Para subir excel -->
+    <div class="lg:col-span-3 md:col-span-2 text-center rounded-3xl border-dashed border-2 border-sky-700">
+      <label 
+          for="bannerInput"
+          
+          class="w-full h-32 shadow-lg py-20 bg-sky-100 rounded-3xl flex text-center justify-center items-center flex-col cursor-pointer hover:bg-sky-50 transition-all duration-300">
+          
+          
+          <div class="flex items-center justify-center space-x-2">
+            <img class="h-12 mb-2 fill-sky-700" src="assets/svg/excel2.svg">
+            <div class="flex flex-col">
+              <span class="text-bluePrimary font-[580]">Selecciona un excel de tu ordenador.</span>
+              <span class="font-light">O arrástralo dentro de esta caja.</span>
+            </div>
+          </div>
+
+      
+          <input 
+              id="bannerInput"
+              type="file"
+              class="hidden"
+              accept=".xls, .xlsx">
+      
+      </label>
+    </div>
+  </div>
 </div>
