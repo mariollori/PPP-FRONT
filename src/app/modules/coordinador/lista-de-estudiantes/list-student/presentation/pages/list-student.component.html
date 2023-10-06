@@ -1,53 +1,341 @@
 <div>
   <div class="flex flex-col gap-6">
-    <h1 class="text-3xl">Bienvenido, <span class="font-bold">David Reyna </span>
+    <h1 class="text-3xl">
+      Bienvenido, <span class="font-bold">David Reyna </span>
     </h1>
-    <h3 class="text-xl">Practicantes en lista de espera</h3>
-    <div>
-      <p class=" text-[#676767]">
-        Los siguientes estudiantes no tienen asignado un supervisor. Antes de
-        asignar un supervisor, asegúrate de revisar detenidamente sus
-        documentos.
-      </p>
-      <div class="open">
+    <h3>
+      Perfiles de practicantes / <span class="font-bold">Porky Chanel</span>
+    </h3>
+    <div class="grid grid-cols-3 space-x-4">
 
-        <label class="search">
-          <i class="fa-sharp fa-solid fa-magnifying-glass" placeholder="Buscar"></i>
-          <input class="buscar" type="text" placeholder="Filtros" required>
-        </label>
-
-      </div>
-
-      <div class="flex gap-6 py-4 w-full flex-wrap h-auto max-md:justify-center">
-
+      <div
+        class="col-span-1 shadow-lg rounded-xl grid grid-rows-2 grid-flow-col gap-4"
+      >
+      
         <div
-          *ngFor="let student of students"
-          class="rounded-xl w-48 h-55  shadow-lg cursor-pointer bg-white text-center">
+          class=" col-span-1 grid-rows-4 flex-col w-full h-auto relative"
+        >
+        <div class="bg-white mb-9">
+          <div class="absolute top-3 left-40 bg-white rounded">
+            <select
+              id="currency"
+              name="currency"
+              class="h-full rounded-md border-0 bg-transparent py-0 pl-2 pr-7 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm"
+            >
+              <option>Practica 1</option>
+            </select>
+          </div>
+          <!-- <img src="../../../../../../../assets/svg/fondo.svg" alt="" /> -->
+          <div class="flex justify-between">
+            <img src="../../../../../../../assets/svg/fondo.svg" alt="" />
+          </div>
+          <div class="flex justify-start absolute top-14 left-5 p-0">
+            <img src="../../../../../../../assets/svg/men.svg" alt="" />
+            <div class="grid grid-rows-2 mt-2 justify-between text-sm pt-10">
+              <label class="font-montserrat font-semibold"
+                >Qbin Raul Peinado</label
+              >
+              <label class="text-gray-500 -mt-2 text-xs"
+                >Codigo: 202020291</label
+              >
+            </div>
+          </div>
+          <div class="py-12 col-span-1 row-span-1 p-4">
+            <div class="flex flex-row justify-between mt-2 text-sm">
+              <label class="font-montserrat font-medium">DNI:</label>
+              <label class="text-gray-500">111111111</label>
+            </div>
+            <div class="flex flex-row justify-between mt-2 text-sm">
+              <label class="font-montserrat font-medium"
+                >Ciclo Academico:</label
+              >
+              <label class="text-gray-500">6</label>
+            </div>
+            <div class="flex flex-row justify-between mt-2 text-sm">
+              <label class="font-montserrat font-medium">Escuela:</label>
+              <label class="text-gray-500">E.P Ingenieria de Sistemas</label>
+            </div>
+            <div class="flex flex-row justify-between mt-2 text-xs">
+              <label class="font-montserrat font-medium"
+                >Area de practicas:</label
+              >
+              <label class="text-gray-500">Programador Fullstack</label>
+            </div>
+            <div class="flex flex-row justify-between mt-2 text-sm">
+              <label class="font-montserrat font-medium"
+                >Curriculum Vitae:</label
+              >
+            </div>
+          </div>
+        </div>
+          
+          <div
+            class="bg-white w-full h-auto relative p-4"
+          >
+            <div class="py-12 col-span-1 row-span-1">
+              <label class="font-montserrat font-semibold text-sm" for=""
+                >Evaluaciones</label
+              >
+            </div>
 
-          <img
-            class="w-15 h-15 md:w-20 mt-4 md:h-auto rounded-full mx-auto"
-            src="{{ student.user.urlProfile }}"
-            alt="{{ student.code }}"
-            width="384"
-            height="512">
+            <div class="flex flex-row justify-between">
+              <h6 class="font-semibold">Evaluacion 1</h6>
+              <div class="rounded-3xl py-0.5 px-2 bg-gray-400"><span class="text-white font-semibold">aprobado</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div
+        class="col-span-2 bg-white grid grid-cols-2 grid-rows-2 shadow-lg p-4 rounded-lg gap-4"
+      >
+        <div class="col-span-1 row-span-1 bg-[#F8F8F8] p-4 rounded-lg">
+          <label class="font-montserrat font-semibold text-sm" for=""
+            >Informacion de la empresa
+          </label>
+          <div class="flex flex-row justify-between mt-2">
+            <label class="text-sm font-montserrat font-medium">Estado:</label>
+            <label class="rounded-2xl px-3 text-xs py-1 bg-[#FF4B4B] text-white"
+              >Pendiente</label
+            >
+          </div>
+          <div class="flex flex-row justify-between">
+            <label class="text-sm font-montserrat font-medium"
+              >Fecha de Inicio:</label
+            >
+            <label class="font-montserrat font-normal text-sm"
+              >13/07/2023</label
+            >
+          </div>
+          <div class="h-[1px] w-full bg-slate-300 my-4"></div>
 
-          <div class="text-dark-500 dark:text-stale-400 mt-2">
-            {{ student.user.firstName }}
+          <label class="font-montserrat font-semibold text-sm" for=""
+            >Supervisor de practicas</label
+          >
+          <div class="flex flex-row items-center justify-center space-x-4 mt-4">
+            <img
+              class="w-12 h-12 rounded-full object-cover"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRgDqtNmfNGbxRdaL3xlLfUGz4iX4gB_xx8Q&usqp=CAU"
+              alt=""
+            />
+            <label class="font-montserrat font-normal text-sm"
+              >Asin Gomez Fernandez</label
+            >
+          </div>
+        </div>
+        <div class="col-span-1 row-span-1 bg-[#F8F8F8] p-4 rounded-lg">
+          <label class="font-montserrat font-semibold text-sm" for=""
+            >Informacion de la empresa
+          </label>
+          <div class="flex flex-row justify-between mt-2">
+            <label class="text-sm font-montserrat font-medium">Nombre:</label>
+            <label>Union</label>
+          </div>
+          <div class="flex flex-row justify-between">
+            <label class="text-sm font-montserrat font-medium">Ruc:</label>
+            <label class="font-montserrat font-normal text-sm"
+              >1923129803182</label
+            >
+          </div>
+          <div class="flex flex-row justify-between">
+            <label class="text-sm font-montserrat font-medium"
+              >Direccion:</label
+            >
+            <label class="font-montserrat font-normal text-sm"
+              >Av Manzanas Lote Quispe</label
+            >
+          </div>
+          <div class="flex flex-row justify-between">
+            <label class="text-sm font-montserrat font-medium">Area:</label>
+            <label class="font-montserrat font-normal text-sm"
+              >Fabrica de software</label
+            >
           </div>
 
-          <span class="text-dark-200 dark:text-stale-200">
-            {{ student.code }}
-          </span>
+          <div class="h-[1px] w-full bg-slate-300 my-4"></div>
 
-          <button
-            class="h-10 px-6 font-normal rounded-md bg-black text-white mb-4 mt-2"
-            type="submit">
-            ver perfil
-          </button>
-
+          <label class="font-montserrat font-semibold text-sm" for=""
+            >Tutor o supervisor empresarial
+          </label>
+          <div class="flex flex-row justify-between mt-2">
+            <label class="text-sm font-montserrat font-medium"
+              >Nombre Completo:</label
+            >
+            <label class="font-montserrat font-normal text-sm"
+              >Qbin Peinado Raul</label
+            >
+          </div>
+          <div class="flex flex-row justify-between">
+            <label class="text-sm font-montserrat font-medium"
+              >Nro Celular:</label
+            >
+            <label class="font-montserrat font-normal text-sm">98267890</label>
+          </div>
+          <div class="flex flex-row justify-between">
+            <label class="text-sm font-montserrat font-medium"
+              >Grado Academico:</label
+            >
+            <label class="font-montserrat font-normal text-sm"
+              >Secundaria completo</label
+            >
+          </div>
+          <div class="flex flex-row justify-between">
+            <label class="text-sm font-montserrat font-medium">Email:</label>
+            <label class="font-montserrat font-normal text-sm"
+              >qbin@gmail.com</label
+            >
+          </div>
         </div>
-
+        <div class="col-span-2 row-span-1">
+          <div class="flex justify-start space-x-2">
+            <img src="../../../../../../../assets/svg/dos.svg" alt="" />
+            <label
+              class="font-montserrat self-center font-semibold text-sm"
+              for=""
+              >Documentos subidos en el segundo pasito</label
+            >
+          </div>
+          <div class="w-full h-full m-1">
+            <div
+              class="w-full rounded-t-lg over flow-hidden grid grid-cols-3 gap-3"
+            >
+              <div class="drop-shadow-2xl">
+                <div
+                  class="bg-[#C3D7FF] flex flex-col items-center py-2 px-2 rounded-t-xl"
+                >
+                  <span
+                    class="text-black px-3 mb-6 rounded-lg text-[10px] border-[#01D355] border-2 self-end bg-[#C1FFBB]"
+                    >Aprobado</span
+                  >
+                  <img
+                    class="w-16 h-16"
+                    src="../../../../../../../assets/svg/doc.svg"
+                    alt=""
+                  />
+                </div>
+                <div
+                  class="bg-white flex-1 text-justify px-2 py-2 font-montserrat text-xs flex justify-between"
+                >
+                  <div>
+                    <span>carta_presentación...</span>
+                    <span class="text-gray-300 text-xs flex">08/10/2023</span>
+                  </div>
+                  <img
+                    src="../../../../../../../assets/svg/donwload.svg"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div class="drop-shadow-2xl">
+                <div class="bg-[#C3D7FF] flex flex-col items-center py-2 px-2">
+                  <span
+                    class="text-black px-3 mb-6 rounded-lg text-[10px] border-[#01D355] border-2 self-end bg-[#C1FFBB]"
+                    >Aprobado</span
+                  >
+                  <img
+                    class="w-16 h-16"
+                    src="../../../../../../../assets/svg/doc.svg"
+                    alt=""
+                  />
+                </div>
+                <div
+                  class="bg-white flex-1 text-justify px-2 py-2 font-montserrat text-xs flex justify-between"
+                >
+                  <div>
+                    <span>carta_presentación...</span>
+                    <span class="text-gray-300 text-xs flex">08/10/2023</span>
+                  </div>
+                  <img
+                    src="../../../../../../../assets/svg/donwload.svg"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div class="drop-shadow-2xl">
+                <div
+                  class="bg-[#C3D7FF] flex flex-col items-center py-2 px-2 rounded-t-xl"
+                >
+                  <span
+                    class="text-black px-3 mb-6 rounded-lg text-[10px] border-[#01D355] border-2 self-end bg-[#C1FFBB]"
+                    >Aprobado</span
+                  >
+                  <img
+                    class="w-16 h-16"
+                    src="../../../../../../../assets/svg/doc.svg"
+                    alt=""
+                  />
+                </div>
+                <div
+                  class="bg-white flex-1 text-justify px-2 py-2 font-montserrat text-xs flex justify-between"
+                >
+                  <div>
+                    <span>carta_presentación...</span>
+                    <span class="text-gray-300 text-xs flex">08/10/2023</span>
+                  </div>
+                  <img
+                    src="../../../../../../../assets/svg/donwload.svg"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div class="drop-shadow-2xl">
+                <div
+                  class="bg-[#C3D7FF] flex flex-col items-center py-2 px-2 rounded-t-xl"
+                >
+                  <span
+                    class="text-black px-3 mb-6 rounded-lg text-[10px] border-[#01D355] border-2 self-end bg-[#C1FFBB]"
+                    >Aprobado</span
+                  >
+                  <img
+                    class="w-16 h-16"
+                    src="../../../../../../../assets/svg/doc.svg"
+                    alt=""
+                  />
+                </div>
+                <div
+                  class="bg-white flex-1 text-justify px-2 py-2 font-montserrat text-xs flex justify-between"
+                >
+                  <div>
+                    <span>carta_presentación...</span>
+                    <span class="text-gray-300 text-xs flex">08/10/2023</span>
+                  </div>
+                  <img
+                    src="../../../../../../../assets/svg/donwload.svg"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div class="drop-shadow-2xl">
+                <div
+                  class="bg-[#C3D7FF] flex flex-col items-center py-2 px-2 rounded-t-xl"
+                >
+                  <span
+                    class="text-black px-3 mb-6 rounded-lg text-[10px] border-[#01D355] border-2 self-end bg-[#C1FFBB]"
+                    >Aprobado</span
+                  >
+                  <img
+                    class="w-16 h-16"
+                    src="../../../../../../../assets/svg/doc.svg"
+                    alt=""
+                  />
+                </div>
+                <div
+                  class="bg-white flex-1 text-justify px-2 py-2 font-montserrat text-xs flex justify-between"
+                >
+                  <div>
+                    <span>carta_presentación...</span>
+                    <span class="text-gray-300 text-xs flex">08/10/2023</span>
+                  </div>
+                  <img
+                    src="../../../../../../../assets/svg/donwload.svg"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-
   </div>
+</div>
