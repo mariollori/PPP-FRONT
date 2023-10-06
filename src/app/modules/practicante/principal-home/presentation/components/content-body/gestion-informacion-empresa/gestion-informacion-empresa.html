@@ -1,5 +1,5 @@
 <div class="overflow-y-auto overflow-scroll">
-    <div class="flex flex-col gap-6">
+    <div class="flex flex-col gap-6" *ngIf="pito2 == 1">
         <h1 class="text-3xl font-montserrat">Bienvenido, <span class="font-bold font-montserrat">Raul El Morado Cabro
             </span></h1>
         <h3 class="font-bold text-xl font-montserrat">Control de Practicas Pre Profesionales</h3>
@@ -12,8 +12,8 @@
             </p>
             <div class="flex gap-6 py-4 w-full flex-wrap h-auto
                     max-md:justify-center">
-                <div
-                    class="w-60 h-60 rounded-xl shadow-lg cursor-pointer bg-white px-5 py-4 flex flex-col hover:bg-neutral-200">
+                <div 
+                    class="w-60 h-60 rounded-xl shadow-lg cursor-pointer bg-white px-5 py-4 flex flex-col hover:bg-neutral-200" (click)="mostrarPito2(2)" [ngClass]="{'btn-activo': pito2 === 1}">
                     <div class="h-[65%] flex items-center justify-center">
                         <img class="h-full" src="assets/svg/pito.svg">
                     </div>
@@ -59,4 +59,5 @@
             </div>
         </div>
     </div>
+    <registrar-empresa (pito)="volver($event)" *ngIf="pito2 !== 1"></registrar-empresa>
 </div>

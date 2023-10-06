@@ -157,8 +157,8 @@
               </li>
             </ul> -->
 
-            <button class="py-1 px-2 border border-gray-600 my-2 w-full mx-auto hover:bg-gray-100 rounded-lg">
-              Crear evaluación
+            <button class="py-1 px-2 border border-gray-600 my-2 w-full mx-auto hover:bg-gray-100 rounded-lg" (click)="onShowModalEvaluation()">
+                Crear evaluación
             </button>
           </div>
 
@@ -404,6 +404,53 @@
     </div>
 
   </div>
+  <global-modal [isOpen]="isShowModal" (close)="isShowModal = false" *ngIf="isShowModal">
+
+    <div class="font-montserrat w-[100vh]">
+    
+      <div class="w-full mb-5 text-bluePrimary">
+        <span class="font-[700]">Evaluación Final</span>
+      </div>
+    
+      <div class="w-full flex flex-row justify-between space-x-3 px-0.5">
+   
+        <textarea class=" border-bluePrimary rounded-lg font-montserrat w-full" cols="10" rows="5" placeholder="Escriba un comentario"></textarea>
+   
+        <input type="text" class="rounded-lg border-gray-300 font-montserrat text-lg" placeholder="Ingresa la Nota">
+   
+      </div>
+   
+      <div class="w-full rounded-lg border border-bluePrimary mt-2 px-2 pb-3">
+        <div class="w-full border-sky-500 mt-2 h-max focus:border-none" name="" id="" cols="auto" rows="5">
+          <div class="space-y-2 mt-4" *ngFor="let pregunta of preguntas; let i = index">
+            <span>Pregunta {{ i + 1 }}</span>
+            <div class="flex flex-row justify-around w-full space-x-3">
+              <textarea name="" class="h-12 w-full rounded-lg text-xs mt-1" id="" cols="30" rows="10" placeholder="Respuesta" [(ngModel)]="preguntas[i].pregunta"></textarea>
+              <button 
+                  *ngIf="preguntas[i].showBoton"
+                  (click)="eliminarPregunta(i)"
+                  class="px-3 py-2 rounded-full self-center bg-gray-600 hover:bg-gray-500">
+                  <i class="fa-solid fa-trash text-white"></i>
+              </button>
+              <button 
+                  *ngIf="!preguntas[i].showBoton"
+                  (click)="onCrearNuevaPregunta(i)"
+                  class="px-3 py-2 rounded-full self-center bg-gray-600 hover:bg-gray-500">
+                  <i class="fa-solid fa-plus text-white"></i>
+              </button>
+          </div>
+          </div>
+        </div>
+      </div>
+    
+    
+    
+      <!-- <global-bg-alerts *ngIf="validated" (actionAlert)="actionAlert()" (actionAccept)="actionAlrt" [alert]="alert">
+      </global-bg-alerts>
+    
+      <global-toast *ngIf="toast" [message]="message" [type]="typeToast" (closed)="toast=false"></global-toast> -->
+    </div>
+    </global-modal>
 
 </div>
 

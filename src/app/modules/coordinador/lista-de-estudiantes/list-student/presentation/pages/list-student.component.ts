@@ -1,24 +1,72 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { GlobalModel } from 'src/app/shared/components/modal/global-modal';
+import { GetStudentsUseCase } from '../../domain/usecase/getStudentsUseCase';
+import { GlobalModel } from "src/app/shared/components/modal/global-modal";
+import { FormsModule } from '@angular/forms';
 import { ModalEvaluationComponent } from '../components/modal-evaluation/modal-evaluation.component';
+import { StudentEntity } from '../../data/entities/student.entity';
+interface Steps {
+  title: string;
+  description: string;
+}
 
 @Component({
   selector: 'list-student',
   templateUrl: './list-student.component.html',
   standalone:true,
-  imports:[ CommonModule, GlobalModel, ModalEvaluationComponent ]
+  imports:[ CommonModule, GlobalModel, FormsModule, GlobalModel, ModalEvaluationComponent ]
 })
-export class ListStudentComponent {
+export class ListStudentComponent implements OnInit {
 
   isShowModal = false
+  students: StudentEntity[] = []
+  preguntas: Pregunta[] = [{ pregunta: '', showBoton: false }]
 
-  constructor( ) { }
+  constructor(
+    private  getStudentUseCase: GetStudentsUseCase
+  ) { }
 
   onShowModalEvaluation(value: boolean) {
     this.isShowModal = value
   }
 
+  onCrearNuevaPregunta(index: number) {
 
+    const preguntaEncontrada =  this.preguntas[index]
+
+    if ( preguntaEncontrada.pregunta === '' ) {
+      alert("Primero rellene el campo de pregunta!")
+      return
+  }
+  this.preguntas[index] = { ...preguntaEncontrada, showBoton: true }
+
+  this.preguntas.push({
+    pregunta: '',
+    showBoton: false
+})
+  }
+
+  eliminarPregunta(index: number) {
+    this.preguntas.splice(index, 1)
+}
+
+
+  ngOnInit(): void { 
+    this.getStudents(); 
+  }
+  
+  
+  async getStudents(){
+    try {
+      this.students = await this.getStudentUseCase.execute('452e3d45-9e93-4f72-ace5-c188f6912f8b')
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+
+}
+interface Pregunta {
+  pregunta: string
+  showBoton: boolean
 }
