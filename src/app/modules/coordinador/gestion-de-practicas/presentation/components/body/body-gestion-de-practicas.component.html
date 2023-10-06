@@ -52,11 +52,11 @@
   <modal-config-practicante *ngIf="position == 1"></modal-config-practicante>
 </div>
 
-<global-modal [isOpen]="modalOpen" (close)="modalOpen = false" *ngIf="modalOpen">
+<global-modal [isOpen]="modalOpen" (close)="modalOpen = false" *ngIf="modalOpen" (actionOpen)="actionOpen()">
   <ng-container [ngSwitch]="position">
     <!-- <modal-config-practicante *ngSwitchCase="'1'"></modal-config-practicante> -->
     <modal-config-supervisor *ngSwitchCase="'2'"></modal-config-supervisor>
-    <create-new-plan [typeDocumentList]="typeDocumentsListAll" *ngSwitchCase="'4'"></create-new-plan>
+    <create-new-plan [typeDocumentList]="typeDocumentsListAll" *ngSwitchCase="'4'" (createNewPlan)="createNewPlan($event, 4)"></create-new-plan>
     <create-new-item *ngSwitchCase="'6'"></create-new-item>
   </ng-container>
 </global-modal>
