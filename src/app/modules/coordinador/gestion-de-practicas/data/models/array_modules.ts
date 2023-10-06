@@ -44,6 +44,7 @@ export class BannersFirebase {
 export class DocumementsFirebase {
   name!: string;
   urlDocument!: string;
+  // typeDocument!: string;
   description!: string;
   status!: boolean;
   type!: string;

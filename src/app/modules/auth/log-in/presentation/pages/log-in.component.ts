@@ -38,7 +38,7 @@ export class LogInComponent implements OnInit {
       const response = await this.authenticationLoginUseCase.execute(data);
 
       sessionStorage.setItem('token', response!.data.token);
-
+      
       sessionStorage.setItem('access', JSON.stringify(response!.data.accesses));
 
       let json = JSON.parse(window.atob(response!.data.token.split('.')[1]));

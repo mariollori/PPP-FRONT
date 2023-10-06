@@ -30,6 +30,8 @@ import { LoadingPageComponent } from 'src/app/shared/components/loading/loading-
   ],
 })
 export class BodyGestionDePracticas implements OnInit {
+  eventNumaber: number = 0;
+
   typeDocumentsListAll: TypeDocumentData[] = [];
 
   itemsComite = new ItemsOfSettingGeneralComite();
@@ -45,6 +47,26 @@ export class BodyGestionDePracticas implements OnInit {
 
   ngOnInit(): void {
     this.getAllTypeDocuments();
+  }
+
+  actionOpen() {
+    console.log(this.eventNumaber);
+
+    switch (this.eventNumaber) {
+      case 4:
+        console.log('entre felicidades');
+        break;
+
+      default:
+        break;
+    }
+  }
+
+  createNewPlan(data: any, num: number) {
+    // console.log("pichulas es lo que comes");
+    console.log(data);
+
+    this.eventNumaber = num;
   }
 
   async getAllTypeDocuments() {

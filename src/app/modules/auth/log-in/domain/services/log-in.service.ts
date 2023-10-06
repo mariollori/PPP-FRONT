@@ -26,4 +26,11 @@ export class LogInService extends LogInRepository {
   getToken(){
     return sessionStorage.getItem('token');
   }
+
+
+  logOut(){
+    sessionStorage.removeItem('token')
+    sessionStorage.removeItem('access')
+    sessionStorage.removeItem('user')
+  }
 }
