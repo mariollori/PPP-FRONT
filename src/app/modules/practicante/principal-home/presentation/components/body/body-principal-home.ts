@@ -26,7 +26,7 @@ export class PrincipalHomeBody{
 
 
     sexoOpen(){
-        this.router.navigate(['/control-de-practicas-pre-profesionales'])
+        this.router.navigate(['menu-items/control-de-practicas-pre-profesionales'])
         return;
     }
 }
