@@ -63,7 +63,12 @@
 
             <div class="bg-red-200 rounded-lg mt-1 drop-shadow-xl flex flex-row">
               <span class="flex flex-1 py-3 px-4">cv-leonel-sanchez.pdf</span>
-              <span class="flex flex-2 bg-white p-2 border border-r-2 text-center">:DD</span>
+              <div class="flex flex-2 bg-white p-2 border border-r-2 text-center">
+                <img
+                  src="../../../../../../../assets/svg/donwload.svg"
+                  alt=""
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -79,7 +84,7 @@
 
           <div>
             <div class="flex flex-row justify-between">
-              <span class="font-semibold text-base">1. Evaluaciones de inicio</span>
+              <span class="font-semibold text-base">1. Evaluación inicio</span>
               <div class="bg-gray-500 py-0.5 px-2 rounded-xl">
                 <span class="text-xs text-white">Aprobado</span>
               </div>
@@ -104,7 +109,7 @@
 
           <div>
             <div class="flex flex-row justify-between mt-4">
-              <span class="font-semibold text-base">2. Evaluaciones de intermedio</span>
+              <span class="font-semibold text-base">2. Evaluación intermedio</span>
               <div class="bg-gray-500 py-0.5 px-2 rounded-xl">
                 <span class="text-xs text-white">Desaprobado</span>
               </div>
@@ -127,10 +132,40 @@
             </ul>
           </div>
 
+          <div>
+            <div class="flex flex-row justify-between">
+              <span class="font-semibold text-base">3. Evaluación final</span>
+              <div class="bg-gray-500 py-0.5 px-2 rounded-xl">
+                <span class="text-xs text-white">No creado</span>
+              </div>
+            </div>
+
+
+            <!-- en caso de que no exista se evaluacion mediante un ng if debee validarse -->
+            <!-- <ul class="pl-4">
+              <li class="flex flex-row justify-between">
+                <span>Nota obtenida</span>
+                <span>20</span>
+              </li>
+              <li class="flex flex-row justify-between">
+                <span>Fecha creada</span>
+                <span>20/12/12</span>
+              </li>
+              <li class="flex flex-row justify-between">
+                <span>Fecha terminda</span>
+                <span>20/12/12</span>
+              </li>
+            </ul> -->
+
+            <button class="py-1 px-2 border border-gray-600 my-2 w-full mx-auto hover:bg-gray-100 rounded-lg">
+              Crear evaluación
+            </button>
+          </div>
+
           <hr>
 
           <h5>Evaluación de satisfacción</h5>
-          <button class="px-2 py-1 border border-gray-600 rounded-lg hover:bg-gray-100">
+          <button class="py-1 px-2 border border-gray-600 my-2 w-full mx-auto hover:bg-gray-100 rounded-lg">
             Hacer evaluación
           </button>
 
@@ -360,7 +395,7 @@
                 />
               </div>
             </div>
-            
+
           </div>
       </div>
 
