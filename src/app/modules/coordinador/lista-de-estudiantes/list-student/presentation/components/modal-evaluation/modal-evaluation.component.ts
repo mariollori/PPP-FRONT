@@ -1,6 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+
+import { StudentServiceApi } from '../../../domain/services/student.services';
+import { lastValueFrom } from 'rxjs';
 
 @Component({
     standalone: true,
@@ -10,9 +13,44 @@ import { FormsModule } from '@angular/forms';
 })
 export class ModalEvaluationComponent {
 
+    @Output() cerrarModal = new EventEmitter<void>()
+
     preguntas: Pregunta[] = [{ pregunta: '', showBoton: false }]
 
-    constructor () { }
+    constructor (
+        private readonly server: StudentServiceApi
+    ) { }
+
+    async crearEvaluacion() {
+        
+        try {
+
+            const payload = new Map<string, any>()
+    
+            payload.set('type', 'Satisfaccion')
+            payload.set('dateEnd', new Date( new Date().getDay() + 7 ) )
+
+            // aqui va el codigo del estudiante o si no es para el va el del supervisor de empresa
+            payload.set('directedTo', '201711882') 
+            payload.set('ppp', '3096059e-7456-4fa5-b029-b6fe0a3be4b2')
+    
+            const arregloSoloPreguntas = this.preguntas.map( x => ({ "question": x.pregunta }) )
+    
+            payload.set('questions', arregloSoloPreguntas )
+
+            await lastValueFrom(this.server.createEvaluation( payload ))
+            
+            alert('Evaluación creada correctamente!')
+            
+            this.cerrarModal.emit()
+
+        } catch( error ) {
+
+            console.log({ error })
+            
+        }
+
+    }
 
     onCrearNuevaPregunta(index: number) {
 

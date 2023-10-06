@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { GlobalModel } from 'src/app/shared/components/modal/global-modal';
@@ -16,8 +16,8 @@ export class ListStudentComponent {
 
   constructor( ) { }
 
-  onShowModalEvaluation() {
-    this.isShowModal = true
+  onShowModalEvaluation(value: boolean) {
+    this.isShowModal = value
   }
 
 

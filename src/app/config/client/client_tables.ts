@@ -9,5 +9,8 @@ export const routesBackendTables = {
   planApi: '/api/plan',
 
   // STUDENT
-  planStudent:'/api/student'
+  planStudent:'/api/student',
+
+  // PPP
+  ppp: '/api/ppp'
 };
