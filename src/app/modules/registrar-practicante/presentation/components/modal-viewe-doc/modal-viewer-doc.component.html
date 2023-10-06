@@ -1,0 +1,80 @@
+<div class="h-[75vh] w-full">
+
+    <div class="w-full">
+        <h3 class="font-semibold text-2xl text-center">Carta de presentación.docx</h3>
+    </div>
+
+    <div class="grid grid-cols-4 mt-3 gap-3">
+
+        <div class="col-span-2 h-full items-center">
+            <ngx-doc-viewer [url]="url" viewer="google" class="h-[70vh] w-[50vh]">
+            </ngx-doc-viewer>
+        </div>
+
+        <div class="col-span-2">
+
+            <div class="flex justify-between">
+                <span>Ultima actualización:</span>
+                <span class="font-semibold">18/08/2022</span>
+            </div>
+
+            <div class="flex items-center justify-between mt-3">
+                <p>Estado de documento: </p>
+                <select name="estado" id="estado" class="border border-gray-300 rounded-2xl">
+                    <option value="pendiente" [defaultSelected]="true">Pendiente</option>
+                    <option value="aprobado">Aprobado</option>
+                    <option value="rechazado">Rechazado</option>
+                </select>
+            </div>
+
+            <div class="h-0.5 w-full bg-slate-300 my-4"></div>
+
+            <h4 class="font-semibold text-lg">Comentarios (3)</h4>
+
+            <div class="flex flex-col">
+
+            
+                <div class="flex space-x-2 mt-4">
+                    <img src="https://boroktimes.com/storage/2023/07/channels4_profile.jpeg" alt="userProfile"
+                        class="rounded-full h-11 w-11">
+
+                    <div class="w-[45vh]">
+                        <p class="font-semibold">Villegas, Alex</p>
+                        <div class="border border-gray-400 px-5 py-3 rounded-2xl">
+                            <p>Me parece que en su documento no se tienen las fechas de inicio, revise porfavor.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex space-x-2 mt-4">
+                    <img src="https://boroktimes.com/storage/2023/07/channels4_profile.jpeg" alt="userProfile"
+                        class="rounded-full h-11 w-11">
+
+                    <div class="w-[45vh]">
+                        <p class="font-semibold">Villegas, Alex</p>
+                        <div class="border border-gray-400 px-5 py-3 rounded-2xl">
+                            <p>Me parece que en su documento no se tienen las fechas de inicio, revise porfavor.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="mt-4">
+                <label for="default-search"
+                    class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Mensaje</label>
+                <div class="relative">
+                    <input type="search" id="default-search"
+                        class="block w-full p-4 text-base text-gray-900 border border-gray-400 rounded-lg bg-gray-50 focus:ring-gray-500 focus:border-gray-500"
+                        placeholder="Escribe un comentario" required>
+                    <button type="submit"
+                        class="text-white absolute right-2.5 bottom-2.5 bg-gray-600 hover:bg-gray-500 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2">Enviar</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

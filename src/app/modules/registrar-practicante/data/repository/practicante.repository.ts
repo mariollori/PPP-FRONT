@@ -42,7 +42,6 @@ export class PracticanteRepository implements IPracticanteRepository {
                 .post<{ data: string }>(`${this.BASE_PATH}/student/create-student`, Object.fromEntries( payload ))
                 .pipe( 
                     map(( response ) => {
-                        console.log({ response })
                         return response.data
                     })
                 );

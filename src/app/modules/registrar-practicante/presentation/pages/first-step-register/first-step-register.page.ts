@@ -49,9 +49,9 @@ export class FirstStepRegister {
 
             this.router.navigate(['/crear-cuenta-info'], { state: response });
 
-        } catch ( error ) {
+        } catch ( error: any ) {
 
-            this.onShowMessageError("Ingrese un codigo correcto!");
+            this.onShowMessageError(error.error.message);
 
         }
 
