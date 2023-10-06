@@ -240,13 +240,22 @@ export class CreateNewPlanModal implements OnInit {
         type: '',
       });
     } else if (this.documents.length > 0) {
-      this.documents.push({
-        name: '',
-        description: '',
-        urlDocument: '',
-        status: true,
-        type: '',
-      });
+      this.message = 'Debe llenar la información anterior';
+      this.typeToast = 'information';
+      this.toast = true;
+      setTimeout(() => {
+        this.toast = false;
+        this.message = '';
+        this.typeToast = '';
+        this.cdr.detectChanges();
+      }, 5000);
+      // this.documents.push({
+      //   name: '',
+      //   description: '',
+      //   urlDocument: '',
+      //   status: true,
+      //   type: '',
+      // });
     }
   }
 }
