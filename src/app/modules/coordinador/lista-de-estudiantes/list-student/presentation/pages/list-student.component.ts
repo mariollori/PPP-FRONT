@@ -1,41 +1,24 @@
-import { Component, OnInit } from '@angular/core'
-import { StudentServiceApi } from '../../domain/services/student.services'
-import { StudentEntity } from '../../data/entities/student.entity'
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { GetStudentsUseCase } from '../../domain/usecase/getStudentsUseCase';
-interface Steps {
-  title: string;
-  description: string;
-}
+
+import { GlobalModel } from 'src/app/shared/components/modal/global-modal';
+import { ModalEvaluationComponent } from '../components/modal-evaluation/modal-evaluation.component';
 
 @Component({
   selector: 'list-student',
   templateUrl: './list-student.component.html',
   standalone:true,
-  imports:[CommonModule]
+  imports:[ CommonModule, GlobalModel, ModalEvaluationComponent ]
 })
-export class ListStudentComponent implements OnInit {
+export class ListStudentComponent {
 
-  students: StudentEntity[] = []
+  isShowModal = false
 
-  constructor(
-    private  getStudentUseCase: GetStudentsUseCase
-  ) { }
+  constructor( ) { }
 
-  ngOnInit(): void { 
-    this.getStudents(); 
+  onShowModalEvaluation() {
+    this.isShowModal = true
   }
-  
-  
-  async getStudents(){
-    try {
-      this.students = await this.getStudentUseCase.execute('452e3d45-9e93-4f72-ace5-c188f6912f8b')
-    } catch (error) {
-      console.log(error)
-    }
-  }
-
-  
 
 
 }
