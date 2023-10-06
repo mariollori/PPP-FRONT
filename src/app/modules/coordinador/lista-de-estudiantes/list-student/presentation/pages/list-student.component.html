@@ -165,7 +165,9 @@
           <hr>
 
           <h5>Evaluación de satisfacción</h5>
-          <button class="py-1 px-2 border border-gray-600 my-2 w-full mx-auto hover:bg-gray-100 rounded-lg">
+          <button 
+            (click)="onShowModalEvaluation()"
+            class="py-1 px-2 border border-gray-600 my-2 w-full mx-auto hover:bg-gray-100 rounded-lg">
             Hacer evaluación
           </button>
 
@@ -451,3 +453,13 @@
     </global-modal>
 
 </div>
+
+
+<!-- modales -->
+
+<global-modal [isOpen]="isShowModal" (close)="isShowModal = false" *ngIf="isShowModal">
+
+  <!-- <modal-viewer-doc-component></modal-viewer-doc-component> -->
+  <modal-evaluation-profile></modal-evaluation-profile>
+
+</global-modal>

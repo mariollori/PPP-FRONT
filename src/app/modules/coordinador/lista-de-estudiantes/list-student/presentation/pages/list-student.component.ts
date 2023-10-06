@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core'
-import { StudentServiceApi } from '../../domain/services/student.services'
-import { StudentEntity } from '../../data/entities/student.entity'
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GetStudentsUseCase } from '../../domain/usecase/getStudentsUseCase';
 import { GlobalModel } from "src/app/shared/components/modal/global-modal";
 import { FormsModule } from '@angular/forms';
+import { ModalEvaluationComponent } from '../components/modal-evaluation/modal-evaluation.component';
+import { StudentEntity } from '../../data/entities/student.entity';
 interface Steps {
   title: string;
   description: string;
@@ -14,7 +14,7 @@ interface Steps {
   selector: 'list-student',
   templateUrl: './list-student.component.html',
   standalone:true,
-  imports:[CommonModule, GlobalModel, FormsModule]
+  imports:[ CommonModule, GlobalModel, FormsModule, GlobalModel, ModalEvaluationComponent ]
 })
 export class ListStudentComponent implements OnInit {
 

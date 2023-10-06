@@ -11,13 +11,15 @@ import {
   standalone: true,
   selector: 'global-modal',
   templateUrl: './global-modal.html',
-  imports: [CommonModule]
+  imports: [CommonModule],
 })
 export class GlobalModel {
   @Input() isOpen: boolean = false;
-  @Output() close = new EventEmitter<void>();
 
+  @Output() close = new EventEmitter<void>();
   @Input() closeText: string = 'Cerrar';
+
+  @Output() actionOpen = new EventEmitter<void>();
   @Input() buttonAccion: boolean = true;
   @Input() textButtonAccion: string = 'Guardar';
 
@@ -33,5 +35,9 @@ export class GlobalModel {
     if (userConfirmation) {
       this.close.emit();
     }
+  }
+
+  actionOpenVoid() {
+    this.actionOpen.emit();
   }
 }

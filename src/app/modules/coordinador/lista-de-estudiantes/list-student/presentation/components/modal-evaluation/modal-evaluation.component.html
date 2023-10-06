@@ -1,0 +1,45 @@
+<div class="w-[100vh] px-3">
+
+    <h4 class="font-semibold text-lg">Evaluacion de satisfacción <span class="text-gray-500">(num. preguntas: {{ preguntas.length }})</span></h4>
+
+    <!-- Primera pregunta -->
+    <div 
+        *ngFor="let pregunta of preguntas; let i = index"
+        class="space-y-2 mt-4">
+
+        <span>Pregunta {{ i + 1 }}</span>
+
+        <div 
+            class="flex flex-row justify-around w-full space-x-3">
+
+            <input 
+                type="text" 
+                placeholder="Ingrese su pregunta" 
+                [(ngModel)]="preguntas[i].pregunta"
+                class="input input-bordered w-full rounded-xl border border-gray-600 focus:border-blue-500" />
+
+            <button 
+                *ngIf="preguntas[i].showBoton"
+                (click)="eliminarPregunta(i)"
+                class="px-3 py-2 rounded-full self-center bg-gray-600 hover:bg-gray-500">
+                <i class="fa-solid fa-trash text-white"></i>
+            </button>
+
+            <button 
+                *ngIf="!preguntas[i].showBoton"
+                (click)="onCrearNuevaPregunta(i)"
+                class="px-3 py-2 rounded-full self-center bg-gray-600 hover:bg-gray-500">
+                <i class="fa-solid fa-plus text-white"></i>
+            </button>
+
+        </div>
+
+    </div>
+    
+    <div class="flex flex-row-reverse mt-5">
+        <button class="px-3 py-1.5 bg-gray-800 hover:bg-gray-700 text-white rounded-xl">
+            Crear evaluación
+        </button>
+    </div>
+    
+</div>
