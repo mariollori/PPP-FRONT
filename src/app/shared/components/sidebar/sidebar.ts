@@ -3,6 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormsModule, NgModel } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { AccessModel } from 'src/app/modules/auth/log-in/data/models/access-model';
+import { LogInService } from 'src/app/modules/auth/log-in/domain/services/log-in.service';
 
 
 
@@ -22,11 +23,16 @@ export class Sidebar implements OnInit{
   sidebarVisible: boolean = true;
   // @Input() accesses!:AccessModel[];
 
-  constructor(private router: Router){}
+  constructor(private router: Router,private loginService:LogInService){}
 
   ngOnInit(): void {
     this.accesses = JSON.parse(sessionStorage.getItem('access')!) as AccessModel[] || [];
     if(this.accesses.length != 0) this.router.navigate([`${this.accesses[0].path}`]);
+  }
+
+  logout(){
+    this.loginService.logOut();
+    this.router.navigate(['/sign-in'])
   }
 
 
