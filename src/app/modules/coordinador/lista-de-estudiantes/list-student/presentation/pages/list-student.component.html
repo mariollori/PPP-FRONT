@@ -157,7 +157,7 @@
               </li>
             </ul> -->
 
-            <button class="py-1 px-2 border border-gray-600 my-2 w-full mx-auto hover:bg-gray-100 rounded-lg" (click)="onShowModalEvaluation()">
+            <button class="py-1 px-2 border border-gray-600 my-2 w-full mx-auto hover:bg-gray-100 rounded-lg" (click)="onShowOtherModalEvaluation()">
                 Crear evaluación
             </button>
           </div>
@@ -404,7 +404,7 @@
     </div>
 
   </div>
-  <global-modal [isOpen]="isShowModal" (close)="isShowModal = false" *ngIf="isShowModal">
+  <global-modal [isOpen]="isShowModalOther" (close)="isShowModalOther = false" *ngIf="isShowModalOther">
 
     <div class="font-montserrat w-[100vh]">
     

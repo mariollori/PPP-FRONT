@@ -4,12 +4,13 @@ import { FormsModule } from '@angular/forms';
 
 import { StudentServiceApi } from '../../../domain/services/student.services';
 import { lastValueFrom } from 'rxjs';
+import { LoadingPageComponent } from 'src/app/shared/components/loading/loading-page.component';
 
 @Component({
     standalone: true,
     selector: 'modal-evaluation-profile',
     templateUrl: './modal-evaluation.component.html',
-    imports: [ CommonModule, FormsModule ]
+    imports: [ CommonModule, FormsModule, LoadingPageComponent ]
 })
 export class ModalEvaluationComponent {
 
