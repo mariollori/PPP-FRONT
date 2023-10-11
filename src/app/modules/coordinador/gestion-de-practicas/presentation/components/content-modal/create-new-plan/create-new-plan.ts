@@ -35,6 +35,7 @@ import { TypeDocumentData } from '../../../../data/models/type_documents';
   imports: [InputTextMedium, CommonModule, GlobasToast, GlobalBgAlerts],
 })
 export class CreateNewPlanModal implements OnInit {
+  @Output() createNewPlan = new EventEmitter<any>();
   @Input() typeDocumentList: TypeDocumentData[] = [];
 
   toast: boolean = false;
@@ -62,7 +63,9 @@ export class CreateNewPlanModal implements OnInit {
     private cdr: ChangeDetectorRef
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.createNewPlan.emit("hola");
+  }
 
   actionAlert() {
     if (!this.validated) this.validated = true;
@@ -175,9 +178,10 @@ export class CreateNewPlanModal implements OnInit {
                       this.documents.push({
                         name: items.name,
                         urlDocument: url,
+                        // typeDocument: '',
                         description: '',
                         status: true,
-                        type: '',
+                        type: ''
                       });
 
                       this.uploadProgressDocs = null;
@@ -231,31 +235,33 @@ export class CreateNewPlanModal implements OnInit {
   }
 
   addDocumentPlan() {
+    console.log(this.documents.length);
+
     if (this.documents.length == 0) {
       this.documents.push({
         name: '',
-        description: '',
         urlDocument: '',
+        // typeDocument: '',
+        description: '',
         status: true,
-        type: '',
+        type: ''
       });
-    } else if (this.documents.length > 0) {
-      this.message = 'Debe llenar la información anterior';
-      this.typeToast = 'information';
-      this.toast = true;
-      setTimeout(() => {
-        this.toast = false;
-        this.message = '';
-        this.typeToast = '';
-        this.cdr.detectChanges();
-      }, 5000);
-      // this.documents.push({
-      //   name: '',
-      //   description: '',
-      //   urlDocument: '',
-      //   status: true,
-      //   type: '',
-      // });
+    } else if (this.documents[this.documents.length - 1]) {
+      if (
+        this.documents[this.documents.length - 1].name == '' ||
+        this.documents[this.documents.length - 1].description == '' ||
+        this.documents[this.documents.length - 1].urlDocument == ''
+      ) {
+        this.message = 'Debe llenar la información anterior';
+        this.typeToast = 'information';
+        this.toast = true;
+        setTimeout(() => {
+          this.toast = false;
+          this.message = '';
+          this.typeToast = '';
+          this.cdr.detectChanges();
+        }, 5000);
+      }
     }
   }
 }

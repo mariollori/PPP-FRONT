@@ -9,7 +9,7 @@
         (click)="showCloseConfirmation()">{{closeText}}</button>
       <button
         class="ml-3 px-5 py-2 bg-hellowPrimary transition-all duration-300 hover:bg-hellowSecondary text-white rounded-[10px]"
-        *ngIf="buttonAccion">{{textButtonAccion}}</button>
+        *ngIf="buttonAccion" (click)="actionOpenVoid()">{{textButtonAccion}}</button>
     </div>
   </div>
 </div>
