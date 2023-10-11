@@ -3,21 +3,22 @@ import { StudentServiceApi } from '../../domain/services/student.services'
 import { StudentEntity } from '../../data/entities/student.entity'
 import { CommonModule } from '@angular/common';
 import { GetStudentsUseCase } from '../../domain/usecase/getStudentsUseCase';
+import { InputTextMedium } from "../../../../../../shared/components/input-text-medium/input-text-medium";
 interface Steps {
   title: string;
   description: string;
 }
 
 @Component({
-  selector: 'list-student',
-  templateUrl: './list-student.component.html',
-  standalone:true,
-  imports:[CommonModule]
+    selector: 'list-student',
+    templateUrl: './list-student.component.html',
+    standalone: true,
+    imports: [CommonModule, InputTextMedium]
 })
 export class ListStudentComponent implements OnInit {
 
   students: StudentEntity[] = []
-
+  mostrarElemento: boolean = false;
   constructor(
     private  getStudentUseCase: GetStudentsUseCase
   ) { }
@@ -34,8 +35,8 @@ export class ListStudentComponent implements OnInit {
       console.log(error)
     }
   }
-
-  
-
+  animacion(){
+    if(!this.mostrarElemento) this.mostrarElemento = true; else this.mostrarElemento = false;
+  }
 
 }

@@ -1,5 +1,5 @@
 <div>
-  <div class="flex flex-col gap-6">
+  <!-- <div class="flex flex-col gap-6">
     <h1 class="text-3xl">Bienvenido, <span class="font-bold">David Reyna </span>
     </h1>
     <h3 class="text-xl">Practicantes en lista de espera</h3>
@@ -9,45 +9,135 @@
         asignar un supervisor, asegúrate de revisar detenidamente sus
         documentos.
       </p>
-      <div class="open">
+    </div> -->
 
-        <label class="search">
-          <i class="fa-sharp fa-solid fa-magnifying-glass" placeholder="Buscar"></i>
-          <input class="buscar" type="text" placeholder="Filtros" required>
-        </label>
+  <div class="flex flex-col gap-6">
+    <h1 class="text-3xl">
+      Bienvenido, <span class="font-bold">David Reyna </span>
+    </h1>
+    <h3 class="text-xl">Perfiles de Practicantes en proceso</h3>
+    <div>
+      <p class="text-[#676767]">
+        Lista de estudiantes aceptados en el proceso de Prácticas Pre
+        Profesionales, puedes filtrarlos por plan de prácticas.
+      </p>
+    </div>
 
+    <div
+      class="w-full flex flex-row justify-between items-center space-x-2"
+    >
+      <div class="search cursor-pointer">
+        <input-text-medium-standalone
+          widht="w-12"
+          borderColor="border-[#D2D2D2]"          placeholder=""
+          fontSize="text-[16px]"
+          height="h-[55px]"
+          radius="rounded-[16px]"
+          transition="transition-all"
+          icon="fa-solid fa-magnifying-glass"
+          iconSize="text-[22px]"
+          iconColor="text-bluePrimary"
+        >
+        </input-text-medium-standalone>
       </div>
 
-      <div class="flex gap-6 py-4 w-full flex-wrap h-auto max-md:justify-center">
-
-        <div
-          *ngFor="let student of students"
-          class="rounded-xl w-48 h-55  shadow-lg cursor-pointer bg-white text-center">
-
-          <img
-            class="w-15 h-15 md:w-20 mt-4 md:h-auto rounded-full mx-auto"
-            src="{{ student.user.urlProfile }}"
-            alt="{{ student.code }}"
-            width="384"
-            height="512">
-
-          <div class="text-dark-500 dark:text-stale-400 mt-2">
-            {{ student.user.firstName }}
-          </div>
-
-          <span class="text-dark-200 dark:text-stale-200">
-            {{ student.code }}
-          </span>
-
-          <button
-            class="h-10 px-6 font-normal rounded-md bg-black text-white mb-4 mt-2"
-            type="submit">
-            ver perfil
-          </button>
-
+      <div
+        class="w-full flex flex-row justify-center space-x-2"
+        *ngIf="mostrarElemento"
+      >
+        <div class="w-full">
+          <select
+            id="planHours"
+            class="appearance-none border border-bluePrimary bg-white text-bluePrimary py-3 px-8 rounded-xl leading-tight focus:border-bluePrimary focus:ring-transparent w-full"
+          >
+            <option>Estudiantes Aprobados</option>
+            <option>Plan 2017</option>
+            <option>Plan 2018</option>
+          </select>
         </div>
 
+        <div class="w-full">
+          <select
+            id="planHours"
+            class="appearance-none border border-bluePrimary bg-white text-bluePrimary py-3 px-8 rounded-xl leading-tight focus:border-bluePrimary focus:ring-transparent w-full"
+          >
+            <option>No realizaron evaluación</option>
+            <option>Plan 2017</option>
+            <option>Plan 2018</option>
+          </select>
+        </div>
+
+        <div class="w-full">
+          <select
+            id="planHours"
+            class="appearance-none border border-bluePrimary bg-white text-bluePrimary py-3 px-8 rounded-xl leading-tight focus:border-bluePrimary focus:ring-transparent w-full"
+          >
+            <option>Estudiantes que</option>
+            <option>Ingeniería Infraestructura</option>
+            <option>Ingeniería Gestión</option>
+          </select>
+        </div>
+
+        <div class="w-full">
+          <select
+            id="planHours"
+            class="appearance-none border border-bluePrimary bg-white text-bluePrimary py-3 px-8 rounded-xl leading-tight focus:border-bluePrimary focus:ring-transparent w-full"
+          >
+            <option>Estudiantes en proceso de hora</option>
+            <option>Estudiantes que culminaron las horas</option>
+          </select>
+        </div>
+
+        <div class="w-full">
+          <select
+            id="planHours"
+            class="appearance-none border border-bluePrimary bg-white text-bluePrimary py-3 px-8 rounded-xl leading-tight focus:border-bluePrimary focus:ring-transparent w-fit"
+          >
+            <option>Plan 2016</option>
+            <option>Plan 2017</option>
+            <option>Plan 2018</option>
+          </select>
+        </div>
+      </div>
+
+      <div
+        class="filtros cursor-pointer flex flex-row items-center space-x-2  appearance-none border border-bluePrimary bg-white p-3 rounded-xl"
+        (click)="animacion()"
+      >
+        <i class="fa-solid fa-sliders text-bluePrimary"></i>
+        <p>Filtros</p>
+        
       </div>
     </div>
 
+    <div class="flex gap-6 py-4 w-full flex-wrap h-auto max-md:justify-center">
+      <div
+        *ngFor="let student of students"
+        class="rounded-xl w-48 h-55 shadow-lg cursor-pointer bg-white text-center"
+      >
+        <img
+          class="w-15 h-15 md:w-20 mt-4 md:h-auto rounded-full mx-auto"
+          src="{{ student.user.urlProfile }}"
+          alt="{{ student.code }}"
+          width="384"
+          height="512"
+        />
+
+        <div class="text-dark-500 dark:text-stale-400 mt-2">
+          {{ student.user.firstName }}
+        </div>
+
+        <span class="text-dark-200 dark:text-stale-200">
+          {{ student.code }}
+        </span>
+
+        <button
+          class="h-10 px-6 font-normal rounded-md bg-black text-white mb-4 mt-2"
+          type="submit"
+        >
+          ver perfil
+        </button>
+      </div>
+    </div>
   </div>
+</div>
