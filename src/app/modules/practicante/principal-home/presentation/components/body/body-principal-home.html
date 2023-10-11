@@ -1,6 +1,119 @@
-<div class="overflow-y-auto overflow-scroll">
-    <button-standalone width="w-[100px]" height="h-[45px]" colorFondo="bg-hellowPrimary" radius="rounded-[7px]"
-            hover="hover:bg-hellowSecondary" transition="transition-all" duration="duration-300" text="Pito"
-            colorText="text-white" fontFamily="font-montserrat" fontSize="text-[15px]" fontWeight="font-normal"
-            onclick="sexoOpen()"></button-standalone>
-</div>
+
+    <div class="flex flex-col gap-6 w-full flex-wrap h-auto max-md:justify-center">
+
+        <h1 class="text-3xl font-montserrat">Bienvenido, <span class="font-bold font-montserrat">Raul El Morado Cabro
+            </span></h1>
+        <div class="w-full h-[100%] px-5 py-4 flex flex-col">
+            <div class="grid grid-rows-1 gap-4">
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="w-full h-[80%] rounded-xl shadow-lg bg-white col-span-1 flex justify-center items-center">
+                        <div class="w-[95%] h-[95%]">
+                            <img class="object-fill w-full h-full" src="assets/imgs/x.jpg">
+                        </div>
+                    </div>
+                    <div class="w-full h-[80%] col-span-1 ">
+                        <div class="h-[80%] items-center px-5">
+                            <div class="pb-5">
+                                <label class="text-lg font-[600] font-montserrat text-[20px]">
+                                    Paso de las Practicas
+                                </label>
+                            </div>
+                            <p class=" text-[#9C9C9C] font-montserrat text-[13.5px] pb-6">
+                                0 ¡Buen día! En esta presentación, te mostraré cómo gestionar eficientemente tus horas de prácticas preprofesionales. Aprenderás a organizar y registrar tus documentos de forma efectiva para su evaluación, lo cual te permitirá acumular horas de experiencia práctica de manera óptima. De esta manera, podrás sacar el máximo provecho de esta valiosa oportunidad y potenciar tu crecimiento profesional.
+                            </p>
+                            <div class="flex flex-row items-center cursor-pointer" (click)="mostrarPito(1)" [ngClass]="{'btn-activo': pito === 1}">
+                                    <div class="w-8 h-8 rounded-full text-white items-center justify-center flex" [ngClass]="{'bg-bluePrimary': pito === 1, 'bg-hellowPrimary': pito!==1}">
+                                        <p>1</p>
+                                    </div>
+                                    <div class="col-span-1 flex-1 pl-6">
+                                        <p class=" text-[#000000] font-montserrat text-[15px] font-[600]">
+                                            Registra tu empreza
+                                        </p>
+                                    </div>
+                            </div>
+                            <div class="flex flex-row items-center">
+                                <div class="h-25 py-2 w-8 items-center justify-center flex">
+                                    <img class="h-full" *ngIf="pito == 1" src="assets/png/doted.png">
+                                    <img class="h-full" *ngIf="pito !== 1" src="assets/png/line.png">
+                                </div>
+                                <div class="col-span-1 flex-1 pl-6" [ngClass]="{'hidden': pito !== 1}">
+                                    <p class= "text-[#9C9C9C] font-montserrat text-[13.5px] ">
+                                        1 ¡Buen día! En esta presentación, te mostraré cómo gestionar eficientemente tus horas de prácticas preprofesionales. Aprenderás a organizar y registrar tus documentos de forma efectiva para su evaluación, lo cual te permitirá acumular horas de experiencia práctica de manera óptima. De esta manera, podrás sacar el máximo provecho de esta valiosa oportunidad y potenciar tu crecimiento profesional.  
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex flex-row pb-2 items-center cursor-pointer" (click)="mostrarPito(2)" [ngClass]="{'btn-activo': pito === 2}">
+                                <div class="w-8 h-8 rounded-full text-white items-center justify-center flex" [ngClass]="{'bg-bluePrimary': pito === 2, 'bg-hellowPrimary': pito!==2}">
+                                    <p>2</p>
+                                </div>
+                                <div class="col-span-1 flex-1 pl-6">
+                                    <p class=" text-[#000000] font-montserrat text-[15px] font-[600]">
+                                        Registra tus datos
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex flex-row items-center">
+                                <div class="h-25 py-2 w-8 items-center justify-center flex">
+                                    <img class="h-full" *ngIf="pito == 2" src="assets/png/doted.png">
+                                    <img class="h-full" *ngIf="pito !== 2" src="assets/png/line.png">
+                                </div>
+                                <div class="col-span-1 flex-1 pl-6 hidden" [ngClass]="{'hidden': pito !== 2}">
+                                    <p class= "text-[#9C9C9C] font-montserrat text-[13.5px]">
+                                       2 ¡Buen día! En esta presentación, te mostraré cómo gestionar eficientemente tus horas de prácticas preprofesionales. Aprenderás a organizar y registrar tus documentos de forma efectiva para su evaluación, lo cual te permitirá acumular horas de experiencia práctica de manera óptima. De esta manera, podrás sacar el máximo provecho de esta valiosa oportunidad y potenciar tu crecimiento profesional.   
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex flex-row pb-2 items-center cursor-pointer" (click)="mostrarPito(3)" [ngClass]="{'btn-activo': pito === 3}">
+                                <div class="w-8 h-8 rounded-full text-white items-center justify-center flex" [ngClass]="{'bg-bluePrimary': pito === 3, 'bg-hellowPrimary': pito!==3}">
+                                    <p>3</p>
+                                </div>
+                                <div class="col-span-1 flex-1 pl-6">
+                                    <p class=" text-[#000000] font-montserrat text-[15px] font-[600]">
+                                        Sube los documentos que se te soliciten
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex flex-row items-center">
+                                <div class="h-25 py-2 w-8 items-center justify-center flex">
+                                    <img class="h-full" *ngIf="pito == 3" src="assets/png/doted.png">
+                                    <img class="h-full" *ngIf="pito !== 3" src="assets/png/line.png">
+                                </div>
+                                <div class="col-span-1 flex-1 pl-6 hidden" [ngClass]="{'hidden': pito !== 3}">
+                                    <p class= "text-[#9C9C9C] font-montserrat text-[13.5px]">
+                                       3 ¡Buen día! En esta presentación, te mostraré cómo gestionar eficientemente tus horas de prácticas preprofesionales. Aprenderás a organizar y registrar tus documentos de forma efectiva para su evaluación, lo cual te permitirá acumular horas de experiencia práctica de manera óptima. De esta manera, podrás sacar el máximo provecho de esta valiosa oportunidad y potenciar tu crecimiento profesional.   
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex flex-row pb-2 items-center cursor-pointer" (click)="mostrarPito(4)" [ngClass]="{'btn-activo': pito === 4}">
+                                <div class="w-8 h-8 rounded-full text-white items-center justify-center flex" [ngClass]="{'bg-bluePrimary': pito === 4, 'bg-hellowPrimary': pito!==4}">
+                                    <p>4</p>
+                                </div>
+                                <div class="col-span-1 flex-1 pl-6">
+                                    <p class=" text-[#000000] font-montserrat text-[15px] font-[600]">
+                                        Realizar las evaluaciones
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex flex-row items-center">
+                                <div class="h-25 py-2 w-8 items-center justify-center flex">
+                                    <img class="h-full" *ngIf="pito == 4" src="assets/png/doted.png">
+                                    <img class="h-full" *ngIf="pito !== 4" src="assets/png/line.png">
+                                </div>
+                                <div class="col-span-1 flex-1 pl-6 hidden" [ngClass]="{'hidden': pito !== 4}">
+                                    <p class= "text-[#9C9C9C] font-montserrat text-[13.5px]">
+                                       4 ¡Buen día! En esta presentación, te mostraré cómo gestionar eficientemente tus horas de prácticas preprofesionales. Aprenderás a organizar y registrar tus documentos de forma efectiva para su evaluación, lo cual te permitirá acumular horas de experiencia práctica de manera óptima. De esta manera, podrás sacar el máximo provecho de esta valiosa oportunidad y potenciar tu crecimiento profesional.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex justify-end pt-2">
+                                <button-standalone width="w-[210px]" height="h-[65px]" colorFondo="bg-bluePrimary" radius="rounded-[15px]"
+                                hover="hover:bg-hellowSecondary" transition="transition-all" duration="duration-300" text="Emprezar"
+                                colorText="text-white" fontFamily="font-montserrat" fontSize="text-[20px]" fontWeight="font-normal"
+                                (click)="sexoOpen()"></button-standalone>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>

@@ -9,10 +9,15 @@ import { routesAccess } from 'src/app/config/api/network_api'
 @Injectable()
 export class StudentServiceApi implements IStudentRepository {
 
-
     private routes = routesAccess;
 
     constructor(private http: HttpClient) { }
+
+    createEvaluation(payload: Map<string, object>): Observable<any> {
+        
+        return this.http.post(`${this.routes.postCreateEvaluationPPP}`, Object.fromEntries(payload));
+
+    }
 
     getStudents(ppp: string): Observable< StudentEntity[] > {
         

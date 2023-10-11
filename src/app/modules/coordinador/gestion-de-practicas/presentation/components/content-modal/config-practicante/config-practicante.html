@@ -15,21 +15,15 @@
           <thead class="bg-gray-200">
             <tr>
               <th class="p-1 rounded-l-lg font-montserrat">Código Universitario</th>
-              <th class="p-1 font-montserrat">Nombres Completos</th>
               <th class="p-1 font-montserrat">Fecha Subida</th>
               <th class="p-1 rounded-r-lg font-montserrat">Estado</th>
             </tr>
           </thead>
           <tbody class="text-center">
-            <tr class="w-full">
-              <td class="p-1 font-montserrat">201727893 </td>
-              <td class="p-1 font-montserrat">Malcolm Lockyer sdfnkjdsbgjhds</td>
-              <td class="p-1 font-montserrat">12/05/2018</td>
-              <td class="py-1 px-3 font-montserrat">
-                <div class="bg-red-500 rounded-xl">
-                  Pendiente
-                </div>
-              </td>
+            <tr *ngFor="let item of jsonData">
+              <td>{{ item.codigoEstudiante }}</td>
+              <td>{{ item.fechaSubida }}</td>
+              <td>{{ item.estado }}</td>
             </tr>
           </tbody>
         </table>
@@ -86,8 +80,8 @@
     
       <div class="relative w-full py-2 px-3 rounded-lg border border-sky-500">
         <div class="w-full  border-bluePrimary  h-max focus:border-none" name="" id="" cols="auto" rows="5">
-          <p>Cantidad de estudiantes en el documento: <span class="font-semibold">22 </span> </p>
-          <p>Fecha de subida: <span class="font-semibold"> 22/03/2023</span></p>
+          <p>Cantidad de estudiantes en el documento: <span class="font-semibold">{{ cantidadEstudiantes }}</span> </p>
+          <p>Fecha de subida: <span class="font-semibold"> {{ fechaSubida }}</span></p>
         </div>
       </div>
       <div class="mt-5">

@@ -29,7 +29,7 @@ export class ItemsOfSettingGeneralComite {
     },
     {
       position: 6,
-      title: 'Agregar items\nde evaluación',
+      title: 'Gestionar items\nde evaluación',
       image: 'assets/svg/modules/comite/settings-comite.svg',
     },
   ];
@@ -44,6 +44,7 @@ export class BannersFirebase {
 export class DocumementsFirebase {
   name!: string;
   urlDocument!: string;
+  // typeDocument!: string;
   description!: string;
   status!: boolean;
   type!: string;
