@@ -17,6 +17,7 @@ export const routesAccess = {
   plantGetAll: `${env}${client.planApi}/get-all`,
   typeDocumentGetAll: `${env}${client.planApi}/get-all-types-documents`,
   createPlan: `${env}${client.planApi}/create-plan-ppp`,
+  getAreaPlan: `${env}${client.planApi}/get-areas-plan`,
   createAreaPlan: `${env}${client.planApi}/create-area-plan`,
   createQuestion: `${env}${client.planApi}/create-question-evaluation`,
   createDocumentPPP: `${env}${client.planApi}/create-document-plan`,

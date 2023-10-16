@@ -1,174 +1,48 @@
 <div>
-
   <div class="flex flex-col gap-6">
-
-    <h1 class="text-3xl">
-      Bienvenido, <span class="font-bold">David Reyna </span>
+    <h1 class="text-3xl">Bienvenido, <span class="font-bold">David Reyna </span>
     </h1>
+    <h3 class="text-xl">Practicantes en lista de espera</h3>
+    <div>
+      <p class=" text-[#676767]">
+        Los siguientes estudiantes no tienen asignado un supervisor. Antes de
+        asignar un supervisor, asegúrate de revisar detenidamente sus
+        documentos.
+      </p>
+      <div class="open">
 
-    <h3>
-      Perfiles de practicantes / <span class="font-bold">Porky Chanel</span>
-    </h3>
-
-  </div>
-
-  <!-- pagina principal de la vista -->
-  <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
-
-    <!-- columan de la informacion basica -->
-    <div class="sm:col-span-1 md:col-span-1">
-
-      <!-- primera cartilla de usuario -->
-      <div class="bg-white rounded-xl">
-
-        <div class="w-full">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVrIT2pl6gc_1KiYq5c_JReUElVc-QBZ1hCw&usqp=CAU" alt="fondo-usuario" class="w-full object-cover rounded-t-xl" />
-        </div>
-
-        <div class="flex flex-row justify-start space-x-3 mx-1">
-          <div class="bg-white p-1 rounded-full -mt-12">
-            <img src="https://i.ytimg.com/vi/4pt31CFzC7A/mqdefault.jpg" alt="foto_perfil_usuario"
-              class="rounded-full h-24 w-24">
-          </div>
-
-          <div class="">
-            <h6 class="text-xl font-semibold">Leonel Aldair Sanchez</h6>
-            <span class="text-sm">Código: 201711882</span>
-          </div>
-        </div>
-
-        <!-- informacion complementaria dentro de la cartilla -->
-
-        <div class="px-3 pb-3 space-y-2">
-          <div class="flex flex-row justify-between">
-            <span class="font-semibold">Dni:</span>
-            <span>201711882</span>
-          </div>
-          <div class="flex flex-row justify-between">
-            <span class="font-semibold">Ciclo academico:</span>
-            <span>10</span>
-          </div>
-          <div class="flex flex-row justify-between">
-            <span class="font-semibold">Escuela:</span>
-            <span>EP. ing de sistemas</span>
-          </div>
-          <div class="flex flex-row justify-between">
-            <span class="font-semibold">Area de practicas:</span>
-            <span>Programador fullstack</span>
-          </div>
-
-          <!-- cv del estudiante -->
-          <div>
-            <span class="font-semibold">Curriculum vitae:</span>
-
-            <div class="bg-red-200 rounded-lg mt-1 drop-shadow-xl flex flex-row">
-              <span class="flex flex-1 py-3 px-4">cv-leonel-sanchez.pdf</span>
-              <div class="flex flex-2 bg-white p-2 border border-r-2 text-center">
-                <img
-                  src="../../../../../../../assets/svg/donwload.svg"
-                  alt=""
-                />
-              </div>
-            </div>
-          </div>
-        </div>
+        <label class="search">
+          <i class="fa-sharp fa-solid fa-magnifying-glass" placeholder="Buscar"></i>
+          <input class="buscar" type="text" placeholder="Filtros" required>
+        </label>
 
       </div>
 
-      <!-- segunda cartilla de las evaluaciones que tiene el practicante -->
-      <div class="bg-white rounded-xl mt-3 px-3 py-2">
-        <h6 class="font-semibold text-lg">Evaluaciones</h6>
+      <div class="flex gap-6 py-4 w-full flex-wrap h-auto max-md:justify-center">
 
-        <!-- esto menter en un componente para poder renderizar varios de esto o talvez se pueda metera manualsitos -->
-        <div class="space-y-1 mt-2">
+        <div
+          *ngFor="let student of students"
+          class="rounded-xl w-48 h-55  shadow-lg cursor-pointer bg-white text-center">
 
-          <div>
-            <div class="flex flex-row justify-between">
-              <span class="font-semibold text-base">1. Evaluación inicio</span>
-              <div class="bg-gray-500 py-0.5 px-2 rounded-xl">
-                <span class="text-xs text-white">Aprobado</span>
-              </div>
-            </div>
+          <img
+            class="w-15 h-15 md:w-20 mt-4 md:h-auto rounded-full mx-auto"
+            src="{{ student.user.urlProfile }}"
+            alt="{{ student.code }}"
+            width="384"
+            height="512">
 
-
-            <ul class="pl-4">
-              <li class="flex flex-row justify-between">
-                <span>Nota obtenida</span>
-                <span>20</span>
-              </li>
-              <li class="flex flex-row justify-between">
-                <span>Fecha creada</span>
-                <span>20/12/12</span>
-              </li>
-              <li class="flex flex-row justify-between">
-                <span>Fecha terminda</span>
-                <span>20/12/12</span>
-              </li>
-            </ul>
+          <div class="text-dark-500 dark:text-stale-400 mt-2">
+            {{ student.user.firstName }}
           </div>
 
-          <div>
-            <div class="flex flex-row justify-between mt-4">
-              <span class="font-semibold text-base">2. Evaluación intermedio</span>
-              <div class="bg-gray-500 py-0.5 px-2 rounded-xl">
-                <span class="text-xs text-white">Desaprobado</span>
-              </div>
-            </div>
+          <span class="text-dark-200 dark:text-stale-200">
+            {{ student.code }}
+          </span>
 
-
-            <ul class="pl-4">
-              <li class="flex flex-row justify-between">
-                <span>Nota obtenida</span>
-                <span>20</span>
-              </li>
-              <li class="flex flex-row justify-between">
-                <span>Fecha creada</span>
-                <span>20/12/12</span>
-              </li>
-              <li class="flex flex-row justify-between">
-                <span>Fecha terminda</span>
-                <span>20/12/12</span>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <div class="flex flex-row justify-between">
-              <span class="font-semibold text-base">3. Evaluación final</span>
-              <div class="bg-gray-500 py-0.5 px-2 rounded-xl">
-                <span class="text-xs text-white">No creado</span>
-              </div>
-            </div>
-
-
-            <!-- en caso de que no exista se evaluacion mediante un ng if debee validarse -->
-            <!-- <ul class="pl-4">
-              <li class="flex flex-row justify-between">
-                <span>Nota obtenida</span>
-                <span>20</span>
-              </li>
-              <li class="flex flex-row justify-between">
-                <span>Fecha creada</span>
-                <span>20/12/12</span>
-              </li>
-              <li class="flex flex-row justify-between">
-                <span>Fecha terminda</span>
-                <span>20/12/12</span>
-              </li>
-            </ul> -->
-
-            <button class="py-1 px-2 border border-gray-600 my-2 w-full mx-auto hover:bg-gray-100 rounded-lg" (click)="onShowOtherModalEvaluation()">
-                Crear evaluación
-            </button>
-          </div>
-
-          <hr>
-
-          <h5>Evaluación de satisfacción</h5>
-          <button 
-            (click)="onShowModalEvaluation(true)"
-            class="py-1 px-2 border border-gray-600 my-2 w-full mx-auto hover:bg-gray-100 rounded-lg">
-            Hacer evaluación
+          <button
+            class="h-10 px-6 font-normal rounded-md bg-black text-white mb-4 mt-2"
+            type="submit">
+            ver perfil
           </button>
 
         </div>
@@ -404,62 +278,3 @@
     </div>
 
   </div>
-  <global-modal [isOpen]="isShowModalOther" (close)="isShowModalOther = false" *ngIf="isShowModalOther">
-
-    <div class="font-montserrat w-[100vh]">
-    
-      <div class="w-full mb-5 text-bluePrimary">
-        <span class="font-[700]">Evaluación Final</span>
-      </div>
-    
-      <div class="w-full flex flex-row justify-between space-x-3 px-0.5">
-   
-        <textarea class=" border-bluePrimary rounded-lg font-montserrat w-full" cols="10" rows="5" placeholder="Escriba un comentario"></textarea>
-   
-        <input type="text" class="rounded-lg border-gray-300 font-montserrat text-lg" placeholder="Ingresa la Nota">
-   
-      </div>
-   
-      <div class="w-full rounded-lg border border-bluePrimary mt-2 px-2 pb-3">
-        <div class="w-full border-sky-500 mt-2 h-max focus:border-none" name="" id="" cols="auto" rows="5">
-          <div class="space-y-2 mt-4" *ngFor="let pregunta of preguntas; let i = index">
-            <span>Pregunta {{ i + 1 }}</span>
-            <div class="flex flex-row justify-around w-full space-x-3">
-              <textarea name="" class="h-12 w-full rounded-lg text-xs mt-1" id="" cols="30" rows="10" placeholder="Respuesta" [(ngModel)]="preguntas[i].pregunta"></textarea>
-              <button 
-                  *ngIf="preguntas[i].showBoton"
-                  (click)="eliminarPregunta(i)"
-                  class="px-3 py-2 rounded-full self-center bg-gray-600 hover:bg-gray-500">
-                  <i class="fa-solid fa-trash text-white"></i>
-              </button>
-              <button 
-                  *ngIf="!preguntas[i].showBoton"
-                  (click)="onCrearNuevaPregunta(i)"
-                  class="px-3 py-2 rounded-full self-center bg-gray-600 hover:bg-gray-500">
-                  <i class="fa-solid fa-plus text-white"></i>
-              </button>
-          </div>
-          </div>
-        </div>
-      </div>
-    
-    
-    
-      <!-- <global-bg-alerts *ngIf="validated" (actionAlert)="actionAlert()" (actionAccept)="actionAlrt" [alert]="alert">
-      </global-bg-alerts>
-    
-      <global-toast *ngIf="toast" [message]="message" [type]="typeToast" (closed)="toast=false"></global-toast> -->
-    </div>
-    </global-modal>
-
-</div>
-
-
-<!-- modales -->
-
-<global-modal [isOpen]="isShowModal" (close)="isShowModal = false" *ngIf="isShowModal">
-
-  <!-- <modal-viewer-doc-component></modal-viewer-doc-component> -->
-  <modal-evaluation-profile (cerrarModal)="onShowModalEvaluation(false)"></modal-evaluation-profile>
-
-</global-modal>

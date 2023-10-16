@@ -1,61 +1,190 @@
 <div class="font-montserrat w-full relative h-full">
   <div class="w-full mb-5 text-bluePrimary">
-    <span class="font-[600]">Crear un nuevo plan de Prácticas Pre Profesionales</span>
-  </div>
-  <div class="relative w-full grid grid-cols-3 gap-3">
-    <div class="relative w-full pt-2">
-      <label class="absolute left-7 -top-[1px] text-bluePrimary text-[11px] bg-white px-2" for="planHours">Selecione
-        Plan</label>
-
-      <select id="planHours"
-        class="appearance-none border border-bluePrimary bg-white text-bluePrimary py-3 px-8 pl-10 rounded-xl leading-tight focus:border-bluePrimary focus:ring-transparent w-full">
-        <option>Plan 2016</option>
-        <option>Plan 2017</option>
-        <option>Plan 2018</option>
-      </select>
-    </div>
-
-    <div class="relative w-full pt-2">
-      <label class="absolute left-7 -top-[1px] text-bluePrimary text-[11px] bg-white px-2" for="planHours">Selecione
-        Área</label>
-
-      <select id="planHours"
-        class="appearance-none border border-bluePrimary bg-white text-bluePrimary py-3 px-8 pl-10 rounded-xl leading-tight focus:border-bluePrimary focus:ring-transparent w-full">
-        <option>Ingeniería de software</option>
-        <option>Ingeniería Infraestructura</option>
-        <option>Ingeniería Gestión</option>
-      </select>
-    </div>
-
-    <div class="relative w-full pt-2">
-      <label class="absolute left-7 -top-[1px] text-bluePrimary text-[11px] bg-white px-2" for="planHours">Etapa
-        Evaluación</label>
-
-      <select id="planHours"
-        class="appearance-none border border-bluePrimary bg-white text-bluePrimary py-3 px-8 pl-10 rounded-xl leading-tight focus:border-bluePrimary focus:ring-transparent w-full">
-        <option>Inicio</option>
-        <option>Intermedio</option>
-        <option>Final</option>
-      </select>
-    </div>
+    <!-- <span class="font-[600]">Crear un nuevo plan de Prácticas Pre Profesionales</span> -->
+    <span class="font-[600]">Gestionar items de evaluacion</span>
   </div>
 
-  <div class="grid gap-3 my-3 text-bluePrimary">
-    <div>
-      <input-text-medium-standalone widht="w-[100%]" borderColor="border-[#D2D2D2]" placeholder="Agregar una pregunta"
-        fontSize="text-[16px]" height="h-[55px]" radius="rounded-[16px]" transition="transition-all"
-        icon="fa-solid fa-circle-question"></input-text-medium-standalone>
+  <div class="relative w-full grid grid-cols-7 grid-rows-5 gap-3 py-4">
+
+    <!-- // form register item -->
+
+    <form [formGroup]="newItemForm" (submit)="addNewItem()"
+      class="relative w-full col-span-3 row-span-4 grid grid-cols-3 grid-rows-4 gap-x-3 gap-y-1 ">
+      <!-- // select 1 -->
+      <div class="relative w-full col-span-1 row-span-1 pt-2">
+        <label
+          class="absolute left-7 -top-[1px] text-bluePrimary text-[11px] bg-white px-2"
+          for="planHours">Selecione Plan</label>
+
+        <select id="planHours"
+          formControlName="plan"
+          class="appearance-none border  border-bluePrimary bg-white text-bluePrimary py-3 px-8 pl-10 rounded-xl leading-tight focus:border-bluePrimary focus:ring-transparent w-full">
+          <option value disabled selected>Seleccione plan</option>
+          <option *ngFor="let plan of plans" value="{{plan.id}}">{{plan.name}}</option>
+        </select>
+      </div>
+
+      <!-- // select 2 -->
+      <div class="relative w-full pt-2 col-span-2 row-span-1 ">
+        <label
+          class="absolute left-7 -top-[1px] text-bluePrimary text-[11px] bg-white px-2"
+          for="planHours">Etapa
+          Evaluación</label>
+
+        <select id="planHours"
+          formControlName="type"
+          class="appearance-none border border-bluePrimary bg-white text-bluePrimary py-3 px-8 pl-10 rounded-xl leading-tight focus:border-bluePrimary focus:ring-transparent w-full">
+          <option value disabled selected>Seleccione plan</option>
+          <option value="inicio">Inicio</option>
+          <option value="intermedio">Intermedio</option>
+          <option value="final">Final</option>
+        </select>
+        <span class="text-xs text-red-600 font-bold mx-3"
+          *ngIf="newItemForm.get('type').invalid && newItemForm.get('type').touched">!
+          Seleccione un tipo</span>
+      </div>
+
+      <!-- // select 3 -->
+      <div class="relative w-full pt-2 col-span-3 row-span-1 ">
+        <label
+          class="absolute left-7 -top-[1px] text-bluePrimary text-[11px] bg-white px-2"
+          for="planHours">Selecione
+          Área</label>
+
+        <select id="planHours"
+          formControlName="area"
+          class="appearance-none border border-bluePrimary bg-white text-bluePrimary py-3 px-8 pl-10 rounded-xl leading-tight focus:border-bluePrimary focus:ring-transparent w-full">
+          <option value disabled selected>Seleccione un area</option>
+          <option *ngFor="let area of areas" value="{{area.id}}">{{area.name}}</option>
+        </select>
+        <span class="text-xs text-red-600 font-bold mx-3"
+          *ngIf="newItemForm.get('area').invalid && newItemForm.get('area').touched">!
+          Seleccione un area</span>
+      </div>
+
+      <div class="relative w-full pt-2 col-span-3 row-span-1 ">
+        <div>
+          <input-text-medium-standalone widht="w-[100%]"
+            borderColor="border-[#D2D2D2]" placeholder="Agregar una pregunta"
+            fontSize="text-[16px]" height="h-[55px]" radius="rounded-[16px]"
+            transition="transition-all"
+            (inputValueChange)="obtenerInputValue($event, 'question')"
+            icon="fa-solid fa-circle-question"></input-text-medium-standalone>
+        </div>
+        <span class="text-xs text-red-600 font-bold mx-3"
+          *ngIf="newItemForm.get('question').invalid && newItemForm.get('question').touched">!
+          Porfavor
+          ingrese una pregunta</span>
+
+      </div>
+
+      <button type="submit"
+        class="col-start-3 bg-bluePastelPrimary row-span-1  px-6 py-2 rounded-md  shadow-md">
+        Agregar
+      </button>
+
+    </form>
+
+    <!-- show questions created -->
+    <div
+      class="flex max-h-96 col-span-4 row-span-5 overflow-y-scroll  p-4 rounded-md shadow-md "
+      style="background-image: linear-gradient(rgba(155, 160, 167, 0.27) 1.5px, transparent 1.5px), linear-gradient(to right, rgba(155, 160, 167, 0.27) 1.5px, rgba(155, 160, 167, 0.1) 1.5px);
+    background-size: 28px 28px;">
+
+      <div class="container mx-auto  sm:px-2">
+        <div class="py-8">
+          <div>
+            <h2 class="text-2xl font-semibold leading-tight">Items por subir</h2>
+          </div>
+          <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
+            <div
+              class="inline-block min-w-full shadow-md rounded-lg overflow-hidden">
+              <table class="min-w-full leading-normal">
+                <thead>
+                  <tr>
+                    <th
+                      class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                      Plan
+                    </th>
+                    <th
+                      class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                      Area
+                    </th>
+                    <th
+                      class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                      Etapa
+                      
+                    </th>
+                    <th
+                      class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                      Pregunta
+                    </th>
+                    <th
+                      class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                      Opciones
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of itemsEvaluation">
+                    <td
+                      class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                      <p class="text-gray-900 whitespace-no-wrap">
+                        {{item.plan}}
+                      </p>
+                    </td>
+                    <td
+                      class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                      <p class="text-gray-900 whitespace-no-wrap">
+                        {{item.area}}
+                      </p>
+                    </td>
+                    <td
+                      class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                      <p class="text-gray-900 whitespace-no-wrap">
+                        {{item.type}}
+                      </p>
+                    </td>
+                    <td
+                      class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                      <p class="text-gray-900 whitespace-no-wrap">
+                        {{item.question}}
+                      </p>
+                    </td>
+                    <td
+                    class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                    <label  (click)="eliminarPregunta(item.question)">
+
+                      <i class="far fa-trash-alt"
+                        style="cursor: pointer;color: red;"
+                       ></i>
+                    </label>
+
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div>
-      <input-text-medium-standalone widht="w-full" borderColor="border-[#D2D2D2]"
-        placeholder="Agregar el tipo de pregunta" fontSize="text-[16px]" height="h-[55px]" radius="rounded-[16px]"
-        transition="transition-all" icon="fa-solid fa-file-circle-question"></input-text-medium-standalone>
-    </div>
+    <!-- <ul>
+
+        <li *ngFor="let item of itemsEvaluation  ">
+          <label>{{item.question}}</label>
+        </li>
+        
+      </ul> -->
+
   </div>
 
-  <global-bg-alerts *ngIf="validated" (actionAlert)="actionAlert()" (actionAccept)="actionAlrt" [alert]="alert">
+  <global-bg-alerts *ngIf="validated" (actionAlert)="actionAlert()"
+    (actionAccept)="actionAlrt" [alert]="alert">
   </global-bg-alerts>
 
-  <global-toast *ngIf="toast" [message]="message" [type]="typeToast" (closed)="toast=false"></global-toast>
+  <global-toast *ngIf="toast" [message]="message" [type]="typeToast"
+    (closed)="toast=false"></global-toast>
 </div>
