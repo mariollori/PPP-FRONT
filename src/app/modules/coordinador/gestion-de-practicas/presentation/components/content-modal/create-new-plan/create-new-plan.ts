@@ -27,12 +27,31 @@ import { CommonModule } from '@angular/common';
 import { GlobasToast } from 'src/app/shared/components/toast/globas-toast';
 import { GlobalBgAlerts } from 'src/app/shared/components/bg-alerts/global-bg-alerts';
 import { TypeDocumentData } from '../../../../data/models/type_documents';
+import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
 @Component({
   standalone: true,
   selector: 'create-new-plan',
   templateUrl: './create-new-plan.html',
   styleUrls: ['create-new-plan.css'],
   imports: [InputTextMedium, CommonModule, GlobasToast, GlobalBgAlerts],
+  animations: [
+    trigger('fadeInOut', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'scale(0.5)' }),
+        animate('5.5s ease-out', style({ opacity: 1, transform: 'scale(1)' })),
+      ]),
+      transition(':leave', [
+        style({ transform: 'translateX(0)' }),
+        animate('10.3s ease-out', style({ transform: 'translateX(100%)' })),
+      ]),
+    ]),
+  ],
 })
 export class CreateNewPlanModal implements OnInit {
   @Output() createNewPlan = new EventEmitter<any>();
@@ -47,7 +66,7 @@ export class CreateNewPlanModal implements OnInit {
   actionAlrt!: void;
 
   bannerList: BannersFirebase[] = [];
-  bannerListString: string[] = [''];
+  bannerListString: string[] = [];
 
   documents: DocumementsFirebase[] = [];
 
@@ -55,6 +74,8 @@ export class CreateNewPlanModal implements OnInit {
   uploadProgressDocs: number | null = null;
 
   view_docs: string = '';
+
+  estadoDiv2: string = '';
 
   constructor(
     private storage: Storage,
@@ -64,7 +85,7 @@ export class CreateNewPlanModal implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.createNewPlan.emit("hola");
+    this.createNewPlan.emit('hola');
   }
 
   actionAlert() {
@@ -181,7 +202,7 @@ export class CreateNewPlanModal implements OnInit {
                         // typeDocument: '',
                         description: '',
                         status: true,
-                        type: ''
+                        type: '',
                       });
 
                       this.uploadProgressDocs = null;
@@ -236,6 +257,7 @@ export class CreateNewPlanModal implements OnInit {
 
   addDocumentPlan() {
     console.log(this.documents.length);
+    this.estadoDiv2 = 'out';
 
     if (this.documents.length == 0) {
       this.documents.push({
@@ -244,7 +266,7 @@ export class CreateNewPlanModal implements OnInit {
         // typeDocument: '',
         description: '',
         status: true,
-        type: ''
+        type: '',
       });
     } else if (this.documents[this.documents.length - 1]) {
       if (
