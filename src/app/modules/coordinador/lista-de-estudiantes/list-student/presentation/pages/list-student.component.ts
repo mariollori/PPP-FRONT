@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GetStudentsUseCase } from '../../domain/usecase/getStudentsUseCase';
+import { StudentEntity } from '../../data/entities/student.entity';
 interface Steps {
   title: string;
   description: string;
@@ -14,41 +15,41 @@ interface Steps {
 })
 export class ListStudentComponent implements OnInit {
 
-  isShowModal = false
-  isShowModalOther = false
+  // isShowModal = false
+  // isShowModalOther = false
   students: StudentEntity[] = []
 
   constructor(
     private getStudentUseCase: GetStudentsUseCase
   ) { }
 
-  onShowModalEvaluation(value: boolean) {
-    this.isShowModal = value
-  }
+  // onShowModalEvaluation(value: boolean) {
+  //   this.isShowModal = value
+  // }
 
-  onShowOtherModalEvaluation(){
-    this.isShowModalOther = true
-  }
+  // onShowOtherModalEvaluation(){
+  //   this.isShowModalOther = true
+  // }
 
-  onCrearNuevaPregunta(index: number) {
+  // onCrearNuevaPregunta(index: number) {
 
-    const preguntaEncontrada = this.preguntas[index]
+  //   const preguntaEncontrada = this.preguntas[index]
 
-    if (preguntaEncontrada.pregunta === '') {
-      alert("Primero rellene el campo de pregunta!")
-      return
-    }
-    this.preguntas[index] = { ...preguntaEncontrada, showBoton: true }
+  //   if (preguntaEncontrada.pregunta === '') {
+  //     alert("Primero rellene el campo de pregunta!")
+  //     return
+  //   }
+  //   this.preguntas[index] = { ...preguntaEncontrada, showBoton: true }
 
-    this.preguntas.push({
-      pregunta: '',
-      showBoton: false
-    })
-  }
+  //   this.preguntas.push({
+  //     pregunta: '',
+  //     showBoton: false
+  //   })
+  // }
 
-  eliminarPregunta(index: number) {
-    this.preguntas.splice(index, 1)
-  }
+  // eliminarPregunta(index: number) {
+  //   this.preguntas.splice(index, 1)
+  // }
 
 
   ngOnInit(): void {
@@ -64,7 +65,7 @@ export class ListStudentComponent implements OnInit {
     }
   }
 
-  
+
 
 
 }
