@@ -54,10 +54,15 @@
     <!-- Coordinador -->
     <div class="flex flex-col items-start w-full gap-3"
         *ngIf="validateRol.includes('coordinador')">
-        <label class>Supervisor de Practicas</label>
+        <label class>Supervisores de practicas</label>
         <div class="flex flex-row space-x-3 w-full items-center">
+            
             <button
-                class="rounded-full h-12 w-12 bg-white border-dashed border-2  border-hellowPrimary hover:bg-slate-50   items-center justify-center text-3xl">+</button>
+                (click)="handleShowModal()"
+                class="rounded-full h-12 w-12 bg-white border-dashed border-2  border-hellowPrimary hover:bg-slate-50   items-center justify-center text-3xl">
+                +
+            </button>
+            
             <div
                 class="flex flex-1 space-x-3 overflow-x-auto max-w-full p-3 rounded-full">
                 <img class="rounded-full w-16 h-16 object-cover "
@@ -153,3 +158,6 @@
     </div>
 
 </aside>
+<global-modal [isOpen]="isShowModal" (close)="isShowModal = false" *ngIf="isShowModal">
+    <create-supervisor-page></create-supervisor-page>
+</global-modal>

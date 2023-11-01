@@ -1,0 +1,89 @@
+<div>
+    
+    <h5 class="font-bold text-xl mb-3">Crear docente supervisor</h5>
+
+    <span class="text-gray-500">Datos personales</span>
+
+    <div class="grid grid-cols-3 gap-4 p-2 mb-3">
+        <input-text-basic
+            (inputValueChange)="onChangeValue($event, 'names')"
+            backgroundInput="bg-greyPrimary"
+            activeBackgroundInput="focus:bg-white"
+            colorPlaceholeder="placeholder-greySecondary"
+            placeholderText="Nombres">
+        </input-text-basic>
+        <input-text-basic
+            (inputValueChange)="onChangeValue($event, 'lastName')"
+            backgroundInput="bg-greyPrimary"
+            activeBackgroundInput="focus:bg-white"
+            colorPlaceholeder="placeholder-greySecondary"
+            placeholderText="Apellidos">
+        </input-text-basic>
+        <input-text-basic
+            (inputValueChange)="onChangeValue($event, 'area')"
+            backgroundInput="bg-greyPrimary"
+            activeBackgroundInput="focus:bg-white"
+            colorPlaceholeder="placeholder-greySecondary"
+            placeholderText="Area">
+        </input-text-basic>
+        <input-text-basic
+            (inputValueChange)="onChangeValue($event, 'email')"
+            backgroundInput="bg-greyPrimary"
+            activeBackgroundInput="focus:bg-white"
+            colorPlaceholeder="placeholder-greySecondary"
+            placeholderText="Correo electronico">
+        </input-text-basic>
+        <input-text-basic
+            (inputValueChange)="onChangeValue($event, 'numPhone')"
+            backgroundInput="bg-greyPrimary"
+            activeBackgroundInput="focus:bg-white"
+            colorPlaceholeder="placeholder-greySecondary"
+            placeholderText="Num celular">
+        </input-text-basic>
+    </div>
+
+    <span class="text-gray-500">Datos de la sesión</span>
+
+    <div class="grid grid-cols-3 gap-4 p-2">
+        <input-text-basic
+            (inputValueChange)="onChangeValue($event, 'userName')"
+            backgroundInput="bg-greyPrimary"
+            activeBackgroundInput="focus:bg-white"
+            colorPlaceholeder="placeholder-greySecondary"
+            placeholderText="Usuario">
+        </input-text-basic>
+        <input-text-basic
+            (inputValueChange)="onChangeValue($event, 'password')"
+            backgroundInput="bg-greyPrimary"
+            activeBackgroundInput="focus:bg-white"
+            typeInput="password"
+            colorPlaceholeder="placeholder-greySecondary"
+            placeholderText="Contraseña">
+        </input-text-basic>
+
+        <div>
+            <input-text-basic
+                (inputValueChange)="onChangeValue($event, 'passwordConfirm')"
+                backgroundInput="bg-greyPrimary"
+                activeBackgroundInput="focus:bg-white"
+                typeInput="password"
+                colorPlaceholeder="placeholder-greySecondary"
+                placeholderText="Contraseña">
+            </input-text-basic>
+            <span *ngIf="notSamePasswords" class="text-red-600 text-xs font-semibold">Las contraseñas no son iguales</span>
+        </div>
+    </div>
+    
+
+    <div class="flex flex-row justify-end space-x-3 mt-6">
+        <button class="py-2 px-3 bg-[#003965] text-white rounded-xl hover:bg-[#345c7b]">
+            Cancelar
+        </button>
+    
+        <button 
+        (click)="handleCreateAdvisor"
+        class="py-2 px-3 bg-[#F8B91E] text-white rounded-xl hover:bg-[#d9b65e]">
+            Crear
+        </button>
+    </div>
+</div>
