@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GetStudentsUseCase } from '../../domain/usecase/getStudentsUseCase';
 import { StudentEntity } from '../../data/entities/student.entity';
+import { ProfileStudentComponent } from '../components/profile-student/profile-student.component';
 interface Steps {
   title: string;
   description: string;
@@ -10,52 +11,36 @@ interface Steps {
 @Component({
   selector: 'list-student',
   templateUrl: './list-student.component.html',
-  standalone:true,
-  imports:[CommonModule]
+  standalone: true,
+  imports: [CommonModule, ProfileStudentComponent]
 })
 export class ListStudentComponent implements OnInit {
 
-  // isShowModal = false
-  // isShowModalOther = false
+  isShowModal = false
+  isShowModalOther = false
   students: StudentEntity[] = []
 
-  constructor(
-    private getStudentUseCase: GetStudentsUseCase
-  ) { }
-
-  // onShowModalEvaluation(value: boolean) {
-  //   this.isShowModal = value
-  // }
-
-  // onShowOtherModalEvaluation(){
-  //   this.isShowModalOther = true
-  // }
-
-  // onCrearNuevaPregunta(index: number) {
-
-  //   const preguntaEncontrada = this.preguntas[index]
-
-  //   if (preguntaEncontrada.pregunta === '') {
-  //     alert("Primero rellene el campo de pregunta!")
-  //     return
-  //   }
-  //   this.preguntas[index] = { ...preguntaEncontrada, showBoton: true }
-
-  //   this.preguntas.push({
-  //     pregunta: '',
-  //     showBoton: false
-  //   })
-  // }
-
-  // eliminarPregunta(index: number) {
-  //   this.preguntas.splice(index, 1)
-  // }
-
+  studentSelected: StudentEntity | null = null
 
   ngOnInit(): void {
     this.getStudents();
   }
 
+  constructor(
+    private getStudentUseCase: GetStudentsUseCase
+  ) { }
+
+  onShowModalEvaluation(value: boolean) {
+    this.isShowModal = value
+  }
+
+  onShowOtherModalEvaluation() {
+    this.isShowModalOther = true
+  }
+
+  handleShowProfile(student: StudentEntity) {
+    this.studentSelected = student
+  }
 
   async getStudents() {
     try {
@@ -64,8 +49,5 @@ export class ListStudentComponent implements OnInit {
       console.log(error)
     }
   }
-
-
-
 
 }

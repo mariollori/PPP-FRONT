@@ -1,10 +1,13 @@
-<div>
+<div *ngIf="!studentSelected">
+
   <div class="flex flex-col gap-6">
     <h1 class="text-3xl">Bienvenido, <span class="font-bold">David Reyna </span>
     </h1>
     <h3 class="text-xl">Practicantes en lista de espera</h3>
+
     <div>
-      <p class=" text-[#676767]">
+      <!-- Primer screen de estudiantes en lista de espera -->
+      <p class="text-[#676767]">
         Los siguientes estudiantes no tienen asignado un supervisor. Antes de
         asignar un supervisor, asegúrate de revisar detenidamente sus
         documentos.
@@ -20,28 +23,24 @@
 
       <div class="flex gap-6 py-4 w-full flex-wrap h-auto max-md:justify-center">
 
-        <div
-          *ngFor="let student of students"
+        <div *ngFor="let student of students"
           class="rounded-xl w-48 h-55  shadow-lg cursor-pointer bg-white text-center">
 
-          <img
-            class="w-15 h-15 md:w-20 mt-4 md:h-auto rounded-full mx-auto"
-            src="{{ student.user.urlProfile }}"
-            alt="{{ student.code }}"
-            width="384"
-            height="512">
+          <img class="w-15 h-15 md:w-20 mt-4 md:h-auto rounded-full mx-auto" src="{{ student.user.urlProfile }}"
+            alt="{{ student.code }}" width="384" height="512">
 
-          <div class="text-dark-500 dark:text-stale-400 mt-2">
-            {{ student.user.firstName }}
+          <div class="font-semibold mt-2">
+            {{ student.user.firstName }} {{ student.user.lastName }}
           </div>
 
-          <span class="text-dark-200 dark:text-stale-200">
+          <span class="text-dark">
             {{ student.code }}
           </span>
 
-          <button
-            class="h-10 px-6 font-normal rounded-md bg-black text-white mb-4 mt-2"
-            type="submit">
+          <br>
+
+          <button (click)="handleShowProfile( student )"
+            class="h-10 px-6 font-normal rounded-md bg-black text-white mb-4 mt-2" type="submit">
             ver perfil
           </button>
 
@@ -51,230 +50,11 @@
 
     </div>
 
-    <!-- columna de la informacion completa de los documentos -->
-    <div class="sm:col-span-1 md:col-span-1 lg:col-span-2 bg-white p-2">
-
-      <!-- primeras columnas para la informacion basica -->
-      <div class="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4">
-
-        <!-- columna 1 del grid interno -->
-        <div class="col-span-1 bg-gray-100 py-2 px-3 rounded-lg">
-
-          <h6 class="font-semibold">Información basica</h6>
-          <ul>
-            <li class="flex flex-row justify-between">
-              <span>Estado</span>
-              <span class="bg-red-400 text-white py-0.5 px-2 text-xs rounded-xl">Pendiente</span>
-            </li>
-            <li class="flex flex-row justify-between">
-              <span>Fecha inicio</span>
-              <span>12/12/12</span>
-            </li>
-          </ul>
-
-          <hr class="my-3">
-
-          <h6 class="font-semibold">Horas de practicas</h6>
-
-          <div class="flex flex-row space-x-2 mt-1">
-            <span>70%</span>
-            <div class="bg-green-300 h-2 w-full self-center rounded-xl"></div>
-            <span>100%</span>
-          </div>
-
-          <hr class="my-3">
-
-          <h6 class="font-semibold">Supervisor de practicas</h6>
-
-          <div class="my-2 flex flex-row justify-center space-x-2">
-            <img 
-              src="https://images.hola.com/images/027f-177f5be615a4-df10198c7b91-1000/horizontal-1200/brad-pitt.jpg" 
-              alt="supervisor"
-              class="h-9 w-9 rounded-full">
-            <span class="self-center font-semibold">
-              Fernando Asin Gomez
-            </span>
-          </div>
-
-        </div>
-
-        <div class="col-span-1 bg-gray-100 py-2 px-3 rounded-lg">
-
-          <h6 class="font-semibold">Información de la empresa</h6>
-          <ul>
-            <li class="flex flex-row justify-between">
-              <span>Nombre:</span>
-              <span>Cudesi</span>
-            </li>
-            <li class="flex flex-row justify-between">
-              <span>Ruc:</span>
-              <span>2812831282</span>
-            </li>
-            <li class="flex flex-row justify-between">
-              <span>Dirección:</span>
-              <span>Perú, Lima ñaña, alo?</span>
-            </li>
-            <li class="flex flex-row justify-between">
-              <span>Area:</span>
-              <span>Desarrollo de software</span>
-            </li>
-          </ul>
-
-          <hr class="my-3">
-
-          <h6 class="font-semibold">Tutor o supervisor empresarial</h6>
-          <ul>
-            <li class="flex flex-row justify-between">
-              <span>Nombres:</span>
-              <span>Gerson malca bazan</span>
-            </li>
-            <li class="flex flex-row justify-between">
-              <span>Num. celular:</span>
-              <span>987654321</span>
-            </li>
-            <li class="flex flex-row justify-between">
-              <span>Grado academico:</span>
-              <span>Bachiller</span>
-            </li>
-            <li class="flex flex-row justify-between">
-              <span>Email:</span>
-              <span>gersonmalca@gmail.com</span>
-            </li>
-          </ul>
-
-        </div>
-      </div>
-
-      <!-- seccion de los documentos -->
-      <div class="mt-4">
-
-          <div class="flex flex-row justify-start space-x-3">
-            <span class="px-2.5 py-0.5 bg-yellow-400 font-semibold rounded-full">1</span>
-            <span class="self-center font-semibold">Documentos subidos en el primer paso</span>
-          </div>
-
-          <div class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 px-2 py-2">
-
-            <!-- primer documento -->
-
-            <div class="drop-shadow-2xl">
-              <div
-                class="bg-[#C3D7FF] flex flex-col items-center py-2 px-2 rounded-t-xl"
-              >
-                <span
-                  class="text-black px-3 mb-6 rounded-lg text-[10px] border-[#01D355] border-2 self-end bg-[#C1FFBB]"
-                  >Aprobado</span
-                >
-                <img
-                  class="w-16 h-16"
-                  src="../../../../../../../assets/svg/doc.svg"
-                  alt=""
-                />
-              </div>
-              <div
-                class="bg-white flex-1 text-justify px-1 py-2 font-montserrat text-xs flex justify-between"
-              >
-                <div>
-                  <span>carta_presentación...</span>
-                  <span class="text-gray-300 text-xs flex">08/10/2023</span>
-                </div>
-                <img
-                  src="../../../../../../../assets/svg/donwload.svg"
-                  alt=""
-                />
-              </div>
-            </div>
-
-            <!-- segundo documento -->
-            <div class="drop-shadow-2xl">
-              <div
-                class="bg-[#C3D7FF] flex flex-col items-center py-2 px-2 rounded-t-xl"
-              >
-                <span
-                  class="text-black px-3 mb-6 rounded-lg text-[10px] border-[#01D355] border-2 self-end bg-[#C1FFBB]"
-                  >Aprobado</span
-                >
-                <img
-                  class="w-16 h-16"
-                  src="../../../../../../../assets/svg/doc.svg"
-                  alt=""
-                />
-              </div>
-              <div
-                class="bg-white flex-1 text-justify px-2 py-2 font-montserrat text-xs flex justify-between"
-              >
-                <div>
-                  <span>carta_presentación...</span>
-                  <span class="text-gray-300 text-xs flex">08/10/2023</span>
-                </div>
-                <img
-                  src="../../../../../../../assets/svg/donwload.svg"
-                  alt=""
-                />
-              </div>
-            </div>
-            
-             <!-- segundo documento -->
-             <div class="drop-shadow-2xl">
-              <div
-                class="bg-[#C3D7FF] flex flex-col items-center py-2 px-2 rounded-t-xl"
-              >
-                <span
-                  class="text-black px-3 mb-6 rounded-lg text-[10px] border-[#01D355] border-2 self-end bg-[#C1FFBB]"
-                  >Aprobado</span
-                >
-                <img
-                  class="w-16 h-16"
-                  src="../../../../../../../assets/svg/doc.svg"
-                  alt=""
-                />
-              </div>
-              <div
-                class="bg-white flex-1 text-justify px-2 py-2 font-montserrat text-xs flex justify-between"
-              >
-                <div>
-                  <span>carta_presentación...</span>
-                  <span class="text-gray-300 text-xs flex">08/10/2023</span>
-                </div>
-                <img
-                  src="../../../../../../../assets/svg/donwload.svg"
-                  alt=""
-                />
-              </div>
-            </div>
-
-             <!-- segundo documento -->
-             <div class="drop-shadow-2xl">
-              <div
-                class="bg-[#C3D7FF] flex flex-col items-center py-2 px-2 rounded-t-xl"
-              >
-                <span
-                  class="text-black px-3 mb-6 rounded-lg text-[10px] border-[#01D355] border-2 self-end bg-[#C1FFBB]"
-                  >Aprobado</span
-                >
-                <img
-                  class="w-16 h-16"
-                  src="../../../../../../../assets/svg/doc.svg"
-                  alt=""
-                />
-              </div>
-              <div
-                class="bg-white flex-1 text-justify px-2 py-2 font-montserrat text-xs flex justify-between"
-              >
-                <div>
-                  <span>carta_presentación...</span>
-                  <span class="text-gray-300 text-xs flex">08/10/2023</span>
-                </div>
-                <img
-                  src="../../../../../../../assets/svg/donwload.svg"
-                  alt=""
-                />
-              </div>
-            </div>
-
-          </div>
-      </div>
-
-    </div>
-
   </div>
+
+</div>
+
+<!-- Cuando un estudiante ha sido seleccionado ps -->
+<div *ngIf="studentSelected">
+  <profile-student></profile-student>
+</div>
