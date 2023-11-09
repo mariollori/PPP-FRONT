@@ -159,5 +159,6 @@
 
 </aside>
 <global-modal [isOpen]="isShowModal" (close)="isShowModal = false" *ngIf="isShowModal">
-    <create-supervisor-page></create-supervisor-page>
+    <create-supervisor-page
+        (cerrarModal)="handleHiddeModal()" ></create-supervisor-page>
 </global-modal>

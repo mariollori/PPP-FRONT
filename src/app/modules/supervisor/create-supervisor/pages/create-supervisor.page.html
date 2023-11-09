@@ -76,12 +76,14 @@
     
 
     <div class="flex flex-row justify-end space-x-3 mt-6">
-        <button class="py-2 px-3 bg-[#003965] text-white rounded-xl hover:bg-[#345c7b]">
+        <button 
+            (click)="handleCerrarModal()"
+            class="py-2 px-3 bg-[#003965] text-white rounded-xl hover:bg-[#345c7b]">
             Cancelar
         </button>
     
         <button 
-        (click)="handleCreateAdvisor"
+        (click)="handleCreateAdvisor()"
         class="py-2 px-3 bg-[#F8B91E] text-white rounded-xl hover:bg-[#d9b65e]">
             Crear
         </button>

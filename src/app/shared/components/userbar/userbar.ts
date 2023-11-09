@@ -51,4 +51,8 @@ export class UserBar implements OnInit {
     this.isShowModal = true
   }
 
+  handleHiddeModal() {
+    this.isShowModal = false
+  }
+
 }

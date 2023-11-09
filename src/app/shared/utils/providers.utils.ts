@@ -8,6 +8,7 @@ import { AuthenticationLoginUseCase } from 'src/app/modules/auth/log-in/domain/u
 import { authenticationGuard } from 'src/app/config/guard/authentication.guard';
 import { TokenInterceptorService } from '../Functions/token-interceptor.service';
 import { StudentServiceApi } from '../../modules/coordinador/lista-de-estudiantes/list-student/domain/services/student.services';
+import { SupervisorService } from 'src/app/modules/supervisor/create-supervisor/services/supervisor.service';
 
 
 export const Providers = [
@@ -29,5 +30,6 @@ export const Providers = [
   GetImgHomeUseCase,
   AuthenticationLoginUseCase,
   authenticationGuard,
-  StudentServiceApi
+  StudentServiceApi,
+  // SupervisorService
 ];
