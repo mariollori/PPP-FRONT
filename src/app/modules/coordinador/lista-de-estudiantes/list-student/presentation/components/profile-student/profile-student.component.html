@@ -1,4 +1,4 @@
-<div>
+<div *ngFor="let student of students">
 
     <div class="flex flex-col gap-6">
   
@@ -7,7 +7,7 @@
       </h1>
   
       <h3>
-        Perfiles de practicantes / <span class="font-bold">Porky Chanel</span>
+        Perfiles de practicantes / <span class="font-bold">{{ student.user.firstName }} {{ student.user.lastName }}</span>
       </h3>
     </div>
   
@@ -26,25 +26,25 @@
   
           <div class="flex flex-row justify-start space-x-3 mx-1">
             <div class="bg-white p-1 rounded-full -mt-12">
-              <img src="https://i.ytimg.com/vi/4pt31CFzC7A/mqdefault.jpg" alt="foto_perfil_usuario"
+              <img src="{{ student.user.urlProfile }}" alt="{{ student.code }}"
                 class="rounded-full h-24 w-24">
               </div>
   
               <div class="">
-                <h6 class="text-xl font-semibold">Leonel Aldair Sanchez</h6>
-                <span class="text-sm">Código: 201711882</span>
+                <h6 class="text-xl font-semibold">{{ student.user.firstName }} {{ student.user.lastName }}</h6>
+                <span class="text-sm">Código: {{ student.code }}</span>
               </div>
             </div>
             <!-- informacion complementaria dentro de la cartilla -->
   
           <div class="px-3 pb-3 space-y-2">
-            <div class="flex flex-row justify-between">
+            <!-- <div class="flex flex-row justify-between">
               <span class="font-semibold">Dni:</span>
-              <span>201711882</span>
-            </div>
+              <span>{{ student.dni }}</span>
+            </div> -->
             <div class="flex flex-row justify-between">
               <span class="font-semibold">Ciclo academico:</span>
-              <span>10</span>
+              <span>{{ student.cycle }}</span>
             </div>
             <div class="flex flex-row justify-between">
               <span class="font-semibold">Escuela:</span>
@@ -52,7 +52,7 @@
             </div>
             <div class="flex flex-row justify-between">
               <span class="font-semibold">Area de practicas:</span>
-              <span>Programador fullstack</span>
+              <span>{{ student.user.area }}</span>
             </div>
   
             <!-- cv del estudiante -->
@@ -60,7 +60,7 @@
               <span class="font-semibold">Curriculum vitae:</span>
   
               <div class="bg-red-200 rounded-lg mt-1 drop-shadow-xl flex flex-row">
-                <span class="flex flex-1 py-3 px-4">cv-leonel-sanchez.pdf</span>
+                <span class="flex flex-1 py-3 px-4">{{ student.nameCv }}</span>
                 <span class="flex flex-2 bg-white p-2 border border-r-2 text-center">:DD</span>
               </div>
   
@@ -80,7 +80,7 @@
               <div class="flex flex-row justify-between">
                 <span class="font-semibold text-base">1. Evaluaciones de inicio</span>
                 <div class="bg-gray-500 py-0.5 px-2 rounded-xl">
-                  <span class="text-xs text-white">Aprobado</span>
+                  <span class="text-xs text-white">{{ student.user.status }}</span>
                 </div>
               </div>
   
@@ -88,23 +88,23 @@
               <ul class="pl-4">
                 <li class="flex flex-row justify-between">
                   <span>Nota obtenida</span>
-                  <span>20</span>
+                  <span>{{student.user.area}}</span>
                 </li>
                 <li class="flex flex-row justify-between">
                   <span>Fecha creada</span>
-                  <span>20/12/12</span>
+                  <span>dd</span>
                 </li>
                 <li class="flex flex-row justify-between">
                   <span>Fecha terminda</span>
-                  <span>20/12/12</span>
+                  <span>ss</span>
                 </li>
               </ul>
             </div>
-            <div>
+            <div >
               <div class="flex flex-row justify-between mt-4">
                 <span class="font-semibold text-base">2. Evaluaciones de intermedio</span>
                 <div class="bg-gray-500 py-0.5 px-2 rounded-xl">
-                  <span class="text-xs text-white">Desaprobado</span>
+                  <span class="text-xs text-white">{{ student.user.status }}</span>
                 </div>
               </div>
   
@@ -112,7 +112,7 @@
               <ul class="pl-4">
                 <li class="flex flex-row justify-between">
                   <span>Nota obtenida</span>
-                  <span>20</span>
+                  <span>{{ student.finalRate }}</span>
                 </li>
                 <li class="flex flex-row justify-between">
                   <span>Fecha creada</span>
@@ -190,19 +190,19 @@
             <ul>
               <li class="flex flex-row justify-between">
                 <span>Nombre:</span>
-                <span>Cudesi</span>
+                <span>ss</span>
               </li>
               <li class="flex flex-row justify-between">
                 <span>Ruc:</span>
-                <span>2812831282</span>
+                <span>ss</span>
               </li>
               <li class="flex flex-row justify-between">
                 <span>Dirección:</span>
-                <span>Perú, Lima ñaña, alo?</span>
+                <span>zz</span>
               </li>
               <li class="flex flex-row justify-between">
                 <span>Area:</span>
-                <span>Desarrollo de software</span>
+                <span>aa</span>
               </li>
             </ul>
   
@@ -212,7 +212,7 @@
             <ul>
               <li class="flex flex-row justify-between">
                 <span>Nombres:</span>
-                <span>Gerson malca bazan</span>
+                <span>{{ student.nameCv }}</span>
               </li>
               <li class="flex flex-row justify-between">
                 <span>Num. celular:</span>
