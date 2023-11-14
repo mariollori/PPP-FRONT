@@ -9,50 +9,50 @@ import { CreateSupervisorPage } from 'src/app/modules/supervisor/create-supervis
   selector: 'userbar-ppp',
   templateUrl: './userbar.html',
   styleUrls: ['./userbar.css'],
-  imports: [CircleAvatarComponent, NgClass, CommonModule, GlobalModel, CreateSupervisorPage]
+  imports: [
+    CircleAvatarComponent,
+    NgClass,
+    CommonModule,
+    GlobalModel,
+    CreateSupervisorPage,
+  ],
 })
-
 export class UserBar implements OnInit {
+  validateRol: string = '';
 
-  validateRol:string='';
+  isShowModal = false;
+  userbarVisible: boolean = true;
 
-  roles:any[] = []
+  roles: any[] = [];
+
+  user: any;
+
+  userData: any;
 
   ngOnInit(): void {
-    this.roles = JSON.parse(sessionStorage.getItem('user')!).roles.map((value:any)=> {this.validateRol+='/'+value.name})
+    this.roles = JSON.parse(sessionStorage.getItem('user')!).roles;
+    this.user = JSON.parse(sessionStorage.getItem('user')!);
+    if (this.roles.length == 1) this.validateRol = this.roles[0].name;
+    else this.validateRol = this.roles[0].name + ' - ' + this.roles[1].name;
+
+    this.userData = JSON.parse(sessionStorage.getItem('userbar')!);
   }
-
-  isShowModal = false
-
-
 
   list = [
     { icon: 'home-2', title: 'Home' },
     { icon: 'setting-1', title: 'Admin' },
     { icon: 'clock', title: 'Options' },
-    { icon: 'home-2', title: 'Home' },
-    { icon: 'setting-1', title: 'Admin' },
-    { icon: 'clock', title: 'Options' },
-    { icon: 'home-2', title: 'Home' },
-    { icon: 'setting-1', title: 'Admin' },
-    { icon: 'clock', title: 'Options' },
-    { icon: 'home-2', title: 'Home' },
-    { icon: 'setting-1', title: 'Admin' },
-    { icon: 'clock', title: 'Options' },
+  ];
 
-
-  ]
-  userbarVisible: boolean = true;
   toogleSidebar() {
     this.userbarVisible = !this.userbarVisible;
   }
-  
+
   handleShowModal() {
-    this.isShowModal = true
+    this.isShowModal = true;
   }
 
   handleHiddeModal() {
-    this.isShowModal = false
+    this.isShowModal = false;
   }
-
 }

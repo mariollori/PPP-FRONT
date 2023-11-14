@@ -1,79 +1,61 @@
 <div class="sm:grid sm:grid-cols-1 md:grid-cols-3 h-screen font-montserrat">
-  
+
   <div class="px-7 py-6">
-    <img
-      class="h-14 w-auto"
-      src="../../../../../../assets/png/LOGO_UPEU.png">
+    <img class="h-14 w-auto" src="../../../../../../assets/png/LOGO_UPEU.png">
 
-          <h1 class="font-bold text-4xl text-center mt-14">Iniciar sesión</h1>
-      
-      <div class="grid mt-8 md:mx-10">
+    <h1 class="font-bold text-4xl text-center mt-14">Iniciar sesión</h1>
 
-        <label class="my-2 text-sm">
-          Usuario
-        </label>
-        
-        <input-text-basic
-          (inputValueChange)="obtenerInputValue($event, 'username')"
-          backgroundInput="bg-greyPrimary"
-          activeBackgroundInput="focus:bg-white"
-          colorPlaceholeder="placeholder-greySecondary"
-          placeholderText="kevinpeinado...">
-        </input-text-basic>
-      </div>
+    <div class="grid mt-8 md:mx-10">
 
-      <div class="grid mt-8 md:mx-10">
+      <label class="my-2 text-sm">
+        Usuario
+      </label>
 
-        <label class="my-2 text-sm">
-          Contraseña
-        </label>
-     
-        <input-text-basic
-          (inputValueChange)="obtenerInputValue($event, 'password')"
-          typeInput="password"
-          backgroundInput="bg-greyPrimary"
-          activeBackgroundInput="focus:bg-white"
-          colorPlaceholeder="placeholder-greySecondary"
-          placeholderText="*******************">
-        </input-text-basic>
-        <!-- <input-text-medium-standalone (inputValueChange)="obtenerInputValue($event, 'password')" widht="w-full" height="h-[55px]"
+      <input-text-basic (inputValueChange)="obtenerInputValue($event, 'username')" backgroundInput="bg-greyPrimary"
+        activeBackgroundInput="focus:bg-white" colorPlaceholeder="placeholder-greySecondary"
+        placeholderText="kevinpeinado...">
+      </input-text-basic>
+    </div>
+
+    <div class="grid mt-8 md:mx-10">
+
+      <label class="my-2 text-sm">
+        Contraseña
+      </label>
+
+      <input-text-basic (inputValueChange)="obtenerInputValue($event, 'password')" typeInput="password"
+        backgroundInput="bg-greyPrimary" activeBackgroundInput="focus:bg-white"
+        colorPlaceholeder="placeholder-greySecondary" placeholderText="*******************">
+      </input-text-basic>
+      <!-- <input-text-medium-standalone (inputValueChange)="obtenerInputValue($event, 'password')" widht="w-full" height="h-[55px]"
           borderInput="border-none" fondoColor="bg-greyPrimary" radius="rounded-[11px]" fontSize="text-[17px]"
           fontFamily="font-montserrat" fontWeigth="font-normal" transition="transition-all" duration="duration-300"
           shadow="shadow-md" placeholder="**************" colorPlaceholder="text-greySecondary"
           fontSizePlaceholder="text-[15px]" fontFamilyPlaceholder="font-montserrat" fontWeigthPlaceholder="font-normal"
           icon="" iconColor="" iconSize=""></input-text-medium-standalone> -->
-      </div>
-      
-      <div class="flex mt-8 flex-row justify-between md:mx-10">
-        <p class="self-center">
-          Eres nuevo?,
-          <span
-            [routerLink]="['/crear-cuenta']"
-            class="text-hellowPrimary font-extrabold cursor-pointer">
-            registrarme
-            </span>
-        </p>
-      
-          <button-standalone
-            width="w-[100px]"
-            height="h-[45px]"
-            colorFondo="bg-hellowPrimary"
-            radius="rounded-[7px]"
-            hover="hover:bg-hellowSecondary"
-            transition="transition-all"
-            duration="duration-300"
-            text="Ingresar"
-            colorText="text-white"
-            fontFamily="font-montserrat"
-            fontSize="text-[15px]"
-            (click)="login()">
-          </button-standalone>
-        </div>
-      </div>
-  
-
-    <div class="col-span-2 self-center">
-      <img class="w-full py-12 px-4" src="../../../../../../assets/svg/sign-in-1.svg" />
     </div>
- 
-<loading-page></loading-page>
+
+    <div class="flex mt-8 flex-row justify-between md:mx-10">
+      <p class="self-center">
+        Eres nuevo?,
+        <span [routerLink]="['/crear-cuenta']" class="text-hellowPrimary font-extrabold cursor-pointer">
+          registrarme
+        </span>
+      </p>
+
+      <button-standalone width="w-[100px]" height="h-[45px]" colorFondo="bg-hellowPrimary" radius="rounded-[7px]"
+        hover="hover:bg-hellowSecondary" transition="transition-all" duration="duration-300" text="Ingresar"
+        colorText="text-white" fontFamily="font-montserrat" fontSize="text-[15px]" (click)="login()">
+      </button-standalone>
+    </div>
+  </div>
+
+
+  <div class="col-span-2 self-center">
+    <img class="w-full py-12 px-4" src="../../../../../../assets/svg/sign-in-1.svg" />
+  </div>
+
+  <global-toast *ngIf="toast" [message]="message" [type]="typeToast" (closed)="toast=false"></global-toast>
+
+
+  <loading-page></loading-page>

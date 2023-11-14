@@ -239,3 +239,7 @@
     </global-modal>
 
 </div>
+
+<global-toast *ngIf="toast" [message]="message" [type]="typeToast" (closed)="toast=false"></global-toast>
+
+<loading-page></loading-page>

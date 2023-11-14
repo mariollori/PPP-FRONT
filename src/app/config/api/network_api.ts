@@ -12,6 +12,9 @@ export const routesAccess = {
   userGetAll: `${env}${client.userApi}/get-all`,
   registerUser: `${env}${client.userApi}/register`,
 
+  // STUDENTS
+  userGetAllById: `${env}${client.planStudent}/get-by-id-profile`,
+
   // PLAN
   basesPPPGet: `${env}${client.planApi}/get-bases-ppp`,
   plantGetAll: `${env}${client.planApi}/get-all`,

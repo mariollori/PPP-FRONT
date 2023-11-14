@@ -1,127 +1,133 @@
 <div class="overflow-y-auto overflow-scroll ">
-    <div class="flex flex-col gap-6 ">
-        <div class="flex justify-between">
-                    <h1 class="text-3xl font-montserrat">Bienvenido, <span class="font-bold font-montserrat">Raul El Morado Cabro
-                    </span></h1>
+  <div class="flex flex-col gap-6 ">
+    <div class="flex justify-between">
+      <h1 class="text-3xl font-montserrat">Bienvenido, <span
+          class="font-bold font-montserrat">{{this.userData.firstName}} {{this.userData.lastName}}
+        </span></h1>
 
-                    <div class="w-8 h-8 bg-hellowPrimary rounded-full text-white items-center justify-center flex">
-                        <p>i</p>
-                    </div>
-        </div>
-        <div class="flex gap-2">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9.57 5.92993L3.5 11.9999L9.57 18.0699" stroke="#292D32" stroke-width="1.5"
-                    stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M20.5 12H3.67004" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10"
-                    stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-            <h3 class="text-bluePrimary text-l font-montserra cursor-pointer" (click)="pito3()">Control de Practicas / </h3>
-            <h3 class="font-bold text-l font-montserrat">Registrar una empresa</h3>
-        </div>
-        <div class="flex items-center justify-center gap-2">
-
-            <div class="flex items-center justify-center rounded-full bg-hellowPrimary h-8 w-8 text-white">
-                <p>1</p>
-            </div>
-            <p class=" text-[#000] font-montserrat text-[13.5px] font-bold">
-                Información basica
-            </p>
-        </div>
-        <div class="relative pr-3 pl-3 pb-5">
-            <div class="w-full rounded-xl shadow-lg bg-white px-5 py-4 flex flex-col">
-                <p class="pb-2 text-hellowPrimary font-montserrat text-[20.5px]">
-                    Datos de la Empresa
-                </p>
-                <div class="grid grid-rows-1 gap-2 pb-6">
-                    <div class="grid grid-cols-4 gap-6">
-                        <div class="col-span-1">
-                            <input-text-medium-standalone borderInput="border-2" widht="w-full"
-                                placeholder="Ruc de la empresa" fontSize="text-[16px]" height="h-[55px]"
-                                radius="rounded-[16px]" transition="transition-all" shadow="shadow-md"
-                                colorPlaceholder="text-bluePrimary" icon="fa-solid fa-hashtag" iconSize="text-[22px]" iconColor="text-bluePrimary"></input-text-medium-standalone>
-                        </div>
-                        <div class="col-span-3">
-                            <input-text-medium-standalone borderInput="border-2" widht="w-full"
-                                placeholder="Nombre de la empresa" fontSize="text-[16px]" height="h-[55px]"
-                                radius="rounded-[16px]" transition="transition-all" shadow="shadow-md"
-                                colorPlaceholder="text-bluePrimary" icon="fa-solid fa-building" iconSize="text-[22px]" iconColor="text-bluePrimary"></input-text-medium-standalone>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="grid grid-rows-1 gap-2 pb-6">
-                    <div class="grid grid-cols-5 gap-6">
-                        <div class="col-span-3">
-                            <input-text-medium-standalone borderInput="border-2" widht="w-full"
-                                placeholder="Dirección de la empresa" fontSize="text-[16px]" height="h-[55px]"
-                                radius="rounded-[16px]" transition="transition-all" shadow="shadow-md"
-                                colorPlaceholder="text-bluePrimary"
-                                fontWeigth="font-semibold" icon="fa-solid fa-location-dot" iconSize="text-[22px]" iconColor="text-bluePrimary"></input-text-medium-standalone>
-                        </div>
-                        <div class="col-span-2">
-                            <input-text-medium-standalone borderInput="border-2" widht="w-full"
-                                placeholder="Área de desempeño" fontSize="text-[16px]" height="h-[55px]"
-                                radius="rounded-[16px]" transition="transition-all" shadow="shadow-md"
-                                colorPlaceholder="text-bluePrimary" icon="fa-solid fa-briefcase" iconSize="text-[22px]" iconColor="text-bluePrimary"></input-text-medium-standalone>
-                        </div>
-                    </div>
-
-                </div>
-                <p class="pb-2 text-hellowPrimary font-montserrat text-[20.5px]">
-                    Datos del Tutor de Prácticas en la Empresa
-                </p>
-                <div class="grid grid-rows-1 gap-2 pb-6">
-                    <div class="grid grid-cols-5 gap-6">
-                        <div class="col-span-3">
-                            <input-text-medium-standalone borderInput="border-2" widht="w-full"
-                                placeholder="Nombre completo" fontSize="text-[16px]" height="h-[55px]"
-                                radius="rounded-[16px]" transition="transition-all" shadow="shadow-md"
-                                colorPlaceholder="text-bluePrimary"
-                                fontWeigth="font-semibold" icon="fa-solid fa-id-badge" iconSize="text-[22px]" iconColor="text-bluePrimary"></input-text-medium-standalone>
-                        </div>
-                        <div class="col-span-2">
-                            <input-text-medium-standalone borderInput="border-2" widht="w-full"
-                                placeholder="Correo electronico" fontSize="text-[16px]" height="h-[55px]"
-                                radius="rounded-[16px]" transition="transition-all" shadow="shadow-md"
-                                colorPlaceholder="text-bluePrimary" icon="fa-solid fa-envelope" iconSize="text-[22px]" iconColor="text-bluePrimary"></input-text-medium-standalone>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid grid-rows-1 gap-2 pb-6">
-                    <div class="grid grid-cols-4 gap-6">
-                        <div class="col-span-1">
-                            <input-text-medium-standalone borderInput="border-2" widht="w-full"
-                                placeholder="Dni" fontSize="text-[16px]" height="h-[55px]"
-                                radius="rounded-[16px]" transition="transition-all" shadow="shadow-md"
-                                colorPlaceholder="text-bluePrimary"
-                                fontWeigth="font-semibold" icon="fa-solid fa-id-card" iconSize="text-[22px]" iconColor="text-bluePrimary"></input-text-medium-standalone>
-                        </div>
-                        <div class="col-span-1">
-                            <input-text-medium-standalone borderInput="border-2" widht="w-full"
-                                placeholder="Telefono" fontSize="text-[16px]" height="h-[55px]"
-                                radius="rounded-[16px]" transition="transition-all" shadow="shadow-md"
-                                colorPlaceholder="text-bluePrimary" icon="fa-solid fa-mobile" iconSize="text-[22px]" iconColor="text-bluePrimary"></input-text-medium-standalone>
-                        </div>
-                        <div class="col-span-2">
-                            <input-text-medium-standalone borderInput="border-2" widht="w-full"
-                                placeholder="Grado de Maestria" fontSize="text-[16px]" height="h-[55px]"
-                                radius="rounded-[16px]" transition="transition-all" shadow="shadow-md"
-                                colorPlaceholder="text-bluePrimary" icon="fa-solid fa-graduation-cap" iconSize="text-[22px]" iconColor="text-bluePrimary"></input-text-medium-standalone>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex items-end justify-end gap-8 pt-10">
-                    <button-standalone width="w-[100px]" height="h-[45px]" colorFondo="bg-hellowPrimary" radius="rounded-[7px]"
-                    hover="hover:bg-hellowSecondary" transition="transition-all" duration="duration-300" text="Limpiar"
-                    colorText="text-white" fontFamily="font-montserrat" fontSize="text-[15px]" fontWeight="font-normal"
-                    ></button-standalone>
-
-                    <button-standalone width="w-[100px]" height="h-[45px]" colorFondo="bg-bluePrimary" radius="rounded-[7px]"
-                    hover="hover:bg-hellowSecondary" transition="transition-all" duration="duration-300" text="Registrar"
-                    colorText="text-white" fontFamily="font-montserrat" fontSize="text-[15px]" fontWeight="font-normal"
-                    ></button-standalone>
-                </div>
-            </div>
-        </div>
+      <div class="w-8 h-8 bg-hellowPrimary rounded-full text-white items-center justify-center flex">
+        <p>i</p>
+      </div>
     </div>
+    <div class="flex gap-2">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9.57 5.92993L3.5 11.9999L9.57 18.0699" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10"
+          stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M20.5 12H3.67004" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+      <h3 class="text-bluePrimary text-l font-montserra cursor-pointer" (click)="pito3()">Control de Practicas / </h3>
+      <h3 class="font-bold text-l font-montserrat">Registrar una empresa</h3>
+    </div>
+    <div class="flex items-center justify-center gap-2">
+
+      <div class="flex items-center justify-center rounded-full bg-hellowPrimary h-8 w-8 text-white">
+        <p>1</p>
+      </div>
+      <p class=" text-[#000] font-montserrat text-[13.5px] font-bold">
+        Información basica
+      </p>
+    </div>
+    <div class="relative pr-3 pl-3 pb-5">
+      <div class="w-full rounded-xl shadow-lg bg-white px-5 py-4 flex flex-col">
+        <p class="pb-2 text-hellowPrimary font-montserrat text-[20.5px]">
+          Datos de la Empresa
+        </p>
+        <div class="grid grid-rows-1 gap-2 pb-6">
+          <div class="grid grid-cols-4 gap-6">
+            <div class="col-span-1">
+
+              <input-text-medium-standalone widht="w-full" borderColor="border-[#D2D2D2]"
+                placeholder="Ruc de la empresa" fontSize="text-[16px]" height="h-[55px]" radius="rounded-[16px]"
+                transition="transition-all" shadow="shadow-md" icon="fa-solid fa-hashtag" iconSize="text-[22px]"
+                iconColor="text-bluePrimary"></input-text-medium-standalone>
+            </div>
+            <div class="col-span-3">
+              <input-text-medium-standalone borderColor="border-[#D2D2D2]" widht="w-full"
+                placeholder="Nombre de la empresa" fontSize="text-[16px]" height="h-[55px]" radius="rounded-[16px]"
+                transition="transition-all" shadow="shadow-md" colorPlaceholder="text-bluePrimary"
+                icon="fa-solid fa-building" iconSize="text-[22px]"
+                iconColor="text-bluePrimary"></input-text-medium-standalone>
+            </div>
+          </div>
+
+        </div>
+        <div class="grid grid-rows-1 gap-2 pb-6">
+          <div class="grid grid-cols-5 gap-6">
+            <div class="col-span-3">
+              <input-text-medium-standalone borderColor="border-[#D2D2D2]" widht="w-full"
+                placeholder="Dirección de la empresa" fontSize="text-[16px]" height="h-[55px]" radius="rounded-[16px]"
+                transition="transition-all" shadow="shadow-md" colorPlaceholder="text-bluePrimary"
+                fontWeigth="font-semibold" icon="fa-solid fa-location-dot" iconSize="text-[22px]"
+                iconColor="text-bluePrimary"></input-text-medium-standalone>
+            </div>
+            <div class="col-span-2">
+              <input-text-medium-standalone borderColor="border-[#D2D2D2]" widht="w-full"
+                placeholder="Área de desempeño" fontSize="text-[16px]" height="h-[55px]" radius="rounded-[16px]"
+                transition="transition-all" shadow="shadow-md" colorPlaceholder="text-bluePrimary"
+                icon="fa-solid fa-briefcase" iconSize="text-[22px]"
+                iconColor="text-bluePrimary"></input-text-medium-standalone>
+            </div>
+          </div>
+
+        </div>
+        <p class="pb-2 text-hellowPrimary font-montserrat text-[20.5px]">
+          Datos del Tutor de Prácticas en la Empresa
+        </p>
+        <div class="grid grid-rows-1 gap-2 pb-6">
+          <div class="grid grid-cols-5 gap-6">
+            <div class="col-span-3">
+              <input-text-medium-standalone borderColor="border-[#D2D2D2]" widht="w-full" placeholder="Nombre completo"
+                fontSize="text-[16px]" height="h-[55px]" radius="rounded-[16px]" transition="transition-all"
+                shadow="shadow-md" colorPlaceholder="text-bluePrimary" fontWeigth="font-semibold"
+                icon="fa-solid fa-id-badge" iconSize="text-[22px]"
+                iconColor="text-bluePrimary"></input-text-medium-standalone>
+            </div>
+            <div class="col-span-2">
+              <input-text-medium-standalone borderColor="border-[#D2D2D2]" widht="w-full"
+                placeholder="Correo electronico" fontSize="text-[16px]" height="h-[55px]" radius="rounded-[16px]"
+                transition="transition-all" shadow="shadow-md" colorPlaceholder="text-bluePrimary"
+                icon="fa-solid fa-envelope" iconSize="text-[22px]"
+                iconColor="text-bluePrimary"></input-text-medium-standalone>
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-rows-1 gap-2 pb-6">
+          <div class="grid grid-cols-4 gap-6">
+            <div class="col-span-1">
+              <input-text-medium-standalone borderColor="border-[#D2D2D2]" widht="w-full" placeholder="Dni"
+                fontSize="text-[16px]" height="h-[55px]" radius="rounded-[16px]" transition="transition-all"
+                shadow="shadow-md" colorPlaceholder="text-bluePrimary" fontWeigth="font-semibold"
+                icon="fa-solid fa-id-card" iconSize="text-[22px]"
+                iconColor="text-bluePrimary"></input-text-medium-standalone>
+            </div>
+            <div class="col-span-1">
+              <input-text-medium-standalone borderColor="border-[#D2D2D2]" widht="w-full" placeholder="Telefono"
+                fontSize="text-[16px]" height="h-[55px]" radius="rounded-[16px]" transition="transition-all"
+                shadow="shadow-md" colorPlaceholder="text-bluePrimary" icon="fa-solid fa-mobile" iconSize="text-[22px]"
+                iconColor="text-bluePrimary"></input-text-medium-standalone>
+            </div>
+            <div class="col-span-2">
+              <input-text-medium-standalone borderColor="border-[#D2D2D2]" widht="w-full"
+                placeholder="Grado de Maestria" fontSize="text-[16px]" height="h-[55px]" radius="rounded-[16px]"
+                transition="transition-all" shadow="shadow-md" colorPlaceholder="text-bluePrimary"
+                icon="fa-solid fa-graduation-cap" iconSize="text-[22px]"
+                iconColor="text-bluePrimary"></input-text-medium-standalone>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-end justify-end gap-8 pt-10">
+          <button-standalone width="w-[100px]" height="h-[45px]" colorFondo="bg-hellowPrimary" radius="rounded-[7px]"
+            hover="hover:bg-hellowSecondary" transition="transition-all" duration="duration-300" text="Limpiar"
+            colorText="text-white" fontFamily="font-montserrat" fontSize="text-[15px]"
+            fontWeight="font-normal"></button-standalone>
+
+          <button-standalone width="w-[100px]" height="h-[45px]" colorFondo="bg-bluePrimary" radius="rounded-[7px]"
+            hover="hover:bg-hellowSecondary" transition="transition-all" duration="duration-300" text="Registrar"
+            colorText="text-white" fontFamily="font-montserrat" fontSize="text-[15px]"
+            fontWeight="font-normal"></button-standalone>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

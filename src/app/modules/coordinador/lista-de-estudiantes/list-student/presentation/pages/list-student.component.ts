@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { GetStudentsUseCase } from '../../domain/usecase/getStudentsUseCase';
 import { StudentEntity } from '../../data/entities/student.entity';
 import { ProfileStudentComponent } from '../components/profile-student/profile-student.component';
+import { LoadingPageComponent } from 'src/app/shared/components/loading/loading-page.component';
 interface Steps {
   title: string;
   description: string;
@@ -12,7 +13,7 @@ interface Steps {
   selector: 'list-student',
   templateUrl: './list-student.component.html',
   standalone: true,
-  imports: [CommonModule, ProfileStudentComponent]
+  imports: [CommonModule, ProfileStudentComponent, LoadingPageComponent]
 })
 export class ListStudentComponent implements OnInit {
 
