@@ -22,14 +22,20 @@ export class BodyControlPractice implements OnInit {
 
   userData: any;
 
+  title: string = '';
+  message: string = '';
+  position: number = 0;
+
   constructor() {}
 
   ngOnInit(): void {
     this.userData = JSON.parse(sessionStorage.getItem('userbar')!);
   }
 
-  sexo() {
-    console.log('asdfghjgfdsghghfd');
+  sexo(title: string, position: number) {
+    this.title = title;
+    this.message = title.toLowerCase();
+    this.position = position;
     this.modalOpen = true;
   }
 

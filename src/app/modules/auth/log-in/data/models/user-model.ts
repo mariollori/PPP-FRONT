@@ -33,8 +33,22 @@ export class PPPModel {
   finishedDate!: string;
   rate!: number;
   status!: boolean;
-  company!: string;
+  company!: CompanyModel;
   advisor!: AdivsorModel;
+}
+
+export class CompanyModel {
+  academicDegreeMentor!: string;
+  address!: string;
+  area!: string;
+  bussinessMentor!: string;
+  cellphoneMentor!: string;
+  dniMentor!: string;
+  emailMentor!: string;
+  id!: string;
+  name!: string;
+  ruc!: string;
+  status!: boolean;
 }
 
 export class AdivsorModel {

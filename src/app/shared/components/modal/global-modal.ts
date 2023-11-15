@@ -6,12 +6,13 @@ import {
   EventEmitter,
   HostListener,
 } from '@angular/core';
+import { GlobalBgAlerts } from '../bg-alerts/global-bg-alerts';
 
 @Component({
   standalone: true,
   selector: 'global-modal',
   templateUrl: './global-modal.html',
-  imports: [CommonModule],
+  imports: [CommonModule, GlobalBgAlerts],
 })
 export class GlobalModel {
   @Input() isOpen: boolean = false;
@@ -23,21 +24,33 @@ export class GlobalModel {
   @Input() buttonAccion: boolean = true;
   @Input() textButtonAccion: string = 'Guardar';
 
+  actionAlert: boolean = false;
+
   @HostListener('document:keydown.escape', ['$event'])
   handleEscapeKey() {
     this.showCloseConfirmation();
   }
 
   showCloseConfirmation() {
-    const userConfirmation = confirm(
-      '¿Estás seguro de que quieres cerrar el modal? La información se perderá.'
-    );
-    if (userConfirmation) {
-      this.close.emit();
-    }
+    this.actionAlert = true;
+    // const userConfirmation = confirm(
+    //   '¿Estás seguro de que quieres cerrar el modal? La información se perderá.'
+    // );
+    // if (userConfirmation) {
+    //   this.close.emit();
+    // }
   }
 
   actionOpenVoid() {
     this.actionOpen.emit();
+  }
+
+  emitActionAlert() {
+    this.actionAlert = false;
+  }
+
+  emitCloseAlert() {
+    this.actionAlert = false;
+    this.close.emit();
   }
 }
