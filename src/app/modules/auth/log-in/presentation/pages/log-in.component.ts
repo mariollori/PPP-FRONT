@@ -60,6 +60,8 @@ export class LogInComponent implements OnInit {
 
       this.userData = userDataResponse!.data;
 
+      console.log(this.userData);
+
       sessionStorage.setItem('user', JSON.stringify(this.loginData));
       sessionStorage.setItem('userbar', JSON.stringify(this.userData));
 

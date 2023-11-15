@@ -34,4 +34,19 @@ export class PPPModel {
   rate!: number;
   status!: boolean;
   company!: string;
+  advisor!: AdivsorModel;
+}
+
+export class AdivsorModel {
+  id!: string;
+  userName!: string;
+  firstName!: string;
+  password!: string;
+  lastName!: string;
+  email!: string;
+  cellphone!: string;
+  area!: string;
+  numStudents!: string;
+  urlProfi1e!: string;
+  status!: boolean;
 }

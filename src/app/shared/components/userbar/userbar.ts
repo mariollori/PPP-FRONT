@@ -36,6 +36,8 @@ export class UserBar implements OnInit {
     else this.validateRol = this.roles[0].name + ' - ' + this.roles[1].name;
 
     this.userData = JSON.parse(sessionStorage.getItem('userbar')!);
+    console.log(this.userData);
+
   }
 
   list = [
