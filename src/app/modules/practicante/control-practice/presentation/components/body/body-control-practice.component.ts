@@ -4,15 +4,21 @@ import { RouterModule } from '@angular/router';
 import { ModalControlPractice } from '../content-modal/modal-control-practice.component';
 import { GlobalModel } from 'src/app/shared/components/modal/global-modal';
 import { DocumentsModel } from '../../../data/models/documents_model';
+import { RegistrarEmpresaComponent } from 'src/app/modules/practicante/principal-home/presentation/components/content-body/registrar-empresa/registrar-empresa';
 
 @Component({
   standalone: true,
   selector: 'body-control-practice',
   templateUrl: './body-control-practice.component.html',
-  imports: [ModalControlPractice, GlobalModel, CommonModule],
+  imports: [
+    ModalControlPractice,
+    GlobalModel,
+    CommonModule,
+    RegistrarEmpresaComponent,
+  ],
 })
 export class BodyControlPractice implements OnInit {
-  item: number = 2;
+  item: number = 1;
 
   modalOpen: boolean = false;
 

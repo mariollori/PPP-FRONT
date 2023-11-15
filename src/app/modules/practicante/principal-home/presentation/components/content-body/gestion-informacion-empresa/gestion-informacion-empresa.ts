@@ -1,26 +1,57 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { RegistrarEmpresaComponent } from '../registrar-empresa/registrar-empresa';
 import { BodyControlPractice } from 'src/app/modules/practicante/control-practice/presentation/components/body/body-control-practice.component';
+import { GlobasToast } from 'src/app/shared/components/toast/globas-toast';
 
 @Component({
   standalone: true,
   selector: 'gestion-informacion-empresa',
   templateUrl: './gestion-informacion-empresa.html',
-  imports: [CommonModule, RegistrarEmpresaComponent, BodyControlPractice],
+  imports: [
+    CommonModule,
+    RegistrarEmpresaComponent,
+    BodyControlPractice,
+    GlobasToast,
+  ],
 })
-export class GentionInfoEmpresaModule implements OnInit{
+export class GentionInfoEmpresaModule implements OnInit {
+  type: string = '';
+  message: string = '';
+  toast: boolean = false;
+
+  validateCompany!: boolean;
+
   pito2: number = 1;
   mostrarEmpresa: boolean = false;
 
   userData: any;
+
+  constructor(private cdr: ChangeDetectorRef) {}
 
   ngOnInit() {
     this.userData = JSON.parse(sessionStorage.getItem('userbar')!);
   }
 
   mostrarPito2(div: number) {
-    this.pito2 = div;
+    if (
+      this.userData.ppp.company == null ||
+      this.userData.ppp.company.name == ''
+    ) {
+      this.pito2 = div;
+    } else {
+      this.type = 'information';
+      this.message =
+        'Usted ya tiene una empresa, no puede registrar otra, contactese con su supervisor.';
+      this.toast = true;
+      this.validateCompany == true;
+      setTimeout(() => {
+        this.toast = false;
+        this.message = '';
+        this.type = '';
+        this.cdr.detectChanges();
+      }, 5000);
+    }
   }
 
   volver(num: number) {
