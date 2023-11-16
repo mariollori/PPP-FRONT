@@ -1,10 +1,10 @@
-import { CommonModule, NgClass } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
 import { ModalControlPractice } from '../content-modal/modal-control-practice.component';
 import { GlobalModel } from 'src/app/shared/components/modal/global-modal';
 import { DocumentsModel } from '../../../data/models/documents_model';
 import { RegistrarEmpresaComponent } from 'src/app/modules/practicante/principal-home/presentation/components/content-body/registrar-empresa/registrar-empresa';
+import { InfoBasicaPracticcante } from './info-basica/info-basica.component';
 
 @Component({
   standalone: true,
@@ -15,6 +15,7 @@ import { RegistrarEmpresaComponent } from 'src/app/modules/practicante/principal
     GlobalModel,
     CommonModule,
     RegistrarEmpresaComponent,
+    InfoBasicaPracticcante
   ],
 })
 export class BodyControlPractice implements OnInit {
