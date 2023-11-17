@@ -5,6 +5,7 @@ import { GlobalModel } from 'src/app/shared/components/modal/global-modal';
 import { DocumentsModel } from '../../../data/models/documents_model';
 import { RegistrarEmpresaComponent } from 'src/app/modules/practicante/principal-home/presentation/components/content-body/registrar-empresa/registrar-empresa';
 import { InfoBasicaPracticcante } from './info-basica/info-basica.component';
+import { ItemsEvaluation } from './items-evaluation/items-evaluation';
 
 @Component({
   standalone: true,
@@ -15,7 +16,8 @@ import { InfoBasicaPracticcante } from './info-basica/info-basica.component';
     GlobalModel,
     CommonModule,
     RegistrarEmpresaComponent,
-    InfoBasicaPracticcante
+    InfoBasicaPracticcante,
+    ItemsEvaluation,
   ],
 })
 export class BodyControlPractice implements OnInit {
