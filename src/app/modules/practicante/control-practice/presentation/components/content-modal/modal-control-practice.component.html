@@ -2,9 +2,11 @@
   <div class="flex flex-col gap-6">
     <span class="text-xl font-montserrat">Subir {{this.title}}</span>
     <span>Por favor adjunta tu {{this.message}}, segun el formato que se le esta pidiendo.</span>
-    <div class="lg:col-span-3 md:col-span-2 text-center rounded-3xl border-dashed border-2 border-sky-700">
+    <div class="lg:col-span-3 md:col-span-2 text-center rounded-3xl border-dashed border-2 border-sky-700"
+      *ngIf="uploadProgressDocs == null && docUploadCompleted == false">
       <label for="bannerInput"
-        class="w-full h-32 shadow-lg py-20 bg-sky-100 rounded-3xl flex text-center justify-center items-center flex-col cursor-pointer hover:bg-sky-50 transition-all duration-300">
+        class="w-full h-32 shadow-lg py-20 bg-sky-100 rounded-3xl flex text-center justify-center items-center flex-col cursor-pointer hover:bg-sky-50 transition-all duration-300"
+        (change)="uploadArchive($event, 'documents', position)">
 
         <img class="h-16 mb-2" src="assets/png/imagen.png">
 
@@ -15,6 +17,37 @@
 
       </label>
     </div>
+
+    <div
+      class="mt-1 mb-5 w-full h-32 shadow-lg bg-greyPrimary rounded-2xl flex text-center justify-center items-center flex-col"
+      *ngIf="uploadProgressDocs != null">
+      <span class="text-[11px] font-semibold text-bluePrimary">Subiendo</span>
+      <div class="text-[14px] font-bold text-hellowPrimary p-2 text-center items-center justify-center flex">
+        <span class="loader"></span>
+        <span class="absolute">{{uploadProgressDocs}}%</span>
+      </div>
+      <span class="text-[11px] font-semibold text-bluePrimary">1 documento</span>
+    </div>
+
+    <div class="w-full h-52 bg-bgPdf shadow-sm rounded-xl flex flex-col" *ngIf="docUploadCompleted == true">
+      <div class="flex-1 flex items-center justify-center relative">
+        <div class="absolute w-7 h-7 bg-white rounded right-3 top-3 flex items-center justify-center cursor-pointer">
+          <i class="fa-solid fa-xmark text-hellowPrimary"></i>
+        </div>
+        <div class="w-36 h-36 flex items-center justify-center rounded-full p-2">
+          <img src="assets/docs/logos/pdf1.png">
+        </div>
+      </div>
+      <div class="h-12 bg-bluePrimary rounded-b-xl px-5 py-2 flex items-center justify-between text-white">
+        <div>
+          <span>{{nameDocViewComplete}}</span>
+        </div>
+        <div>
+          <span>{{pesoDocViewComplete.toFixed(2)}} MB</span>
+        </div>
+      </div>
+    </div>
+
 
     <div class="flex justify-end">
       <button

@@ -42,6 +42,8 @@ module.exports = {
         informationbd: "#b5ccdb",
         warningbd: "#ede7cb",
         errorbd: "#f0c7c7",
+
+        bgPdf: "#E09C98",
       },
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],
