@@ -3,6 +3,7 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { RegistrarEmpresaComponent } from '../registrar-empresa/registrar-empresa';
 import { BodyControlPractice } from 'src/app/modules/practicante/control-practice/presentation/components/body/body-control-practice.component';
 import { GlobasToast } from 'src/app/shared/components/toast/globas-toast';
+import { LoadingPageComponent } from 'src/app/shared/components/loading/loading-page.component';
 
 @Component({
   standalone: true,
@@ -13,6 +14,7 @@ import { GlobasToast } from 'src/app/shared/components/toast/globas-toast';
     RegistrarEmpresaComponent,
     BodyControlPractice,
     GlobasToast,
+    LoadingPageComponent
   ],
 })
 export class GentionInfoEmpresaModule implements OnInit {
@@ -29,7 +31,7 @@ export class GentionInfoEmpresaModule implements OnInit {
 
   constructor(private cdr: ChangeDetectorRef) {}
 
-  ngOnInit() {
+  async ngOnInit() {
     this.userData = JSON.parse(sessionStorage.getItem('userbar')!);
   }
 

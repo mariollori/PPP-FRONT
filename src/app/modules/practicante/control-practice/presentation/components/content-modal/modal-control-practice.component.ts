@@ -8,13 +8,19 @@ import {
   ref,
   uploadBytesResumable,
 } from '@angular/fire/storage';
-import { DocumentBackModel } from '../../../data/models/document_back_model';
+import {
+  DocumentBackModel,
+  DocumentBackResponseModel,
+  DocumentDataModel,
+} from '../../../data/models/document_back_model';
+import { TypeDocumentsUseCase } from '../../../domain/usecase/documents_usecase';
+import { LoadingPageComponent } from 'src/app/shared/components/loading/loading-page.component';
 @Component({
   standalone: true,
   selector: 'modal-control-practice',
   templateUrl: './modal-control-practice.component.html',
   styleUrls: ['modal-control-practice.component.css'],
-  imports: [CommonModule],
+  imports: [CommonModule, LoadingPageComponent],
 })
 export class ModalControlPractice implements OnInit {
   documentCvCharged: boolean = false;
@@ -24,7 +30,7 @@ export class ModalControlPractice implements OnInit {
 
   @Input() title: string = '';
   @Input() message: string = '';
-  @Input() position: number = 0;
+  @Input() position: string = '';
   @Input() urlDoc: string = '';
 
   userData: any;
@@ -34,16 +40,30 @@ export class ModalControlPractice implements OnInit {
 
   docBackData = new DocumentBackModel();
 
-  constructor(private storage: Storage, private cdr: ChangeDetectorRef) {}
+  typeDocument: DocumentBackResponseModel[] = [];
 
-  ngOnInit(): void {
+  constructor(
+    private storage: Storage,
+    private cdr: ChangeDetectorRef,
+    private typeDocumentsUseCase: TypeDocumentsUseCase
+  ) {}
+
+  async ngOnInit() {
+    await this.listTypeDocuments();
+    console.log(this.typeDocument);
+
     this.userData = JSON.parse(sessionStorage.getItem('userbar')!);
     console.log(this.userData);
   }
 
-  uploadArchive($event: any, folder: string, nameDoc: number) {
+  async listTypeDocuments() {
+    const response = await this.typeDocumentsUseCase.execute();
+
+    this.typeDocument = response!.data;
+  }
+
+  uploadArchive($event: any, folder: string, idDoc: string) {
     this.uploadProgressDocs = 0;
-    console.log(nameDoc);
 
     const pathFirebase = `documents/students/${this.userData.code}/${folder}/`;
     const file = $event.target.files[0];
@@ -93,7 +113,7 @@ export class ModalControlPractice implements OnInit {
               // Subida completa, hacer lo que sea necesario.
 
               const docsData: DocumentBackModel = {
-                type: 'pdf',
+                type: idDoc,
                 name: items.name,
                 urlDocument: url,
                 dateUpload: new Date(),

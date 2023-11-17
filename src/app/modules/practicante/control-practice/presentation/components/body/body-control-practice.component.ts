@@ -6,6 +6,9 @@ import { DocumentsModel } from '../../../data/models/documents_model';
 import { RegistrarEmpresaComponent } from 'src/app/modules/practicante/principal-home/presentation/components/content-body/registrar-empresa/registrar-empresa';
 import { InfoBasicaPracticcante } from './info-basica/info-basica.component';
 import { ItemsEvaluation } from './items-evaluation/items-evaluation';
+import { GetAllDocumentByPPPUseCase } from '../../../domain/usecase/get_all_document_by_ppp_usecase';
+import { DocumentDataPPP } from '../../../data/models/document_back_model';
+import { LoadingPageComponent } from 'src/app/shared/components/loading/loading-page.component';
 
 @Component({
   standalone: true,
@@ -18,6 +21,7 @@ import { ItemsEvaluation } from './items-evaluation/items-evaluation';
     RegistrarEmpresaComponent,
     InfoBasicaPracticcante,
     ItemsEvaluation,
+    LoadingPageComponent,
   ],
 })
 export class BodyControlPractice implements OnInit {
@@ -33,15 +37,28 @@ export class BodyControlPractice implements OnInit {
 
   title: string = '';
   message: string = '';
-  position: number = 0;
+  position: string = '';
 
-  constructor() {}
+  documentsResponse: DocumentDataPPP[] = [];
 
-  ngOnInit(): void {
+  constructor(private getAllDocumentByPppUseCase: GetAllDocumentByPPPUseCase) {}
+
+  async ngOnInit() {
     this.userData = JSON.parse(sessionStorage.getItem('userbar')!);
+    await this.listDocuments();
   }
 
-  sexo(title: string, position: number) {
+  async listDocuments() {
+    const response = await this.getAllDocumentByPppUseCase.execute(
+      this.userData.ppp.id
+    );
+
+    console.log(response!.data);
+
+    this.documentsResponse = response!.data;
+  }
+
+  sexo(title: string, position: string) {
     this.title = title;
     this.message = title.toLowerCase();
     this.position = position;

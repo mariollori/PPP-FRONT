@@ -1,7 +1,7 @@
 <div class="container mx-auto overflow-y-auto overflow-scroll">
   <div class="flex flex-col gap-6">
     <span class="text-xl font-montserrat">Subir {{this.title}}</span>
-    <span>Por favor adjunta tu {{this.message}}, segun el formato que se le esta pidiendo.</span>
+    <span>Por favor adjunta tu {{this.message}}, según el formato que se le esta pidiendo.</span>
     <div class="lg:col-span-3 md:col-span-2 text-center rounded-3xl border-dashed border-2 border-sky-700"
       *ngIf="uploadProgressDocs == null && docUploadCompleted == false">
       <label for="bannerInput"
@@ -58,3 +58,5 @@
     </div>
   </div>
 </div>
+
+<loading-page></loading-page>

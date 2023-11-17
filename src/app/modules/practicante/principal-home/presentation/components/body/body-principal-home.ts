@@ -14,7 +14,7 @@ export class PrincipalHomeBody implements OnInit{
 
   constructor(private router: Router) {}
 
-  ngOnInit() {
+  async ngOnInit() {
     this.userData = JSON.parse(sessionStorage.getItem('userbar')!);
   }
 
