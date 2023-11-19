@@ -14,7 +14,7 @@ import { AreaMapper } from "../mappers";
 })
 export class PracticanteRepository implements IPracticanteRepository {
 
-    private BASE_PATH = 'https://ppp-services-wu3h-dev.fl0.io/api'
+    private BASE_PATH = 'https://ppp-back-dev-ecxr.4.us-1.fl0.io/api'
 
     constructor(
         private http: HttpClient

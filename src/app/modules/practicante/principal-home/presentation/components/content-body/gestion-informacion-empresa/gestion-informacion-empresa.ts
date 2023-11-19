@@ -36,11 +36,12 @@ export class GentionInfoEmpresaModule implements OnInit {
   }
 
   mostrarPito2(div: number) {
-    if (
-      this.userData.ppp.company == null ||
-      this.userData.ppp.company.name == ''
-    ) {
+
+    if ( !this.userData.ppp || !this.userData.ppp.company ) {
+      
       this.pito2 = div;
+    
+
     } else {
       this.type = 'information';
       this.message =

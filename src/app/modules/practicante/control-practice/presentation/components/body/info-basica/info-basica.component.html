@@ -7,7 +7,7 @@
 
             <ul class="space-y-1">
                 <li class="flex flex-row justify-between">
-                    <span class="font-semibold">codigo universitario</span>
+                    <span class="font-semibold">Cod. Universitario</span>
                     <span>{{ userLoggedIn.code }}</span>
                 </li>
                 <li class="flex flex-row justify-between">
@@ -15,7 +15,7 @@
                     <span>{{ userLoggedIn.cellphone }}</span>
                 </li>
                 <li class="flex flex-row justify-between">
-                    <span class="font-semibold">ciclo</span>
+                    <span class="font-semibold">Ciclo academico</span>
                     <span>{{ userLoggedIn.cycle }}</span>
                 </li>
                 <li class="flex flex-row justify-between">
@@ -27,7 +27,7 @@
             <div class="bg-red-200 flex flex-row space-x-2 items-center rounded-lg p-2">
                 <img src="https://cdn-icons-png.flaticon.com/256/337/337946.png" alt="{{ userLoggedIn.nameCv }}" class="w-12 h-12">
                 <a href="{{ userLoggedIn.urlCv }}" target="_blank" class="flex flex-1">
-                    <span class="text-lg font-semibold">Nombre documento: <span class="text-gray-500">{{ userLoggedIn.nameCv }}</span></span>
+                    <span class="text-lg font-semibold">Documento: <span class="text-gray-500">{{ userLoggedIn.nameCv }}</span></span>
                 </a>
             </div>
 
