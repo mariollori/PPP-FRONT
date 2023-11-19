@@ -147,10 +147,7 @@ export class ModalControlPractice implements OnInit {
 
     await this.listTypeDocuments();
 
-    this.enviarEvento();
-  }
-
-  enviarEvento() {
     this.modalIsOpen.emit(false);
   }
+
 }

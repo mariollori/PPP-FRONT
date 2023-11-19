@@ -43,7 +43,7 @@
       </div>
     </div>
     <div *ngIf="item == 1" class="">
-    <!-- <registrar-empresa></registrar-empresa>  AQUI EDITAS-->
+      <!-- <registrar-empresa></registrar-empresa>  AQUI EDITAS-->
       <info-basica-practicante></info-basica-practicante>
     </div>
     <div *ngIf="item == 3">
@@ -54,7 +54,8 @@
 
 <global-modal [isOpen]="modalOpen" (close)="modalOpen = false" *ngIf="modalOpen">
   <ng-container>
-    <modal-control-practice (saveDocument) ="recibirEvento($event)"  [message]="this.message" [title]="this.title" [position]="this.position" [urlDoc]="urlDocView"></modal-control-practice>
+    <modal-control-practice (modalIsOpen)="recibirEvento($event)" [message]="this.message" [title]="this.title"
+      [position]="this.position" [urlDoc]="urlDocView"></modal-control-practice>
   </ng-container>
 </global-modal>
 
