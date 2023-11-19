@@ -15,6 +15,7 @@ import {
 } from '../../../data/models/document_back_model';
 import { TypeDocumentsUseCase } from '../../../domain/usecase/documents_usecase';
 import { LoadingPageComponent } from 'src/app/shared/components/loading/loading-page.component';
+import { CreateDocumentsUseCase } from '../../../domain/usecase/create_document_usecase';
 @Component({
   standalone: true,
   selector: 'modal-control-practice',
@@ -31,7 +32,7 @@ export class ModalControlPractice implements OnInit {
   @Input() title: string = '';
   @Input() message: string = '';
   @Input() position: string = '';
-  @Input() urlDoc: string = '';
+  @Input() urlDoc: string = 'aasa';
 
   userData: any;
 
@@ -45,7 +46,8 @@ export class ModalControlPractice implements OnInit {
   constructor(
     private storage: Storage,
     private cdr: ChangeDetectorRef,
-    private typeDocumentsUseCase: TypeDocumentsUseCase
+    private typeDocumentsUseCase: TypeDocumentsUseCase,
+    private createDocumentsUseCase: CreateDocumentsUseCase
   ) {}
 
   async ngOnInit() {
@@ -132,5 +134,11 @@ export class ModalControlPractice implements OnInit {
     );
 
     uploadTask.resume(); // Iniciar la subida.
+  }
+
+  async saveDocument() {
+    await this.createDocumentsUseCase.execute(this.docBackData);
+
+    await this.listTypeDocuments();
   }
 }

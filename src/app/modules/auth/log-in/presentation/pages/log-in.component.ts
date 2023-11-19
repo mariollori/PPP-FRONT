@@ -45,10 +45,17 @@ export class LogInComponent implements OnInit {
 
     try {
       const response = await this.authenticationLoginUseCase.execute(data);
+      console.log(response!.data.roles);
 
-      const userDataResponse = await this.getAllUserByIdUseCase.execute(
-        response!.data.id
-      );
+      for (const rol of response!.data.roles) {
+        if (rol.name == 'practicante') {
+          const userDataResponse = await this.getAllUserByIdUseCase.execute(
+            response!.data.id
+          );
+          this.userData = userDataResponse!.data;
+          sessionStorage.setItem('userbar', JSON.stringify(this.userData));
+        }
+      }
 
       sessionStorage.setItem('token', response!.data.token);
 
@@ -58,12 +65,7 @@ export class LogInComponent implements OnInit {
 
       this.loginData = response!.data;
 
-      this.userData = userDataResponse!.data;
-
-      console.log(this.userData);
-
       sessionStorage.setItem('user', JSON.stringify(this.loginData));
-      sessionStorage.setItem('userbar', JSON.stringify(this.userData));
 
       this.message =
         'Oops, error al registrarte. Al parecer no eres acto para iniciar tus practicas.';

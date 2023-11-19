@@ -41,6 +41,8 @@ export class BodyControlPractice implements OnInit {
 
   documentsResponse: DocumentDataPPP[] = [];
 
+  urlDocView: string = '';
+
   constructor(private getAllDocumentByPppUseCase: GetAllDocumentByPPPUseCase) {}
 
   async ngOnInit() {
@@ -59,6 +61,14 @@ export class BodyControlPractice implements OnInit {
   }
 
   sexo(title: string, position: string) {
+    this.urlDocView = "";
+    for (const docs of this.documentsResponse) {
+      if (docs.type == position) {
+        console.log("Entro " + " " + docs.type + " " + position);
+
+        this.urlDocView = docs.urlDocument;
+      }
+    }
     this.title = title;
     this.message = title.toLowerCase();
     this.position = position;

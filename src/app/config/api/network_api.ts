@@ -28,5 +28,6 @@ export const routesAccess = {
 
   // PPP
   postCreateEvaluationPPP: `${env}${client.ppp}/create-evaluation`,
-  getAllDocumentPPP: `${env}${client.ppp}/get-documents-ppp`
+  getAllDocumentPPP: `${env}${client.ppp}/get-documents-ppp`,
+  createDocuments: `${env}${client.ppp}/create-ppp-document`,
 };

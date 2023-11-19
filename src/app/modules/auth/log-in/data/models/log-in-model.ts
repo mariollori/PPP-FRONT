@@ -1,4 +1,4 @@
-import { AccessModel } from "./access-model";
+import { AccessModel } from './access-model';
 
 export class LoginModel {
   info!: string;
@@ -15,13 +15,19 @@ export class LoginModelData {
   cellphone!: string;
   area!: string;
   numStudents!: string;
+  roles!: Roles[];
   urlProfile!: string;
   status!: string;
   token!: string;
-  accesses!:AccessModel[];
+  accesses!: AccessModel[];
 }
 
 export class LoginModelSend {
   userName!: string;
   password!: string;
+}
+
+export class Roles {
+  description!: string;
+  name!: string;
 }

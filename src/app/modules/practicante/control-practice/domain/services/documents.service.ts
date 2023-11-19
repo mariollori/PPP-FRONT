@@ -3,7 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { routesAccess } from 'src/app/config/api/network_api';
 import { Observable } from 'rxjs';
 import { DocumentRepository } from '../../data/respository/documents_repository';
-import { DocumentDataModel, DocumentDataPPPModel } from '../../data/models/document_back_model';
+import {
+  DocumentBackModel,
+  DocumentDataModel,
+  DocumentDataPPP,
+  DocumentDataPPPModel,
+} from '../../data/models/document_back_model';
 
 @Injectable({
   providedIn: 'root',
@@ -20,6 +25,15 @@ export class DocumentsService extends DocumentRepository {
   }
 
   getAllDocumentsRepository(idPpp: string): Observable<DocumentDataPPPModel> {
-    return this.http.get<DocumentDataPPPModel>(`${this.routes.getAllDocumentPPP}/${idPpp}`);
+    return this.http.get<DocumentDataPPPModel>(
+      `${this.routes.getAllDocumentPPP}/${idPpp}`
+    );
+  }
+
+  createDocumentsRepository(documemt: DocumentBackModel): Observable<any> {
+    return this.http.post<DocumentDataPPP>(
+      `${this.routes.createDocuments}`,
+      documemt
+    );
   }
 }
