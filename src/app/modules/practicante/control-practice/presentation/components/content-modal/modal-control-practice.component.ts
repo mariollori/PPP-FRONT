@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import {
   Storage,
   getDownloadURL,
@@ -16,6 +16,7 @@ import {
 import { TypeDocumentsUseCase } from '../../../domain/usecase/documents_usecase';
 import { LoadingPageComponent } from 'src/app/shared/components/loading/loading-page.component';
 import { CreateDocumentsUseCase } from '../../../domain/usecase/create_document_usecase';
+import { DomSanitizer } from '@angular/platform-browser';
 @Component({
   standalone: true,
   selector: 'modal-control-practice',
@@ -32,7 +33,9 @@ export class ModalControlPractice implements OnInit {
   @Input() title: string = '';
   @Input() message: string = '';
   @Input() position: string = '';
-  @Input() urlDoc: string = 'aasa';
+  @Input() urlDoc: string = '';
+
+  @Output() modalIsOpen= new EventEmitter<boolean>();
 
   userData: any;
 
@@ -43,19 +46,22 @@ export class ModalControlPractice implements OnInit {
 
   typeDocument: DocumentBackResponseModel[] = [];
 
+  urlOrigi: any;
+
   constructor(
     private storage: Storage,
     private cdr: ChangeDetectorRef,
     private typeDocumentsUseCase: TypeDocumentsUseCase,
+    private sanitizer: DomSanitizer,
     private createDocumentsUseCase: CreateDocumentsUseCase
   ) {}
 
   async ngOnInit() {
+    this.urlOrigi = this.sanitizer.bypassSecurityTrustResourceUrl(this.urlDoc);
     await this.listTypeDocuments();
-    console.log(this.typeDocument);
 
     this.userData = JSON.parse(sessionStorage.getItem('userbar')!);
-    console.log(this.userData);
+    console.log(this.urlDoc);
   }
 
   async listTypeDocuments() {
@@ -140,5 +146,11 @@ export class ModalControlPractice implements OnInit {
     await this.createDocumentsUseCase.execute(this.docBackData);
 
     await this.listTypeDocuments();
+
+    this.enviarEvento();
+  }
+
+  enviarEvento() {
+    this.modalIsOpen.emit(false);
   }
 }

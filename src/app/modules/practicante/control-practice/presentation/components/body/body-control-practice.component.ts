@@ -78,4 +78,11 @@ export class BodyControlPractice implements OnInit {
   nextPage(page: number) {
     this.item = page;
   }
+
+  async recibirEvento(modal: any) {
+    this.modalOpen = false;
+    console.log(modal);
+    await this.listDocuments();
+
+  }
 }

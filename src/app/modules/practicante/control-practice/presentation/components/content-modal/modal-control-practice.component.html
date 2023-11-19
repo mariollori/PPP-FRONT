@@ -3,7 +3,7 @@
     <div *ngIf="urlDoc !== ''" class="w-[600px]">
       <span class="text-xl font-montserrat">{{this.title}}</span>
       <iframe id="inlineFrameExample" class="w-full h-[650px] py-5"
-        src="https://firebasestorage.googleapis.com/v0/b/ppp-upeu.appspot.com/o/documents%2Fstudents%2F201720136%2Fdocuments%2FNOTAS_2022_II.pdf?alt=media&token=c4fe7a3e-3611-42e7-88f1-6189342b5b55">
+        [src]="urlOrigi">
       </iframe>
       <div class="flex justify-end">
         <button
