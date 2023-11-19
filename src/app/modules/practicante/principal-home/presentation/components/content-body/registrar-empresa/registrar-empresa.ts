@@ -9,6 +9,23 @@ import { InputTextMedium } from 'src/app/shared/components/input-text-medium/inp
   imports: [InputTextMedium, ButtonStandAlone, CommonModule],
 })
 export class RegistrarEmpresaComponent implements OnInit {
+
+
+  formValueCompany: IFormValue = {
+    name: '',
+    area: '',
+    ruc: '',
+    address: '',
+    bussinessMentor: '',
+    dniMentor: '',
+    cellphoneMentor: '',
+    emailMentor: '',
+    academicDegreeMentor: '',
+    status: false,
+    ppp: ''
+  }
+
+  /* ui */
   @Output() pito = new EventEmitter<number>();
 
   userData: any;
@@ -17,7 +34,49 @@ export class RegistrarEmpresaComponent implements OnInit {
     this.userData = JSON.parse(sessionStorage.getItem('userbar')!);
   }
 
+  handleSave() {
+    
+    const data: IFormValue = { ...this.formValueCompany, status: true, ppp: this.userData?.ppp?.id! }
+
+    /**
+     * validamos que todo el objeto esté completo
+     * sin campos vacios
+     */
+    if( !Object.values(data).every(value => value !== null && value !== undefined && value !== '') ) {
+      return
+    }
+    
+    console.log({ data })
+
+    // TODO: agregar conexion con la bbdd
+
+    // TODO: toast de confirmación
+
+    // TODO: mandamos a la otra ventana luego de registrar la empresa
+    this.pito3()
+
+  }
+
   pito3() {
     this.pito.emit(1);
   }
+
+  onChangeValue( value: string, typeText: string ) {
+    this.formValueCompany = { ...this.formValueCompany, [ typeText ]: value }
+  }
+
+}
+
+interface IFormValue { 
+  name: string
+  area: string
+  ruc: string
+  address: string
+  bussinessMentor: string
+  dniMentor: string
+  cellphoneMentor: string
+  emailMentor: string
+  academicDegreeMentor: string
+  status: boolean
+  ppp: string
 }
