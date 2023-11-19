@@ -150,4 +150,9 @@ export class ModalControlPractice implements OnInit {
     this.modalIsOpen.emit(false);
   }
 
+  closemodal() {
+    this.modalIsOpen.emit(false);
+    console.log(this.modalIsOpen);
+
+  }
 }

@@ -7,7 +7,7 @@
       </iframe>
       <div class="flex justify-end">
         <button
-          class="px-5 py-2 bg-bluePrimary transition-all duration-300 hover:bg-blueSecondary text-white rounded-[10px]">Cerrar</button>
+          class="px-5 py-2 bg-bluePrimary transition-all duration-300 hover:bg-blueSecondary text-white rounded-[10px]" (click)="closemodal()">Cerrar</button>
         <button
           class="ml-3 px-5 py-2 bg-hellowPrimary transition-all duration-300 hover:bg-hellowSecondary text-white rounded-[10px]">
           Eliminar documento</button>
@@ -67,7 +67,7 @@
 
     <div class="flex justify-end" *ngIf="urlDoc == ''">
       <button
-        class="px-5 py-2 bg-bluePrimary transition-all duration-300 hover:bg-blueSecondary text-white rounded-[10px]">Cancelar</button>
+        class="px-5 py-2 bg-bluePrimary transition-all duration-300 hover:bg-blueSecondary text-white rounded-[10px]" (click)="closemodal()">Cancelar</button>
       <button
         class="ml-3 px-5 py-2 bg-hellowPrimary transition-all duration-300 hover:bg-hellowSecondary text-white rounded-[10px]" (click)="saveDocument()">Subir
         documento</button>
