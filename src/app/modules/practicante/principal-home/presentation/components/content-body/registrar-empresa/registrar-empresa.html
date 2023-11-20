@@ -37,13 +37,17 @@
           <div class="grid grid-cols-4 gap-6">
             <div class="col-span-1">
 
-              <input-text-medium-standalone widht="w-full" borderColor="border-[#D2D2D2]"
+              <input-text-medium-standalone
+              (inputValueChange)="onChangeValue($event, 'ruc')"
+                widht="w-full" borderColor="border-[#D2D2D2]"
                 placeholder="Ruc de la empresa" fontSize="text-[16px]" height="h-[55px]" radius="rounded-[16px]"
                 transition="transition-all" shadow="shadow-md" icon="fa-solid fa-hashtag" iconSize="text-[22px]"
                 iconColor="text-bluePrimary"></input-text-medium-standalone>
             </div>
             <div class="col-span-3">
-              <input-text-medium-standalone borderColor="border-[#D2D2D2]" widht="w-full"
+              <input-text-medium-standalone 
+              (inputValueChange)="onChangeValue($event, 'name')"
+              borderColor="border-[#D2D2D2]" widht="w-full"
                 placeholder="Nombre de la empresa" fontSize="text-[16px]" height="h-[55px]" radius="rounded-[16px]"
                 transition="transition-all" shadow="shadow-md" colorPlaceholder="text-bluePrimary"
                 icon="fa-solid fa-building" iconSize="text-[22px]"
@@ -55,14 +59,18 @@
         <div class="grid grid-rows-1 gap-2 pb-6">
           <div class="grid grid-cols-5 gap-6">
             <div class="col-span-3">
-              <input-text-medium-standalone borderColor="border-[#D2D2D2]" widht="w-full"
+              <input-text-medium-standalone 
+              (inputValueChange)="onChangeValue($event, 'address')"
+              borderColor="border-[#D2D2D2]" widht="w-full"
                 placeholder="Dirección de la empresa" fontSize="text-[16px]" height="h-[55px]" radius="rounded-[16px]"
                 transition="transition-all" shadow="shadow-md" colorPlaceholder="text-bluePrimary"
                 fontWeigth="font-semibold" icon="fa-solid fa-location-dot" iconSize="text-[22px]"
                 iconColor="text-bluePrimary"></input-text-medium-standalone>
             </div>
             <div class="col-span-2">
-              <input-text-medium-standalone borderColor="border-[#D2D2D2]" widht="w-full"
+              <input-text-medium-standalone
+              (inputValueChange)="onChangeValue($event, 'area')"
+              borderColor="border-[#D2D2D2]" widht="w-full"
                 placeholder="Área de desempeño" fontSize="text-[16px]" height="h-[55px]" radius="rounded-[16px]"
                 transition="transition-all" shadow="shadow-md" colorPlaceholder="text-bluePrimary"
                 icon="fa-solid fa-briefcase" iconSize="text-[22px]"
@@ -77,18 +85,22 @@
         <div class="grid grid-rows-1 gap-2 pb-6">
           <div class="grid grid-cols-5 gap-6">
             <div class="col-span-3">
-              <input-text-medium-standalone borderColor="border-[#D2D2D2]" widht="w-full" placeholder="Nombre completo"
-                fontSize="text-[16px]" height="h-[55px]" radius="rounded-[16px]" transition="transition-all"
-                shadow="shadow-md" colorPlaceholder="text-bluePrimary" fontWeigth="font-semibold"
-                icon="fa-solid fa-id-badge" iconSize="text-[22px]"
-                iconColor="text-bluePrimary"></input-text-medium-standalone>
+              <input-text-medium-standalone 
+              (inputValueChange)="onChangeValue($event, 'bussinessMentor')"
+              borderColor="border-[#D2D2D2]" widht="w-full" placeholder="Nombre completo"
+              fontSize="text-[16px]" height="h-[55px]" radius="rounded-[16px]" transition="transition-all"
+              shadow="shadow-md" colorPlaceholder="text-bluePrimary" fontWeigth="font-semibold"
+              icon="fa-solid fa-id-badge" iconSize="text-[22px]"
+              iconColor="text-bluePrimary"></input-text-medium-standalone>
             </div>
             <div class="col-span-2">
-              <input-text-medium-standalone borderColor="border-[#D2D2D2]" widht="w-full"
-                placeholder="Correo electronico" fontSize="text-[16px]" height="h-[55px]" radius="rounded-[16px]"
-                transition="transition-all" shadow="shadow-md" colorPlaceholder="text-bluePrimary"
-                icon="fa-solid fa-envelope" iconSize="text-[22px]"
-                iconColor="text-bluePrimary"></input-text-medium-standalone>
+              <input-text-medium-standalone 
+              (inputValueChange)="onChangeValue($event, 'emailMentor')"
+              borderColor="border-[#D2D2D2]" widht="w-full"
+              placeholder="Correo electronico" fontSize="text-[16px]" height="h-[55px]" radius="rounded-[16px]"
+              transition="transition-all" shadow="shadow-md" colorPlaceholder="text-bluePrimary"
+              icon="fa-solid fa-envelope" iconSize="text-[22px]"
+              iconColor="text-bluePrimary"></input-text-medium-standalone>
             </div>
           </div>
         </div>
@@ -96,20 +108,23 @@
           <div class="grid grid-cols-4 gap-6">
             <div class="col-span-1">
               <input-text-medium-standalone borderColor="border-[#D2D2D2]" widht="w-full" placeholder="Dni"
-                fontSize="text-[16px]" height="h-[55px]" radius="rounded-[16px]" transition="transition-all"
-                shadow="shadow-md" colorPlaceholder="text-bluePrimary" fontWeigth="font-semibold"
-                icon="fa-solid fa-id-card" iconSize="text-[22px]"
-                iconColor="text-bluePrimary"></input-text-medium-standalone>
+              (inputValueChange)="onChangeValue($event, 'dniMentor')"
+              fontSize="text-[16px]" height="h-[55px]" radius="rounded-[16px]" transition="transition-all"
+              shadow="shadow-md" colorPlaceholder="text-bluePrimary" fontWeigth="font-semibold"
+              icon="fa-solid fa-id-card" iconSize="text-[22px]"
+              iconColor="text-bluePrimary"></input-text-medium-standalone>
             </div>
             <div class="col-span-1">
               <input-text-medium-standalone borderColor="border-[#D2D2D2]" widht="w-full" placeholder="Telefono"
-                fontSize="text-[16px]" height="h-[55px]" radius="rounded-[16px]" transition="transition-all"
-                shadow="shadow-md" colorPlaceholder="text-bluePrimary" icon="fa-solid fa-mobile" iconSize="text-[22px]"
-                iconColor="text-bluePrimary"></input-text-medium-standalone>
+              (inputValueChange)="onChangeValue($event, 'cellphoneMentor')"
+              fontSize="text-[16px]" height="h-[55px]" radius="rounded-[16px]" transition="transition-all"
+              shadow="shadow-md" colorPlaceholder="text-bluePrimary" icon="fa-solid fa-mobile" iconSize="text-[22px]"
+              iconColor="text-bluePrimary"></input-text-medium-standalone>
             </div>
             <div class="col-span-2">
               <input-text-medium-standalone borderColor="border-[#D2D2D2]" widht="w-full"
-                placeholder="Grado de Maestria" fontSize="text-[16px]" height="h-[55px]" radius="rounded-[16px]"
+              placeholder="Grado de Maestria" fontSize="text-[16px]" height="h-[55px]" radius="rounded-[16px]"
+              (inputValueChange)="onChangeValue($event, 'academicDegreeMentor')"
                 transition="transition-all" shadow="shadow-md" colorPlaceholder="text-bluePrimary"
                 icon="fa-solid fa-graduation-cap" iconSize="text-[22px]"
                 iconColor="text-bluePrimary"></input-text-medium-standalone>
@@ -117,15 +132,16 @@
           </div>
         </div>
         <div class="flex items-end justify-end gap-8 pt-10">
-          <button-standalone width="w-[100px]" height="h-[45px]" colorFondo="bg-hellowPrimary" radius="rounded-[7px]"
-            hover="hover:bg-hellowSecondary" transition="transition-all" duration="duration-300" text="Limpiar"
-            colorText="text-white" fontFamily="font-montserrat" fontSize="text-[15px]"
-            fontWeight="font-normal"></button-standalone>
-
-          <button-standalone width="w-[100px]" height="h-[45px]" colorFondo="bg-bluePrimary" radius="rounded-[7px]"
-            hover="hover:bg-hellowSecondary" transition="transition-all" duration="duration-300" text="Registrar"
-            colorText="text-white" fontFamily="font-montserrat" fontSize="text-[15px]"
-            fontWeight="font-normal"></button-standalone>
+          <button 
+          (click)="this.pito3()"
+          class="bg-blueSecondary py-2 px-4 hover:bg-blue-900 rounded-xl text-white font-semibold">
+            Limpiar
+          </button>
+          <button 
+          (click)="this.handleSave()"
+          class="bg-hellowPrimary py-2 px-4 hover:bg-yellow-400 rounded-xl text-white font-semibold">
+            Registrar
+          </button>
         </div>
       </div>
     </div>

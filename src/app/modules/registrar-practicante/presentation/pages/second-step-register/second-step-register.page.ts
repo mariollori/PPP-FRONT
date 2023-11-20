@@ -161,7 +161,7 @@ export class SecondStepRegister implements OnInit {
       this.router.navigate(['/menu-items']);
     } catch (error) {
       this.message =
-        'Oops, error al registrarte. Al parecer no eres acto para iniciar tus practicas.';
+        'Oops, error al registrarte. Al parecer no eres apto   para iniciar tus practicas.';
       this.typeToast = 'error';
       this.toast = true;
       setTimeout(
