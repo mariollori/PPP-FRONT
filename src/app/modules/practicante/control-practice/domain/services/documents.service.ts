@@ -38,9 +38,6 @@ export class DocumentsService extends DocumentRepository {
   }
 
   deleteDocumentsRepository(documemt: string): Observable<any> {
-    return this.http.post<any>(
-      `${this.routes.deleteDocuments}/${documemt}`,
-      ''
-    );
+    return this.http.delete<any>(`${this.routes.deleteDocuments}/${documemt}`);
   }
 }

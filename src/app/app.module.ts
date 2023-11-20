@@ -48,6 +48,7 @@ import { ItemsEvaluation } from './modules/practicante/control-practice/presenta
 import { ModalControlPractice } from './modules/practicante/control-practice/presentation/components/content-modal/modal-control-practice.component';
 import { SettingsUserPageComponent } from './modules/settings/presentation/components/settings-user-page';
 import { YouProfile } from './modules/settings/presentation/components/profile/you-profile';
+import { EditPasswordComponent } from './modules/settings/presentation/components/edit-password/edit-password';
 // import { IonicModule } from '@ionic/angular';
 
 // PROVIDERS
@@ -99,6 +100,7 @@ import { YouProfile } from './modules/settings/presentation/components/profile/y
     ModalControlPractice,
     SettingsUserPageComponent,
     YouProfile,
+    EditPasswordComponent,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideStorage(() => getStorage()),
     // IonicModule.forRoot(),
