@@ -1,79 +1,88 @@
-<div class="grid grid-cols-2 gap-3 pb-5">
+<div class="grid grid-cols-1 gap-3 pb-5">
 
-    <div class="col-span-1 bg-white shadow-lg rounded-xl p-4">
-        <h5 class="text-lg text-center font-semibold mb-4">Información personal</h5>
-        
-        <div class="flex flex-col space-y-2">
+  <div class="flex bg-white shadow-lg rounded-xl">
+    <div class="w-64 h-full flex p-5">
+      <div class="w-full h-full rounded-lg overflow-hidden">
+        <img class="w-full h-full object-cover" [src]="userLoggedIn.urlProfile">
+      </div>
+    </div>
+    <div class="col-span-1  p-4 flex-1">
+      <h5 class="text-lg text-center font-semibold mb-4">Información personal</h5>
 
-            <ul class="space-y-1">
-                <li class="flex flex-row justify-between">
-                    <span class="font-semibold">Cod. Universitario</span>
-                    <span>{{ userLoggedIn.code }}</span>
-                </li>
-                <li class="flex flex-row justify-between">
-                    <span class="font-semibold">Num. Telefono</span>
-                    <span>{{ userLoggedIn.cellphone }}</span>
-                </li>
-                <li class="flex flex-row justify-between">
-                    <span class="font-semibold">Ciclo academico</span>
-                    <span>{{ userLoggedIn.cycle }}</span>
-                </li>
-                <li class="flex flex-row justify-between">
-                    <span class="font-semibold">Email</span>
-                    <span>{{ userLoggedIn.email }}</span>
-                </li>
-            </ul>
+      <div class="flex flex-col space-y-2">
 
-            <div class="bg-red-200 flex flex-row space-x-2 items-center rounded-lg p-2">
-                <img src="https://cdn-icons-png.flaticon.com/256/337/337946.png" alt="{{ userLoggedIn.nameCv }}" class="w-12 h-12">
-                <a href="{{ userLoggedIn.urlCv }}" target="_blank" class="flex flex-1">
-                    <span class="text-lg font-semibold">Documento: <span class="text-gray-500">{{ userLoggedIn.nameCv }}</span></span>
-                </a>
-            </div>
+        <ul class="space-y-1">
+          <li class="flex flex-row justify-between">
+            <span class="font-semibold">Cod. Universitario</span>
+            <span>{{ userLoggedIn.code }}</span>
+          </li>
+          <li class="flex flex-row justify-between">
+            <span class="font-semibold">Num. Telefono</span>
+            <span>{{ userLoggedIn.cellphone }}</span>
+          </li>
+          <li class="flex flex-row justify-between">
+            <span class="font-semibold">Ciclo academico</span>
+            <span>{{ userLoggedIn.cycle }}</span>
+          </li>
+          <li class="flex flex-row justify-between">
+            <span class="font-semibold">Email</span>
+            <span>{{ userLoggedIn.email }}</span>
+          </li>
+        </ul>
 
+        <div class="bg-red-200 flex flex-row space-x-2 items-center rounded-lg p-2">
+          <img src="https://cdn-icons-png.flaticon.com/256/337/337946.png" alt="{{ userLoggedIn.nameCv }}"
+            class="w-12 h-12">
+          <a href="{{ userLoggedIn.urlCv }}" target="_blank" class="flex flex-1">
+            <span class="text-lg font-semibold">Documento: <span class="text-gray-500">{{ userLoggedIn.nameCv
+                }}</span></span>
+          </a>
         </div>
 
-    </div>
-    
-    <div class="col-span-1 bg-white shadow-lg rounded-xl p-4">
-        <h5 class="text-lg text-center font-semibold mb-4">Infomación empresarial</h5>
-
-        <div class="flex flex-col space-y-2">
-
-            <ul class="space-y-1">
-                <li class="flex flex-row justify-between">
-                    <span class="font-semibold">Nombre empresa</span>
-                    <span>{{ userLoggedIn.ppp.company.name }}</span>
-                </li>
-                <li class="flex flex-row justify-between">
-                    <span class="font-semibold">RUC</span>
-                    <span>{{ userLoggedIn.ppp.company.ruc }}</span>
-                </li>
-                <li class="flex flex-row justify-between">
-                    <span class="font-semibold">Lugar</span>
-                    <span>{{ userLoggedIn.ppp.company.address }}</span>
-                </li>
-                <li class="flex flex-row justify-between">
-                    <span class="font-semibold">Area de empresa</span>
-                    <span>{{ userLoggedIn.ppp.company.area }}</span>
-                </li>
-                <li class="flex flex-row justify-between">
-                    <span class="font-semibold">Supervisor empresarial</span>
-                    <span>{{ userLoggedIn.ppp.company.bussinessMentor }}</span>
-                </li>
-                <li class="flex flex-row justify-between">
-                    <span class="font-semibold">Email supervisor empresarial</span>
-                    <span>{{ userLoggedIn.ppp.company.emailMentor }}</span>
-                </li>
-                <li class="flex flex-row justify-between">
-                    <span class="font-semibold">Celular supervisor empresarial</span>
-                    <span>{{ userLoggedIn.ppp.company.cellphoneMentor }}</span>
-                </li>
-                
-            </ul>
-
-        </div>
+      </div>
 
     </div>
+  </div>
+
+  <div class="col-span-1 bg-white shadow-lg rounded-xl p-4">
+    <h5 class="text-lg text-center font-semibold mb-4">Infomación empresarial</h5>
+
+    <div class="flex flex-col space-y-2">
+
+      <ul class="space-y-1">
+        <li class="flex flex-row justify-between">
+          <span class="font-semibold">Nombre empresa</span>
+          <span>{{ userLoggedIn.ppp.company.name }}</span>
+        </li>
+        <li class="flex flex-row justify-between">
+          <span class="font-semibold">RUC</span>
+          <span>{{ userLoggedIn.ppp.company.ruc }}</span>
+        </li>
+        <li class="flex flex-row justify-between">
+          <span class="font-semibold">Lugar</span>
+          <span>{{ userLoggedIn.ppp.company.address }}</span>
+        </li>
+        <li class="flex flex-row justify-between">
+          <span class="font-semibold">Area de empresa</span>
+          <span>{{ userLoggedIn.ppp.company.area }}</span>
+        </li>
+        <li class="flex flex-row justify-between">
+          <span class="font-semibold">Supervisor empresarial</span>
+          <span>{{ userLoggedIn.ppp.company.bussinessMentor }}</span>
+        </li>
+        <li class="flex flex-row justify-between">
+          <span class="font-semibold">Email supervisor empresarial</span>
+          <span>{{ userLoggedIn.ppp.company.emailMentor }}</span>
+        </li>
+        <li class="flex flex-row justify-between">
+          <span class="font-semibold">Celular supervisor empresarial</span>
+          <span>{{ userLoggedIn.ppp.company.cellphoneMentor }}</span>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
 
 </div>

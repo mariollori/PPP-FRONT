@@ -1,0 +1,68 @@
+<div class="flex flex-col items-center justify-center w-full h-[415px] bg-white rounded-xl p-5  text-bluePrimary">
+  <div class="w-full flex gap-5 items-center justify-center">
+    <i class="fa-solid fa-id-badge text-3xl text-hellowPrimary"></i>
+    <span class="text-2xl font-semibold text-hellowPrimary">Mi Perfil</span>
+  </div>
+  <div class="p-2"></div>
+  <div class="flex w-full h-80 bg-white rounded-xl gap-7 text-bluePrimary">
+    <div class="flex flex-col items-center justify-center">
+      <div class="w-48 h-48 rounded-xl overflow-hidden">
+        <img class="w-full h-full object-cover" [src]="userData.urlProfile">
+      </div>
+      <div class="p-1"></div>
+      <div
+        class="p-2 w-full bg-bluePrimary flex items-center justify-center rounded-lg text-white cursor-pointer hover:bg-blueSecondary transition-all duration-300">
+        <span>cambiar foto de perfil</span>
+      </div>
+      <div class="p-1"></div>
+      <div
+        class="p-2 w-full bg-hellowPrimary flex items-center justify-center rounded-lg text-white cursor-pointer :bg-hellowSecondary transition-all duration-300">
+        <span>Eliminar foto de perfil</span>
+      </div>
+    </div>
+    <div class="flex-1 text-[18px] flex flex-col justify-between">
+      <div class="flex">
+        <div class="flex-1">
+          <div class="py-2 flex">
+            <span class="text-black font-normal">Nombre </span>
+            <span class="pl-5 font-medium">{{userData.firstName}}</span>
+          </div>
+          <div class="py-2 flex">
+            <span class="text-black font-normal">Apellido </span>
+            <span class="pl-5 font-medium">{{userData.lastName}}</span>
+          </div>
+          <div class="py-2 flex">
+            <span class="text-black font-normal">Correo electrónico </span>
+            <span class="pl-5 font-medium">{{userData.email}}</span>
+          </div>
+          <div class="py-2 flex">
+            <span class="text-black font-normal">Número de celular </span>
+            <span class="pl-5 font-medium">{{userData.cellphone}}</span>
+          </div>
+        </div>
+        <div class="flex-1">
+          <div class="py-2 flex">
+            <span class="text-black font-normal">Código Universitario</span>
+            <span class="pl-5 font-medium">{{userData.code}}</span>
+          </div>
+          <div class="py-2 flex">
+            <span class="text-black font-normal">Area de Desempeño </span>
+            <span class="pl-5 font-medium">{{userData.area}}</span>
+          </div>
+          <div class="py-2 flex">
+            <span class="text-black font-normal">Ciclo academico </span>
+            <span class="pl-5 font-medium">{{userData.cycle}}</span>
+          </div>
+          <!-- <div class="py-2 flex">
+            <span class="text-black font-normal">Nombre </span>
+            <span class="pl-5 font-medium">{{userData.cellphone}}</span>
+          </div> -->
+        </div>
+      </div>
+      <div
+        class="w-full bg-red-200 p-2 rounded-lg flex text-black justify-center items-center cursor-pointer hover:bg-red-300  transition-all duration-300">
+        <span>Descargar curriculum vitae</span>
+      </div>
+    </div>
+  </div>
+</div>

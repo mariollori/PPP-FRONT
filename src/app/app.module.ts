@@ -46,6 +46,8 @@ import { GentionInfoEmpresaModule } from './modules/practicante/principal-home/p
 import { RegistrarEmpresaComponent } from './modules/practicante/principal-home/presentation/components/content-body/registrar-empresa/registrar-empresa';
 import { ItemsEvaluation } from './modules/practicante/control-practice/presentation/components/body/items-evaluation/items-evaluation';
 import { ModalControlPractice } from './modules/practicante/control-practice/presentation/components/content-modal/modal-control-practice.component';
+import { SettingsUserPageComponent } from './modules/settings/presentation/components/settings-user-page';
+import { YouProfile } from './modules/settings/presentation/components/profile/you-profile';
 // import { IonicModule } from '@ionic/angular';
 
 // PROVIDERS
@@ -95,6 +97,8 @@ import { ModalControlPractice } from './modules/practicante/control-practice/pre
     RegistrarEmpresaComponent,
     ItemsEvaluation,
     ModalControlPractice,
+    SettingsUserPageComponent,
+    YouProfile,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideStorage(() => getStorage()),
     // IonicModule.forRoot(),
