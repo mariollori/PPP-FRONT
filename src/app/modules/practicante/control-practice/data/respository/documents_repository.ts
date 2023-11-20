@@ -7,4 +7,5 @@ export abstract class DocumentRepository {
   abstract getAllDocumentsRepository(idPpp: string): Observable<DocumentDataPPPModel>;
 
   abstract createDocumentsRepository(documemt: DocumentBackModel): Observable<any>;
+  abstract deleteDocumentsRepository(documemt: string): Observable<any>;
 }

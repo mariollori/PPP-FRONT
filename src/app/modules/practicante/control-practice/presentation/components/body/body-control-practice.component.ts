@@ -42,6 +42,7 @@ export class BodyControlPractice implements OnInit {
   documentsResponse: DocumentDataPPP[] = [];
 
   urlDocView: string = '';
+  idDocument: string = '';
 
   constructor(private getAllDocumentByPppUseCase: GetAllDocumentByPPPUseCase) {}
 
@@ -62,11 +63,13 @@ export class BodyControlPractice implements OnInit {
 
   sexo(title: string, position: string) {
     this.urlDocView = "";
+    this.idDocument = "";
     for (const docs of this.documentsResponse) {
       if (docs.type == position) {
         console.log("Entro " + " " + docs.type + " " + position);
 
         this.urlDocView = docs.urlDocument;
+        this.idDocument = docs.id;
       }
     }
     this.title = title;

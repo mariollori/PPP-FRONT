@@ -55,7 +55,7 @@
 <global-modal [isOpen]="modalOpen" (close)="modalOpen = false" *ngIf="modalOpen">
   <ng-container>
     <modal-control-practice (modalIsOpen)="recibirEvento($event)" [message]="this.message" [title]="this.title"
-      [position]="this.position" [urlDoc]="urlDocView"></modal-control-practice>
+      [position]="this.position" [urlDoc]="urlDocView" [idDocument]="idDocument"></modal-control-practice>
   </ng-container>
 </global-modal>
 
