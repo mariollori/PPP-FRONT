@@ -76,8 +76,14 @@ export class RegistrarEmpresaComponent implements OnInit {
       this.userData.id
     );
 
+    console.log("userDataResponse");
+    console.log(userDataResponse);
+
+
     this.userDataStorage = userDataResponse!.data;
     sessionStorage.setItem('userbar', JSON.stringify(this.userDataStorage));
+    console.log("this.userDataStorage");
+    console.log(this.userDataStorage);
 
     // TODO: toast de confirmación
 
