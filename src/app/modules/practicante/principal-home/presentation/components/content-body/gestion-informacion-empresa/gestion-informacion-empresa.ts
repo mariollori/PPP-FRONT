@@ -56,17 +56,17 @@ export class GentionInfoEmpresaModule implements OnInit {
   volver(num: number) {
     this.userData = JSON.parse(sessionStorage.getItem('userbar')!);
 
-    this.type = 'success';
-      this.message =
-        'Se acaba de crear la empresa correctamente...!!!';
-      this.toast = true;
-      this.validateCompany == true;
-      setTimeout(() => {
-        this.toast = false;
-        this.message = '';
-        this.type = '';
-        this.cdr.detectChanges();
-      }, 5000);
+    // this.type = 'success';
+    //   this.message =
+    //     'Se acaba de crear la empresa correctamente...!!!';
+    //   this.toast = true;
+    //   this.validateCompany == true;
+    //   setTimeout(() => {
+    //     this.toast = false;
+    //     this.message = '';
+    //     this.type = '';
+    //     this.cdr.detectChanges();
+    //   }, 5000);
 
     this.pito2 = num;
     this.cdr.detectChanges();
