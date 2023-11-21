@@ -8,4 +8,6 @@ export abstract class DocumentRepository {
 
   abstract createDocumentsRepository(documemt: DocumentBackModel): Observable<any>;
   abstract deleteDocumentsRepository(documemt: string): Observable<any>;
+
+  abstract createEntherpriseRepository(entherprise: any): Observable<any>;
 }

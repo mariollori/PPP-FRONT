@@ -31,4 +31,5 @@ export const routesAccess = {
   getAllDocumentPPP: `${env}${client.ppp}/get-documents-ppp`,
   createDocuments: `${env}${client.ppp}/create-ppp-document`,
   deleteDocuments: `${env}${client.ppp}/delete-document-ppp`,
+  createEnterprise: `${env}${client.ppp}/create-company-ppp`,
 };

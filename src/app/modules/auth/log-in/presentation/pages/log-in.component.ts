@@ -45,7 +45,7 @@ export class LogInComponent implements OnInit {
 
     try {
       const response = await this.authenticationLoginUseCase.execute(data);
-      console.log(response!.data.roles);
+      console.log(response!.data);
 
       for (const rol of response!.data.roles) {
         if (rol.name == 'practicante') {
