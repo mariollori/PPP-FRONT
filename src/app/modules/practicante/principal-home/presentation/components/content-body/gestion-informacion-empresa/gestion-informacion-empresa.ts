@@ -14,7 +14,7 @@ import { LoadingPageComponent } from 'src/app/shared/components/loading/loading-
     RegistrarEmpresaComponent,
     BodyControlPractice,
     GlobasToast,
-    LoadingPageComponent
+    LoadingPageComponent,
   ],
 })
 export class GentionInfoEmpresaModule implements OnInit {
@@ -36,12 +36,8 @@ export class GentionInfoEmpresaModule implements OnInit {
   }
 
   mostrarPito2(div: number) {
-
-    if ( !this.userData.ppp || !this.userData.ppp.company ) {
-      
+    if (!this.userData.ppp || !this.userData.ppp.company) {
       this.pito2 = div;
-    
-
     } else {
       this.type = 'information';
       this.message =
@@ -58,7 +54,10 @@ export class GentionInfoEmpresaModule implements OnInit {
   }
 
   volver(num: number) {
+    this.userData = JSON.parse(sessionStorage.getItem('userbar')!);
+
     this.pito2 = num;
+    this.cdr.detectChanges();
   }
 
   empresaDocs(empresa: boolean) {
