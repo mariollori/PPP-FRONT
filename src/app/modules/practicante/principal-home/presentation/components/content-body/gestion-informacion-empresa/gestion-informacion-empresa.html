@@ -45,7 +45,7 @@
         Mostramos la siguiente lista en las empresas donde usted ha realizado sus practicas y subidos sus documentos
       </p>
       <div class="flex gap-6 py-4 w-full flex-wrap h-auto
-                    max-md:justify-center">
+                    max-md:justify-center" *ngIf="this.userData.ppp.company == null">
         <div class="w-60 h-60 rounded-xl shadow-lg cursor-pointer bg-white px-5 py-4 flex flex-col hover:bg-neutral-200"
           (click)="empresaDocs(true)">
           <div class="h-[65%] flex items-center justify-center">
